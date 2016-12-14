@@ -12,7 +12,9 @@ function login() {
         submitHandler:function() {
             $.post("", {}, function(data) {
                 if (data.IsSuccess) {
-                    
+                    layer.msg(data.Msg, { time: 1500 });
+                } else {
+                    layer.msg(data.Msg, { time: 1500 });
                 }
             });
 
