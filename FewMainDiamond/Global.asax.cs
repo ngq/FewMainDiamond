@@ -20,6 +20,6 @@ namespace FewMainDiamond
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AutofacConfig.Register();
-        }
+        }  
     }
 }
