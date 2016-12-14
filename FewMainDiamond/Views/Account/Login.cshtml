@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "登录";
+    Layout = "~/Views/Shared/_LayoutAccount.cshtml";
+}
+<div class="content">
+    <form name="login" id="login"  method="post">
+        <ul>
+            <h3>会员登陆</h3>
+            <li>
+                <h6>用户名</h6><span><input type="text" name="name"></span>
+            </li>
+            <li>
+                <h6>密 码</h6><span><input type="password" name="pwd"></span>
+            </li>
+            <li style="width: 200px;">
+                <h6>验证码</h6><span><input type="text" name="verify" style="width: 80px;"></span>
+            </li>
+            <div class="mem">
+                <img title="点击刷新验证码" src="@Url.Action("GetImg", "Common",new {id="login"})" onclick="this.src = '@Url.Action("GetImg", "Common",new {id="login"})' + '?=' + Math.random()" style="cursor: pointer">
+            </div>
+            <div class="protocol">
+                <input name="protocol" type="checkbox" value=""> 自动登陆 <a href="@Url.Action("Forget")" class="z">忘记密码？点击找回</a>
+            </div>
+
+        </ul>
+        <div class="bot">
+            <input type="submit" name="submit" value="立即登陆" class="btn"><a href="@Url.Action("Register")" class="btn2">不是会员？立即注册</a><div>
+                <div class="protocol" style="margin-top:15px;">您还可以选择以下登陆方式</div>
+                <div class="protocol"><a href="#"><img src="/Content/images/login/qq_login.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><img src="/Content/images/login/loginButton_24.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><img src="/Content/images/login/weixin_login.png"></a></div>
+            </div>
+        </div>
+    </form>
+</div>
+

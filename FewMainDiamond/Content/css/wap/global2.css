@@ -1,0 +1,70 @@
+﻿@charset "utf-8";
+/* CSS Document */
+/*------全局定义-------------------- */
+*{padding:0px;margin:0px;}
+body{font: normal 100% "微软雅黑"; position:relative; padding-bottom:50px;}
+body{ font-size:16px; font-family:"微软雅黑"; position:relative;padding-bottom:50px;}
+@media screen and (min-width:320px) and (max-width:480px){
+body{ font-size:12px;}
+}
+@media screen and (min-width:480px) and (max-width:640px){
+body{ font-size:16px;}
+}
+@media screen and (min-width:640px) and (max-width:960px){
+body{ font-size:18px;}
+}
+@media screen and (min-width:960px){
+body{ font-size:20px;}
+}
+img{ border:none;}
+a{ color:#666666;text-decoration:none; border:none;}
+a:hover{text-decoration: none;color:#FF0000; }
+ul,ol,li{list-style:none;}
+input,select,button{font: normal 100% "微软雅黑";vertical-align:middle;}
+select{border:none;}
+.clear{clear:both;height:0px; overflow: hidden;}
+
+
+/*------header-------------------- */
+header{width:96%;height:auto;padding:0 2%; position:absolute; z-index:2;overflow:hidden;}
+.head_top{width:100%;height:auto; overflow:hidden;}
+.logo{width:40%; float:left;}
+.logo img{max-width:100%; height:auto;}
+
+.sider{width:50%; text-align:right; float:right;}
+.sider ul{padding-top:5%;}
+.sider ul li{ float:right;width:18%;padding-left:12%;}
+.sider ul li img{max-width:100%; height:auto;}
+
+.head_bottom{ width:100%;padding:10px 0px; color:#fff;}
+.head_bottom .head_left{ float:left;font-size:1.2em;}
+.head_bottom .head_left a{ color:#ffffff; }
+.head_bottom .head_right{ float:right; color:#ffffff;}
+.head_bottom .head_right a{ display:block; float:right; background:#21d9d9; color:#ffffff; padding:1px 10px;margin-left:5px;border-radius:2px; -moz-border-radius: 2px; -webkit-border-radius:2px;}
+.head_bottom  .head_seach{display:block; position:absolute;right:0px; bottom:0px; color:#010101; padding:8px 40px 8px 20px; background:url(../../images/base/seach_bg.png) no-repeat right 20px center; background-size:10% 20%;background-color:#f5f5f5;}
+
+/***************Nav************************/
+nav{width:100%;height:50px; position:fixed; z-index:3; bottom:0px; left:0px;  background:url(../../images/base/nav_bg.png) no-repeat; background-size:100% 100%;}
+nav ul{padding:6px 0 6px 0;}
+nav ul li{width:24.7%;height:38px; float:left; display:block; text-align:center; border-left:1px solid #222;overflow:hidden;}
+nav ul li:first-child{ border-left:none;}
+nav ul li a{color:#FFF; height:38px; display:block;border-left:1px solid #444;}
+nav ul li:first-child a{ border-left:none;}
+nav ul li a img{ width:20px; height:20px; display:block; margin:0 auto;}
+nav ul li a span{ display:block;font-size:12px;height:18px; line-height:18px;}
+nav ul li:nth-child(2){ position:relative;}
+nav ul li:nth-child(2) .carnumber{ width:8px;height:8px;border-radius:8px; -moz-border-radius:8px; -webkit-border-radius:8px; background:#21d9d9;position:absolute;left:55%;top:4px;}
+
+.rightnav{position: fixed; height:1000px; overflow:hidden; top:10px; right:0;z-index:2;background:#21d9d9; }
+.rightnav .list li img{ width:30px; height:30px; float:right; margin:6px 0px 0 0; }
+.rightnav .list{ text-indent:0px;}
+.rightnav .list li{height:42px;line-height:42px; border-bottom:1px solid #1bd2d2;}
+.rightnav .list li a{ height:41px;font-size:14px;font-weight:400;color:#fff; display:block;border-bottom:1px solid #33e5e5; padding:0 20px;}
+#bg{background-color:#000;position:absolute;z-index:1;left:0;top:0;display:none;width:100%;height:100%;opacity:0.5;filter: alpha(opacity=50);-moz-opacity: 0.5;}
+
+/*------footer-------------------- */
+footer{width:100%;height:auto; overflow:hidden;}
+footer .copyright{ color:#808080; font-size:0.9em; padding:30px 0 10px 0; text-align:center; background:#f5f5f5;}
+footer .online{ position:relative;}
+footer .online img{ width:100%;vertical-align:bottom;display:block;margin:0 auto;}
+footer .online a{ position:absolute; width:25%;height:0;padding-bottom:8.33%;right:3.7%;top:38%;}

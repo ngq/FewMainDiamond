@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - 我的 ASP.NET 应用程序</title>
+
+</head>
+<body>
+    <!--头部-->
+    @{ Html.RenderAction("Header", "Layout");}
+
+    @RenderBody()
+    <!--底部-->
+    @{ Html.RenderAction("Footer", "Layout");}
+
+    @*@Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")*@
+    <link href="~/Content/css/home.css" rel="stylesheet" />
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+    <link href="~/Content/css/diamond.css" rel="stylesheet" />
+    <script src="~/Content/scripts/jquery-1.10.2.js"></script>
+    <script src="~/Content/scripts/common.base.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+
+</html>

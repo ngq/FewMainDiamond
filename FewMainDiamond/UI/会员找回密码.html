@@ -1,0 +1,74 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <title>会员找回密码</title>
+
+    <link href="Content/css/login.css" rel="stylesheet" />
+    <script src="Content/scripts/jquery-1.10.2.js"></script>
+    <script src="Content/scripts/common.base.js"></script>
+
+</head>
+<body>
+
+    <div class="login">
+        <div id="top">
+            <a href="http://www.qydiamond.com/"><img id="logo" src="Content/images/login/user_logo.png" /></a>
+            <div class="right">
+                <a class="theme-login" href="javascript:;">APP下载</a>
+                <a class="theme-login2" href="javascript:;">微信客服</a>
+            </div>
+            <div class="theme-popover-mask"></div>
+        </div>
+        <!--------------------会员登陆--------------------------->
+
+        <div class="content">
+            <form action="http://www.qydiamond.com/user/pwd.html" method="post">
+                <ul>
+                    <h3>找回密码</h3>
+                    <li><h6>会员帐号</h6><span><input type="text" name="membername" value="" /></span></li>
+                    <li><h6>注册邮箱</h6><span><input type="text" name="memberemail" value="" /></span></li>
+                    <div class="bot">
+                        <input type="submit" name="submit" value="提交找回" class="btn" /><a href="http://www.qydiamond.com/user/login.html" class="btn2">已是会员？立即登陆</a>
+                        <div>
+                        </div>
+                    </div>
+                </ul>
+            </form>
+        </div>
+    </div>
+
+    <!---APP下载--->
+    <div class="theme-popover" style="display: none;">
+        <div class="theme-poptit">
+            <h3>
+                <b></b>APP下载
+            </h3> <a class="close" title="关闭" href="javascript:;">×</a>
+        </div>
+        <div class="theme_box">
+            <img src="Content/images/login/s_2.jpg" />
+            <p>您好，APP网站升级中，请稍后访问！<!--请扫描二维码下载APP登录QYdiamond官网--></p>
+        </div>
+    </div>
+    <!---微信客服--->
+    <div class="theme-popover2" style="display: none;">
+        <div class="theme-poptit2">
+            <h3>
+                <b></b>微信客服
+            </h3> <a class="close" title="关闭" href="javascript:;">×</a>
+        </div>
+        <div class="theme_box">
+            <img src="Content/images/login/s_1.jpg" />
+            <p>请扫码添加QYdiamond客服为您服务</p>
+        </div>
+    </div>
+    <script language="JavaScript">
+        function fleshVerify() {
+            //重载验证码
+            var time = new Date().getTime();
+            document.getElementById('verifyImg').src = '/Public/verify/' + time;
+        }
+    </script>
+
+</body>
+</html>

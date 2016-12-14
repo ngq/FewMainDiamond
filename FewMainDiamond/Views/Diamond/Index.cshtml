@@ -1,0 +1,393 @@
+﻿
+@{
+    ViewBag.Title = "全球裸钻查询表";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section scripts
+{
+<link href="/Content/css/diamond.css" rel="stylesheet" />
+
+<script src="/Content/scripts/diamond.js"></script>
+<script src="/Content/scripts/laypage/laypage.js"></script>
+    <script>
+        $(function(){
+            bgChange();
+            //分页脚本
+            laypage({
+                cont: $('.pagination'), //容器。值支持id名、原生dom对象，jquery对象,
+                pages: 100, //总页数
+                skip: true, //是否开启跳页
+                skin: '#77C7C8',
+                groups: 7 //连续显示分页数
+            });})
+</script>
+}
+<div id="position"><div class="box">当前位置：<a href="javascript:;">全球裸钻查询</a> <span style="float:right;">美元汇率：<b style="color:#ff9900;">6.90</b></span></div></div>
+<div class="main">
+    <div id="diamond_search">
+        <form name="form1" method="GET" action="http://www.qydiamond.com/diamond/index.html">
+            <input name="nid" type="hidden" value="2" />
+            <input name="shape" id="shape" type="hidden" value="" />
+            <input name="color" id="color" type="hidden" value="" />
+            <input name="clarity" id="clarity" type="hidden" value="" />
+            <input name="cut" id="cut" type="hidden" value="" />
+            <input name="polishing" id="polishing" type="hidden" value="" />
+            <input name="symmetric" id="symmetric" type="hidden" value="" />
+            <input name="certificate" id="certificate" type="hidden" value="" />
+            <input name="sort" value="" type="hidden" />
+
+            <!--形状-->
+            <div class="con">
+                <h3 class="s_h3">形状</h3>
+                <ul class="shape">
+                    <li name="ROUND">           <span class="sh1">圆形</span></li>
+                    <li name="PRINCESS">  <span class="sh2">公主方</span></li>
+                    <li name="OVAL">              <span class="sh3">椭圆形</span></li>
+                    <li name="HEART">           <span class="sh4">心形</span></li>
+                    <li name="MARQUISE">  <span class="sh5">橄榄形</span></li>
+                    <li name="RADIANT">     <span class="sh6">雷蒂恩</span></li>
+                    <li name="CUSHION">     <span class="sh7">垫形</span></li>
+                    <li name="EMERALD">     <span class="sh8">祖母绿</span></li>
+                    <li name="PEAR">              <span class="sh9">梨形</span></li>
+                </ul>
+            </div>
+            <!--颜色-->
+            <div class="con">
+                <h3>颜色</h3>
+                <ul class="color">
+                    <li name="D">D</li>
+                    <li name="E">E</li>
+                    <li name="F">F</li>
+                    <li name="G">G</li>
+                    <li name="H">H</li>
+                    <li name="I">I</li>
+                    <li name="J">J</li>
+                    <li name="K">K</li>
+                    <li name="L">L</li>
+                    <li name="M">M</li>
+                    <li name="N">N</li>
+                </ul>
+            </div>
+            <!--净度-->
+            <div class="con" style="width:53.68%;">
+                <h3>净度</h3>
+                <ul class="clarity">
+                    <li name="IF">IF</li>
+                    <li name="VVS1">VVS1</li>
+                    <li name="VVS2">VVS2</li>
+                    <li name="VS1">VS1</li>
+                    <li name="VS2">VS2</li>
+                    <li name="SI1">SI1</li>
+                    <li name="SI2">SI2</li>
+                </ul>
+            </div>
+            <div class="con width2">
+                <h3>重量</h3>
+                <input name="size1" type="text" value="0.3" /><font>ct</font><b></b>
+                <input name="size2" type="text" value="18" /><font>ct</font>
+            </div>
+            <div class="clear"></div>
+            <div class="con width">
+                <h3>切工</h3>
+                <ul class="cut">
+                    <li name="EX">EX </li>
+                    <li name="VG">VG</li>
+                    <li name="GD">GD</li>
+                </ul>
+            </div>
+            <div class="con width">
+                <h3>抛光</h3>
+                <ul class="polishing">
+                    <li name="EX">EX </li>
+                    <li name="VG">VG</li>
+                    <li name="GD">GD</li>
+                </ul>
+            </div>
+            <div class="con width2">
+                <h3>价格</h3>
+                <input name="price1" type="text" value="1000" /><font>￥</font><b></b>
+                <input name="price2" type="text" value="1000000" /><font>￥</font>
+            </div>
+            <div class="clear"></div>
+            <div class="con width">
+                <h3>对称</h3>
+                <ul class="symmetric">
+                    <li name="EX">EX </li>
+                    <li name="VG">VG</li>
+                    <li name="GD">GD</li>
+                </ul>
+            </div>
+            <div class="con width">
+                <h3>证书</h3>
+                <ul class="certificate">
+                    <li name="GIA">GIA</li>
+                    <li name="HRD">HRD</li>
+                    <li name="IGI">IGI</li>
+                </ul>
+            </div>
+
+            <div class="con width">
+                <h3>证书号</h3><input name="number" type="text" value="" style="width:246px;" />
+            </div>
+            <div class="hint2"><a href="http://www.qydiamond.com/User/registered.html" target="_blank"><img src="/Content/images/base/hint2.jpg" /></a></div>
+            <div class="hint">
+                <img src="/Content/images/base/hint1.jpg" />
+                <div class="btn">
+                    <a href="http://www.qydiamond.com/diamond/index/nid/2.html">重 置</a>
+                    <input type="submit" name="" value="搜 索" />
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div id="diamond">
+        <ul class="c1">
+            <form id="filterForm" name="form1" method="get" action="http://www.qydiamond.com/diamond/index.html">
+                <input name="nid" type="hidden" value="2" />
+                <input name="shape" id="shape" type="hidden" value="" />
+                <input name="color" id="color" type="hidden" value="" />
+                <input name="clarity" id="clarity" type="hidden" value="" />
+                <input name="cut" id="cut" type="hidden" value="" />
+                <input name="polishing" id="polishing" type="hidden" value="" />
+                <input name="symmetric" id="symmetric" type="hidden" value="" />
+                <input name="certificate" id="certificate" type="hidden" value="" />
+
+                <input name="number" type="hidden" value="" />
+                <input name="size1" type="hidden" value="" />
+                <input name="size2" type="hidden" value="" />
+                <input name="price1" type="hidden" value="" />
+                <input name="price2" type="hidden" value="" />
+
+                <input id="sort" type="hidden" value="" name="sort" to="filter" />
+
+                <li class="bg">
+                    <dl>
+                        <dd>形状</dd>
+                        <dd>重量</dd>
+                        <dd>颜色</dd>
+                        <dd>净度</dd>
+                        <dd>切工</dd>
+                        <dd>抛光</dd>
+                        <dd>对称</dd>
+                        <dd>荧光</dd>
+                        <dd class="dd1">尺寸</dd>
+                        <dd>奶油</dd>
+                        <dd>色度</dd>
+                        <dd class="dd3">台面比</dd>
+                        <dd class="dd3">深度比</dd>
+                        <dd>证书</dd>
+                        <dd class="dd2">证书号</dd>
+
+                        <dd class="dd3">
+                            价格
+                            <div class="sort">
+                                <a certificate="1" href="javascript:Filter(&#39;sort&#39;,&#39;1&#39;);"><img src="Content/images/base/sort1.png" /></a>
+                                <a certificate="3" href="javascript:Filter(&#39;sort&#39;,&#39;3&#39;);"><img src="Content/images/base/sort3.png" /></a>
+                                <a certificate="2" href="javascript:Filter(&#39;sort&#39;,&#39;2&#39;);"><img src="Content/images/base/sort2.png" /></a>
+                            </div>
+                        </dd>
+                        <dd class="dd6">订购</dd>
+                    </dl>
+                </li>
+            </form>
+            <li>
+                <dl>
+                    <dd>
+                        <img src="/Content/images/base/dz1.png" alt="钻石证书号：1238546149" />
+                    </dd>
+                    <dd>0.3</dd>
+                    <dd>L</dd>
+                    <dd>VS2</dd>
+                    <dd>EX</dd>
+                    <dd>EX</dd>
+                    <dd>EX</dd>
+                    <dd>
+                        无
+                    </dd>
+                    <dd class="dd1">4.29x4.32x2.65</dd>
+                    <dd>
+                        无
+                    </dd>
+                    <dd>咖							</dd>
+                    <dd class="dd3">59</dd>
+                    <dd class="dd3">61.6</dd>
+                    <dd>
+                        <a href="http://www.gia.edu/cs/Satellite?pagename=GST%2FDispatcher&amp;childpagename=GIA%2FPage%2FReportCheck&amp;c=Page&amp;cid=1355954554547&amp;reportno=1238546149" target="_blank">GIA</a>
+
+                    </dd>
+                    <dd class="dd2">1238546149</dd>
+
+
+
+                    <dd class="dd3">
+                        2517
+                    </dd>
+
+                    <dd class="diam-buy dd6"><a class="diam-login" style="color:#f80;">查看</a></dd>
+                    <div class="diam-popover" style="display: none;">
+                        <div class="diam-poptit">
+                            <a href="javascript:;" title="关闭" class="close">×</a>
+                        </div>
+                        <!-------------->
+
+                        <div class="img">
+
+                            <div class="diamon_img">
+                                <img src="/Content/images/base/sh1.jpg" alt="钻石证书号：1238546149" />
+                            </div>
+                        </div>
+
+                        <!--------->
+                        <div class="cimg">
+                            <img src="/Content/images/base/gia.jpg" />
+                        </div>
+                        <!--------->
+                        <div class="con">
+                            <p>
+                                <font>形状</font>
+                                <img src="/Content/images/base/dz1.png" />
+                            </p>
+                            <p>
+                                <font>证书</font>
+                                <a href="http://www.gia.edu/cs/Satellite?pagename=GST%2FDispatcher&amp;childpagename=GIA%2FPage%2FReportCheck&amp;c=Page&amp;cid=1355954554547&amp;reportno=1238546149" target="_blank">
+                                    GIA <span style="color:#ccb17a;">证书查询</span>
+                                </a>
+
+                            </p>
+                            <p>
+                                <font>证书号</font>
+                                <a href="http://www.gia.edu/cs/Satellite?pagename=GST%2FDispatcher&amp;childpagename=GIA%2FPage%2FReportCheck&amp;c=Page&amp;cid=1355954554547&amp;reportno=1238546149" target="_blank">1238546149</a>
+                            </p>
+                            <p><font>重量</font>0.3</p>
+                            <p><font>颜色</font>L</p>
+                            <p><font>净度</font>VS2</p>
+                            <p><font>切工</font>EX</p>
+                            <p><font>抛光</font>EX</p>
+                            <p><font>对称</font>EX</p>
+                            <p>
+                                <font>荧光</font>
+                                无
+                            </p>
+                            <p>
+                                <font>奶油</font>
+                                无
+                            </p>
+                            <p>
+                                <font>色度</font>
+                                咖
+                            </p>
+                            <p><font>台面比</font>59</p>
+                            <p><font>深度比</font>61.6</p>
+                            <p><font>尺寸</font>4.29x4.32x2.65</p>
+
+                            <p><font>价格</font><span><b style="color:#ccb17a; font-size:14px;">￥2517</b></span></p>
+                        </div>
+                        <div class="dg"><a href="http://www.qydiamond.com/home/cart/diamond_cart/did/4337527.html">在线订购</a></div>
+                    </div>
+                </dl>
+            </li>
+
+            <li>
+                <dl style="background: rgb(247, 247, 247);">
+                    <dd>
+                        <img src="/Content/images/base/dz1.png" alt="钻石证书号：5171751490" />
+                    </dd>
+                    <dd>0.3</dd>
+                    <dd>I</dd>
+                    <dd>SI2</dd>
+                    <dd>EX</dd>
+                    <dd>EX</dd>
+                    <dd>EX</dd>
+                    <dd>
+                        无
+                    </dd>
+                    <dd class="dd1">4.36*4.33*2.65</dd>
+                    <dd>
+                        奶
+                    </dd>
+                    <dd>无							</dd>
+                    <dd class="dd3">58</dd>
+                    <dd class="dd3">60.9</dd>
+                    <dd>
+                        <a href="http://www.gia.edu/cs/Satellite?pagename=GST%2FDispatcher&amp;childpagename=GIA%2FPage%2FReportCheck&amp;c=Page&amp;cid=1355954554547&amp;reportno=5171751490" target="_blank">GIA</a>
+
+                    </dd>
+                    <dd class="dd2">5171751490</dd>
+
+
+
+                    <dd class="dd3">
+                        3478
+                    </dd>
+
+                    <dd class="diam-buy dd6"><a class="diam-login" style="color:#f80;">查看</a></dd>
+                    <div class="diam-popover">
+                        <div class="diam-poptit">
+                            <a href="javascript:;" title="关闭" class="close">×</a>
+                        </div>
+                        <!-------------->
+
+                        <div class="img">
+
+                            <div class="diamon_img">
+                                <img src="/Content/images//base/sh1.jpg" alt="钻石证书号：5171751490" />
+                            </div>
+                        </div>
+
+                        <!--------->
+                        <div class="cimg">
+                            <img src="/Content/images/gia.jpg" />
+                        </div>
+                        <!--------->
+                        <div class="con">
+                            <p>
+                                <font>形状</font>
+                                <img src="/Content/images/base/dz1.png" />
+                            </p>
+                            <p>
+                                <font>证书</font>
+                                <a href="http://www.gia.edu/cs/Satellite?pagename=GST%2FDispatcher&amp;childpagename=GIA%2FPage%2FReportCheck&amp;c=Page&amp;cid=1355954554547&amp;reportno=5171751490" target="_blank">
+                                    GIA <span style="color:#ccb17a;">证书查询</span>
+                                </a>
+
+                            </p>
+                            <p>
+                                <font>证书号</font>
+                                <a href="http://www.gia.edu/cs/Satellite?pagename=GST%2FDispatcher&amp;childpagename=GIA%2FPage%2FReportCheck&amp;c=Page&amp;cid=1355954554547&amp;reportno=5171751490" target="_blank">5171751490</a>
+                            </p>
+                            <p><font>重量</font>0.3</p>
+                            <p><font>颜色</font>I</p>
+                            <p><font>净度</font>SI2</p>
+                            <p><font>切工</font>EX</p>
+                            <p><font>抛光</font>EX</p>
+                            <p><font>对称</font>EX</p>
+                            <p>
+                                <font>荧光</font>
+                                无
+                            </p>
+                            <p>
+                                <font>奶油</font>
+                                奶
+                            </p>
+                            <p>
+                                <font>色度</font>
+                                无
+                            </p>
+                            <p><font>台面比</font>58</p>
+                            <p><font>深度比</font>60.9</p>
+                            <p><font>尺寸</font>4.36*4.33*2.65</p>
+
+                            <p><font>价格</font><span><b style="color:#ccb17a; font-size:14px;">￥3478</b></span></p>
+                        </div>
+                        <div class="dg"><a href="http://www.qydiamond.com/home/cart/diamond_cart/did/4393854.html">在线订购</a></div>
+                    </div>
+                </dl>
+            </li>
+        </ul>
+
+
+    </div>
+    <div class="pagination"></div>
+</div>
+<div class="diam-popover-mask" style="display: none;"></div>
+

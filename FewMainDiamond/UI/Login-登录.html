@@ -1,0 +1,151 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>会员登陆</title>
+    <link href="Content/css/login.css" rel="stylesheet" />
+   
+    <script src="Content/scripts/jquery-1.10.2.js"></script>
+    <script src="Content/scripts/common.base.js"></script>
+</head>
+<body >
+    <div class="login">
+        <div id="top">
+            <a href="http://www.qydiamond.com/"><img id="logo" src="Content/images/login/user_logo.png"></a>
+            <div class="right">
+                <a class="theme-login" href="javascript:;">APP下载</a>
+                <a class="theme-login2" href="javascript:;">微信客服</a>
+            </div>
+            <div class="theme-popover-mask"></div>
+        </div>
+        <!--------------------会员登陆--------------------------->
+        <div class="content">
+            <form name="login" action="http://www.qydiamond.com/user/login.html" method="post">
+                <ul>
+                    <h3>会员登陆</h3>
+                    <li><h6>用户名</h6><span><input type="text" name="name"></span></li>
+                    <li><h6>密 码</h6><span><input type="password" name="pwd"></span></li>
+                    <li style="width:200px;"><h6>验证码</h6><span><input type="text" name="verify" style="width:80px;"></span></li>
+                    <div class="mem"><img title="点击刷新验证码" src="" onclick="Math.random()"></div>
+                    <div class="protocol"><input name="protocol" type="checkbox" value="">  自动登陆 <a href="http://www.qydiamond.com/user/pwd.html" class="z">忘记密码？点击找回</a></div>
+                    <div class="bot">
+                        <input type="submit" name="submit" value="立即登陆" class="btn"><a href="http://www.qydiamond.com/user/registered.html" class="btn2">不是会员？立即注册</a><div>
+                            <div class="protocol" style="margin-top:15px;">您还可以选择以下登陆方式</div>
+                            <div class="protocol"><a href="http://www.qydiamond.com/login/login/type/qq.html"><img src="Content/images/login/qq_login.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.qydiamond.com/login/login/type/sina.html"><img src="Content/images/login/loginButton_24.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.qydiamond.com/login/login/type/weixin.html"><img src="Content/images/login/weixin_login.png"></a></div>
+                        </div>
+                    </div>
+                </ul>
+            </form>
+        </div>
+        <!---------------------会员注册------------------------->
+
+    </div>
+    <!---APP下载--->
+    <div class="theme-popover" style="display:none;">
+        <div class="theme-poptit"><h3><b></b>APP下载</h3> <a class="close" title="关闭" href="javascript:;">×</a></div>
+        <div class="theme_box"><img src="Content/images/login/s_2.jpg"><p>您好，APP网站升级中，请稍后访问！<!--请扫描二维码下载APP登录QYdiamond官网--></p></div>
+    </div>
+    <!---微信客服--->
+    <div class="theme-popover2" style="display:none;">
+        <div class="theme-poptit2"><h3><b></b>微信客服</h3> <a class="close" title="关闭" href="javascript:;">×</a></div>
+        <div class="theme_box"><img src="Content/images/login/s_1.jpg"><p>请扫码添加QYdiamond客服为您服务</p></div>
+    </div>
+    <!---左侧导航开始--->
+    <div class="chat_f1">
+        <div class="chat_f1_expr" style="height: 800px; display: block;">
+            <!------------>
+            <div class="list">
+                <b><img src="Content/images/base/1_03.png" /></b>
+                <div class="detail" style="width:136px;  margin-left:-136px; height:200px; ">
+                    <span class="mem">
+                        <img src="Content/images/base/1_01.png" />
+                        <li><a href="http://www.qydiamond.com/user/user_out/out/2.html" target="_top">退出</a></li>
+                        <li><a href="http://www.qydiamond.com/member/index.html" target="_blank">会员中心</a></li>
+                    </span>
+                </div>
+            </div>
+            <!------------>
+            <div class="list kf1">
+                <b><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2047753273&amp;site=qq&amp;menu=yes"><img src="Content/images/base/1_11.png" /></a></b>
+                <div class="detail" style="width:150px;  margin-left:-150px; margin-top:-100px;">
+                    <span class="kf">
+                        <h6>客服中心</h6>
+                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2047753273&amp;site=qq&amp;menu=yes" class="one">客服咨询</a>
+                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2047753273&amp;site=qq&amp;menu=yes" class="one">客服咨询</a>
+                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=929327063&amp;site=qq&amp;menu=yes" class="one">客服咨询</a>
+                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2559364384&amp;site=qq&amp;menu=yes" class="two">用户反馈</a>
+                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2559364384&amp;site=qq&amp;menu=yes" class="two">售后服务</a>
+                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=929327063&amp;site=qq&amp;menu=yes" class="two">招商部经理</a>
+                    </span>
+                </div>
+            </div>
+            <!------------>
+            <div class="list">
+                <b><a target="_blank" href="http://www.qydiamond.com/cart/index/class/1.html"><img src="Content/images/base/1_05.png" /></a></b>
+                <div class="detail" style="width:136px;  margin-left:-136px; ">
+                    <span class="mem" style="height:120px;">
+                        购物车数量为
+                        <b> 0&nbsp;<font style="font-weight:lighter">件商品</font></b>
+                        <li><a href="http://www.qydiamond.com/cart/index/class/1.html" target="_blank">购物车</a> </li>
+                    </span>
+                </div>
+            </div>
+            <!------------>
+            <div class="list">
+                <b><a target="_blank" href="http://www.qydiamond.com/member/index"><img src="Content/images/base/1_07.png" /></a></b>
+                <div class="detail">
+                    <span><a target="_blank" href="http://www.qydiamond.com/member/index">我的订单</a></span>
+                </div>
+            </div>
+            <!------------>
+            <!---------------------------------------------------------------->
+            <div class="list" style="margin-top:160px;">
+                <b>
+                    <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=657525650&amp;site=qq&amp;menu=yes"><img src="Content/images/base/1_13.png" /></a>
+                </b>
+                <div class="detail">
+                    <span>
+                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=657525650&amp;site=qq&amp;menu=yes">用户反馈</a>
+                    </span>
+                </div>
+            </div>
+
+            <div class="list">
+                <b>
+                    <a target="_blank" href="http://www.qydiamond.com/diamond/index/nid/2.html"><img src="Content/images/base/1_14.png" /></a>
+                </b>
+                <div class="detail" style="width:200px; margin-top:-210px; margin-left:-200px; height:210px;">
+                    <!-- JiaThis Button BEGIN -->
+                    <div id="jiathis_sers" class="jiadiv_02">
+                        <h6>分享给我的好友们</h6>
+                        <a class="jiatitle" onclick="jiathis_sendto(&#39;tsina&#39;);return false;" href="javascript:;"><img src="Content/images/base/f1.png" />新浪微博</a>
+                        <a class="jiatitle" onclick="jiathis_sendto(&#39;weixin&#39;);return false;" href="javascript:;"><img src="Content/images/base/f2.png" />微信</a>
+                        <a class="jiatitle" onclick="jiathis_sendto(&#39;qzone&#39;);return false;" href="javascript:;"><img src="Content/images/base/f8.png" />QQ空间</a>
+                        <a class="jiatitle" onclick="jiathis_sendto(&#39;tqq&#39;);return false;" href="javascript:;"><img src="Content/images/base/f4.png" />腾讯微博</a>
+                        <a class="jiatitle" onclick="jiathis_sendto(&#39;renren&#39;);return false;" href="javascript:;"><img src="Content/images/base/f10.png" />人人网</a>
+                        <a class="jiatitle" onclick="jiathis_sendto(&#39;cqq&#39;);return false;" href="javascript:;"><img src="Content/images/base/f5.png" />QQ好友</a>
+                    </div>
+                    <!-- JiaThis Button END -->
+                </div>
+            </div>
+            <!------------>
+            <div class="list">
+                <b><img src="Content/images/base/1_15.png" /></b>
+                <div class="detail" style="width:136px; margin-top:-260px; margin-left:-136px; height:200px;">
+                    <span>
+                        <img src="Content/images/base/ws.png" />
+                    </span>
+                </div>
+            </div>
+            <!------------>
+            <div class="list">
+
+                <b><a href="http://www.qydiamond.com/diamond/index/nid/2.html#"><img src="Content/images/base/1_18.png" /></a></b>
+                <div class="detail"><span><a href="http://www.qydiamond.com/diamond/index/nid/2.html#">返回顶部</a></span></div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

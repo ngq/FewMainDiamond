@@ -1,0 +1,74 @@
+﻿@charset "utf-8";
+@import url(global.css);
+/*------全局定义-------------------- */
+*{padding:0;margin:0;}
+body{
+   font-size:12px;
+  font-family:"微软雅黑";
+   background: url(../images/login/user_bg.jpg) center top;
+  }		
+img{border:none;}   
+a{color:#226c6f;text-decoration:none;}
+a:hover{text-decoration: none;color:#FF0000;}	
+ul{list-style:none;}   
+input,select,button{font:12px Verdana,Arial,Tahoma;vertical-align:middle;}
+.clear{clear:both;height:0px; overflow: hidden;}
+textarea, input{ border:1px solid #80adaf; text-indent:3px; color:#333; font-size:12px;}
+
+select{ border:1px solid #fff;  color:#333;}
+
+
+/*-----------圆角公用-----------*/
+
+.rounded{-moz-border-radius: 6px;-webkit-border-radius: 6px; border-radius: 6px;}
+
+.button,
+#main-content table tfoot td .bulk-actions select,
+.pagination a.number,
+form input.text-input,
+form textarea,
+form .wysiwyg,
+.dp-popup{ -moz-border-radius: 4px;-webkit-border-radius: 4px; border-radius: 4px;}
+			
+.content-box,
+.content-box-header,
+ul.content-box-tabs li a.current,
+.shortcut-button,
+.notification {-moz-border-radius: 6px;-webkit-border-radius: 6px;border-radius: 6px;}
+.content-box-header {-moz-border-radius-bottomleft: 0;-moz-border-radius-bottomright: 0;-webkit-border-bottom-left-radius: 0;-webkit-border-bottom-right-radius: 0;border-bottom-left-radius: 0;border-bottom-right-radius: 0;}
+.closed-box .content-box-header {-moz-border-radius-bottomleft: 6px;-moz-border-radius-bottomright: 6px;-webkit-border-bottom-left-radius: 6px;-webkit-border-bottom-right-radius: 6px;border-bottom-left-radius: 6px;			border-bottom-right-radius: 6px;}
+
+				
+.login {width:1200px; margin:0 auto;}
+.top {width: 100%; height:190px; padding:0;}	
+.top .right{ float:right; padding-top:13px;}
+.top .right a{ color:#fff; padding-left: 38px;}	
+		
+.content{ float:right; background:#fff; width:300px; padding:38px 50px 68px 50px;-moz-border-radius: 6px;-webkit-border-radius: 6px;border-radius: 6px;}	
+.content ul{overflow:hidden; display:block; width:305px; margin:0 auto;}    
+.content ul li{width:300px;float:left;display:block;margin-bottom:20px; padding:3px 0; border:1px solid #ccc; overflow:hidden;-moz-border-radius: 6px;-webkit-border-radius: 6px;border-radius: 6px;}  
+.content ul li a{color: #226c6f;}
+.content ul li h6{width:110px;height:20px; line-height:20px; margin-top:4px;float:left;display:block;color:#666;font-size:14px; font-weight:lighter; text-indent:30px; border-right:1px solid #dedede;}  
+.content ul li span{font-size:12px;display:block; float:left;}  
+.content ul li span input{width:180px;height:20px;line-height:20px; padding:5px 0; display:block; float:left; border:none; color:#666; text-indent:5px; outline:none;}  
+.content ul li span select {width:220px;line-height:20px;padding:0; padding:5px;}  
+
+.content ul h3{ font-size:24px; color:#333; margin-bottom:20px; display:block; width:100%; font-weight:lighter;}   
+
+.content ul .bot{ width:100%; float:left;}
+.content ul .btn{width:136px; height:36px; line-height:36px; display:block; float:left;background:#21d9d9;color:#fff;border:none;-moz-border-radius: 6px;-webkit-border-radius: 6px;border-radius: 6px; font-size:14px; font-family:"微软雅黑";}  
+.content ul .btn:hover{background:#cca965;}  
+
+.content ul .btn2{width:156px; height:36px;color:#333; line-height:36px; display:block; text-align:center; float:left;background:#f2f2f2;margin-left:10px; -moz-border-radius: 6px;-webkit-border-radius: 6px;border-radius: 6px; margin-left:10px; font-size:12px; }  
+.content ul .btn2:hover{background:#cca965; color:#fff;}  
+
+.content ul .protocol{ width:100%; padding-bottom:20px; float:left; color:#333;}
+.content ul .protocol .z{ color:#333; float:right;}
+.content ul .protocol a:hover{ color:#cca965;}
+.content ul .protocol .s{}
+
+.content ul .mem{ width:90px; float:left; padding:4px 0; border:1px solid #ccc;-moz-border-radius: 6px;-webkit-border-radius: 6px;border-radius: 6px; margin-left:10px; overflow:hidden;}
+.content ul .mem img{ width:90px; height:28px; margin-left:-5px;}
+
+
+  

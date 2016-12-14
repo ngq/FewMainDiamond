@@ -1,0 +1,75 @@
+﻿/* CSS Document */
+
+@import url(global2.css);
+
+/*------column-------------------- */
+.column{width:100%;height:auto; overflow:hidden;}
+.column ul{padding:20px 0px;  overflow:hidden;}
+.column ul li{ float:left; width:25%; text-align:center;}
+.column ul li a{ display:block;width:70%;height:auto;margin:0 auto; text-align:center;}
+.column ul li a img{max-width:100%;height:auto;}
+.column ul li a span{ color:#000000; font-size:0.9em; display:block;margin-top:10px; font-weight:bold;}
+
+
+/*------hot_product------------------- */
+.hot_product{width:100%;height:auto; overflow:hidden}
+.hot_product .title{ text-align:center;padding:2% 0; overflow:hidden; }
+.hot_product .title span{ display:block; font-family:Arial; color:#21d9d9; font-size:1.2em;}
+.hot_product .title p{ display:block;  background:url(../../images/base/bg.jpg) repeat-x center;}
+.hot_product .title p strong{ display:block;color:#000000;width:30%;margin:0 auto; background:#FFF; font-size:1.6em; font-weight:normal;}
+.hot_product .hot_box{width:100%; background:#f5f5f5;}
+.hot_product .hot_box ul{padding:3% 4% 0 4%;}
+.hot_product .hot_box ul li{width:48%; height: auto; text-align:center;margin-bottom:5%;padding-bottom:2%; background:#FFF; overflow:hidden;}
+.hot_product .hot_box ul li:first-child{ float:left;}
+.hot_product .hot_box ul li:nth-child(2){ float:right;}
+.hot_product .hot_box ul li img{max-width:100%;height:auto; margin:0 auto;}
+.hot_product .hot_box ul li h3{font-size:1em;color:#000000;margin-top:2%; font-weight:normal; text-align:left;padding-left:10%;}
+.hot_product .hot_box ul li span{display:block;;margin-top:1%; font-weight:bold; text-align:left;padding-left:10%}
+.hot_product .hot_box ul li .b1{color:#808080; text-decoration:line-through;font-size:0.8em;}
+.hot_product .hot_box ul li .b2{color:#29cccc; font-size:1em;}
+
+/*------new_product------------------- */
+.new_product{width:100%;height:auto; overflow:hidden}
+.new_product .title{ text-align:center;padding:2% 0; overflow:hidden; }
+.new_product .title span{ display:block; font-family:Arial; color:#21d9d9; font-size:1.2em;}
+.new_product .title p{ display:block;  background:url(../../images/base/bg.jpg) repeat-x center;}
+.new_product .title p strong{ display:block;color:#000000;width:30%;margin:0 auto; background:#FFF; font-size:1.6em; font-weight:normal;}
+.new_product .new_box{padding:3% 4% 0 4%;}
+.new_product .new_box .flash{width:100%;}
+.new_product .new_box .flash img{width:100%;height:auto;display:block;}
+.new_product .new_box .new_list{margin-top:25px;}
+.new_product .new_box .new_list a{ display:block;width:48%; text-align:center;}
+.new_product .new_box .new_list a:first-child{ float:left;}
+.new_product .new_box .new_list a:nth-child(2){ float:right;}
+.new_product .new_box .new_list a img{width:100%; height:auto; display:block;}
+
+/*------column2------------------- */
+.column2{width:100%; height:auto; position:relative;margin-top:25px;margin-bottom:60px;}
+.column2 .gd img{width:100%;height:auto; display:block;}
+.column2 ul{position:absolute;left:0; bottom:-50px; width:100%; }
+.column2 ul li{width:25%; float:left; text-align:center;}
+.column2 ul li a{ display:block;width:80%;margin:0 auto;}
+.column2 ul li img{max-width:100%; height:auto;}
+
+/*------news------------------- */
+.new_dynamic{width:100%;height:auto;margin-bottom:20px; overflow:hidden}
+.new_dynamic.title{ text-align:center;padding:2% 0; overflow:hidden; }
+.new_dynamic .title span{ display:block; font-family:Arial; color:#21d9d9; font-size:1.2em;}
+.new_dynamic .title p{ display:block;  background:url(../../images/base/bg.jpg) repeat-x center;}
+.new_dynamic .title p strong{ display:block;color:#000000;width:30%;margin:0 auto; background:#FFF; font-size:1.6em; font-weight:normal;}
+.new_dynamic .news_box{}
+.new_dynamic .news_box ul{padding:0 4%;}
+.new_dynamic .news_box ul li{ padding:6px 0; overflow:hidden}
+.new_dynamic .news_box ul li a{ color:#000000; font-size:0.9em; float:left;}
+.new_dynamic .news_box ul li span{ color:#000000; font-size:0.9em; float:right;}
+/*------message------------------- */
+.message{width:100%;height:auto; text-align:center;}
+.message .title{color:#000000; font-size:1em;margin:15px 0px;}
+.message ul{width:94%;margin:0 auto;}
+.message ul li{margin-bottom:20px;}
+.message ul li input{ display:block;width:100%;height:50px; line-height:50px;  border-radius:5px; -moz-border-radius: 5px; -webkit-border-radius:5px; }
+.message ul li .input{ color:#808080; text-indent:24px; font-size:1em;border:1px solid #808080; }
+.message ul li .submit{ background:#21d9d9; color:#ffffff; font-size:1.5em;border:1px solid #21d9d9;}
+/*------pic-img------------------- */
+.pic-img{width:100%;height:auto;}
+.pic-img img{width:100%;vertical-align:bottom;display:block;}

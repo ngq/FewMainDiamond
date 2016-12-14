@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/css/login.css" rel="stylesheet" />
+
+    <script src="~/Content/scripts/jquery-1.10.2.js"></script>
+    <script src="~/Content/scripts/common.base.js"></script>
+</head>
+<body>
+    <div class="login">
+        <div class="top">
+            <a href="http://www.qydiamond.com/"><img id="logo" src="/Content/images/login/user_logo.png"></a>
+            <div class="right">
+                <a class="theme-login" href="javascript:;">APP下载</a>
+                <a class="theme-login2" href="javascript:;">微信客服</a>
+            </div>
+            <div class="theme-popover-mask"></div>
+        </div>
+        <!--------------------会员登陆--------------------------->
+
+        @RenderBody()
+
+        <!---------------------会员注册------------------------->
+
+    </div>
+    <!---APP下载--->
+    <div class="theme-popover" style="display:none;">
+        <div class="theme-poptit"><h3><b></b>APP下载</h3> <a class="close" title="关闭" href="javascript:;">×</a></div>
+        <div class="theme_box"><img src="/Content/images/login/s_2.jpg"><p>您好，APP网站升级中，请稍后访问！<!--请扫描二维码下载APP登录QYdiamond官网--></p></div>
+    </div>
+    <!---微信客服--->
+    <div class="theme-popover2" style="display:none;">
+        <div class="theme-poptit2"><h3><b></b>微信客服</h3> <a class="close" title="关闭" href="javascript:;">×</a></div>
+        <div class="theme_box"><img src="/Content/images/login/s_1.jpg"><p>请扫码添加QYdiamond客服为您服务</p></div>
+    </div>
+    @{ Html.RenderPartial("~/Views/Layout/RightFooterNav.cshtml");}
+</body>
+</html>

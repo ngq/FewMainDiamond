@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Forget";
+    Layout = "~/Views/Shared/_LayoutAccount.cshtml";
+}
+
+<div class="content">
+    <form action="http://www.qydiamond.com/user/pwd.html" method="post">
+        <ul>
+            <h3>找回密码</h3>
+            <li><h6>会员帐号</h6><span><input type="text" name="membername" value="" /></span></li>
+            <li><h6>注册邮箱</h6><span><input type="text" name="memberemail" value="" /></span></li>
+        </ul>
+        <div class="bot">
+            <input type="submit" name="submit" value="提交找回" class="btn" /><a href="http://www.qydiamond.com/user/login.html" class="btn2">已是会员？立即登陆</a>
+            <div>
+            </div>
+        </div>
+    </form>
+</div>

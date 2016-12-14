@@ -1,0 +1,183 @@
+﻿
+@{
+    ViewBag.Title = "首页";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section scripts
+{
+    <script src="/Content/scripts/jquery.flexslider-min.js"></script>
+    <script src="/Content/scripts/jquery.featureCarousel.js"></script>
+    <script>
+        $(function(){
+            $("#featureCarousel").featureCarousel({
+
+                // include options like this:
+
+                // (use quotes only for string values, and no trailing comma after last option)
+
+                // option: value,
+
+                // option: value
+
+            });
+            $('.flexslider').flexslider({
+                directionNav: true,
+                pauseOnAction: false
+            });
+        });
+    </script>
+}
+<div class="main">
+    <!--幻灯-->
+    <div class="flexslider">
+        <ul class="slides">
+
+            <li class="" style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;"><a href="http://www.qydiamond.com/" target="_blank"><img src="~/Content/images/index/20160418203022_40583.jpg" alt="4" draggable="false"></a></li>
+            <li class="" style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;"><a href="http://www.qydiamond.com/diamond/index/nid/2.html" target="_blank"><img src="~/Content/images/index/20160418205928_77280.jpg" alt="选择裸钻" draggable="false"></a></li>
+            <li class="" style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;"><a href="http://www.qydiamond.com/Setting/index/nid/5.html" target="_blank"><img src="~/Content/images/index/20160419181548_27245.jpg" alt="钻戒款式" draggable="false"></a></li>
+            <li class="flex-active-slide" style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 1; display: block; z-index: 2;"><a href="http://www.qydiamond.com/info/index/nid/1.html" target="_blank"><img src="~/Content/images/index/20160418203337_45603.jpg" alt="珠宝品牌" draggable="false"></a></li>
+        </ul>
+        <ol class="flex-control-nav flex-control-paging"><li><a class="">1</a></li><li><a class="">2</a></li><li><a class="">3</a></li><li><a class="flex-active">4</a></li></ol><ul class="flex-direction-nav"><li><a class="flex-prev" href="http://www.qydiamond.com/#"></a></li><li><a class="flex-next" href="http://www.qydiamond.com/#"></a></li></ul>
+    </div>
+    <div class="pro_news">
+        <div class="left"><a href="http://www.qydiamond.com/diamond/index/nid/2.html" target="_blank"><img src="~/Content/images/index/h_20.jpg"></a></div>
+        <div class="right">
+            <div class="top"><a href="http://www.qydiamond.com/info/index/nid/3.html" target="_blank"><img src="~/Content/images/index/h_05.gif"></a></div>
+            <div class="con">
+                <div class="title"><h3>NEWS</h3><a href="http://www.qydiamond.com/list/index/nid/8.html" target="_blank">MORE+</a></div>
+                <ul>
+                    <li><a href="http://www.qydiamond.com/content/index/nid/12/id/69.html" target="_blank">卿语珠宝公司春节放假与商品购买公告</a><span>2016-01-29</span></li>
+                    <li><a href="http://www.qydiamond.com/content/index/nid/31/id/50.html" target="_blank">钻石颜色等级怎么分级</a><span>2015-10-15</span></li>
+                    <li><a href="http://www.qydiamond.com/content/index/nid/31/id/48.html" target="_blank"> 黄钻的等级的划分</a><span>2015-10-15</span></li>
+                    <li><a href="http://www.qydiamond.com/content/index/nid/31/id/47.html" target="_blank">中国钻石回购难题很多</a><span>2015-10-15</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="bot"><img src="~/Content/images/index/h_31.gif"></div>
+    </div>
+
+    <!---------------新品上市----------------------->
+    <div class="news_product">
+        <div class="product_box">
+            <div class="fuwuImg">
+                <!--img start-->
+                <div id="featureCarousel">
+
+                    <div class="feature" style="left: 364px; width: 430px; height: 430px; top: 20px; opacity: 1; z-index: 4;">
+                        <img src="~/Content/images/index/20160304143426_43016.jpg" alt="钻石:YX038" style="width: 430px; display: inline-block; height: 430px;">
+                        <div style="display: block; opacity: 0.85;">
+                            <span>型号：YX038</span>
+                            <p></p>
+                            <a href="http://www.qydiamond.com/content/setting/nid/60/id/1484.html" target="_blank">点击查看详细信息</a>
+                        </div>
+                    </div><div class="feature" style="left: 784px; width: 344px; height: 344px; top: 60px; opacity: 0.4; z-index: 1;">
+                        <img src="~/Content/images/index/20160304142916_42717.jpg" alt="钻石:HZ037" style="width: 344px; display: inline-block; height: 344px;">
+                        <div style="display: none;">
+                            <span>型号：HZ037</span>
+                            <p></p>
+                            <a href="http://www.qydiamond.com/content/setting/nid/59/id/1472.html" target="_blank">点击查看详细信息</a>
+                        </div>
+                    </div><div class="feature" style="left: 407px; width: 344px; height: 344px; top: 60px; opacity: 0;">
+                        <img src="~/Content/images/index/20160303181610_69578.jpg" alt="钻石:ZH043" style="width: 344px;">
+                        <div style="display: none;">
+                            <span>型号：ZH043</span>
+                            <p></p>
+                            <a href="http://www.qydiamond.com/content/setting/nid/75/id/1412.html" target="_blank">点击查看详细信息</a>
+                        </div>
+                    </div><div class="feature" style="left: 407px; width: 344px; height: 344px; top: 60px; opacity: 0;">
+                        <img src="~/Content/images/index/20160225155722_86744.jpg" alt="钻石:BGL056" style="width: 344px;">
+                        <div style="display: none;">
+                            <span>型号：BGL056</span>
+                            <p></p>
+                            <a href="http://www.qydiamond.com/content/setting/nid/65/id/985.html" target="_blank">点击查看详细信息</a>
+                        </div>
+                    </div><div class="feature" style="left: 407px; width: 344px; height: 344px; top: 60px; opacity: 0;">
+                        <img src="~/Content/images/index/20160225150918_28086.jpg" alt="钻石:Bluenile67" style="width: 344px;">
+                        <div style="display: none;">
+                            <span>型号：Bluenile67</span>
+                            <p></p>
+                            <a href="http://www.qydiamond.com/content/setting/nid/71/id/960.html" target="_blank">点击查看详细信息</a>
+                        </div>
+                    </div><div class="feature" style="left: 407px; width: 344px; height: 344px; top: 60px; opacity: 0;">
+                        <img src="~/Content/images/index/20160225105752_36672.jpg" alt="钻石:BGL029" style="width: 344px;">
+                        <div style="display: none;">
+                            <span>型号：BGL029</span>
+                            <p></p>
+                            <a href="http://www.qydiamond.com/content/setting/nid/65/id/882.html" target="_blank">点击查看详细信息</a>
+                        </div>
+                    </div><div class="feature" style="left: 407px; width: 344px; height: 344px; top: 60px; opacity: 0;">
+                        <img src="~/Content/images/index/20160224183358_71962.jpg" alt="钻石:BLSM059" style="width: 344px;">
+                        <div style="display: none;">
+                            <span>型号：BLSM059</span>
+                            <p></p>
+                            <a href="http://www.qydiamond.com/content/setting/nid/70/id/873.html" target="_blank">点击查看详细信息</a>
+                        </div>
+                    </div><div class="feature" style="left: 407px; width: 344px; height: 344px; top: 60px; opacity: 0;">
+                        <img src="~/Content/images/index/20160224181957_90197.jpg" alt="钻石:BLSM041" style="width: 344px;">
+                        <div style="display: none;">
+                            <span>型号：BLSM041</span>
+                            <p></p>
+                            <a href="http://www.qydiamond.com/content/setting/nid/70/id/855.html" target="_blank">点击查看详细信息</a>
+                        </div>
+                    </div><div class="feature" style="left: 407px; width: 344px; height: 344px; top: 60px; opacity: 0; z-index: 1;">
+                        <img src="~/Content/images/index/20160224180835_64316.jpg" alt="钻石:BLSM021" style="width: 344px; display: inline-block; height: 344px;">
+                        <div style="display: none;">
+                            <span>型号：BLSM021</span>
+                            <p></p>
+                            <a href="http://www.qydiamond.com/content/setting/nid/70/id/815.html" target="_blank">点击查看详细信息</a>
+                        </div>
+                    </div><div class="feature" style="left: 30px; width: 344px; height: 344px; top: 60px; opacity: 0.4; z-index: 1;">
+                        <img src="~/Content/images/index/20160224170946_82375.jpg" alt="钻石:YKFB040" style="width: 344px; display: inline-block; height: 344px;">
+                        <div style="display: none;">
+                            <span>型号：YKFB040</span>
+                            <p></p>
+                            <a href="http://www.qydiamond.com/content/setting/nid/69/id/671.html" target="_blank">点击查看详细信息</a>
+                        </div>
+                    </div>
+                </div>
+                <!--img end-->
+            </div>
+        </div>
+    </div>
+
+    <div class="hot_product">
+        <div class="top"><img src="~/Content/images/index/h_18.gif"></div>
+
+        <div class="top2"><a href="http://www.qydiamond.com/Content/product/nid/20/id/332.html" target="_blank"><img src="~/Content/images/index/h_34.gif" alt="六爪钻戒 白18K金六爪皇冠女戒"></a>	 </div>
+        <div class="left">
+            <a href="http://www.qydiamond.com/Content/product/nid/20/id/329.html" target="_blank"><img src="~/Content/images/index/h_36.gif" alt="18K白金雪花六爪扭臂钻戒"></a>
+        </div>
+        <div class="right">
+            <div class="top2">
+                <a href="http://www.qydiamond.com/Content/product/nid/20/id/330.html" target="_blank"><img src="~/Content/images/index/h_38.gif" alt="18K玫瑰金小清新蝴蝶钻戒"></a>
+            </div>
+            <ul>
+                <li><a href="http://www.qydiamond.com/Content/product/nid/20/id/333.html" target="_blank"><img src="~/Content/images/index/h_40.gif" alt="裸钻定制 钻石批发 gia裸钻"></a></li>
+                <li><a href="http://www.qydiamond.com/Content/product/nid/20/id/334.html" target="_blank"><img src="~/Content/images/index/h_401.gif" alt="超性价比 异形裸钻 gia证书钻石定制"></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="ly">
+        <div class="box">
+            <div class="left"><img src="~/Content/images/index/h_46.gif"></div>
+            <div class="server_right">
+                <span>留下您的脚印 让QYdiamond与您同行！</span>
+                <form name="my_form" action="http://www.qydiamond.com/form/index.html" method="post">
+                    <input name="c1" type="hidden" value="您的称呼">
+                    <input name="c2" type="hidden" value="您的联系方式">
+                    <input name="class" type="hidden" value="189">
+                    <input type="text" name="title" value="您的尊贵称呼" onblur="if(this.value==&#39;&#39;){this.value=&#39;您的尊贵称呼&#39;;}" onfocus="if(this.value==&#39;您的尊贵称呼&#39;){this.value=&#39;&#39;;}">
+                    <input type="text" name="phone" value="您的联系方式" onblur="if(this.value==&#39;&#39;){this.value=&#39;您的联系方式&#39;;}" onfocus="if(this.value==&#39;您的联系方式&#39;){this.value=&#39;&#39;;}">
+                    <textarea name="content" onblur="if(this.value==&#39;&#39;){this.value=&#39;想对QYdiamond说的话…&#39;;}" onfocus="if(this.value==&#39;想对QYdiamond说的话…&#39;){this.value=&#39;&#39;;}">想对QYdiamond说的话…</textarea>
+                    <input style="background:#21d9d9; border:none; color:#ffffff; font-size:16px;" type="submit" name="submit" value="立即提交，享受QYdiamond最专业的服务">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="baozhen">
+        <div class="top"><img src="~/Content/images/index/h_50.gif"></div>
+        <div class="top2"><img src="~/Content/images/index/h_52.gif"></div>
+        <div class="con"><a href="http://www.qydiamond.com/#"><img src="~/Content/images/index/h_53.gif"></a></div>
+    </div>
+</div>
+

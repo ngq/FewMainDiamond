@@ -1,0 +1,222 @@
+﻿
+@{
+    ViewBag.Title = "钻石首饰_钻石定制|珠宝镶嵌|钻石价格|裸钻批发|";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section scripts
+{
+    <script src="/Content/scripts/banner.js"></script>
+    <script src="/Content/scripts/laypage/laypage.js"></script>
+    <script>
+        $(function(){
+            //分页脚本
+            laypage({
+                cont: $('.pagination'), //容器。值支持id名、原生dom对象，jquery对象,
+                pages: 100, //总页数
+                skip: true, //是否开启跳页
+                skin: '#77C7C8',
+                groups: 7 //连续显示分页数
+            });})
+    </script>
+}
+<div id="position">
+    <div class="box">
+        当前位置：<a href="http://www.qydiamond.com/setting/index/nid/5.html">款式欣赏</a>&gt;<a href="http://www.qydiamond.com/setting/index/nid/52.html">钻石首饰</a>
+    </div>
+</div>
+<div class="main">
+    <div class="picturenav">
+        <div class="title">
+            <div class="sider">
+                <div class="bigclass">
+                    <ul>
+                        <li><img src="/Content/images/setting/sider_01.jpg" alt="钻石首饰"><a href="http://www.qydiamond.com/setting/index/nid/52.html" target="_self" id="sider1" onclick="setTab(&#39;sider&#39;,1,4)" class="hover"><span>钻石首饰</span><p>Diamond jewelry</p></a></li>
+                        <li><img src="/Content/images/setting/sider_02.jpg" alt="珍珠首饰"><a href="http://www.qydiamond.com/setting/index/nid/78.html" target="_self" id="sider2" onclick="setTab(&#39;sider&#39;,2,4)" class="hover"><span>珍珠首饰</span><p>Pearl jewelry</p></a></li>
+                        <li><img src="/Content/images/setting/sider_03.jpg" alt="彩宝首饰"><a href="http://www.qydiamond.com/setting/index/nid/79.html" target="_self" id="sider3" onclick="setTab(&#39;sider&#39;,3,4)" class="hover"><span>彩宝首饰</span><p>Choi bao jewelry</p></a></li>
+                        <li><img src="/Content/images/setting/sider_04.jpg" alt="国际品牌"><a href="http://www.qydiamond.com/setting/index/nid/62.html" target="_self" id="sider4" onclick="setTab(&#39;sider&#39;,4,4)" class="hover"><span>国际品牌</span><p>International brand</p></a></li>
+                    </ul>
+                </div>
+                <div class="big_box">
+                    <div class="box_list" id="con_sider_1" style="display:block;">
+                        <div class="subclass">
+                            <div class="title">钻石首饰</div>
+                            <ul>
+                                <li><a href="http://www.qydiamond.com/setting/index/nid/53.html">女戒</a></li>
+                                <li><a href="http://www.qydiamond.com/setting/index/nid/54.html">男戒</a></li>
+                                <li><a href="http://www.qydiamond.com/setting/index/nid/55.html">对戒</a></li>
+                                <li><a href="http://www.qydiamond.com/setting/index/nid/56.html">吊坠</a></li>
+                                <li><a href="http://www.qydiamond.com/setting/index/nid/57.html">耳钉</a></li>
+                                <li><a href="http://www.qydiamond.com/setting/index/nid/58.html">手链</a></li>
+                                <li><a href="http://www.qydiamond.com/setting/index/nid/59.html">黄钻</a></li>
+                                <li><a href="http://www.qydiamond.com/setting/index/nid/60.html">异形</a></li>
+                                <li><a href="http://www.qydiamond.com/setting/index/nid/77.html">JCAD定制</a></li>
+                            </ul>
+                        </div>
+                        <div class="big_pic"><a href="http://www.qydiamond.com/setting/index/nid/52.html" target="_self"><img src="/Content/images/setting/sider_09.jpg" alt="钻石首饰"></a></div>
+                    </div>
+                    <div class="box_list" id="con_sider_2" style="display:none;">
+                        <div class="subclass">
+                            <div class="title">珍珠首饰</div>
+                            <ul>
+                                <li><a href="http://www.qydiamond.com/setting/index/nid/75.html">戒指</a></li>
+                                <li><a href="http://www.qydiamond.com/setting/index/nid/80.html">吊坠</a></li>
+                            </ul>
+                        </div>
+                        <div class="big_pic"><a href="http://www.qydiamond.com/setting/index/nid/52.html" target="_self"><img src="/Content/images/setting/sider_08.jpg" alt="钻石首饰"></a></div>
+                    </div>
+                    <div class="box_list" id="con_sider_3" style="display:none;">
+                        <div class="subclass">
+                            <div class="title">彩宝首饰</div>
+                            <ul>
+                                <li><a href="http://www.qydiamond.com/setting/index/nid/61.html">戒指</a></li>
+                                <li><a href="http://www.qydiamond.com/setting/index/nid/81.html">吊坠</a></li>
+                            </ul>
+                        </div>
+                        <div class="big_pic"><a href="http://www.qydiamond.com/setting/index/nid/52.html" target="_self"><img src="/Content/images/setting/sider_06.jpg" alt="钻石首饰"></a></div>
+                    </div>
+                    <div class="box_list" id="con_sider_4" style="display:none;">
+                        <div class="subclass">
+                            <div class="title">国际品牌</div>
+                            <ul>
+                                <li><a href="http://www.qydiamond.com/setting/index/nid/63.html">卡地亚</a></li>
+                                <li><a href="http://www.qydiamond.com/setting/index/nid/64.html">蒂芙尼</a></li>
+                                <li><a href="http://www.qydiamond.com/setting/index/nid/65.html">宝格丽</a></li>
+                                <li><a href="http://www.qydiamond.com/setting/index/nid/66.html">香奈儿</a></li>
+                                <li><a href="http://www.qydiamond.com/setting/index/nid/67.html">伯爵</a></li>
+                                <li><a href="http://www.qydiamond.com/setting/index/nid/68.html">肖邦</a></li>
+                                <li><a href="http://www.qydiamond.com/setting/index/nid/69.html">梵克雅宝</a></li>
+                                <li><a href="http://www.qydiamond.com/setting/index/nid/70.html">巴黎尚美</a></li>
+                                <li><a href="http://www.qydiamond.com/setting/index/nid/71.html">Bluenile</a></li>
+                                <li><a href="http://www.qydiamond.com/setting/index/nid/72.html">海瑞温斯顿</a></li>
+                            </ul>
+                        </div>
+                        <div class="big_pic"><a href="http://www.qydiamond.com/setting/index/nid/52.html" target="_self"><img src="/Content/images/setting/sider_07.jpg" alt="钻石首饰"></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="minnav">
+                <ul>
+                    <li><a href="http://www.qydiamond.com/setting/index/nid/52.html" class="hov">全部</a></li>
+
+
+                    <li><a href="http://www.qydiamond.com/setting/index/nid/52/class/198.html">婚戒</a></li>
+                    <li><a href="http://www.qydiamond.com/setting/index/nid/52/class/199.html">流行</a></li>
+                    <li><a href="http://www.qydiamond.com/setting/index/nid/52/class/200.html">个性</a></li>
+                    <li><a href="http://www.qydiamond.com/setting/index/nid/52/class/201.html">经典</a></li>
+                    <li><a href="http://www.qydiamond.com/setting/index/nid/52/class/202.html">时尚</a></li>
+                    <li><a href="http://www.qydiamond.com/setting/index/nid/52/class/203.html">明星</a></li>
+                    <li><a href="http://www.qydiamond.com/setting/index/nid/52/class/204.html">简洁</a></li>
+                    <li><a href="http://www.qydiamond.com/setting/index/nid/52/class/209.html">豪华</a></li>
+                    <li><a href="http://www.qydiamond.com/setting/index/nid/52/class/205.html">3D展示</a></li>
+                    <li><a href="http://www.qydiamond.com/setting/index/nid/52/class/206.html">JCAD库</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="picture">
+        <ul>
+            <li>
+                <a href="http://www.qydiamond.com/content/setting/nid/52/id/1498.html"><img src="/Content/images/setting/20160304144034_91535.jpg" alt="珠宝款式_钻石款式_珠宝型号：YX052"></a>
+                <h6><a href="http://www.qydiamond.com/content/setting/nid/52/id/1498.html">款式形号：YX052</a></h6>
+            </li>
+            <li>
+                <a href="http://www.qydiamond.com/content/setting/nid/52/id/1497.html"><img src="/Content/images/setting/20160304143949_65755.jpg" alt="珠宝款式_钻石款式_珠宝型号：YX051"></a>
+                <h6><a href="http://www.qydiamond.com/content/setting/nid/52/id/1497.html">款式形号：YX051</a></h6>
+            </li>
+            <li>
+                <a href="http://www.qydiamond.com/content/setting/nid/52/id/1496.html"><img src="/Content/images/setting/20160304143930_91732.jpg" alt="珠宝款式_钻石款式_珠宝型号：YX050"></a>
+                <h6><a href="http://www.qydiamond.com/content/setting/nid/52/id/1496.html">款式形号：YX050</a></h6>
+            </li>
+            <li>
+                <a href="http://www.qydiamond.com/content/setting/nid/52/id/1495.html"><img src="/Content/images/setting/20160304143908_35826.jpg" alt="珠宝款式_钻石款式_珠宝型号：YX049"></a>
+                <h6><a href="http://www.qydiamond.com/content/setting/nid/52/id/1495.html">款式形号：YX049</a></h6>
+            </li>
+            <li>
+                <a href="http://www.qydiamond.com/content/setting/nid/52/id/1494.html"><img src="/Content/images/setting/20160304143848_37344.jpg" alt="珠宝款式_钻石款式_珠宝型号：YX048"></a>
+                <h6><a href="http://www.qydiamond.com/content/setting/nid/52/id/1494.html">款式形号：YX048</a></h6>
+            </li>
+            <li>
+                <a href="http://www.qydiamond.com/content/setting/nid/52/id/1493.html"><img src="/Content/images/setting/20160304143800_83970.jpg" alt="珠宝款式_钻石款式_珠宝型号：YX047"></a>
+                <h6><a href="http://www.qydiamond.com/content/setting/nid/52/id/1493.html">款式形号：YX047</a></h6>
+            </li>
+            <li>
+                <a href="http://www.qydiamond.com/content/setting/nid/52/id/1492.html"><img src="/Content/images/setting/20160304143721_75143.jpg" alt="珠宝款式_钻石款式_珠宝型号：YX046"></a>
+                <h6><a href="http://www.qydiamond.com/content/setting/nid/52/id/1492.html">款式形号：YX046</a></h6>
+            </li>
+            <li>
+                <a href="http://www.qydiamond.com/content/setting/nid/52/id/1491.html"><img src="/Content/images/setting/20160304143704_88524.jpg" alt="珠宝款式_钻石款式_珠宝型号：YX045"></a>
+                <h6><a href="http://www.qydiamond.com/content/setting/nid/52/id/1491.html">款式形号：YX045</a></h6>
+            </li>
+            <li>
+                <a href="http://www.qydiamond.com/content/setting/nid/52/id/1490.html"><img src="/Content/images/setting/20160426112829_52934.jpg" alt="珠宝款式_钻石款式_珠宝型号：YX044"></a>
+                <h6><a href="http://www.qydiamond.com/content/setting/nid/52/id/1490.html">款式形号：YX044</a></h6>
+            </li>
+            <li>
+                <a href="http://www.qydiamond.com/content/setting/nid/52/id/1489.html"><img src="/Content/images/setting/20160304143618_90540.jpg" alt="珠宝款式_钻石款式_珠宝型号：YX043"></a>
+                <h6><a href="http://www.qydiamond.com/content/setting/nid/52/id/1489.html">款式形号：YX043</a></h6>
+            </li>
+            <li>
+                <a href="http://www.qydiamond.com/content/setting/nid/52/id/1488.html"><img src="/Content/images/setting/20160304143603_59718.jpg" alt="珠宝款式_钻石款式_珠宝型号：YX042"></a>
+                <h6><a href="http://www.qydiamond.com/content/setting/nid/52/id/1488.html">款式形号：YX042</a></h6>
+            </li>
+            <li>
+                <a href="http://www.qydiamond.com/content/setting/nid/52/id/1487.html"><img src="/Content/images/setting/20160304143542_78376.jpg" alt="珠宝款式_钻石款式_珠宝型号：YX041"></a>
+                <h6><a href="http://www.qydiamond.com/content/setting/nid/52/id/1487.html">款式形号：YX041</a></h6>
+            </li>
+            <li>
+                <a href="http://www.qydiamond.com/content/setting/nid/52/id/1486.html"><img src="/Content/images/setting/20160304143526_87659.jpg" alt="珠宝款式_钻石款式_珠宝型号：YX040"></a>
+                <h6><a href="http://www.qydiamond.com/content/setting/nid/52/id/1486.html">款式形号：YX040</a></h6>
+            </li>
+            <li>
+                <a href="http://www.qydiamond.com/content/setting/nid/52/id/1485.html"><img src="/Content/images/setting/20160304143445_20014.jpg" alt="珠宝款式_钻石款式_珠宝型号：YX039"></a>
+                <h6><a href="http://www.qydiamond.com/content/setting/nid/52/id/1485.html">款式形号：YX039</a></h6>
+            </li>
+            <li>
+                <a href="http://www.qydiamond.com/content/setting/nid/52/id/1484.html"><img src="/Content/images/setting/20160304143426_43016.jpg" alt="珠宝款式_钻石款式_珠宝型号：YX038"></a>
+                <h6><a href="http://www.qydiamond.com/content/setting/nid/52/id/1484.html">款式形号：YX038</a></h6>
+            </li>
+            <li>
+                <a href="http://www.qydiamond.com/content/setting/nid/52/id/1483.html"><img src="/Content/images/setting/20160304143413_11988.jpg" alt="珠宝款式_钻石款式_珠宝型号：YX037"></a>
+                <h6><a href="http://www.qydiamond.com/content/setting/nid/52/id/1483.html">款式形号：YX037</a></h6>
+            </li>
+            <li>
+                <a href="http://www.qydiamond.com/content/setting/nid/52/id/1482.html"><img src="/Content/images/setting/20160304143353_60811.jpg" alt="珠宝款式_钻石款式_珠宝型号：YX036"></a>
+                <h6><a href="http://www.qydiamond.com/content/setting/nid/52/id/1482.html">款式形号：YX036</a></h6>
+            </li>
+            <li>
+                <a href="http://www.qydiamond.com/content/setting/nid/52/id/1481.html"><img src="/Content/images/setting/20160304143333_21837.jpg" alt="珠宝款式_钻石款式_珠宝型号：YX035"></a>
+                <h6><a href="http://www.qydiamond.com/content/setting/nid/52/id/1481.html">款式形号：YX035</a></h6>
+            </li>
+            <li>
+                <a href="http://www.qydiamond.com/content/setting/nid/52/id/1480.html"><img src="/Content/images/setting/20160304143308_97121.jpg" alt="珠宝款式_钻石款式_珠宝型号：YX034"></a>
+                <h6><a href="http://www.qydiamond.com/content/setting/nid/52/id/1480.html">款式形号：YX034</a></h6>
+            </li>
+            <li>
+                <a href="http://www.qydiamond.com/content/setting/nid/52/id/1479.html"><img src="/Content/images/setting/20160304143251_59287.jpg" alt="珠宝款式_钻石款式_珠宝型号：YX033"></a>
+                <h6><a href="http://www.qydiamond.com/content/setting/nid/52/id/1479.html">款式形号：YX033</a></h6>
+            </li>
+            <li>
+                <a href="http://www.qydiamond.com/content/setting/nid/52/id/1478.html"><img src="/Content/images/setting/20160304143234_40808.jpg" alt="珠宝款式_钻石款式_珠宝型号：YX032"></a>
+                <h6><a href="http://www.qydiamond.com/content/setting/nid/52/id/1478.html">款式形号：YX032</a></h6>
+            </li>
+            <li>
+                <a href="http://www.qydiamond.com/content/setting/nid/52/id/1477.html"><img src="/Content/images/setting/20160304143215_45705.jpg" alt="珠宝款式_钻石款式_珠宝型号：YX032"></a>
+                <h6><a href="http://www.qydiamond.com/content/setting/nid/52/id/1477.html">款式形号：YX032</a></h6>
+            </li>
+            <li>
+                <a href="http://www.qydiamond.com/content/setting/nid/52/id/1476.html"><img src="/Content/images/setting/20160304143037_11159.jpg" alt="珠宝款式_钻石款式_珠宝型号：HZ041"></a>
+                <h6><a href="http://www.qydiamond.com/content/setting/nid/52/id/1476.html">款式形号：HZ041</a></h6>
+            </li>
+            <li>
+                <a href="http://www.qydiamond.com/content/setting/nid/52/id/1475.html"><img src="/Content/images/setting/20160304143014_55021.jpg" alt="珠宝款式_钻石款式_珠宝型号：HZ040"></a>
+                <h6><a href="http://www.qydiamond.com/content/setting/nid/52/id/1475.html">款式形号：HZ040</a></h6>
+            </li>
+        </ul>
+    </div>
+    <div class="pagination"></div>
+
+</div>
+
+
+

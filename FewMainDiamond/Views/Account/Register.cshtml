@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "会员注册";
+    Layout = "~/Views/Shared/_LayoutAccount.cshtml";
+}
+<script src="~/Scripts/jquery.validate.js"></script>
+<script>
+    
+</script>
+<div class="content">
+    <form id="register" method="post">
+        <ul>
+            <h3>会员注册</h3>
+            <li>
+                <s class="">
+                    <h6>会员帐号</h6>
+                    <span>
+                        <input type="text" name="membername" value="帐号大小为3~20个字符" onfocus="if (this.value == '帐号大小为3~20个字符'){this.value = ''}" onblur="if(this.value == ''){this.value = '帐号大小为3~20个字符'}" />
+                    </span>
+                </s>
+            </li>
+            <li>
+                <h6>会员密码</h6><span><input type="password" name="password" value="" /></span>
+            </li>
+            <li>
+                <h6>确认密码</h6><span><input type="password" name="password2" value="" /></span>
+            </li>
+            <li>
+                <h6>会员邮箱</h6><span><input type="text" name="memberemail" value="" /></span>
+            </li>
+            <li>
+                <h6>手机号码</h6><span><input type="text" name="cell_phone" value="" /></span>
+            </li>
+            <li>
+                <h6>微信号码</h6><span><input type="text" name="wechat" value="" /></span>
+            </li>
+            <li style="width: 200px;">
+                <h6>验证码 </h6><span><input type="text" style="width: 80px;" name="verify" value="" /></span>
+            </li>
+            <div class="mem"><img title="点击刷新验证码" src="@Url.Action("GetImg", "Common",new {id="login"})" onclick="this.src = '@Url.Action("GetImg", "Common",new {id="login"})' + '?=' + Math.random()" style="cursor: pointer"/>
+            </div>
+            <div class="protocol"><input name="protocol" type="checkbox" value="1" checked=""/> 已阅读并同意<a href="http://www.qydiamond.com/cover/index/nid/73.html" class="s" target="_blank">《卿语钻石用户服务协议》</a>
+            </div>
+
+        </ul>
+        <div class="bot">
+            <input type="submit" name="submit" value="立即注册" class="btn" /><a href="@Url.Action("Login")" class="btn2">已是会员？立即登陆</a><div>
+            </div>
+        </div>
+    </form>
+</div>
+
