@@ -79,6 +79,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FewMainEntity.edmx</DependentUpon>
     </Compile>
+    <Compile Include="FewMainProType.cs">
+      <DependentUpon>FewMainEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="FewMainType.cs">
       <DependentUpon>FewMainEntity.tt</DependentUpon>
     </Compile>

@@ -29,5 +29,6 @@ namespace FewMain.Model
         public virtual DbSet<FewMainType> FewMainType { get; set; }
         public virtual DbSet<Tag> Tag { get; set; }
         public virtual DbSet<Users> Users { get; set; }
+        public virtual DbSet<FewMainProType> FewMainProType { get; set; }
     }
 }

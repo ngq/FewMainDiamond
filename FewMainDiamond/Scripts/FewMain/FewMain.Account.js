@@ -1,5 +1,5 @@
 ﻿$(function() {
-
+   
 });
 // 手机号码验证
 jQuery.validator.addMethod("isMobile", function (value, element) {
@@ -40,7 +40,7 @@ function login() {
         focusInvalid: false,
         onkeyup: false,
         submitHandler:function() {
-            $.post("", $("#login").serialize(), function (data) {
+            $.post("/account/login", $("#login").serialize(), function (data) {
                 if (data.IsSuccess) {
                     layer.msg(data.Msg, { time: 1500 });
                 } else {

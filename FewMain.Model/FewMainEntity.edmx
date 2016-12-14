@@ -22,6 +22,14 @@
           <Property Name="AddTime" Type="datetime" />
           <Property Name="AppId" Type="int" />
         </EntityType>
+        <EntityType Name="FewMainProType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypeName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ParentId" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="FewMainType">
           <Key>
             <PropertyRef Name="Id" />
@@ -52,11 +60,13 @@
           <Property Name="Email" Type="nvarchar(max)" />
           <Property Name="Mobile" Type="nvarchar(max)" />
           <Property Name="QQ" Type="nvarchar(max)" />
+          <Property Name="Weixin" Type="nvarchar(max)" />
           <Property Name="HeaderImgSrc" Type="nvarchar(max)" />
           <Property Name="AddTime" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityContainer Name="FewMainDiamondModelStoreContainer">
           <EntitySet Name="Content" EntityType="Self.Content" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FewMainProType" EntityType="Self.FewMainProType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FewMainType" EntityType="Self.FewMainType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tag" EntityType="Self.Tag" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
@@ -70,6 +80,7 @@
           <EntitySet Name="FewMainType" EntityType="FewMainDiamondModel.FewMainType" />
           <EntitySet Name="Tag" EntityType="FewMainDiamondModel.Tag" />
           <EntitySet Name="Users" EntityType="FewMainDiamondModel.Users" />
+          <EntitySet Name="FewMainProType" EntityType="FewMainDiamondModel.FewMainProType" />
         </EntityContainer>
         <EntityType Name="Content">
           <Key>
@@ -120,6 +131,15 @@
           <Property Name="QQ" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="HeaderImgSrc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="AddTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Weixin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="FewMainProType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ParentId" Type="Int32" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -168,6 +188,7 @@
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="FewMainDiamondModel.Users">
               <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Weixin" ColumnName="Weixin" />
                 <ScalarProperty Name="AddTime" ColumnName="AddTime" />
                 <ScalarProperty Name="HeaderImgSrc" ColumnName="HeaderImgSrc" />
                 <ScalarProperty Name="QQ" ColumnName="QQ" />
@@ -178,6 +199,15 @@
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FewMainProType">
+            <EntityTypeMapping TypeName="FewMainDiamondModel.FewMainProType">
+              <MappingFragment StoreEntitySet="FewMainProType">
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
