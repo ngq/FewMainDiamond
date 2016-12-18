@@ -1,13 +1,27 @@
-﻿ <!--头部开始-->
+﻿@using FewMain.WebHelper.CurrentContext
+<!--头部开始-->
 <div class="header">
     <div class="top">
         <ul>
-            <div class="logo"><a href="http://www.qydiamond.com/"><img src="~/Content/images/base/logo.png" title="卿语钻石" alt="卿语钻石" /></a></div>
+            <div class="logo"><a href="http://www.qydiamond.com/"><img src="~/Content/images/base/logo.png" title="卿语钻石" /></a></div>
             <li class="w"><a class="theme-login2" href="javascript:;">关注卿语</a></li>
-            <li><a href="http://www.qydiamond.com/cart/index/class/1.html" target="_blank">您的购物车中有<b>0</b>件商品</a></li>
-            <li><a href="http://www.qydiamond.com/user/user_out/out/2.html" target="_top">退出</a></li>
-            <li><a href="http://www.qydiamond.com/member/index.html" target="_blank">会员中心</a></li>
-            <li>您好<b>nieq</b>，欢迎来到卿语钻石品牌官网!</li>
+
+            @if (CurrentUserContext.Current.IsLogin)
+            {
+                <li><a href="http://www.qydiamond.com/cart/index/class/1.html" target="_blank">您的购物车中有<b>0</b>件商品</a></li>
+
+                <li><a href="http://www.qydiamond.com/user/user_out/out/2.html" target="_top">退出</a></li>
+                <li><a href="http://www.qydiamond.com/member/index.html" target="_blank">会员中心</a></li>
+                <li>您好<b>@CurrentUserContext.Current.UserName</b>，欢迎来到卿语钻石品牌官网!</li>
+            }
+            else
+            {
+                <li><a href="@Url.Action("Register","Account")" target="_blank">注册</a></li>
+                <li><a href="@Url.Action("Login","Account")" target="_blank">登陆</a></li>
+
+                <li>您好<b></b>，欢迎来到卿语钻石品牌官网!</li>
+            }
+
             <div class="theme-popover-mask"></div>
         </ul>
     </div>

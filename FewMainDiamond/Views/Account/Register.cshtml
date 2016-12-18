@@ -8,7 +8,7 @@
     <script>
         $(function () {
             $("#register").validate({
-                focusInvalid: true,
+                focusInvalid: false,
                 onkeyup: false,
                 submitHandler: function (form) {
                     $.post("/account/register", $("#register").serialize(), function (data) {

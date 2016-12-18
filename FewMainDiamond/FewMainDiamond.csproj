@@ -479,19 +479,6 @@
     <Content Include="Content\images\wap\picture_05_10.jpg" />
     <Content Include="Content\images\wap\sider.png" />
     <Content Include="Content\images\wap\sider_04.png" />
-    <Content Include="Content\scripts\banner.js" />
-    <Content Include="Content\scripts\common.base.js" />
-    <Content Include="Content\scripts\diamond.js" />
-    <Content Include="Content\scripts\jquery-1.10.2.js" />
-    <Content Include="Content\scripts\jquery-1.10.2.min.js" />
-    <Content Include="Content\scripts\jquery.featureCarousel.js" />
-    <Content Include="Content\scripts\jquery.flexslider-min.js" />
-    <Content Include="Content\scripts\jquery_1.8.3.min.js" />
-    <Content Include="Content\scripts\laypage\laypage.js" />
-    <Content Include="Content\scripts\laypage\skin\laypage.css" />
-    <Content Include="Content\scripts\picture.js" />
-    <Content Include="Content\scripts\Segoma.min.js" />
-    <Content Include="Content\scripts\swiper.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -503,6 +490,7 @@
     <Content Include="Scripts\FewMain\diamond.js" />
     <Content Include="Scripts\FewMain\FewMain.Account.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\FewMain\jquery.validate.ext.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -893,6 +881,10 @@
     <ProjectReference Include="..\FewMain.Repository\FewMain.Repository.csproj">
       <Project>{1111800d-a2d8-4ed2-b2f4-c3653b3e9105}</Project>
       <Name>FewMain.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FewMain.WebHelper\FewMain.WebHelper.csproj">
+      <Project>{afc5de17-7634-4d45-a260-c831da54cba8}</Project>
+      <Name>FewMain.WebHelper</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

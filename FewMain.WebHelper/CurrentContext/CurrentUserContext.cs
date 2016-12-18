@@ -72,7 +72,7 @@ namespace FewMain.WebHelper.CurrentContext
         {
             get
             {
-                return Setting.UserId == null ? 0 : EncryptHelper.Decrypt(Setting.UserId).ToInt();
+                return   Setting == null ? 0 : EncryptHelper.Decrypt(Setting.UserId).ToInt();
             }
         }
         /// <summary>

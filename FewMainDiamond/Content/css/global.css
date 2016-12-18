@@ -14,7 +14,7 @@ input,select,button{font:12px Verdana,Arial,Tahoma;vertical-align:middle; outlin
 .header .top .logo{position:absolute; top:0; left:0px; }
 .header .top ul {width:1200px; height:100%;margin:0 auto;display: block; position:relative;}
 .header .top ul li {color: #333;display: block;float:right;height: 30px; line-height:30px; padding: 0 6px;}
-.header .top ul li a {color: #333;font-family: "微软雅黑";}
+.header .top ul li a {font-family: "微软雅黑";}
 .header .top ul li a b{color:#ff9900; padding:0 2px;}
 .header .top ul .w a{ color:#666;background:url(../images/base/top_ws.jpg) no-repeat 0 1px; padding-left:20px; margin-left:5px;}
 /*------*/

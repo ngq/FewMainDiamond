@@ -14,6 +14,7 @@
 .flex-direction-nav li a.flex-prev:hover{left:130px;background:url(../images/index/prev2.png) center center no-repeat;}
 .flex-direction-nav li a.flex-next{right:130px;background:url(../images/index/next.png) center center no-repeat;}
 .flex-direction-nav li a.flex-next:hover{right:130px;background:url(../images/index/next2.png) center center no-repeat;}
+ 
 
 .pro_news{ width:1200px; margin:0 auto; overflow:hidden; margin-top:30px;}
 .pro_news .left{ width:590px; height:460px; float:left;}
