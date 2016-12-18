@@ -8,27 +8,18 @@ jQuery.validator.addMethod("isMobile", function (value, element) {
     return this.optional(element) || (length == 11 && mobile.test(value));
 }, "请正确填写您的手机号码");
 //自定义提示信息
-//检测当前密码是否正确
-jQuery.validator.addMethod("Password", function (value, element) {
-    var msg = "false";
-    var bo = "";
-    $.ajax({
-        url: "/account/CheckCurrentPwd",
-        data: { CurrentPwd: value },
-        async: false,
-        type: "POST",
-        success: function (data) {
-            bo = data;
-        }
+//账户名
+jQuery.validator.addMethod("required", function (value, element) {
 
-    });
     var bool = false;
-    if (bo == msg) {
-        bool = false;
-    } else {
+    if (value !== "") {
         bool = true;
     }
-    var dd = this.optional(element) || bool;
+    var dd = bool;
+    if (!dd) {
+        var msg = $(element).attr("data-alertMsg");
+        layer.tips('请输入' + msg, element);
+    }
     return dd;
 }, "");
 /**
@@ -48,23 +39,41 @@ function login() {
                 }
             });
 
-        }, rules: {
+        },
+        rules: {
             UserName: {
-                required: true,
-                Password: true
+                required: true
             },
             Password: {
-                required: true,
-                email: true
+                required: true
             }
+        }   
+    });
+}
+/**
+ * 注册
+ * @returns {} 
+ */
+function register() {
+    $("#login").validate({
+        focusInvalid: false,
+        onkeyup: false,
+        submitHandler: function () {
+            $.post("/account/register", $("#register").serialize(), function (data) {
+                if (data.IsSuccess) {
+                    layer.msg(data.Msg, { time: 1500 });
+                } else {
+                    layer.msg(data.Msg, { time: 1500 });
+            }
+            });
+
         },
-        messages: {
-            CurrentPwd: {
-                required: "旧密码必须填写"
+        rules: {
+            UserName: {
+                required: true
             },
-            Email: {
-                required: "请填写邮箱",
-                email: "请输入正确的email地址"
+            Password: {
+                required: true
             }
         }
     });
