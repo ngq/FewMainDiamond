@@ -130,8 +130,8 @@
           <Property Name="Mobile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="QQ" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="HeaderImgSrc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="AddTime" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Weixin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AddTime" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
         <EntityType Name="FewMainProType">
           <Key>

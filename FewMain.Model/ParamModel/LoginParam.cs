@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FewMain.Model
+namespace FewMain.Model.ParamModel
 {
-    public class UsersLoginParam
+    public class LoginParam
     {
         public string UserName { get; set; }
         public string Password { get; set; }

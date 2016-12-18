@@ -56,10 +56,7 @@ ul.content-box-tabs li a.current,
 .content ul h3{ font-size:24px; color:#333; margin-bottom:20px; display:block; width:100%; font-weight:lighter;}   
 
 
-.content ul .protocol{ width:100%; padding-bottom:20px; float:left; color:#333;}
-.content ul .protocol .z{ color:#333; float:right;}
-.content ul .protocol a:hover{ color:#cca965;}
-.content ul .protocol .s{}
+ 
 
 .content ul .mem{ width:90px; float:left; padding:2px 0; border:1px solid #ccc;-moz-border-radius: 6px;-webkit-border-radius: 6px;border-radius: 6px; margin-left:10px; overflow:hidden;}
 .content ul .mem img{ width:90px; height:28px; margin-left:-5px;}
@@ -68,7 +65,11 @@ ul.content-box-tabs li a.current,
 .content  .btn{width:136px; height:36px; line-height:36px; display:block; float:left;background:#21d9d9;color:#fff;border:none;-moz-border-radius: 6px;-webkit-border-radius: 6px;border-radius: 6px; font-size:14px; font-family:"微软雅黑";}  
 .content  .btn:hover{background:#cca965;}  
 
-.content  .btn2{width:156px; height:36px;color:#333; line-height:36px; display:block; text-align:center; float:right;background:#f2f2f2;margin-left:10px; -moz-border-radius: 6px;-webkit-border-radius: 6px;border-radius: 6px; margin-left:10px; font-size:12px; }  
+.content  .btn2{width:156px; height:36px;color:#333; line-height:36px; display:block; text-align:center; float:right;background:#f2f2f2;margin-left:6px; -moz-border-radius: 6px;-webkit-border-radius: 6px;border-radius: 6px; margin-left:6px; font-size:12px; }  
 .content .btn2:hover{background:#cca965; color:#fff;}  
+.content  .protocol{ width:100%; padding-bottom:20px; float:left; color:#333;}
+.content  .protocol .z{ color:#333; float:right;}
+.content  .protocol a:hover{ color:#cca965;}
+.content  .protocol .s{}
 
   

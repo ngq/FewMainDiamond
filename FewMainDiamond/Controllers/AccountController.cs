@@ -42,7 +42,7 @@ namespace FewMainDiamond.Controllers
         /// <param name="userModel"></param>
         /// <returns></returns>
         [HttpPost]
-        public ActionResult Login(UsersLoginParam userModel)
+        public ActionResult Login( LoginParam userModel)
         {
             string returnUrl = Request["returnUrl"];
             if (userModel.UserName.IsNullOrEmpty())
@@ -66,6 +66,26 @@ namespace FewMainDiamond.Controllers
                 }
             }
         }
+        #region 检验登录验证码
+        /// <summary>
+        /// 校验登录验证码
+        /// </summary>
+        /// <param name="codeVal"></param>
+        /// <returns></returns>
+        public ActionResult CheckLoginValidate(string codeVal)
+        {
+            if (CacheHelper.Session["logincode"].ToString() != codeVal.ToLower())
+            {
+                return Content("false");
+
+            }
+            else
+            {
+                return Content("true");
+            }
+
+        }
+        #endregion
         #endregion
 
         #region 注册
@@ -88,7 +108,7 @@ namespace FewMainDiamond.Controllers
                     IsSuccess = false,
                     Msg = "两次密码不一致"
                 };
-            }else if (CacheHelper.Session["imgcode"].ToString() != parms.ValidateCode)
+            }else if (CacheHelper.Session["registercode"].ToString() != parms.ValidateCode)
             {
                 result = new ResultModel()
                 {
@@ -96,10 +116,131 @@ namespace FewMainDiamond.Controllers
                     Msg = "图片验证码错误"
                 };
             }
+            var isRegister = userBll.Register(parms);
+            if (isRegister)
+            {
+                userBll.Login(new LoginParam() {Password = parms.Password, UserName = parms.UserName});
+                //注册成功跳转到首页
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                result = new ResultModel()
+                {
+                    IsSuccess = false,
+                    Msg = "注册失败"
+                };
+                return Json(result);
+            }
 
-             
-            return new ContentResult();
+            
         }
+
+        #region 1.0 检验注册验证码
+        /// <summary>
+        /// 校验注册验证码
+        /// </summary>
+        /// <param name="codeVal"></param>
+        /// <returns></returns>
+        public ActionResult CheckRegisterValidate(string codeVal)
+        {
+            if (CacheHelper.Session["registercode"].ToString()!= codeVal.ToLower())
+            {
+                return Content("false");
+
+            }
+            else
+            {
+                return Content("true");
+            }
+
+        }
+        #endregion
+
+        #region 2.0 账号验证
+        /// <summary>
+        /// 校验注册验证码
+        /// </summary>
+        /// <param name="codeVal">被验证信息</param>
+        /// <returns></returns>
+        public ActionResult CheckUserAccount(string codeVal)
+        {
+            if (userBll.CheckUserAccount(codeVal))
+            {
+                return Content("false");
+
+            }
+            else
+            {
+                return Content("true");
+            }
+
+        }
+        #endregion
+
+        #region 3.0 邮箱验证
+        /// <summary>
+        /// 校验注册验证码
+        /// </summary>
+        /// <param name="codeVal">被验证信息</param>
+        /// <returns></returns>
+        public ActionResult CheckEmail(string codeVal)
+        {
+            if (userBll.CheckEmail(codeVal))
+            {
+                return Content("false");
+
+            }
+            else
+            {
+                return Content("true");
+            }
+
+        }
+        #endregion
+
+        #region 4.0 手机号验证
+        /// <summary>
+        /// 校验注册验证码
+        /// </summary>
+        /// <param name="codeVal">被验证信息</param>
+        /// <returns></returns>
+        public ActionResult CheckMobile(string codeVal)
+        {
+            if (userBll.CheckMobile(codeVal))
+            {
+                return Content("false");
+
+            }
+            else
+            {
+                return Content("true");
+            }
+
+        }
+        #endregion
+
+        #region 5.0 微信验证
+        /// <summary>
+        /// 校验注册验证码
+        /// </summary>
+        /// <param name="codeVal">被验证信息</param>
+        /// <returns></returns>
+        public ActionResult CheckWeixin(string codeVal)
+        {
+            if (userBll.CheckWeixin(codeVal))
+            {
+                return Content("false");
+
+            }
+            else
+            {
+                return Content("true");
+            }
+
+        }
+        #endregion
+
         #endregion
 
         #region 忘记密码

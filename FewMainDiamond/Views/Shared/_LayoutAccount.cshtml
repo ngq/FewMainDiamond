@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     <link href="~/Content/css/login.css" rel="stylesheet" />
-
-    <script src="~/Content/scripts/jquery-1.10.2.js"></script>
-    <script src="~/Content/scripts/common.base.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/FewMain/common.base.js"></script>
+    <script src="~/Scripts/layer-v3.0.1/layer/layer.js"></script>
+    @RenderSection("scripts", required: false)
 </head>
 <body>
     <div class="login">

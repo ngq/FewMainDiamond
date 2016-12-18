@@ -1,9 +1,133 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "会员注册";
     Layout = "~/Views/Shared/_LayoutAccount.cshtml";
 }
-<script src="~/Scripts/jquery.validate.js"></script>
+ @section scripts
+{
+
+    <script>
+        $(function () {
+            $("#register").validate({
+                focusInvalid: true,
+                onkeyup: false,
+                submitHandler: function (form) {
+                    $.post("/account/register", $("#register").serialize(), function (data) {
+                        if (data.IsSuccess) {
+                            layer.msg(data.Msg, { time: 1500 });
+                        } else {
+                            layer.msg(data.Msg, { time: 1500 });
+                        }
+                    });
+                },
+                errorPlacement: function (error, element) {
+                    // error 表示错误信息
+                    layer.tips(error.text(), element, { tips: [2, 'rgba(0,0,0,0.6)'], color: '#FFF', tipsMore: true });
+                    return;
+                },
+                rules: {
+                    UserName: {
+                        required: true,
+                        remote: {                                          //验证账号是否存在
+                            type: "POST",
+                            url: "/account/checkaccount",             //servlet
+                            data: {
+                                codeVal: function () { return $("#UserName").val(); }
+                            }
+                        }
+                    },
+                    Password: {
+                        required: true,
+                        minlength: 6
+                    },
+                    RePassword: {
+                        required: true,
+                        minlength: 6,
+                        equalTo: "#Password"
+                    },
+                     
+                    Email: {
+                        required: true,
+                        remote: {                                          //验证邮箱是否存在
+                            type: "POST",
+                            url: "/account/checkemail",             //servlet
+                            data: {
+                                codeVal: function () { return $("#Email").val(); }
+                            }
+                        }
+                    },
+                    Mobile: {
+                        required: true,
+                        isMobile:true,
+                        remote: {                                          //验证用户名是否存在
+                            type: "POST",
+                            url: "/account/checkmobile",             //servlet
+                            data: {
+                                codeVal: function () { return $("#Mobile").val(); }
+                            }
+                        }
+                    },
+                    Weixin: {
+                        required: true,
+                        remote: {                                          //验证微信是否存在
+                            type: "POST",
+                            url: "/account/checkweixin",             //servlet
+                            data: {
+                                codeVal: function () { return $("#Weixin").val(); }
+                            }
+                        }
+                    },
+                    ValidateCode: {
+                        required: true,
+                        remote: {                                          //验证验证码是否正确
+                            type: "POST",
+                            url: "/account/CheckRegisterValidate",             //servlet
+                            data: {
+                                codeVal: function () { return $("#verifyCode").val(); }
+                            }
+                        }
+                    }
+
+                },
+                messages: {
+                    UserName: {
+                        required: "请输入账号",
+                        remote:"账号已存在"
+                    },
+                    Password: {
+                        required: "请输入密码",
+                        minlength:"至少输入6位"
+                    },
+                    RePassword: {
+                        required: "请再次输入密码",
+                        minlength: "至少输入6位",
+                        equalTo: "两次密码输入不一致"
+                    },
+                    Email: {
+                        required: "请输入验证码",
+                        remote: "邮箱已存在"
+                    },
+                    Mobile: {
+                        required: "请输入验证码",
+                        isMobile: "请正确填写手机号",
+                        remote: "手机号已存在请登录或者更换" 
+                       
+                    },
+                    Weixin: {
+                        required: "请输入验证码",
+                        remote: "微信号已存在"
+                    },
+                    ValidateCode: {
+                        required: "请输入验证码",
+                        remote: "验证码不正确"
+                    }
+                }
+
+            });
+        })
+
+    </script>
+}
+
 <script>
     
 </script>
@@ -12,32 +136,30 @@
         <ul>
             <h3>会员注册</h3>
             <li>
-                <s class="">
                     <h6>会员帐号</h6>
                     <span>
-                        <input type="text" name="membername" value="帐号大小为3~20个字符" onfocus="if (this.value == '帐号大小为3~20个字符'){this.value = ''}" onblur="if(this.value == ''){this.value = '帐号大小为3~20个字符'}" />
+                        <input type="text" name="UserName"   id="UserName"   />
                     </span>
-                </s>
             </li>
             <li>
-                <h6>会员密码</h6><span><input type="password" name="password" value="" /></span>
+                <h6>会员密码</h6><span><input type="password" name="Password"  id="Password" /></span>
             </li>
             <li>
-                <h6>确认密码</h6><span><input type="password" name="password2" value="" /></span>
+                <h6>确认密码</h6><span><input type="password" name="RePassword" id="RePassword" /></span>
             </li>
             <li>
-                <h6>会员邮箱</h6><span><input type="text" name="memberemail" value="" /></span>
+                <h6>会员邮箱</h6><span><input type="text" name="Email"  id="Email" /></span>
             </li>
             <li>
-                <h6>手机号码</h6><span><input type="text" name="cell_phone" value="" /></span>
+                <h6>手机号码</h6><span><input type="text" name="Mobile" id="Mobile"/></span>
             </li>
             <li>
-                <h6>微信号码</h6><span><input type="text" name="wechat" value="" /></span>
+                <h6>微信号码</h6><span><input type="text" name="Weixin"   id="Weixin"/></span>
             </li>
             <li style="width: 200px;">
-                <h6>验证码 </h6><span><input type="text" style="width: 80px;" name="verify" value="" /></span>
+                <h6>验证码 </h6><span><input type="text" style="width: 80px;" name="ValidateCode" id="ValidateCode" /></span>
             </li>
-            <div class="mem"><img title="点击刷新验证码" src="@Url.Action("GetImg", "Common",new {id="login"})" onclick="this.src = '@Url.Action("GetImg", "Common",new {id="login"})' + '?=' + Math.random()" style="cursor: pointer"/>
+            <div class="mem"><img title="点击刷新验证码" src="@Url.Action("GetImgCode", "Common",new {id="register"})" onclick="this.src = '@Url.Action("GetImgCode", "Common",new {id="register"})' + '?=' + Math.random()" style="cursor: pointer"/>
             </div>
             <div class="protocol"><input name="protocol" type="checkbox" value="1" checked=""/> 已阅读并同意<a href="http://www.qydiamond.com/cover/index/nid/73.html" class="s" target="_blank">《卿语钻石用户服务协议》</a>
             </div>

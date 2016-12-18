@@ -74,6 +74,10 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -94,10 +98,6 @@
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Optimization">
       <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
@@ -496,17 +496,23 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\FewMain\banner.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\FewMain\common.base.js" />
+    <Content Include="Scripts\FewMain\diamond.js" />
     <Content Include="Scripts\FewMain\FewMain.Account.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\FewMain\jquery.featureCarousel.js" />
+    <Content Include="Scripts\FewMain\jquery.flexslider-min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jquery_1.8.3.min.js" />
     <Content Include="Scripts\layer-v3.0.1\demo.html" />
     <Content Include="Scripts\layer-v3.0.1\layer\layer.js" />
     <Content Include="Scripts\layer-v3.0.1\layer\mobile\layer.js" />
@@ -521,8 +527,11 @@
     <Content Include="Scripts\laypage\laypage.js" />
     <Content Include="Scripts\laypage\skin\laypage.css" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\FewMain\picture.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\FewMain\Segoma.min.js" />
+    <Content Include="Scripts\FewMain\swiper.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="UI\Content\css\diamond.css" />
     <Content Include="UI\Content\css\global.css" />
@@ -869,6 +878,10 @@
       <Project>{34eb5ee2-0cfe-4f8e-88c1-3818d4b6e4ed}</Project>
       <Name>FewMain.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\FewMain.IRepository\FewMain.IRepository.csproj">
+      <Project>{05039add-992e-412d-81f1-8120b2b6a593}</Project>
+      <Name>FewMain.IRepository</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FewMain.IService\FewMain.IService.csproj">
       <Project>{979a2802-c663-41d8-81ae-c66f37af981d}</Project>
       <Name>FewMain.IService</Name>
@@ -876,6 +889,10 @@
     <ProjectReference Include="..\FewMain.Model\FewMain.Model.csproj">
       <Project>{91a84aff-8124-481e-9d63-d150ada65ddb}</Project>
       <Name>FewMain.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FewMain.Repository\FewMain.Repository.csproj">
+      <Project>{1111800d-a2d8-4ed2-b2f4-c3653b3e9105}</Project>
+      <Name>FewMain.Repository</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -23,7 +23,7 @@ namespace FewMain.Model
         public string Mobile { get; set; }
         public string QQ { get; set; }
         public string HeaderImgSrc { get; set; }
-        public System.DateTime AddTime { get; set; }
         public string Weixin { get; set; }
+        public System.DateTime AddTime { get; set; }
     }
 }

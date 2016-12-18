@@ -19,21 +19,21 @@ namespace FewMainDiamond.Controllers
             return View();
         }
         /// <summary>
-        /// 生成验证码
+        /// 生成验证码,把验证信息存放的session中
         /// </summary>
         /// <returns></returns>
-        public ActionResult GetImg(string id)
+        public ActionResult GetImgCode(string id)
         {
            
             string code = string.Empty;
             byte[] bytes = ValidateCode.CreateValidateGraphic(out code);
             if (id == "register")
             {
-                CacheHelper.Session["registercode"] = code;
+                CacheHelper.Session["registercode"] = code.ToLower();
             }
             else if (id == "login")
             {
-                CacheHelper.Session["logincode"] = code;
+                CacheHelper.Session["logincode"] = code.ToLower();
             }
            
             return File(bytes,  @"image/jpeg");

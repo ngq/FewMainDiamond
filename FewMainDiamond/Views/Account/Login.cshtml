@@ -3,6 +3,67 @@
     ViewBag.Title = "登录";
     Layout = "~/Views/Shared/_LayoutAccount.cshtml";
 }
+@section scripts
+{
+
+    <script>
+        $(function () {
+            $("#login").validate({
+                focusInvalid: false,
+                onkeyup: false,
+                submitHandler: function () {
+                    $.post("/account/login", $("#login").serialize(), function (data) {
+                        if (data.IsSuccess) {
+                            layer.msg(data.Msg, { time: 1500 });
+                        } else {
+                            layer.msg(data.Msg, { time: 1500 });
+                        }
+                    });
+                },
+                errorPlacement: function (error, element) {
+                    // error 表示错误信息
+                    layer.tips(error.text(), element, { tips: [2, 'rgba(0,0,0,0.6)'], color: '#FFF', tipsMore: true });
+                    return;
+                },
+                rules: {
+                    UserName: {
+                        required: true
+                    },
+                    Password: {
+                        required: true
+                    },
+                    verify: {
+                        required: true,
+                        remote: {                                          //验证用户名是否存在
+                            type: "POST",
+                            url: "/account/CheckLoginValidate",             //servlet
+                            data: {
+                                codeVal: function () { return $("#verifyCode").val(); }
+                            }
+                        }
+                    }
+                },
+                messages: {
+                    UserName: {
+                        required: "请输入账号"
+                    },
+                    Password: {
+                        required: "请输入密码"
+                    },
+                    verify: {
+                        required: "请输入验证码",
+                        remote: "验证码不正确"
+                    }
+                }
+
+            });
+        })
+
+    </script>
+}
+<script>
+
+</script>
 <div class="content">
     <form name="login" id="login" method="post">
         <ul>
@@ -14,20 +75,25 @@
                 <h6>密 码</h6><span><input type="password" name="Password"></span>
             </li>
             <li style="width: 200px;">
-                <h6>验证码</h6><span><input type="text" name="verify" style="width: 80px;"></span>
+                <h6>验证码</h6><span><input type="text" name="verify" id="verifyCode" style="width: 80px;"></span>
             </li>
             <div class="mem">
-                <img title="点击刷新验证码" src="@Url.Action("GetImg", "Common",new {id="login"})" onclick="this.src = '@Url.Action("GetImg", "Common",new {id="login"})' + '?=' + Math.random()" style="cursor: pointer">
-            </div>
-            <div class="protocol">
-                <input name="protocol" type="checkbox" value=""> 自动登陆 <a href="@Url.Action("Forget")" class="z">忘记密码？点击找回</a>
+                <img title="点击刷新验证码" src="@Url.Action("GetImgCode", "Common", new {id = "login"})" onclick="this.src = '@Url.Action("GetImgCode", "Common", new {id = "login"})' + '?=' + Math.random()" style="cursor: pointer">
             </div>
 
         </ul>
+        <div class="protocol">
+            <input name="protocol" type="checkbox" id="autoLogin" value=""> <label for="autoLogin" style="cursor: pointer">自动登陆</label>  <a href="@Url.Action("Forget")" class="z">忘记密码？点击找回</a>
+        </div>
+
         <div class="bot">
-            <input type="submit" name="submit" value="立即登陆" class="btn"><a href="@Url.Action("Register")" class="btn2">不是会员？立即注册</a><div>
-                <div class="protocol" style="margin-top:15px;">您还可以选择以下登陆方式</div>
-                <div class="protocol"><a href="#"><img src="/Content/images/login/qq_login.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><img src="/Content/images/login/loginButton_24.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><img src="/Content/images/login/weixin_login.png"></a></div>
+            <button type="submit" class="btn">立即登陆</button>
+            <a href="@Url.Action("Register")" class="btn2">不是会员？立即注册</a>
+            <div>
+                <div class="protocol" style="margin-top: 15px;">您还可以选择以下登陆方式</div>
+                <div class="protocol">
+                    <a href="#"><img src="/Content/images/login/qq_login.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><img src="/Content/images/login/loginButton_24.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><img src="/Content/images/login/weixin_login.png"></a>
+                </div>
             </div>
         </div>
     </form>
