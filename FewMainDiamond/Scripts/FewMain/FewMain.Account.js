@@ -70,5 +70,36 @@ function login() {
     });
 }
 function register() {
-    
+    $("#login").validate({
+        focusInvalid: false,
+        onkeyup: false,
+        submitHandler: function () {
+            $.post("/account/register", $("#register").serialize(), function (data) {
+                if (data.IsSuccess) {
+                    layer.msg(data.Msg, { time: 1500 });
+                } else {
+                    layer.msg(data.Msg, { time: 1500 });
+                }
+            });
+
+        }, rules: {
+            UserName: {
+                required: true,
+                Password: true
+            },
+            Password: {
+                required: true,
+                email: true
+            }
+        },
+        messages: {
+            CurrentPwd: {
+                required: "旧密码必须填写"
+            },
+            Email: {
+                required: "请填写邮箱",
+                email: "请输入正确的email地址"
+            }
+        }
+    });
 }
