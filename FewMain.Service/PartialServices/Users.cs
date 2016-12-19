@@ -34,13 +34,15 @@ namespace FewMain.Service
                 CacheHelper.Cookie.Set(BaseConfig.CookieLoginUserInfo, EncryptHelper.Encryption(json), 1440);
             }
             return user == null ? false : true;
-        } 
+        }
         #endregion
 
         #region 注册相关
         public bool Register(RegisterParam parms)
         {
-            return false;
+            var model = new Users() { AddTime = DateTime.Now, Email = parms.Email, Mobile = parms.Mobile, Password = EncryptHelper.Encryption(parms.Password), UserName = parms.UserName, Weixin = parms.Weixin };
+            Add(model);
+            return SaveChanges() > 0;
         }
 
         /// <summary>
@@ -50,7 +52,7 @@ namespace FewMain.Service
         /// <returns></returns>
         public bool CheckUserAccount(string account)
         {
-            if (Query(t=>t.UserName== account).FirstOrDefault()!=null)
+            if (Query(t => t.UserName == account).FirstOrDefault() != null)
             {
                 return true;
             }
