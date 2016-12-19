@@ -3,16 +3,75 @@
     ViewBag.Title = "Forget";
     Layout = "~/Views/Shared/_LayoutAccount.cshtml";
 }
+@section scripts
+{
+    <script>
+        $(function() {
+            $("#forget").validate({
+                focusInvalid: false,
+                onkeyup: false,
+                submitHandler: function () {
+                    $.post("/account/forget", $("#forget").serialize(), function (data) {
+                        if (data.IsSuccess) {
+                            layer.msg(data.Msg, { time: 1500 });
+                        } else {
+                            layer.msg(data.Msg, { time: 1500 });
+                        }
+                    });
+                },
+                errorPlacement: function (error, element) {
+                    // error 表示错误信息
+                    layer.tips(error.text(), element, { tips: [2, 'rgba(0,0,0,0.6)'], color: '#FFF', tipsMore: true });
+                    return;
+                },
+                rules: {
+                    UserName: {
+                        required: true,
+                        remote: {                                          //验证用户名是否存在
+                            type: "POST",
+                            url: "/account/CheckForgetAccount",             //servlet
+                            data: {
+                                codeVal: function () { return $("#UserName").val(); }
+                            }
+                        }
+                    },
+                    Email: {
+                        required: true,
+                        remote: {                                          //验证邮箱是否存在
+                            type: "POST",
+                            url: "/account/CheckForgetEmail",             //servlet
+                            data: {
+                                codeVal: function () { return $("#Email").val(); }
+                            }
+                        }
+                    } 
+                     
+                },
+                messages: {
+                    UserName: {
+                        required: "请输入账号",
+                        remote:"账号不存在"
+                    },
+                    Email: {
+                        required: "请输入邮箱",
+                        remote:"邮箱不存在"
+                    } 
+                     
+                }
 
+            });
+        });
+    </script>
+}
 <div class="content">
-    <form action="http://www.qydiamond.com/user/pwd.html" method="post">
+    <form method="post" id="forget">
         <ul>
             <h3>找回密码</h3>
-            <li><h6>会员帐号</h6><span><input type="text" name="membername" value="" /></span></li>
-            <li><h6>注册邮箱</h6><span><input type="text" name="memberemail" value="" /></span></li>
+            <li><h6>会员帐号</h6><span><input type="text" name="UserName"  id="UserName" /></span></li>
+            <li><h6>注册邮箱</h6><span><input type="text" name="Email"  id="Email" /></span></li>
         </ul>
         <div class="bot">
-            <input type="submit" name="submit" value="提交找回" class="btn" /><a href="http://www.qydiamond.com/user/login.html" class="btn2">已是会员？立即登陆</a>
+            <input type="submit" name="submit" value="提交找回" class="btn" /><a href="@Url.Action("Login")" class="btn2">已是会员？立即登陆</a>
             <div>
             </div>
         </div>

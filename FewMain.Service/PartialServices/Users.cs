@@ -40,9 +40,19 @@ namespace FewMain.Service
         #region 注册相关
         public bool Register(RegisterParam parms)
         {
-            var model = new Users() { AddTime = DateTime.Now, Email = parms.Email, Mobile = parms.Mobile, Password = EncryptHelper.Encryption(parms.Password), UserName = parms.UserName, Weixin = parms.Weixin };
-            Add(model);
-            return SaveChanges() > 0;
+            try
+            {
+                var model = new Users() { AddTime = DateTime.Now, Email = parms.Email, Mobile = parms.Mobile, Password = EncryptHelper.GetMD5( parms.Password), UserName = parms.UserName, Weixin = parms.Weixin };
+                Add(model);
+                return SaveChanges() > 0;
+            }
+            catch (Exception ex)
+            {
+                return false;
+                throw;
+            }
+           
+           
         }
 
         /// <summary>

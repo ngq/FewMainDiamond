@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using FewMain.Common;
 using FewMain.Common.Cache;
 using FewMain.IService;
 using FewMain.Model;
@@ -163,7 +164,7 @@ namespace FewMainDiamond.Controllers
         /// </summary>
         /// <param name="codeVal">被验证信息</param>
         /// <returns></returns>
-        public ActionResult CheckUserAccount(string codeVal)
+        public ActionResult CheckAccount(string codeVal)
         {
             if (userBll.CheckUserAccount(codeVal))
             {
@@ -249,7 +250,59 @@ namespace FewMainDiamond.Controllers
         {
            return View();
         }
+        [HttpPost]
+        public ActionResult Forget(ForgetParam parms )
+        {
+            return View();
+        }
+        /// <summary>
+        /// 校验账号是否存在
+        /// </summary>
+        /// <param name="codeVal">被验证信息</param>
+        /// <returns></returns>
+        public ActionResult CheckForgetAccount(string codeVal)
+        {
+            if (userBll.CheckUserAccount(codeVal))
+            {
+                return Content("true");
+
+            }
+            else
+            {
+                return Content("false");
+            }
+
+        }
+        /// <summary>
+        /// 校验邮箱是否存在
+        /// </summary>
+        /// <param name="codeVal">被验证信息</param>
+        /// <returns></returns>
+        public ActionResult CheckForgetEmail(string codeVal)
+        {
+            if (userBll.CheckEmail(codeVal))
+            {
+                return Content("true");
+
+            }
+            else
+            {
+                return Content("false");
+            }
+
+        }
         #endregion
 
+        #region 退出登录
+        /// <summary>
+        /// 退出登录
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult LoginOut()
+        {
+            CacheHelper.Cookie.Remove(BaseConfig.CookieLoginUserInfo);
+            return RedirectToAction("Index","Home");
+        }
+        #endregion
     }
 }

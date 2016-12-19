@@ -22,7 +22,7 @@ namespace FewMainDiamond.Controllers
         /// <returns></returns>
         public ActionResult Index()
         {
-          var model=  users.Query(t => t.ID == 1).First();
+         
             return View();
         }
 

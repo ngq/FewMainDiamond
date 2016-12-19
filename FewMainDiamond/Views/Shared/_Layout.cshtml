@@ -5,7 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - 我的 ASP.NET 应用程序</title>
-
+    <link href="~/Content/css/home.css" rel="stylesheet" />
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+    <link href="~/Content/css/diamond.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/FewMain/common.base.js"></script>
+    @RenderSection("scripts", required: false)
 </head>
 <body>
     <!--头部-->
@@ -17,12 +22,7 @@
 
     @*@Scripts.Render("~/bundles/jquery")
         @Scripts.Render("~/bundles/bootstrap")*@
-    <link href="~/Content/css/home.css" rel="stylesheet" />
-    <link href="~/Content/css/style.css" rel="stylesheet" />
-    <link href="~/Content/css/diamond.css" rel="stylesheet" />
-    <script src="~/Scripts/jquery-1.10.2.js"></script>
-    <script src="~/Scripts/FewMain/common.base.js"></script>
-    @RenderSection("scripts", required: false)
+    
 </body>
 
 </html>

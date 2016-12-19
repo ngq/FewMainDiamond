@@ -85,6 +85,7 @@
     <Compile Include="FewMainType.cs">
       <DependentUpon>FewMainEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="ParamModel\ForgetParam.cs" />
     <Compile Include="ParamModel\RegisterParam.cs" />
     <Compile Include="ParamModel\LoginParam.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

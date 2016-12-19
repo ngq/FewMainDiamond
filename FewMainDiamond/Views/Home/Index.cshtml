@@ -4,22 +4,13 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @section scripts
-{
+{<script src="~/Scripts/FewMain/jquery.featureCarousel.js"></script>
     <script src="~/Scripts/FewMain/jquery.flexslider-min.js"></script>
-    <script src="~/Scripts/FewMain/jquery.featureCarousel.js"></script>
+  
 
     <script>
         $(function(){
             $("#featureCarousel").featureCarousel({
-
-                // include options like this:
-
-                // (use quotes only for string values, and no trailing comma after last option)
-
-                // option: value,
-
-                // option: value
-
             });
             $('.flexslider').flexslider({
                 directionNav: true,

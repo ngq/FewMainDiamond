@@ -14,7 +14,8 @@
                 submitHandler: function () {
                     $.post("/account/login", $("#login").serialize(), function (data) {
                         if (data.IsSuccess) {
-                            layer.msg(data.Msg, { time: 1500 });
+                            location.href = data.Data;
+                                layer.msg(data.Msg, { time: 1500 });
                         } else {
                             layer.msg(data.Msg, { time: 1500 });
                         }
