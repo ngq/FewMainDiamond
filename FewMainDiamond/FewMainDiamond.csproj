@@ -315,6 +315,7 @@
     <Content Include="Content\images\index\20160418203337_45603.jpg" />
     <Content Include="Content\images\index\20160418205928_77280.jpg" />
     <Content Include="Content\images\index\20160419181548_27245.jpg" />
+    <Content Include="Content\images\index\bd.png" />
     <Content Include="Content\images\index\dot.png" />
     <Content Include="Content\images\index\h_05.gif" />
     <Content Include="Content\images\index\h_18.gif" />
@@ -329,11 +330,14 @@
     <Content Include="Content\images\index\h_50.gif" />
     <Content Include="Content\images\index\h_52.gif" />
     <Content Include="Content\images\index\h_53.gif" />
+    <Content Include="Content\images\index\ico-bannerBtn.png" />
+    <Content Include="Content\images\index\line.png" />
     <Content Include="Content\images\index\navbg.png" />
     <Content Include="Content\images\index\next.png" />
     <Content Include="Content\images\index\next2.png" />
     <Content Include="Content\images\index\prev.png" />
     <Content Include="Content\images\index\prev2.png" />
+    <Content Include="Content\images\index\right_d.png" />
     <Content Include="Content\images\login\loginButton_24.png" />
     <Content Include="Content\images\login\qq_login.png" />
     <Content Include="Content\images\login\s_1.jpg" />
@@ -491,6 +495,7 @@
     <Content Include="Scripts\FewMain\FewMain.Account.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\FewMain\jquery.validate.ext.js" />
+    <Content Include="Scripts\FewMain\lunbo.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
