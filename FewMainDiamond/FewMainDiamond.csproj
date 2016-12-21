@@ -494,13 +494,13 @@
     <Content Include="Scripts\FewMain\diamond.js" />
     <Content Include="Scripts\FewMain\FewMain.Account.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\FewMain\index.js" />
     <Content Include="Scripts\FewMain\jquery.validate.ext.js" />
     <Content Include="Scripts\FewMain\lunbo.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\FewMain\jquery.featureCarousel.js" />
-    <Content Include="Scripts\FewMain\jquery.flexslider-min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
