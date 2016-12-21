@@ -1,6 +1,113 @@
 ﻿@import url(global.css);
+/*------------------首页轮播图-----------------*/
+.dr_banner {
+    height: 470px;
+    position: relative;
+}
+
+.dr_bannerul {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+}
+
+    .dr_bannerul li {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 470px;
+        overflow: hidden;
+        display: none;
+    }
+
+    .dr_bannerul img {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        margin-left: -960px;
+    }
+
+    .dr_bannerul li:first-child {
+        display: block;
+    }
+
+.dr_banner li a {
+    display: block;
+    height: 470px;
+}
+
+.dr_banner a.drbanBtn {
+    position: absolute;
+    display: none;
+    top: 200px;
+    width: 60px;
+    height: 60px;
+   
+    background: url('../images/index/ico-bannerBtn.png') no-repeat;
+}
+
+.dr_banner a.drprevBtn {
+    left: 50px;
+}
+
+.dr_banner a.drnextBtn {
+    right: 50px;
+    background-position: -68px 0;
+}
+
+.dr_banner a.drprevBtn:hover {
+    background-position: 0 -66px;
+}
+
+.dr_banner a.drnextBtn:hover {
+    background-position: -68px -66px;
+}
+
+.dr_banner:hover a.drbanBtn {
+    display: block;
+}
+
+/*-------------轮播图页码----------*/
+
+.drbanner_xdcort {
+    text-align: center;
+    clear: both;
+    position: absolute;
+    width: 100%;
+    bottom: 20px;
+}
+
+.drbanner_xd {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    height: 32px;
+}
+
+    .drbanner_xd li {
+        width: 36px;
+        height: 32px;
+        float: left;
+        
+        background: url(../images/index/line.png) no-repeat center;
+        text-align: left;
+    }
+
+    .drbanner_xd .nobg {
+        width: 5px;
+        background: url(../images/index/right_d.png) no-repeat left center;
+    }
+
+    .drbanner_xd li.drbanner_click span {
+        display: inline-block;
+       
+        background: url(../images/index/bd.png) no-repeat;
+        width: 30px;
+        height: 30px;
+        margin: 1px 0 0 -12px;
+    }
 /*-------------首页幻灯------------*/
-.flexslider{position:relative;height:600px;overflow:hidden;/*background:url(../images/index/loading.gif) 50% no-repeat;*/ }
+.flexslider{position:relative;height:470px;overflow:hidden;/*background:url(../images/index/loading.gif) 50% no-repeat;*/ }
 .slides{position:relative;z-index:1;left: 50%; margin: 0 auto 0 -960px;overflow: hidden; text-align: center; width: 1920px;}
 .slides li{height:600px; z-index:10;}
 .slides li img{ z-index:10;}

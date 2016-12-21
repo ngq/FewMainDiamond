@@ -4,13 +4,21 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @section scripts
-{<script src="~/Scripts/FewMain/jquery.featureCarousel.js"></script>
-    <script src="~/Scripts/FewMain/jquery.flexslider-min.js"></script>
-  
-
+{
+    <script src="~/Scripts/FewMain/jquery.featureCarousel.js"></script>
+    <script src="~/Scripts/FewMain/lunbo.js"></script>
     <script>
-        $(function(){
+        $(function() {
+            var indexBan = new Banner().init({
+                id: '#drHomeBan',
+                btnListId: '#drHomeBanxd',
+                btnListClass: 'drbanner_click',
+                nextBtn: '#drbanNext',
+                prevBtn: '#drbanPrev'
+            });
+
             $("#featureCarousel").featureCarousel({
+
             });
             $('.flexslider').flexslider({
                 directionNav: true,
@@ -18,19 +26,59 @@
             });
         });
     </script>
+     
 }
 <div class="main">
-    <!--幻灯-->
-    <div class="flexslider">
-        <ul class="slides">
+    <!--轮播图-->
+    
+        <div class="dr_banner">
+            <ul class="dr_bannerul" id="drHomeBan">
+                <li style="display: none;">
+                    <a href="http://www.darryring.com/act/drChristmas" target="_blank">
+                        <img src="http://jewely-image.b0.upaiyun.com/images/2016-12-02/1480665758.jpg">
+                    </a>
+                </li>
+                <li style="display: none;">
+                    <a href="http://www.darryring.com/culture" target="_blank">
+                        <img src="http://jewely-image.b0.upaiyun.com/images/2016-12-02/1480665798.jpg">
+                    </a>
+                </li>
+                <li style="display: list-item;">
+                    <a href="http://www.darryring.com/act/drTwelveDate" target="_blank">
+                        <img src="http://jewely-image.b0.upaiyun.com/images/2016-12-15/1481796180.jpg">
+                    </a>
+                </li>
+                <li style="display: none;">
+                    <a href="http://www.darryring.com/act/store/sh" target="_blank">
+                        <img src="http://jewely-image.b0.upaiyun.com/images/2016-12-16/1481882043.jpg">
+                    </a>
+                </li>
+                <li style="display: none;">
+                    <a href="http://www.darryring.com/market/drqh.html" target="_blank">
+                        <img src="http://jewely-image.b0.upaiyun.com/images/2016-12-10/1481336945.jpg">
+                    </a>
+                </li>
+                <li style="display: none;">
+                    <a href="http://www.darryring.com/market/myheart" target="_blank">
+                        <img src="http://jewely-image.b0.upaiyun.com/images/2016-12-05/1480906184.jpg">
+                    </a>
+                </li>
+            </ul>
+            <div class="drbanner_xdcort">
+                <ul class="drbanner_xd" id="drHomeBanxd">
+                    <li class=""><span></span></li>
+                    <li class=""><span></span></li>
+                    <li class="drbanner_click"><span></span></li>
+                    <li class=""><span></span></li>
+                    <li class=""><span></span></li>
+                    <li class="nobg"><span></span></li>
 
-            <li class="" style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;"><a href="http://www.qydiamond.com/" target="_blank"><img src="~/Content/images/index/20160418203022_40583.jpg" alt="4" draggable="false"></a></li>
-            <li class="" style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;"><a href="http://www.qydiamond.com/diamond/index/nid/2.html" target="_blank"><img src="~/Content/images/index/20160418205928_77280.jpg" alt="选择裸钻" draggable="false"></a></li>
-            <li class="" style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;"><a href="http://www.qydiamond.com/Setting/index/nid/5.html" target="_blank"><img src="~/Content/images/index/20160419181548_27245.jpg" alt="钻戒款式" draggable="false"></a></li>
-            <li class="flex-active-slide" style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 1; display: block; z-index: 2;"><a href="http://www.qydiamond.com/info/index/nid/1.html" target="_blank"><img src="~/Content/images/index/20160418203337_45603.jpg" alt="珠宝品牌" draggable="false"></a></li>
-        </ul>
-        <ol class="flex-control-nav flex-control-paging"><li><a class="">1</a></li><li><a class="">2</a></li><li><a class="">3</a></li><li><a class="flex-active">4</a></li></ol><ul class="flex-direction-nav"><li><a class="flex-prev" href="http://www.qydiamond.com/#"></a></li><li><a class="flex-next" href="http://www.qydiamond.com/#"></a></li></ul>
-    </div>
+                </ul>
+            </div>
+            <a id="drbanPrev" class="drbanBtn drprevBtn" href="javascript:;"></a>
+            <a id="drbanNext" class="drbanBtn drnextBtn" href="javascript:;"></a>
+        </div>
+    <!--轮播图-->
     <div class="pro_news">
         <div class="left"><a href="http://www.qydiamond.com/diamond/index/nid/2.html" target="_blank"><img src="~/Content/images/index/h_20.jpg"></a></div>
         <div class="right">
