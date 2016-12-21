@@ -4,12 +4,22 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="f01072caca0648c8bf58861fccebad4f" Name="Diagram1">
-        <EntityTypeShape EntityType="FewMainDiamondModel.FewMainArticle" Width="1.5" PointX="3.375" PointY="0.75" />
-        <EntityTypeShape EntityType="FewMainDiamondModel.FewMainType" Width="1.5" PointX="3.375" PointY="4.75" />
-        <EntityTypeShape EntityType="FewMainDiamondModel.Tag" Width="1.5" PointX="5.375" PointY="0.75" />
-        <EntityTypeShape EntityType="FewMainDiamondModel.Users" Width="1.5" PointX="0.75" PointY="0.75" />
-        <EntityTypeShape EntityType="FewMainDiamondModel.FewMainProType" Width="1.5" PointX="0.75" PointY="4.75" />
+      <Diagram DiagramId="f01072caca0648c8bf58861fccebad4f" Name="Diagram1" ZoomLevel="109">
+        <EntityTypeShape EntityType="FewMainDiamondModel.FewMainArticle" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="FewMainDiamondModel.FewMainProType" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="FewMainDiamondModel.FewMainType" Width="1.5" PointX="2.75" PointY="3.75" />
+        <EntityTypeShape EntityType="FewMainDiamondModel.Tag" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="FewMainDiamondModel.Users" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="FewMainDiamondModel.FewMainCart" Width="1.875" PointX="6.875" PointY="2.125" />
+        <EntityTypeShape EntityType="FewMainDiamondModel.FewMainCartDetail" Width="2" PointX="7" PointY="4" />
+        <EntityTypeShape EntityType="FewMainDiamondModel.FewMainOrder" Width="1.75" PointX="7" PointY="5.875" />
+        <EntityTypeShape EntityType="FewMainDiamondModel.FewMainOrderDetail" Width="2" PointX="9.625" PointY="5.75" />
+        <AssociationConnector Association="FewMainDiamondModel.FewMainCartFewMainCartDetail" />
+        <EntityTypeShape EntityType="FewMainDiamondModel.FewMainOrderType" Width="1.5" PointX="7.625" PointY="8.25" />
+        <EntityTypeShape EntityType="FewMainDiamondModel.FewMainCartType" Width="1.5" PointX="9.375" PointY="2.25" />
+        <AssociationConnector Association="FewMainDiamondModel.FewMainCartFewMainCartType" />
+        <AssociationConnector Association="FewMainDiamondModel.FewMainOrderTypeFewMainOrder" />
+        <AssociationConnector Association="FewMainDiamondModel.FewMainOrderFewMainOrderDetail" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -4,83 +4,215 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="FewMainDiamondModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Content">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Author" Type="nvarchar" MaxLength="50" />
-          <Property Name="Type" Type="int" />
-          <Property Name="WebTitle" Type="nvarchar" MaxLength="500" />
-          <Property Name="WebKeyword" Type="nvarchar" MaxLength="500" />
-          <Property Name="WebDescription" Type="nvarchar" MaxLength="500" />
-          <Property Name="Title" Type="nvarchar" MaxLength="500" />
-          <Property Name="Contents" Type="ntext" />
-          <Property Name="ClickCount" Type="int" />
-          <Property Name="Tag" Type="int" />
-          <Property Name="AddTime" Type="datetime" />
-          <Property Name="AppId" Type="int" />
-        </EntityType>
-        <EntityType Name="FewMainProType">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TypeName" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="ParentId" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="FewMainType">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TypeName" Type="nvarchar" MaxLength="50" />
-          <Property Name="ParentId" Type="int" />
-          <Property Name="Remark" Type="nvarchar" MaxLength="500" />
-          <Property Name="AddTime" Type="datetime" />
-        </EntityType>
-        <EntityType Name="Tag">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TabName" Type="nvarchar" MaxLength="50" />
-          <Property Name="Remark" Type="nvarchar" MaxLength="500" />
-        </EntityType>
-        <EntityType Name="Users">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
-          <Property Name="Password" Type="nvarchar" MaxLength="50" />
-          <Property Name="NickName" Type="nvarchar" MaxLength="50" />
-          <Property Name="RealName" Type="nvarchar(max)" />
-          <Property Name="Email" Type="nvarchar(max)" />
-          <Property Name="Mobile" Type="nvarchar(max)" />
-          <Property Name="QQ" Type="nvarchar(max)" />
-          <Property Name="Weixin" Type="nvarchar(max)" />
-          <Property Name="HeaderImgSrc" Type="nvarchar(max)" />
-          <Property Name="AddTime" Type="datetime" Nullable="false" />
-        </EntityType>
-        <EntityContainer Name="FewMainDiamondModelStoreContainer">
-          <EntitySet Name="Content" EntityType="Self.Content" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="FewMainProType" EntityType="Self.FewMainProType" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="FewMainType" EntityType="Self.FewMainType" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Tag" EntityType="Self.Tag" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
-        </EntityContainer>
-      </Schema></edmx:StorageModels>
+    <Schema Namespace="FewMainDiamondModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="FewMainDiamondModelStoreContainer">
+    <EntitySet Name="FewMainArticle" EntityType="FewMainDiamondModel.Store.FewMainArticle" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FewMainProType" EntityType="FewMainDiamondModel.Store.FewMainProType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FewMainType" EntityType="FewMainDiamondModel.Store.FewMainType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tag" EntityType="FewMainDiamondModel.Store.Tag" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users" EntityType="FewMainDiamondModel.Store.Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FewMainCart" EntityType="FewMainDiamondModel.Store.FewMainCart" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FewMainCartDetail" EntityType="FewMainDiamondModel.Store.FewMainCartDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FewMainOrder" EntityType="FewMainDiamondModel.Store.FewMainOrder" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FewMainOrderDetail" EntityType="FewMainDiamondModel.Store.FewMainOrderDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FewMainOrderType" EntityType="FewMainDiamondModel.Store.FewMainOrderType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FewMainCartType" EntityType="FewMainDiamondModel.Store.FewMainCartType" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FewMainCartFewMainCartDetail" Association="FewMainDiamondModel.Store.FewMainCartFewMainCartDetail">
+      <End Role="FewMainCart" EntitySet="FewMainCart" />
+      <End Role="FewMainCartDetail" EntitySet="FewMainCartDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FewMainCartFewMainCartType" Association="FewMainDiamondModel.Store.FewMainCartFewMainCartType">
+      <End Role="FewMainCart" EntitySet="FewMainCart" />
+      <End Role="FewMainCartType" EntitySet="FewMainCartType" />
+    </AssociationSet>
+    <AssociationSet Name="FewMainOrderTypeFewMainOrder" Association="FewMainDiamondModel.Store.FewMainOrderTypeFewMainOrder">
+      <End Role="FewMainOrder" EntitySet="FewMainOrder" />
+      <End Role="FewMainOrderType" EntitySet="FewMainOrderType" />
+    </AssociationSet>
+    <AssociationSet Name="FewMainOrderFewMainOrderDetail" Association="FewMainDiamondModel.Store.FewMainOrderFewMainOrderDetail">
+      <End Role="FewMainOrder" EntitySet="FewMainOrder" />
+      <End Role="FewMainOrderDetail" EntitySet="FewMainOrderDetail" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="FewMainArticle">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Author" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Type" Type="int" Nullable="true" />
+    <Property Name="WebTitle" Type="nvarchar" Nullable="true" MaxLength="500" />
+    <Property Name="WebKeyword" Type="nvarchar" Nullable="true" MaxLength="500" />
+    <Property Name="WebDescription" Type="nvarchar" Nullable="true" MaxLength="500" />
+    <Property Name="Title" Type="nvarchar" Nullable="true" MaxLength="500" />
+    <Property Name="Contents" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="ClickCount" Type="int" Nullable="true" />
+    <Property Name="Tag" Type="int" Nullable="true" />
+    <Property Name="AddTime" Type="datetime" Nullable="true" />
+    <Property Name="AppId" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="FewMainProType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TypeName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ParentId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FewMainType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TypeName" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="ParentId" Type="int" Nullable="true" />
+    <Property Name="Remark" Type="nvarchar" Nullable="true" MaxLength="500" />
+    <Property Name="AddTime" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Tag">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TabName" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Remark" Type="nvarchar" Nullable="true" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="NickName" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="RealName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Mobile" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="QQ" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="HeaderImgSrc" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Weixin" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="AddTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FewMainCart">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FewMainCartTypeId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FewMainCartDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FewMainCartId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FewMainOrder">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FewMainOrderTypeId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FewMainOrderDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FewMainOrderId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FewMainOrderType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FewMainCartType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <Association Name="FewMainCartFewMainCartDetail">
+    <End Role="FewMainCart" Type="FewMainDiamondModel.Store.FewMainCart" Multiplicity="1" />
+    <End Role="FewMainCartDetail" Type="FewMainDiamondModel.Store.FewMainCartDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FewMainCart">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FewMainCartDetail">
+        <PropertyRef Name="FewMainCartId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FewMainCartFewMainCartType">
+    <End Role="FewMainCart" Type="FewMainDiamondModel.Store.FewMainCart" Multiplicity="*" />
+    <End Role="FewMainCartType" Type="FewMainDiamondModel.Store.FewMainCartType" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="FewMainCartType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FewMainCart">
+        <PropertyRef Name="FewMainCartTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FewMainOrderTypeFewMainOrder">
+    <End Role="FewMainOrder" Type="FewMainDiamondModel.Store.FewMainOrder" Multiplicity="*" />
+    <End Role="FewMainOrderType" Type="FewMainDiamondModel.Store.FewMainOrderType" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="FewMainOrderType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FewMainOrder">
+        <PropertyRef Name="FewMainOrderTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FewMainOrderFewMainOrderDetail">
+    <End Role="FewMainOrder" Type="FewMainDiamondModel.Store.FewMainOrder" Multiplicity="1" />
+    <End Role="FewMainOrderDetail" Type="FewMainDiamondModel.Store.FewMainOrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FewMainOrder">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FewMainOrderDetail">
+        <PropertyRef Name="FewMainOrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="FewMainDiamondModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="FewMainDiamondEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Content" EntityType="FewMainDiamondModel.FewMainArticle" />
+          <EntitySet Name="FewMainArticle" EntityType="FewMainDiamondModel.FewMainArticle" />
+          <EntitySet Name="FewMainProType" EntityType="FewMainDiamondModel.FewMainProType" />
           <EntitySet Name="FewMainType" EntityType="FewMainDiamondModel.FewMainType" />
           <EntitySet Name="Tag" EntityType="FewMainDiamondModel.Tag" />
           <EntitySet Name="Users" EntityType="FewMainDiamondModel.Users" />
-          <EntitySet Name="FewMainProType" EntityType="FewMainDiamondModel.FewMainProType" />
+          <EntitySet Name="FewMainCart" EntityType="FewMainDiamondModel.FewMainCart" />
+          <EntitySet Name="FewMainCartDetail" EntityType="FewMainDiamondModel.FewMainCartDetail" />
+          <EntitySet Name="FewMainOrder" EntityType="FewMainDiamondModel.FewMainOrder" />
+          <EntitySet Name="FewMainOrderDetail" EntityType="FewMainDiamondModel.FewMainOrderDetail" />
+          <AssociationSet Name="FewMainCartFewMainCartDetail" Association="FewMainDiamondModel.FewMainCartFewMainCartDetail">
+            <End Role="FewMainCart" EntitySet="FewMainCart" />
+            <End Role="FewMainCartDetail" EntitySet="FewMainCartDetail" />
+          </AssociationSet>
+          <EntitySet Name="FewMainOrderType" EntityType="FewMainDiamondModel.FewMainOrderType" />
+          <EntitySet Name="FewMainCartType" EntityType="FewMainDiamondModel.FewMainCartType" />
+          <AssociationSet Name="FewMainCartFewMainCartType" Association="FewMainDiamondModel.FewMainCartFewMainCartType">
+            <End Role="FewMainCart" EntitySet="FewMainCart" />
+            <End Role="FewMainCartType" EntitySet="FewMainCartType" />
+          </AssociationSet>
+          <AssociationSet Name="FewMainOrderTypeFewMainOrder" Association="FewMainDiamondModel.FewMainOrderTypeFewMainOrder">
+            <End Role="FewMainOrder" EntitySet="FewMainOrder" />
+            <End Role="FewMainOrderType" EntitySet="FewMainOrderType" />
+          </AssociationSet>
+          <AssociationSet Name="FewMainOrderFewMainOrderDetail" Association="FewMainDiamondModel.FewMainOrderFewMainOrderDetail">
+            <End Role="FewMainOrder" EntitySet="FewMainOrder" />
+            <End Role="FewMainOrderDetail" EntitySet="FewMainOrderDetail" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="FewMainArticle">
           <Key>
@@ -98,6 +230,14 @@
           <Property Name="Tag" Type="Int32" />
           <Property Name="AddTime" Type="DateTime" Precision="3" />
           <Property Name="AppId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="FewMainProType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ParentId" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="FewMainType">
           <Key>
@@ -133,84 +273,223 @@
           <Property Name="Weixin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="AddTime" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
-        <EntityType Name="FewMainProType">
+        <EntityType Name="FewMainCart">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TypeName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="ParentId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CartDetail" Relationship="FewMainDiamondModel.FewMainCartFewMainCartDetail" FromRole="FewMainCart" ToRole="FewMainCartDetail" />
+          <NavigationProperty Name="CartType" Relationship="FewMainDiamondModel.FewMainCartFewMainCartType" FromRole="FewMainCart" ToRole="FewMainCartType" />
+          <Property Name="FewMainCartTypeId" Type="Int32" Nullable="false" />
+          <Property Name="CartId" Type="String" Nullable="false" />
         </EntityType>
-      </Schema>
+        <EntityType Name="FewMainCartDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Cart" Relationship="FewMainDiamondModel.FewMainCartFewMainCartDetail" FromRole="FewMainCartDetail" ToRole="FewMainCart" />
+          <Property Name="FewMainCartId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FewMainOrder">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="OrderType" Relationship="FewMainDiamondModel.FewMainOrderTypeFewMainOrder" FromRole="FewMainOrder" ToRole="FewMainOrderType" />
+          <Property Name="OrderId" Type="String" Nullable="false" />
+          <Property Name="FewMainOrderTypeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="OrderDetail" Relationship="FewMainDiamondModel.FewMainOrderFewMainOrderDetail" FromRole="FewMainOrder" ToRole="FewMainOrderDetail" />
+        </EntityType>
+        <EntityType Name="FewMainOrderDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Order" Relationship="FewMainDiamondModel.FewMainOrderFewMainOrderDetail" FromRole="FewMainOrderDetail" ToRole="FewMainOrder" />
+          <Property Name="FewMainOrderId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="FewMainCartFewMainCartDetail">
+          <End Type="FewMainDiamondModel.FewMainCart" Role="FewMainCart" Multiplicity="1" />
+          <End Type="FewMainDiamondModel.FewMainCartDetail" Role="FewMainCartDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FewMainCart">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FewMainCartDetail">
+              <PropertyRef Name="FewMainCartId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="FewMainOrderType">
+          <Documentation>
+            <LongDescription>订单类型 </LongDescription>
+          </Documentation>
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Order" Relationship="FewMainDiamondModel.FewMainOrderTypeFewMainOrder" FromRole="FewMainOrderType" ToRole="FewMainOrder" />
+        </EntityType>
+        <EntityType Name="FewMainCartType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Cart" Relationship="FewMainDiamondModel.FewMainCartFewMainCartType" FromRole="FewMainCartType" ToRole="FewMainCart" />
+        </EntityType>
+        <Association Name="FewMainCartFewMainCartType">
+          <End Type="FewMainDiamondModel.FewMainCart" Role="FewMainCart" Multiplicity="*" />
+          <End Type="FewMainDiamondModel.FewMainCartType" Role="FewMainCartType" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="FewMainCartType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FewMainCart">
+              <PropertyRef Name="FewMainCartTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FewMainOrderTypeFewMainOrder">
+          <End Type="FewMainDiamondModel.FewMainOrder" Role="FewMainOrder" Multiplicity="*" />
+          <End Type="FewMainDiamondModel.FewMainOrderType" Role="FewMainOrderType" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="FewMainOrderType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FewMainOrder">
+              <PropertyRef Name="FewMainOrderTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FewMainOrderFewMainOrderDetail">
+          <End Type="FewMainDiamondModel.FewMainOrder" Role="FewMainOrder" Multiplicity="1" />
+          <End Type="FewMainDiamondModel.FewMainOrderDetail" Role="FewMainOrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FewMainOrder">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FewMainOrderDetail">
+              <PropertyRef Name="FewMainOrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
     <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="FewMainDiamondModelStoreContainer" CdmEntityContainer="FewMainDiamondEntities">
-          <EntitySetMapping Name="Content">
-            <EntityTypeMapping TypeName="FewMainDiamondModel.FewMainArticle">
-              <MappingFragment StoreEntitySet="Content">
-                <ScalarProperty Name="AppId" ColumnName="AppId" />
-                <ScalarProperty Name="AddTime" ColumnName="AddTime" />
-                <ScalarProperty Name="Tag" ColumnName="Tag" />
-                <ScalarProperty Name="ClickCount" ColumnName="ClickCount" />
-                <ScalarProperty Name="Contents" ColumnName="Contents" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="WebDescription" ColumnName="WebDescription" />
-                <ScalarProperty Name="WebKeyword" ColumnName="WebKeyword" />
-                <ScalarProperty Name="WebTitle" ColumnName="WebTitle" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
-                <ScalarProperty Name="Author" ColumnName="Author" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="FewMainType">
-            <EntityTypeMapping TypeName="FewMainDiamondModel.FewMainType">
-              <MappingFragment StoreEntitySet="FewMainType">
-                <ScalarProperty Name="AddTime" ColumnName="AddTime" />
-                <ScalarProperty Name="Remark" ColumnName="Remark" />
-                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
-                <ScalarProperty Name="TypeName" ColumnName="TypeName" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Tag">
-            <EntityTypeMapping TypeName="FewMainDiamondModel.Tag">
-              <MappingFragment StoreEntitySet="Tag">
-                <ScalarProperty Name="Remark" ColumnName="Remark" />
-                <ScalarProperty Name="TabName" ColumnName="TabName" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Users">
-            <EntityTypeMapping TypeName="FewMainDiamondModel.Users">
-              <MappingFragment StoreEntitySet="Users">
-                <ScalarProperty Name="Weixin" ColumnName="Weixin" />
-                <ScalarProperty Name="AddTime" ColumnName="AddTime" />
-                <ScalarProperty Name="HeaderImgSrc" ColumnName="HeaderImgSrc" />
-                <ScalarProperty Name="QQ" ColumnName="QQ" />
-                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="RealName" ColumnName="RealName" />
-                <ScalarProperty Name="NickName" ColumnName="NickName" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="FewMainProType">
-            <EntityTypeMapping TypeName="FewMainDiamondModel.FewMainProType">
-              <MappingFragment StoreEntitySet="FewMainProType">
-                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
-                <ScalarProperty Name="TypeName" ColumnName="TypeName" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
+    <EntitySetMapping Name="FewMainArticle">
+      <EntityTypeMapping TypeName="IsTypeOf(FewMainDiamondModel.FewMainArticle)">
+        <MappingFragment StoreEntitySet="FewMainArticle">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Author" ColumnName="Author" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="WebTitle" ColumnName="WebTitle" />
+          <ScalarProperty Name="WebKeyword" ColumnName="WebKeyword" />
+          <ScalarProperty Name="WebDescription" ColumnName="WebDescription" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Contents" ColumnName="Contents" />
+          <ScalarProperty Name="ClickCount" ColumnName="ClickCount" />
+          <ScalarProperty Name="Tag" ColumnName="Tag" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+          <ScalarProperty Name="AppId" ColumnName="AppId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FewMainProType">
+      <EntityTypeMapping TypeName="IsTypeOf(FewMainDiamondModel.FewMainProType)">
+        <MappingFragment StoreEntitySet="FewMainProType">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FewMainType">
+      <EntityTypeMapping TypeName="IsTypeOf(FewMainDiamondModel.FewMainType)">
+        <MappingFragment StoreEntitySet="FewMainType">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tag">
+      <EntityTypeMapping TypeName="IsTypeOf(FewMainDiamondModel.Tag)">
+        <MappingFragment StoreEntitySet="Tag">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TabName" ColumnName="TabName" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="IsTypeOf(FewMainDiamondModel.Users)">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="NickName" ColumnName="NickName" />
+          <ScalarProperty Name="RealName" ColumnName="RealName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="QQ" ColumnName="QQ" />
+          <ScalarProperty Name="HeaderImgSrc" ColumnName="HeaderImgSrc" />
+          <ScalarProperty Name="Weixin" ColumnName="Weixin" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FewMainCart">
+      <EntityTypeMapping TypeName="IsTypeOf(FewMainDiamondModel.FewMainCart)">
+        <MappingFragment StoreEntitySet="FewMainCart">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FewMainCartTypeId" ColumnName="FewMainCartTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FewMainCartDetail">
+      <EntityTypeMapping TypeName="IsTypeOf(FewMainDiamondModel.FewMainCartDetail)">
+        <MappingFragment StoreEntitySet="FewMainCartDetail">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FewMainCartId" ColumnName="FewMainCartId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FewMainOrder">
+      <EntityTypeMapping TypeName="IsTypeOf(FewMainDiamondModel.FewMainOrder)">
+        <MappingFragment StoreEntitySet="FewMainOrder">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FewMainOrderTypeId" ColumnName="FewMainOrderTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FewMainOrderDetail">
+      <EntityTypeMapping TypeName="IsTypeOf(FewMainDiamondModel.FewMainOrderDetail)">
+        <MappingFragment StoreEntitySet="FewMainOrderDetail">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FewMainOrderId" ColumnName="FewMainOrderId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FewMainOrderType">
+      <EntityTypeMapping TypeName="IsTypeOf(FewMainDiamondModel.FewMainOrderType)">
+        <MappingFragment StoreEntitySet="FewMainOrderType">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FewMainCartType">
+      <EntityTypeMapping TypeName="IsTypeOf(FewMainDiamondModel.FewMainCartType)">
+        <MappingFragment StoreEntitySet="FewMainCartType">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>

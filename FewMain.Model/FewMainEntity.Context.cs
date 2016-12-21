@@ -25,10 +25,16 @@ namespace FewMain.Model
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<FewMainArticle> Content { get; set; }
+        public virtual DbSet<FewMainArticle> FewMainArticle { get; set; }
+        public virtual DbSet<FewMainProType> FewMainProType { get; set; }
         public virtual DbSet<FewMainType> FewMainType { get; set; }
         public virtual DbSet<Tag> Tag { get; set; }
         public virtual DbSet<Users> Users { get; set; }
-        public virtual DbSet<FewMainProType> FewMainProType { get; set; }
+        public virtual DbSet<FewMainCart> FewMainCart { get; set; }
+        public virtual DbSet<FewMainCartDetail> FewMainCartDetail { get; set; }
+        public virtual DbSet<FewMainOrder> FewMainOrder { get; set; }
+        public virtual DbSet<FewMainOrderDetail> FewMainOrderDetail { get; set; }
+        public virtual DbSet<FewMainOrderType> FewMainOrderType { get; set; }
+        public virtual DbSet<FewMainCartType> FewMainCartType { get; set; }
     }
 }
