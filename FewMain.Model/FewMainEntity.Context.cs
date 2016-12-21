@@ -25,7 +25,7 @@ namespace FewMain.Model
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Content> Content { get; set; }
+        public virtual DbSet<FewMainArticle> Content { get; set; }
         public virtual DbSet<FewMainType> FewMainType { get; set; }
         public virtual DbSet<Tag> Tag { get; set; }
         public virtual DbSet<Users> Users { get; set; }

@@ -7,13 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FewMain.IService
+namespace FewMain.IRepository
 {
     using System;
     using System.Collections.Generic;
     
-    using FewMain.Model;
-    public partial interface  IUsersServices:IBaseServices<Users>
+     using FewMain.Model;
+    public partial interface  IFewMainProTypeRepository:IBaseRepository<FewMainProType>
     {
      
     }

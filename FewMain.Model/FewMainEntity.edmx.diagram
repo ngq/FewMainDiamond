@@ -5,7 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="f01072caca0648c8bf58861fccebad4f" Name="Diagram1">
-        <EntityTypeShape EntityType="FewMainDiamondModel.Content" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="FewMainDiamondModel.FewMainArticle" Width="1.5" PointX="3.375" PointY="0.75" />
         <EntityTypeShape EntityType="FewMainDiamondModel.FewMainType" Width="1.5" PointX="3.375" PointY="4.75" />
         <EntityTypeShape EntityType="FewMainDiamondModel.Tag" Width="1.5" PointX="5.375" PointY="0.75" />
         <EntityTypeShape EntityType="FewMainDiamondModel.Users" Width="1.5" PointX="0.75" PointY="0.75" />

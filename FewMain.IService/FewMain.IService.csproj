@@ -54,7 +54,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Content.cs">
+    <Compile Include="FewMainArticle.cs">
+      <DependentUpon>FewMain_IServices.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FewMainProType.cs">
       <DependentUpon>FewMain_IServices.tt</DependentUpon>
     </Compile>
     <Compile Include="FewMainType.cs">

@@ -76,13 +76,13 @@
     <edmx:ConceptualModels>
       <Schema Namespace="FewMainDiamondModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="FewMainDiamondEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Content" EntityType="FewMainDiamondModel.Content" />
+          <EntitySet Name="Content" EntityType="FewMainDiamondModel.FewMainArticle" />
           <EntitySet Name="FewMainType" EntityType="FewMainDiamondModel.FewMainType" />
           <EntitySet Name="Tag" EntityType="FewMainDiamondModel.Tag" />
           <EntitySet Name="Users" EntityType="FewMainDiamondModel.Users" />
           <EntitySet Name="FewMainProType" EntityType="FewMainDiamondModel.FewMainProType" />
         </EntityContainer>
-        <EntityType Name="Content">
+        <EntityType Name="FewMainArticle">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -148,7 +148,7 @@
     <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="FewMainDiamondModelStoreContainer" CdmEntityContainer="FewMainDiamondEntities">
           <EntitySetMapping Name="Content">
-            <EntityTypeMapping TypeName="FewMainDiamondModel.Content">
+            <EntityTypeMapping TypeName="FewMainDiamondModel.FewMainArticle">
               <MappingFragment StoreEntitySet="Content">
                 <ScalarProperty Name="AppId" ColumnName="AppId" />
                 <ScalarProperty Name="AddTime" ColumnName="AddTime" />

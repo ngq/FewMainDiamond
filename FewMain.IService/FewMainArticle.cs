@@ -13,7 +13,7 @@ namespace FewMain.IService
     using System.Collections.Generic;
     
     using FewMain.Model;
-    public partial interface  IUsersServices:IBaseServices<Users>
+    public partial interface  IFewMainArticleServices:IBaseServices<FewMainArticle>
     {
      
     }

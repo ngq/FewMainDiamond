@@ -12,7 +12,7 @@ namespace FewMain.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class Content
+    public partial class FewMainArticle
     {
         public int Id { get; set; }
         public string Author { get; set; }

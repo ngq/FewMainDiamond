@@ -56,7 +56,10 @@
   <ItemGroup>
     <Compile Include="BaseDbContext.cs" />
     <Compile Include="BaseRepository.cs" />
-    <Compile Include="Content.cs">
+    <Compile Include="FewMainArticle.cs">
+      <DependentUpon>FewMain_Repository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FewMainProType.cs">
       <DependentUpon>FewMain_Repository.tt</DependentUpon>
     </Compile>
     <Compile Include="FewMainType.cs">

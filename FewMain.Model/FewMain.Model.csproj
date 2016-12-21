@@ -60,10 +60,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommonModel\ResultModel.cs" />
-    <Compile Include="Content.cs">
+    <Compile Include="CurrentModel\UserModel.cs" />
+    <Compile Include="FewMainArticle.cs">
       <DependentUpon>FewMainEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="CurrentModel\UserModel.cs" />
     <Compile Include="FewMainEntity.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -7,14 +7,22 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FewMain.IRepository
+namespace FewMain.Service
 {
     using System;
     using System.Collections.Generic;
     
-     using FewMain.Model;
-    public partial interface  IContentRepository:IBaseRepository<Content>
+    using FewMain.IRepository;
+    using FewMain.IService;
+    using Model;
+    public partial class  FewMainProTypeServices:BaseServices<FewMainProType>,IFewMainProTypeServices
     {
-     
+      IFewMainProTypeRepository _rep;
+    
+       public FewMainProTypeServices(IFewMainProTypeRepository _rep)
+       {
+        this._rep = _rep;
+    	base._dal = _rep;
+       }
     }
 }

@@ -55,7 +55,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseServices.cs" />
-    <Compile Include="Content.cs">
+    <Compile Include="FewMainArticle.cs">
+      <DependentUpon>FewMain_Services.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FewMainProType.cs">
       <DependentUpon>FewMain_Services.tt</DependentUpon>
     </Compile>
     <Compile Include="FewMainType.cs">

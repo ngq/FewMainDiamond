@@ -15,11 +15,11 @@ namespace FewMain.Service
     using FewMain.IRepository;
     using FewMain.IService;
     using Model;
-    public partial class  ContentServices:BaseServices<Content>,IContentServices
+    public partial class  FewMainArticleServices:BaseServices<FewMainArticle>,IFewMainArticleServices
     {
-      IContentRepository _rep;
+      IFewMainArticleRepository _rep;
     
-       public ContentServices(IContentRepository _rep)
+       public FewMainArticleServices(IFewMainArticleRepository _rep)
        {
         this._rep = _rep;
     	base._dal = _rep;
