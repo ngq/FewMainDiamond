@@ -18,14 +18,15 @@ namespace FewMain.Model
         public FewMainCart()
         {
             this.CartDetail = new HashSet<FewMainCartDetail>();
+            this.CartType = new HashSet<FewMainCartType>();
         }
     
         public int Id { get; set; }
-        public int FewMainCartTypeId { get; set; }
         public string CartId { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<FewMainCartDetail> CartDetail { get; set; }
-        public virtual FewMainCartType CartType { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FewMainCartType> CartType { get; set; }
     }
 }

@@ -11,15 +11,15 @@
         <EntityTypeShape EntityType="FewMainDiamondModel.Tag" Width="1.5" PointX="4.75" PointY="0.75" />
         <EntityTypeShape EntityType="FewMainDiamondModel.Users" Width="1.5" PointX="4.75" PointY="3.75" />
         <EntityTypeShape EntityType="FewMainDiamondModel.FewMainCart" Width="1.875" PointX="6.875" PointY="2.125" />
-        <EntityTypeShape EntityType="FewMainDiamondModel.FewMainCartDetail" Width="2" PointX="7" PointY="4" />
-        <EntityTypeShape EntityType="FewMainDiamondModel.FewMainOrder" Width="1.75" PointX="7" PointY="5.875" />
+        <EntityTypeShape EntityType="FewMainDiamondModel.FewMainCartDetail" Width="2" PointX="6.875" PointY="4.375" />
+        <EntityTypeShape EntityType="FewMainDiamondModel.FewMainOrder" Width="1.75" PointX="7" PointY="6.125" />
         <EntityTypeShape EntityType="FewMainDiamondModel.FewMainOrderDetail" Width="2" PointX="9.625" PointY="5.75" />
         <AssociationConnector Association="FewMainDiamondModel.FewMainCartFewMainCartDetail" />
-        <EntityTypeShape EntityType="FewMainDiamondModel.FewMainOrderType" Width="1.5" PointX="7.625" PointY="8.25" />
+        <EntityTypeShape EntityType="FewMainDiamondModel.FewMainOrderType" Width="1.875" PointX="7.625" PointY="8.25" />
         <EntityTypeShape EntityType="FewMainDiamondModel.FewMainCartType" Width="1.5" PointX="9.375" PointY="2.25" />
-        <AssociationConnector Association="FewMainDiamondModel.FewMainCartFewMainCartType" />
         <AssociationConnector Association="FewMainDiamondModel.FewMainOrderTypeFewMainOrder" />
         <AssociationConnector Association="FewMainDiamondModel.FewMainOrderFewMainOrderDetail" />
+        <AssociationConnector Association="FewMainDiamondModel.FewMainCartFewMainCartType" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
