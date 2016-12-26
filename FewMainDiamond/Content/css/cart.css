@@ -1,3 +1,30 @@
+     dl, dt, dd , label, legend, table, tbody, tfoot, thead, tr, th, td {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        font-style: normal;
+    }
+
+    .w1000 {
+        width: 1200px;
+        margin: 0 auto;
+    }
+
+    .clearfix:after {
+        content: " ";
+        display: block;
+        visibility: hidden;
+        clear: both;
+        height: 0;
+        line-height: 0;
+    }
+
+    .fr {
+        float: right;
+        display: inline;
+    }
 .shoppingcart, .checkstand {
     font-family: "宋体";
     color: #666;

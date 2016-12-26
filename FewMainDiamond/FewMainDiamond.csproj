@@ -200,6 +200,7 @@
     <Compile Include="Controllers\DiamondController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LayoutController.cs" />
+    <Compile Include="Controllers\MemberController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
@@ -975,6 +976,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Common\" />
+    <Folder Include="Views\Member\" />
     <Folder Include="Views\News\" />
     <Folder Include="Views\Order\" />
   </ItemGroup>

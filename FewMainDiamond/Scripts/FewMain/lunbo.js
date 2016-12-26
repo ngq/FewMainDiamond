@@ -98,4 +98,4 @@
             return this;
         }
     }
-    module.exports = Banner;
+    
