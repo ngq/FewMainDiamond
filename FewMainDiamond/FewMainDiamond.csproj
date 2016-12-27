@@ -215,9 +215,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\cart.css" />
+    <Content Include="Content\css\order.css" />
     <Content Include="Content\images\cart\bottom.png" />
+    <Content Include="Content\images\cart\ico-service.png" />
     <Content Include="Content\images\cart\right.png" />
     <Content Include="Content\images\cart\steps_bg.png" />
+    <Content Include="Content\images\order\ico-location.png" />
     <Content Include="Content\noimage.jpg" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -505,6 +508,7 @@
     <Content Include="Scripts\FewMain\index.js" />
     <Content Include="Scripts\FewMain\jquery.validate.ext.js" />
     <Content Include="Scripts\FewMain\lunbo.js" />
+    <Content Include="Scripts\FewMain\order.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -972,13 +976,13 @@
     <Content Include="Scripts\layui\font\iconfont.ttf" />
     <Content Include="Scripts\layui\font\iconfont.woff" />
     <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Order\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Common\" />
     <Folder Include="Views\Member\" />
     <Folder Include="Views\News\" />
-    <Folder Include="Views\Order\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
