@@ -6,7 +6,14 @@
 @section scripts
 {
     <link href="~/Content/css/order.css" rel="stylesheet" />
-<script src="~/Scripts/FewMain/order.js"></script>
+    <script src="~/Scripts/FewMain/order.js"></script>
+    <script src="~/Scripts/layer-v3.0.1/layer/layer.js"></script>
+   
+    <script>
+        $(function () {
+            fixbottom();
+        })
+    </script>
 }
 
 <!--主体内容-->
@@ -22,7 +29,7 @@
             </div>
             <div class="sp_steps2 steps_active">
                 <span>2</span>
-                <p>2. 填写订单信息 / 签署真爱协议</p>
+                <p>2. 填写订单信息</p>
             </div>
             <div class="sp_steps3">
                 <span>3</span>
@@ -53,7 +60,7 @@
                         <select name="data[province]" id="province">
                             <option selected="selected">请选择省份</option>
                             <option>省份</option>
-                          
+
                         </select>
                         <select name="data[city]" id="city" data-value="0">
                             <option selected="selected">请选择城市</option>
@@ -128,14 +135,14 @@
                     <a href="javascript:;" class="address_add">添加新收货地址&gt;&gt;</a>
                 </div>
             </div>
-            <div class="delivery_notic">
-                <h3>送货通知</h3>
-                <p><input type="radio" name="noticmsg" id="" value="" checked="checked" class="msg_receiver" data-type="1" data-addr="have" />发货短信通知到 收货人</p>
-                <p><input type="radio" name="noticmsg" id="" value="" class="msg_others" data-type="2" />发货短信通知到 其他联系人</p>
-                <p class="msg_r"><label for="phone_number">13255475846</label> <a href="javascript:;" class="msg_change">修改</a></p>
-                <p class="msg_o"><input type="text" name="" id="receipt-phone" value="" placeholder="请输入接收短信手机号码" /><a href="javascript:;" class="link_btn1 msg_confirm">确认</a></p>
+            @*<div class="delivery_notic">
+                    <h3>送货通知</h3>
+                    <p><input type="radio" name="noticmsg" id="" value="" checked="checked" class="msg_receiver" data-type="1" data-addr="have" />发货短信通知到 收货人</p>
+                    <p><input type="radio" name="noticmsg" id="" value="" class="msg_others" data-type="2" />发货短信通知到 其他联系人</p>
+                    <p class="msg_r"><label for="phone_number">13255475846</label> <a href="javascript:;" class="msg_change">修改</a></p>
+                    <p class="msg_o"><input type="text" name="" id="receipt-phone" value="" placeholder="请输入接收短信手机号码" /><a href="javascript:;" class="link_btn1 msg_confirm">确认</a></p>
 
-            </div> 
+                </div>*@
         </div>
         <!--收货人信息end-->
         <!--确认订单信息-->
@@ -157,22 +164,18 @@
                 <tbody>
                     <tr>
                         <td>
-                            <img src="./订单信息_files/1468294171.jpg" width="78" height="78" />
+                            <img src="" width="78" height="78" />
                             <div>
                                 <!-- <p>Forever 系列 经典款 30分 F色</p>
                                 <p></p> -->
-                                FOREVER 系列  经典款
-
-                                30分
-
-                                F色
+                                FOREVER 系列  经典款 30分 F色
                                 <p></p>
                             </div>
                         </td>
                         <td>
                             白18K金
                         </td>
-                        <td>						    24						    						</td>
+                        <td>24</td>
                         <td></td>
                         <td>
                             <strong>¥13009.00</strong>
@@ -182,10 +185,8 @@
             </table>
         </div>
         <!--确认订单信息end-->
-       
-      
         <!--订单留言备注-->
-        <div class="order_remark fix">
+        <div class="order_remark clearfix">
             <div class="order_info">
                 <h4>订单留言/备注</h4>
             </div>
@@ -208,7 +209,9 @@
         </div>
     </div>
     <!--订单结算end-->
+    <div class="top_zhibao">
+        <img src="~/Content/images/index/h_50.gif">
+    </div>
 </div>
 <!--主体内容end-->
-<div class="dr_blackwall" style="display: none;"></div>
 <!--底部-->
