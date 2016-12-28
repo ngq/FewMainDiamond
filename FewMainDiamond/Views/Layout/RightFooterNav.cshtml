@@ -1,16 +1,32 @@
-﻿<!--右侧客服导航开始-->
+﻿@using FewMain.WebHelper.CurrentContext
+<!--右侧客服导航开始-->
 <div class="chat_f1">
     <div class="chat_f1_expr" style="height: 800px; display: block;">
         <!------------>
         <div class="list">
-            <b><img src="~/Content/images/base/1_03.png" /></b>
-            <div class="detail" style="width:136px;  margin-left:-136px; height:200px; ">
-                <span class="mem">
-                    <img src="~/Content/images/base/1_01.png" />
-                    <li><a href="http://www.qydiamond.com/user/user_out/out/2.html" target="_top">退出</a></li>
-                    <li><a href="http://www.qydiamond.com/member/index.html" target="_blank">会员中心</a></li>
-                </span>
-            </div>
+            <b><img src="~/Content/images/base/1_03.png"/></b>
+            @if (CurrentUserContext.Current.IsLogin)
+            {
+                <div class="detail" style="width: 136px; margin-left: -136px; height: 200px;">
+                    <span class="mem">
+                        <img src="~/Content/images/base/1_01.png" />
+                        <li><a href="@Url.Action("LoginOut","Account")" target="_top">退出</a></li>
+                        <li><a href="@Url.Action("Index","Member")" target="_blank">会员中心</a></li>
+                    </span>
+                </div>
+            }
+            else
+            {
+                <div class="detail" style="width: 136px; margin-left: -136px; height: 200px; display: none;">
+                    <span class="mem">
+                        <img src="http://www.qydiamond.com/Public/home/images/qq/1_01.png">
+                        <li><a href="@Url.Action("Register", "Account")" target="_blank">注册</a></li>
+                        <li><a href="@Url.Action("Login","Account")" target="_blank">登陆</a></li>
+                    </span>
+                </div>
+            }
+           
+            
         </div>
         <!------------>
         <div class="list kf1">
@@ -29,20 +45,20 @@
         </div>
         <!------------>
         <div class="list">
-            <b><a target="_blank" href="http://www.qydiamond.com/cart/index/class/1.html"><img src="~/Content/images/base/1_05.png" /></a></b>
+            <b><a target="_blank" href="@Url.Action("index","Cart")"><img src="~/Content/images/base/1_05.png" /></a></b>
             <div class="detail" style="width:136px;  margin-left:-136px; ">
                 <span class="mem" style="height:120px;">
                     购物车数量为
                     <b> 0&nbsp;<font style="font-weight:lighter">件商品</font></b>
-                    <li><a href="http://www.qydiamond.com/cart/index/class/1.html" target="_blank">购物车</a> </li>
+                    <li><a href="@Url.Action("index","Cart")" target="_blank">购物车</a> </li>
                 </span>
             </div>
         </div>
         <!------------>
         <div class="list">
-            <b><a target="_blank" href="http://www.qydiamond.com/member/index"><img src="~/Content/images/base/1_07.png" /></a></b>
+            <b><a target="_blank" href="@Url.Action("Index","Order")"><img src="~/Content/images/base/1_07.png" /></a></b>
             <div class="detail">
-                <span><a target="_blank" href="http://www.qydiamond.com/member/index">我的订单</a></span>
+                <span><a target="_blank" href="@Url.Action("Index","Order")">我的订单</a></span>
             </div>
         </div>
         <!------------>

@@ -1,0 +1,325 @@
+dl, dt, dd, label, legend, table, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    font-style: normal;
+}
+body {
+    background: #FFF;
+}
+.w1000 {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.clearfix:after {
+    content: " ";
+    display: block;
+    visibility: hidden;
+    clear: both;
+    height: 0;
+    line-height: 0;
+}
+
+.fr {
+    float: right;
+    display: inline;
+}
+
+.shoppingcart, .checkstand {
+    font-family: "宋体";
+    color: #666;
+}
+
+/*a:link {
+    color: #C67C59;
+}
+
+a:hover {
+    color: #d49e85;
+}
+
+a:visited {
+    color: #C67C59;
+}*/
+
+a.link_btn1 {
+    display: inline-block;
+    padding: 6px 10px;
+    color: #C67C59;
+    border: 1px solid #C67C59;
+    font-size: 12px;
+    margin-right: 10px;
+}
+
+    a.link_btn1:hover {
+        color: #D49E85;
+        border: 1px solid #d49e85;
+    }
+
+a.link_btn2:hover {
+    background: #d49e85;
+}
+
+.checkstand {
+    margin: 40px auto;
+    position: relative;
+}
+
+.checkstand_head {
+    *height: 45px;
+}
+
+    .checkstand_head h3 {
+        border-left: 2px solid #c67c59;
+        font-size: 18px;
+        font-family: "微软雅黑";
+        color: #333;
+        padding-left: 15px;
+        display: inline-block;
+        float: left;
+    }
+
+.shopping_steps div {
+    width: 198px;
+    float: left;
+    text-align: center;
+    color: #ccc;
+    font-size: 12px;
+}
+
+.shopping_steps span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 23px;
+    color: #fff;
+    letter-spacing: -2px;
+    margin-bottom: 10px;
+    background: #ccc url(../images/cart/steps_bg.png) center no-repeat;
+}
+
+.sp_steps1 span {
+    background-position: left center;
+}
+
+.sp_steps3 span {
+    background-position: right center;
+}
+
+.shopping_steps .steps_active span {
+    background-color: #7abd54;
+}
+
+.shopping_steps .steps_active p {
+    color: #7abd54;
+}
+
+.shopping_steps .steps_selected span {
+    background-color: #caecb6;
+}
+
+.shopping_steps .steps_selected p {
+    color: #caecb6;
+}
+ 
+ 
+ 
+.shoppingcart {
+    margin: 40px auto;
+}
+
+.shoppingcart_table {
+    width: 100%;
+    border: 0;
+    margin: 20px 0;
+    font-size: 12px;
+    border: 1px solid #e0e0e0;
+}
+
+    .shoppingcart_table thead {
+        background: #f3f3f3;
+        border: 1px solid #e0e0e0;
+    }
+
+    .shoppingcart_table tbody {
+        background: #fcfcfc;
+        border: 1px solid #e0e0e0;
+    }
+
+    .shoppingcart_table tr {
+    }
+
+        .shoppingcart_table tr td {
+            padding: 15px 0;
+        }
+
+    .shoppingcart_table tbody tr td {
+        line-height: 30px;
+    }
+
+    .shoppingcart_table thead input, .scfoot_left input {
+        margin: 0 4px 0 0 !important;
+        vertical-align: middle;
+        position: relative;
+        top: -1px;
+    }
+
+.shoppingcart_tbody input[type="checkbox"] {
+    margin-top: 40px;
+}
+
+.nopadding {
+    padding: 0 !important;
+}
+
+.nopad_left {
+    padding-left: 0 !important;
+}
+
+.padleft_20 {
+    padding-left: 20px !important;
+}
+
+.border_dashed {
+    border-bottom: 1px dashed #e0e0e0;
+}
+
+.shoppingcart_table strong {
+    margin-right: 20px;
+}
+
+.ring_detail strong, .ring_detail div {
+    display: inline-block;
+    vertical-align: text-top;
+    line-height: 20px;
+    *display: inline;
+    *float: left;
+}
+
+.ring_detail p {
+    color: #999;
+}
+
+.ringdetail_hide {
+    width: 200px;
+}
+
+    .ringdetail_hide div {
+        display: none;
+    }
+
+.ringdetail_show {
+    background: url('../images/cart/right.png') right center no-repeat;
+    padding-right: 10px;
+}
+
+    .ringdetail_show.active {
+        background: url('../images/cart/bottom.png') right center no-repeat;
+    }
+
+.shoppingcart_pay {
+    height: 50px;
+    background: #f9f9f9;
+    border: 1px solid #f1f1f1;
+    font-size: 12px;
+}
+
+    .shoppingcart_pay p {
+        display: inline-block;
+        margin-right: 15px;
+        line-height: 50px;
+        *display: inline;
+    }
+
+.scfoot_left {
+    float: left;
+    padding-left: 20px;
+}
+
+.scfoot_right {
+    float: right;
+}
+
+.scfoot_left a {
+    color: #666;
+}
+
+    .scfoot_left a:hover {
+        color: #C67C59;
+    }
+
+.scfoot_right strong {
+    color: #ff5d5b;
+    margin: 0 1px;
+    font-size: 13px;
+}
+
+.scfoot_right a {
+    display: inline-block;
+    width: 160px;
+    letter-spacing: 1px;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 50px;
+    background: #C67C59;
+    color: #fff;
+    text-align: center;
+    margin-left: 30px;
+}
+
+.shopping_security {
+    font-size: 12px;
+    text-align: right;
+    margin-top: 10px;
+}
+
+    .shopping_security span {
+        display: inline-block;
+        height: 20px;
+        line-height: 20px;
+        margin-left: 20px;
+        padding-left: 25px;
+    }
+
+        .shopping_security span.security2 {
+            background-position: 0 -36px;
+        }
+
+        .shopping_security span.security3 {
+            background-position: 0 -70px;
+        }
+
+.shopping_security {
+    font-size: 12px;
+    text-align: right;
+    margin-top: 10px;
+}
+
+    .shopping_security span {
+        display: inline-block;
+        height: 20px;
+        line-height: 20px;
+        margin-left: 20px;
+        padding-left: 25px;
+        background: url(../images/cart/ico-service.png) 0 0 no-repeat;
+    }
+
+        .shopping_security span.security2 {
+            background-position: 0 -36px;
+        }
+
+        .shopping_security span.security3 {
+            background-position: 0 -70px;
+        }
+
+.shoppingcart_none {
+    margin: 40px 0;
+    background: #fafafa;
+    border: 1px solid #f1f1f1;
+}
+.top_zhibao {
+    margin-top: 40px;
+}

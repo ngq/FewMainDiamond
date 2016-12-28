@@ -1,0 +1,214 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section scripts
+{
+    <link href="~/Content/css/order.css" rel="stylesheet" />
+<script src="~/Scripts/FewMain/order.js"></script>
+}
+
+<!--主体内容-->
+<div class="checkstand w1000">
+    <!--购物车标题流程-->
+    <div class="checkstand_head clearfix">
+        <h3>填写订单信息</h3>
+        <div class="shopping_steps fr">
+            <!--已操作步骤class=steps_selected,当前步骤class=steps_active-->
+            <div class="sp_steps1 steps_selected">
+                <span>1</span>
+                <p>1.我的购物车</p>
+            </div>
+            <div class="sp_steps2 steps_active">
+                <span>2</span>
+                <p>2. 填写订单信息 / 签署真爱协议</p>
+            </div>
+            <div class="sp_steps3">
+                <span>3</span>
+                <p>3.付款 完成购买</p>
+            </div>
+        </div>
+    </div>
+    <!--购物车标题流程 end-->
+    <div class="checkstand_con">
+        <!--收货人信息-->
+        <div class="order_info">
+            <h4>收货人信息</h4>
+        </div>
+        <div class="order_address">
+
+            <!--首次添加地址-->
+            <div class="address_edit address_popup" style="display: none;">
+                <div class="Popup_close address_close"></div>
+                <h4>添加新收货地址</h4>
+                <form id="address-form">
+                    <div>
+                        <label><span>*</span>收货人</label>
+                        <input type="text" name="data[username]" id="username" value="" placeholder="请您填写收货人姓名" />
+                        <input type="hidden" name="data[id]" id="data-id" value="" />
+                    </div>
+                    <div class="address_select">
+                        <label><span>*</span>国家/区域</label>
+                        <select name="data[province]" id="province">
+                            <option selected="selected">请选择省份</option>
+                            <option>省份</option>
+                          
+                        </select>
+                        <select name="data[city]" id="city" data-value="0">
+                            <option selected="selected">请选择城市</option>
+                            <option>城市</option>
+                        </select>
+                        <select name="data[distrct]" id="distrct" data-value="0">
+                            <option selected="selected">请选择区县</option>
+                            <option>区县</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label><span>*</span>详细地址</label>
+                        <input type="text" name="data[address]" id="address" value="" placeholder="请您填写收货人详细地址" class="width300" />
+                    </div>
+                    <div>
+                        <label>邮政编码</label>
+                        <input type="text" name="data[postcode]" id="postcode" value="" placeholder="请您填写邮政编码" />
+                    </div>
+                    <div>
+                        <label><span>*</span>手机号码</label>
+                        <input type="text" name="data[mobile]" id="mobile" value="" class="" placeholder="请您填写收货人手机号码" />
+                        <span class="error_info" style="display: none">手机号校验正确性</span>
+                    </div>
+                    <div>
+                        <label>固定电话</label>
+                        <!-- <input type="text" name="" id="telephone1" value="" class="width46" /> -
+                        <input type="text" name="" id="telephone2" value="" class="width46" /> -
+                        <input type="text" name="" id="telephone3" value="" class="width126" /> -->
+                        <input type="text" name="data[phone]" id="telephone" value="" placeholder="如:国家号-区号-固定电话" />
+                    </div>
+                    <div>
+                        <label>电子邮箱</label>
+                        <input type="text" name="data[email]" id="email" value="" placeholder="请您填写收货人电子邮箱" />
+                    </div>
+                </form>
+                <div class="confirm_btn">
+                    <a href="javascript:;" class="link_btn1 distribution">配送到此地址</a>
+                    <a href="javascript:;" class="address_close">取消</a>
+                </div>
+            </div>
+            <!--首次添加地址end-->
+            <div class="address_lists" style="display:block;">
+                <!-- <div class="address_list select">
+                    <span class="sendto">寄送至</span>
+                    <div>
+                        <input type="radio" name="addressInfo" id="" value="" checked="checked"/>
+                        <p>广东省 深圳市 南山区 俄还街道 科技难受的地方29号下次的撒网大厦20地方上碱碱（斯蒂芬）<span class="address_phone">15912345678</span><span>默认地址</span></p>
+                    </div>
+                    <a href="javascript:;">修改本地址</a>
+                </div> -->
+
+                <div class="address_list select">
+                    <span class="sendto">寄送至</span>
+                    <div>
+                        <input type="radio" name="addressInfo" id="" value="" checked="checked" />
+                        <p id="address" data-id="12682">河北省  唐山市  路南区 而突然v（地方）<span class="address_phone">13255475846</span></p>
+                    </div>
+                    <!-- <a id="modify" href="/order?id=12682">修改本地址</a> -->
+                    <span><a class="dis-mod" href="javascript:;" data-id="12682">修改</a> <a class="dis-del" href="http://www.darryring.com/order/address/delete?id=12682" style="margin:0 32px 0 10px;">删除</a></span>
+                </div>
+
+                <!-- <div class="address_list address_hide">
+                    <span class="sendto">寄送至</span>
+                    <div>
+                        <input type="radio" name="addressInfo" id="" value=""/>
+                        <p>广东省 深圳市 南山区 俄还街道 科技难受的地方29号下次的撒网大厦20地方上碱碱（斯蒂芬）<span class="address_phone">15912345678</span></p>
+                    </div>
+                    <a href="javascript:;">修改本地址</a>
+                </div> -->
+                <div class="address_option">
+                    <a href="javascript:;" class="address_other">使用其他地址</a>
+                    <a href="javascript:;" class="address_add">添加新收货地址&gt;&gt;</a>
+                </div>
+            </div>
+            <div class="delivery_notic">
+                <h3>送货通知</h3>
+                <p><input type="radio" name="noticmsg" id="" value="" checked="checked" class="msg_receiver" data-type="1" data-addr="have" />发货短信通知到 收货人</p>
+                <p><input type="radio" name="noticmsg" id="" value="" class="msg_others" data-type="2" />发货短信通知到 其他联系人</p>
+                <p class="msg_r"><label for="phone_number">13255475846</label> <a href="javascript:;" class="msg_change">修改</a></p>
+                <p class="msg_o"><input type="text" name="" id="receipt-phone" value="" placeholder="请输入接收短信手机号码" /><a href="javascript:;" class="link_btn1 msg_confirm">确认</a></p>
+
+            </div> 
+        </div>
+        <!--收货人信息end-->
+        <!--确认订单信息-->
+        <div class="confirm_info">
+            <div class="order_info">
+                <h4>确认订单信息<span>预计发货时间: 20个工作日内（付款成功后）</span></h4>
+                <a href="@Url.Action("Index","Cart")"> &lt;&lt; 返回修改购物车 </a>
+            </div>
+            <table class="confirmInfo_table" cellpadding="20" border="1">
+                <thead>
+                    <tr>
+                        <td>商品名称</td>
+                        <td>材质</td>
+                        <td>手寸/尺寸</td>
+                        <td>刻字（内容）</td>
+                        <td>购买价格</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <img src="./订单信息_files/1468294171.jpg" width="78" height="78" />
+                            <div>
+                                <!-- <p>Forever 系列 经典款 30分 F色</p>
+                                <p></p> -->
+                                FOREVER 系列  经典款
+
+                                30分
+
+                                F色
+                                <p></p>
+                            </div>
+                        </td>
+                        <td>
+                            白18K金
+                        </td>
+                        <td>						    24						    						</td>
+                        <td></td>
+                        <td>
+                            <strong>¥13009.00</strong>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--确认订单信息end-->
+       
+      
+        <!--订单留言备注-->
+        <div class="order_remark fix">
+            <div class="order_info">
+                <h4>订单留言/备注</h4>
+            </div>
+            <textarea name="" id="remark"></textarea>
+            <div class="remark_right">
+                <p>如有特殊要求，请留言，客服会第一时间联系您的；</p>
+                <p> 或者直接联系   <a href="javascript:showxiaon(&#39;kf_9883_1402631963601&#39;);">在线客服 &gt;</a></p>
+            </div>
+        </div>
+        <!--订单留言备注end-->
+    </div>
+    <!--订单结算-->
+    <div class="shoppingcart_pay clearfix pay_bottom">
+        <div class="scfoot_right">
+            <p>已选<strong>1</strong>件商品</p>
+            <p>总价：<strong>¥13009</strong></p>
+            <p>免运费</p>
+            <!-- <a href="/order/pay" class="link_btn2">立即结算</a> -->
+            <a href="javascript:;" class="link_btn2" id="order-post">立即结算</a>
+        </div>
+    </div>
+    <!--订单结算end-->
+</div>
+<!--主体内容end-->
+<div class="dr_blackwall" style="display: none;"></div>
+<!--底部-->

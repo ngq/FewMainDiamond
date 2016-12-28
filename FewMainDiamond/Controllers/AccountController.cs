@@ -73,6 +73,7 @@ namespace FewMainDiamond.Controllers
         /// </summary>
         /// <param name="codeVal"></param>
         /// <returns></returns>
+        [NonAction]
         public ActionResult CheckLoginValidate(string codeVal)
         {
             if (CacheHelper.Session["logincode"].ToString() != codeVal.ToLower())

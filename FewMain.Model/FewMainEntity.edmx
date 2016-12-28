@@ -21,10 +21,6 @@
       <End Role="FewMainCart" EntitySet="FewMainCart" />
       <End Role="FewMainCartDetail" EntitySet="FewMainCartDetail" />
     </AssociationSet>
-    <AssociationSet Name="FewMainCartFewMainCartType" Association="FewMainDiamondModel.Store.FewMainCartFewMainCartType">
-      <End Role="FewMainCart" EntitySet="FewMainCart" />
-      <End Role="FewMainCartType" EntitySet="FewMainCartType" />
-    </AssociationSet>
     <AssociationSet Name="FewMainOrderTypeFewMainOrder" Association="FewMainDiamondModel.Store.FewMainOrderTypeFewMainOrder">
       <End Role="FewMainOrder" EntitySet="FewMainOrder" />
       <End Role="FewMainOrderType" EntitySet="FewMainOrderType" />
@@ -32,6 +28,10 @@
     <AssociationSet Name="FewMainOrderFewMainOrderDetail" Association="FewMainDiamondModel.Store.FewMainOrderFewMainOrderDetail">
       <End Role="FewMainOrder" EntitySet="FewMainOrder" />
       <End Role="FewMainOrderDetail" EntitySet="FewMainOrderDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FewMainCartFewMainCartType" Association="FewMainDiamondModel.Store.FewMainCartFewMainCartType">
+      <End Role="FewMainCart" EntitySet="FewMainCart" />
+      <End Role="FewMainCartType" EntitySet="FewMainCartType" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="FewMainArticle">
@@ -98,7 +98,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="FewMainCartTypeId" Type="int" Nullable="false" />
+    <Property Name="CartId" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="FewMainCartDetail">
     <Key>
@@ -112,6 +112,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderId" Type="nvarchar(max)" Nullable="false" />
     <Property Name="FewMainOrderTypeId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="FewMainOrderDetail">
@@ -126,12 +127,15 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TypeName" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="FewMainCartType">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TypeName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FewMainCartId" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="FewMainCartFewMainCartDetail">
     <End Role="FewMainCart" Type="FewMainDiamondModel.Store.FewMainCart" Multiplicity="1" />
@@ -142,18 +146,6 @@
       </Principal>
       <Dependent Role="FewMainCartDetail">
         <PropertyRef Name="FewMainCartId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FewMainCartFewMainCartType">
-    <End Role="FewMainCart" Type="FewMainDiamondModel.Store.FewMainCart" Multiplicity="*" />
-    <End Role="FewMainCartType" Type="FewMainDiamondModel.Store.FewMainCartType" Multiplicity="1" />
-    <ReferentialConstraint>
-      <Principal Role="FewMainCartType">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="FewMainCart">
-        <PropertyRef Name="FewMainCartTypeId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -181,6 +173,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FewMainCartFewMainCartType">
+    <End Role="FewMainCart" Type="FewMainDiamondModel.Store.FewMainCart" Multiplicity="1" />
+    <End Role="FewMainCartType" Type="FewMainDiamondModel.Store.FewMainCartType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FewMainCart">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FewMainCartType">
+        <PropertyRef Name="FewMainCartId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -201,10 +205,6 @@
           </AssociationSet>
           <EntitySet Name="FewMainOrderType" EntityType="FewMainDiamondModel.FewMainOrderType" />
           <EntitySet Name="FewMainCartType" EntityType="FewMainDiamondModel.FewMainCartType" />
-          <AssociationSet Name="FewMainCartFewMainCartType" Association="FewMainDiamondModel.FewMainCartFewMainCartType">
-            <End Role="FewMainCart" EntitySet="FewMainCart" />
-            <End Role="FewMainCartType" EntitySet="FewMainCartType" />
-          </AssociationSet>
           <AssociationSet Name="FewMainOrderTypeFewMainOrder" Association="FewMainDiamondModel.FewMainOrderTypeFewMainOrder">
             <End Role="FewMainOrder" EntitySet="FewMainOrder" />
             <End Role="FewMainOrderType" EntitySet="FewMainOrderType" />
@@ -212,6 +212,10 @@
           <AssociationSet Name="FewMainOrderFewMainOrderDetail" Association="FewMainDiamondModel.FewMainOrderFewMainOrderDetail">
             <End Role="FewMainOrder" EntitySet="FewMainOrder" />
             <End Role="FewMainOrderDetail" EntitySet="FewMainOrderDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FewMainCartFewMainCartType" Association="FewMainDiamondModel.FewMainCartFewMainCartType">
+            <End Role="FewMainCart" EntitySet="FewMainCart" />
+            <End Role="FewMainCartType" EntitySet="FewMainCartType" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="FewMainArticle">
@@ -279,9 +283,8 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="CartDetail" Relationship="FewMainDiamondModel.FewMainCartFewMainCartDetail" FromRole="FewMainCart" ToRole="FewMainCartDetail" />
-          <NavigationProperty Name="CartType" Relationship="FewMainDiamondModel.FewMainCartFewMainCartType" FromRole="FewMainCart" ToRole="FewMainCartType" />
-          <Property Name="FewMainCartTypeId" Type="Int32" Nullable="false" />
           <Property Name="CartId" Type="String" Nullable="false" />
+          <NavigationProperty Name="CartType" Relationship="FewMainDiamondModel.FewMainCartFewMainCartType" FromRole="FewMainCart" ToRole="FewMainCartType" />
         </EntityType>
         <EntityType Name="FewMainCartDetail">
           <Key>
@@ -330,26 +333,17 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="Order" Relationship="FewMainDiamondModel.FewMainOrderTypeFewMainOrder" FromRole="FewMainOrderType" ToRole="FewMainOrder" />
+          <Property Name="TypeName" Type="String" Nullable="false" />
         </EntityType>
         <EntityType Name="FewMainCartType">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeName" Type="String" Nullable="false" />
           <NavigationProperty Name="Cart" Relationship="FewMainDiamondModel.FewMainCartFewMainCartType" FromRole="FewMainCartType" ToRole="FewMainCart" />
+          <Property Name="FewMainCartId" Type="Int32" Nullable="false" />
         </EntityType>
-        <Association Name="FewMainCartFewMainCartType">
-          <End Type="FewMainDiamondModel.FewMainCart" Role="FewMainCart" Multiplicity="*" />
-          <End Type="FewMainDiamondModel.FewMainCartType" Role="FewMainCartType" Multiplicity="1" />
-          <ReferentialConstraint>
-            <Principal Role="FewMainCartType">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="FewMainCart">
-              <PropertyRef Name="FewMainCartTypeId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FewMainOrderTypeFewMainOrder">
           <End Type="FewMainDiamondModel.FewMainOrder" Role="FewMainOrder" Multiplicity="*" />
           <End Type="FewMainDiamondModel.FewMainOrderType" Role="FewMainOrderType" Multiplicity="1" />
@@ -371,6 +365,18 @@
             </Principal>
             <Dependent Role="FewMainOrderDetail">
               <PropertyRef Name="FewMainOrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FewMainCartFewMainCartType">
+          <End Type="FewMainDiamondModel.FewMainCart" Role="FewMainCart" Multiplicity="1" />
+          <End Type="FewMainDiamondModel.FewMainCartType" Role="FewMainCartType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FewMainCart">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FewMainCartType">
+              <PropertyRef Name="FewMainCartId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -448,7 +454,7 @@
       <EntityTypeMapping TypeName="IsTypeOf(FewMainDiamondModel.FewMainCart)">
         <MappingFragment StoreEntitySet="FewMainCart">
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="FewMainCartTypeId" ColumnName="FewMainCartTypeId" />
+          <ScalarProperty Name="CartId" ColumnName="CartId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -464,6 +470,7 @@
       <EntityTypeMapping TypeName="IsTypeOf(FewMainDiamondModel.FewMainOrder)">
         <MappingFragment StoreEntitySet="FewMainOrder">
           <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
           <ScalarProperty Name="FewMainOrderTypeId" ColumnName="FewMainOrderTypeId" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -480,6 +487,7 @@
       <EntityTypeMapping TypeName="IsTypeOf(FewMainDiamondModel.FewMainOrderType)">
         <MappingFragment StoreEntitySet="FewMainOrderType">
           <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -487,6 +495,8 @@
       <EntityTypeMapping TypeName="IsTypeOf(FewMainDiamondModel.FewMainCartType)">
         <MappingFragment StoreEntitySet="FewMainCartType">
           <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <ScalarProperty Name="FewMainCartId" ColumnName="FewMainCartId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
