@@ -3,3 +3,253 @@
     ViewBag.Title = "钻石首饰_钻石定制|珠宝镶嵌|钻石价格|裸钻批发|";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@section scripts
+{
+
+    <script src="~/Scripts/laypage/laypage.js"></script>
+    <script>
+        $(function () {
+            //分页脚本
+            laypage({
+                cont: $('.pagination'), //容器。值支持id名、原生dom对象，jquery对象,
+                pages: 100, //总页数
+                skip: true, //是否开启跳页
+                skin: '#77C7C8',
+                groups: 7 //连续显示分页数
+            });
+        });
+
+        function Filter(a, b) {
+            var $ = function (e) { return document.getElementById(e); }
+            var ipts = $('filterForm').getElementsByTagName('input'), result = [];
+            for (var i = 0, l = ipts.length; i < l; i++) {
+                if (ipts[i].getAttribute('to') == 'filter') {
+                    result.push(ipts[i]);
+                }
+            }
+            if ($(a)) {
+                $(a).value = b;
+                for (var j = 0, len = result.length; j < len; j++) {
+
+                    if (result[j].value == '' || result[j].value == '0') {
+                        result[j].parentNode.removeChild(result[j]);
+                    }
+                }
+                document.forms['filterForm'].submit();
+            }
+            return false;
+        }
+    </script>
+}
+<div class="banner2">
+    <div class="box">
+        <img src="/Content/images/mall/20151207214740_62907.jpg" />
+    </div>
+</div>
+<div id="position">
+    <div class="box">
+        当前位置：<a href="http://www.qydiamond.com/product/index/nid/4.html">特价商城</a>
+    </div>
+</div>
+<div class="main">
+
+    <div class="prosearch">
+        <form id="filterForm" name="form1" method="get" action="http://www.qydiamond.com/product/index.html">
+            <input id="nid" type="hidden" value="4" name="nid" to="filter" />
+            <input id="texture" type="hidden" value="" name="texture" to="filter" />
+            <input id="payment" type="hidden" value="" name="payment" to="filter" />
+            <input id="use" type="hidden" value="" name="use" to="filter" />
+            <input id="size" type="hidden" value="" name="size" to="filter" />
+            <input id="shape" type="hidden" value="" name="shape" to="filter" />
+            <input id="title1" type="hidden" value="" name="title1" to="filter" />
+
+            <ul class="navul">
+                <li class="navli">
+                    <h3>按类别：</h3>
+                    <ul class="pronav">
+                        <li class="in all"><a pid="0" href="javascript:Filter(&#39;nid&#39;,&#39;4&#39;);">全部</a></li>
+                        <li class=""><a nid="20" href="javascript:Filter(&#39;nid&#39;,&#39;20&#39;);">女戒</a></li>
+                        <li class=""><a nid="21" href="javascript:Filter(&#39;nid&#39;,&#39;21&#39;);">男戒</a></li>
+                        <li class=""><a nid="23" href="javascript:Filter(&#39;nid&#39;,&#39;23&#39;);">对戒</a></li>
+                        <li class=""><a nid="26" href="javascript:Filter(&#39;nid&#39;,&#39;26&#39;);">吊坠</a></li>
+                        <li class=""><a nid="27" href="javascript:Filter(&#39;nid&#39;,&#39;27&#39;);">耳钉</a></li>
+                        <li class=""><a nid="28" href="javascript:Filter(&#39;nid&#39;,&#39;28&#39;);">手链</a></li>
+                        <li class=""><a nid="24" href="javascript:Filter(&#39;nid&#39;,&#39;24&#39;);">女戒指环</a></li>
+                        <li class=""><a nid="25" href="javascript:Filter(&#39;nid&#39;,&#39;25&#39;);">男戒指环</a></li>
+                    </ul>
+                </li>
+                <li class="navli">
+                    <h3>按形状：</h3>
+                    <ul class="pronav">
+                        <li class="in all"><a href="javascript:Filter(&#39;shape&#39;,&#39;0&#39;);">全部</a></li>
+                        <li class=""><a shape="170" href="javascript:Filter(&#39;shape&#39;,&#39;170&#39;);">圆形</a></li>
+                        <li class=""><a shape="171" href="javascript:Filter(&#39;shape&#39;,&#39;171&#39;);">公主方</a></li>
+                        <li class=""><a shape="172" href="javascript:Filter(&#39;shape&#39;,&#39;172&#39;);">椭圆形</a></li>
+                        <li class=""><a shape="173" href="javascript:Filter(&#39;shape&#39;,&#39;173&#39;);">心形</a></li>
+                        <li class=""><a shape="174" href="javascript:Filter(&#39;shape&#39;,&#39;174&#39;);">橄榄形</a></li>
+                        <li class=""><a shape="175" href="javascript:Filter(&#39;shape&#39;,&#39;175&#39;);">雷蒂恩</a></li>
+                        <li class=""><a shape="176" href="javascript:Filter(&#39;shape&#39;,&#39;176&#39;);">垫形</a></li>
+                        <li class=""><a shape="177" href="javascript:Filter(&#39;shape&#39;,&#39;177&#39;);">祖母绿</a></li>
+                        <li class=""><a shape="178" href="javascript:Filter(&#39;shape&#39;,&#39;178&#39;);">梨形</a></li>
+                    </ul>
+                </li>
+                <li class="navli">
+                    <h3>按材质：</h3>
+                    <ul class="pronav">
+                        <li class="in all"><a href="javascript:Filter(&#39;texture&#39;,&#39;0&#39;);">全部</a></li>
+                        <li class=""><a texture="107" href="javascript:Filter(&#39;texture&#39;,&#39;107&#39;);">18K白金</a></li>
+                        <li class=""><a texture="108" href="javascript:Filter(&#39;texture&#39;,&#39;108&#39;);">18K玫瑰金</a></li>
+                        <li class=""><a texture="109" href="javascript:Filter(&#39;texture&#39;,&#39;109&#39;);">PT950铂金</a></li>
+                        <li class=""><a texture="111" href="javascript:Filter(&#39;texture&#39;,&#39;111&#39;);">18K黄金</a></li>
+                    </ul>
+                </li>
+                <li class="navli" style="border:none;">
+                    <h3>按款式：</h3>
+                    <ul class="pronav">
+                        <li class="in all"><a href="javascript:Filter(&#39;payment&#39;,&#39;0&#39;);">全部</a></li>
+                        <li class=""><a payment="115" href="javascript:Filter(&#39;payment&#39;,&#39;115&#39;);">最新款</a></li>
+                        <li class=""><a payment="116" href="javascript:Filter(&#39;payment&#39;,&#39;116&#39;);">流行款</a></li>
+                        <li class=""><a payment="117" href="javascript:Filter(&#39;payment&#39;,&#39;117&#39;);">畅销款</a></li>
+                        <li class=""><a payment="118" href="javascript:Filter(&#39;payment&#39;,&#39;118&#39;);">经典款</a></li>
+                        <li class=""><a payment="119" href="javascript:Filter(&#39;payment&#39;,&#39;119&#39;);">大牌款</a></li>
+                        <li class=""><a payment="120" href="javascript:Filter(&#39;payment&#39;,&#39;120&#39;);">个性款</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="search">
+                <h6>商品名称：</h6><input id="proname" name="proname" type="text" style="width:180px" value="" />
+                <h6 style="padding-left:20px;">价格：</h6>
+
+                <input name="price1" type="text" style="width:80px" value="1" /><b>￥ —</b>
+                <input name="price2" type="text" style="width:80px" value="100000" /><b>￥</b>
+
+                <a class="test" href="javascript:Filter(&#39;title1&#39;,&#39;&#39;);">搜 索</a> 
+                <a class="test2" href="http://www.qydiamond.com/product/index/nid/4.html">重 置</a>
+                 
+            </div>
+        </form>
+    </div>
+
+    <div class="product">
+        <ul class="leftmargin">
+            <li>
+                <a href="http://www.qydiamond.com/content/product/nid/20/id/332.html"><img src="/Content/images/mall/20160427110358_35556.jpg" alt="六爪钻戒 白18K金六爪皇冠女戒" /></a>
+                <div class="pro-name">六爪钻戒 白18K金六爪皇冠女戒</div>
+                <div class="product-price">¥12900.00</div>
+                <span>收藏 </span>
+                <span>立即购买</span>
+            </li>
+            <li>
+                <a href="http://www.qydiamond.com/content/product/nid/20/id/330.html"><img src="/Content/images/mall/20160124101418_16915.jpg" alt="18K玫瑰金小清新蝴蝶钻戒" /></a>
+                <div class="pro-name">六爪钻戒 白18K金六爪皇冠女戒</div>
+                <div class="product-price">¥12900.00</div>
+                <span>收藏 </span>
+                <span>立即购买</span>
+            </li>
+            <li>
+                <a href="http://www.qydiamond.com/content/product/nid/20/id/329.html"><img src="/Content/images/mall/20160124094757_70018.jpg" alt="18K白金雪花六爪扭臂钻戒" /></a>
+                <div class="pro-name">六爪钻戒 白18K金六爪皇冠女戒</div>
+                <div class="product-price">¥12900.00</div>
+                <span>收藏 </span>
+                <span>立即购买</span>
+            </li>
+            <li>
+                <a href="http://www.qydiamond.com/content/product/nid/28/id/325.html"><img src="/Content/images/mall/20150902204529_69268.jpg" alt="帕尔瓦蒂·佩-白18K金钻石手链" /></a>
+                <div class="pro-name">六爪钻戒 白18K金六爪皇冠女戒</div>
+                <div class="product-price">¥12900.00</div>
+                <span>收藏 </span>
+                <span>立即购买</span>
+            </li>
+            <li>
+                <a href="http://www.qydiamond.com/content/product/nid/28/id/324.html"><img src="/Content/images/mall/20150902204356_52508.jpg" alt="伊人-白18K金钻石手链" /></a>
+                <div class="pro-name">六爪钻戒 白18K金六爪皇冠女戒</div>
+                <div class="product-price">¥12900.00</div>
+                <span>收藏 </span>
+                <span>立即购买</span>
+            </li>
+            <li>
+                <a href="http://www.qydiamond.com/content/product/nid/28/id/323.html"><img src="/Content/images/mall/20150902204238_31711.jpg" alt="第六感-白18K金钻石手链" /></a>
+                <div class="pro-name">六爪钻戒 白18K金六爪皇冠女戒</div>
+                <div class="product-price">¥12900.00</div>
+                <span>收藏 </span>
+                <span>立即购买</span>
+            </li>
+            <li>
+                <a href="http://www.qydiamond.com/content/product/nid/28/id/322.html"><img src="/Content/images/mall/20150902204107_31253.jpg" alt="茜茜公主-白18K金钻石手链" /></a>
+                <div class="pro-name">六爪钻戒 白18K金六爪皇冠女戒</div>
+                <div class="product-price">¥12900.00</div>
+                <span>收藏 </span>
+                <span>立即购买</span>
+            </li>
+            <li>
+                <a href="http://www.qydiamond.com/content/product/nid/28/id/321.html"><img src="/Content/images/mall/20150902203939_74264.jpg" alt="雅典娜-白18K金钻石手链" /></a>
+                <div class="pro-name">六爪钻戒 白18K金六爪皇冠女戒</div>
+                <div class="product-price">¥12900.00</div>
+                <span>收藏 </span>
+                <span>立即购买</span>
+            </li>
+            <li>
+                <a href="http://www.qydiamond.com/content/product/nid/28/id/320.html"><img src="/Content/images/mall/20150902203824_60509.jpg" alt="海伦-白18K金钻石手链" /></a>
+                <div class="pro-name">六爪钻戒 白18K金六爪皇冠女戒</div>
+                <div class="product-price">¥12900.00</div>
+                <span>收藏 </span>
+                <span>立即购买</span>
+            </li>
+            <li>
+                <a href="http://www.qydiamond.com/content/product/nid/28/id/319.html"><img src="/Content/images/mall/20150902203705_87678.jpg" alt="Angel Love-白18K金钻石手链" /></a>
+                <div class="pro-name">六爪钻戒 白18K金六爪皇冠女戒</div>
+                <div class="product-price">¥12900.00</div>
+                <span>收藏 </span>
+                <span>立即购买</span>
+            </li>
+            <li>
+                <a href="http://www.qydiamond.com/content/product/nid/28/id/318.html"><img src="/Content/images/mall/20150902203556_97673.jpg" alt="埃及艳后-白18K金钻石手链" /></a>
+                <div class="pro-name">六爪钻戒 白18K金六爪皇冠女戒</div>
+                <div class="product-price">¥12900.00</div>
+                <span>收藏 </span>
+                <span>立即购买</span>
+            </li>
+            <li>
+                <a href="http://www.qydiamond.com/content/product/nid/28/id/317.html"><img src="/Content/images/mall/20150902203430_29627.jpg" alt="卓越-白18K金钻石手链" /></a>
+                <div class="pro-name">六爪钻戒 白18K金六爪皇冠女戒</div>
+                <div class="product-price">¥12900.00</div>
+                <span>收藏 </span>
+                <span>立即购买</span>
+            </li>
+            <li>
+                <a href="http://www.qydiamond.com/content/product/nid/28/id/316.html"><img src="/Content/images/mall/20150902203253_45359.jpg" alt="天真-白18K金钻石手链" /></a>
+                <div class="pro-name">六爪钻戒 白18K金六爪皇冠女戒</div>
+                <div class="product-price">¥12900.00</div>
+                <span>收藏 </span>
+                <span>立即购买</span>
+            </li>
+            <li>
+                <a href="http://www.qydiamond.com/content/product/nid/28/id/315.html"><img src="/Content/images/mall/20150902203135_86426.jpg" alt="甜甜圈-白18K金钻石手链" /></a>
+                <div class="pro-name">六爪钻戒 白18K金六爪皇冠女戒</div>
+                <div class="product-price">¥12900.00</div>
+                <span>收藏 </span>
+                <span>立即购买</span>
+            </li>
+            <li>
+                <a href="http://www.qydiamond.com/content/product/nid/28/id/314.html"><img src="/Content/images/mall/20150902203017_21002.jpg" alt="眼眸-白18K金钻石手链" /></a>
+                <div class="pro-name">六爪钻戒 白18K金六爪皇冠女戒</div>
+                <div class="product-price">¥12900.00</div>
+                <span>收藏 </span>
+                <span>立即购买</span>
+            </li>
+            <li>
+                <a href="http://www.qydiamond.com/content/product/nid/28/id/314.html"><img src="/Content/images/mall/20150902203017_21002.jpg" alt="眼眸-白18K金钻石手链" /></a>
+                <div class="pro-name">六爪钻戒 白18K金六爪皇冠女戒</div>
+                <div class="product-price">¥12900.00</div>
+                <span>收藏 </span>
+                <span>立即购买</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="pagination"></div>
+
+
+
+</div>
