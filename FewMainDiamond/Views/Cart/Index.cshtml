@@ -1,0 +1,187 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section scripts
+{
+   
+<link href="~/Content/css/cart.css" rel="stylesheet" />
+<script src="/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/FewMain/cart.js"></script>
+ 
+ 
+}
+
+<div class="shoppingcart w1000">
+    <!--购物车标题流程-->
+    <div class="checkstand_head clearfix">
+        <h3>购物车</h3>
+        <div class="shopping_steps fr">
+            <!--已操作步骤class=steps_selected,当前步骤class=steps_active-->
+            <div class="sp_steps1 steps_active">
+                <span>1</span>
+                <p>1.我的购物车</p>
+            </div>
+            <div class="sp_steps2">
+                <span>2</span>
+                <p>2. 填写订单信息</p><!--首次购买订单流程-->
+                <!--<p>2. 填写订单信息 </p>再次购买订单流程-->
+            </div>
+            <div class="sp_steps3">
+                <span>3</span>
+                <p>3.付款 完成购买</p>
+            </div> 
+            
+        </div>
+    </div>
+    <div class="shoppingcart_list">
+        <table class="shoppingcart_table" border="1" cellpadding="10">
+            <thead>
+            <tr>
+                <td width="150px" class="padleft_20"><input type="checkbox" name="" id="" value="" checked="checked" class="check_all"/>全选</td>
+                <td width="500px" align="center">商品</td>
+                <td width="200px" align="center">价格</td>
+                <td width="150px" align="center" class="padright_20">操作</td>
+            </tr>
+            </thead>
+        </table>
+
+        <table class="shoppingcart_table shoppingcart_tbody" border="1" cellpadding="10">
+            <tbody>
+            <tr height="70px">
+                <td width="30px" rowspan="2" class="padleft_20" valign="top"><input type="checkbox" name="" data-price="12809.00" data-id="38044" id="38044" value="1" checked="checked" class="cbox"/></td>
+                <td width="120px" rowspan="2" valign="top"><img src="/Content/noimage.jpg" alt="" width="100" height="100"/></td>
+                <td width="500px" class="nopad_left border_dashed">
+                    <strong>
+                        FOREVER 系列 经典款
+
+                        30分
+
+                        F色
+                    </strong> <strong>求婚钻戒</strong>
+                </td>
+                <td width="200px" class="border_dashed pay_money" align="center"><span>¥12809.00</span></td>
+                <td width="150px" class="border_dashed" align="center"><a href="javascript:;" class="addCollect" data-id="38044">移入收藏夹</a> <a href="javascript:;" class="car-del" data-id="38044">删除</a> </td>
+            </tr>
+            <tr>
+                <td class="nopad_left ring_detail" colspan="2">
+                    <strong>求婚钻戒信息</strong>
+                    <div class="ringdetail_hide">
+                        <p>主钻重量：30分</p>
+                        <div>
+                            <p>戒托材质：白18K金</p>
+                            <p>刻字内容：</p>
+                            <p>手寸大小：22</p>
+                            <p>主钻形状：圆形</p>
+                            <p>主钻颜色：F</p>
+                            <p>产品编号：A02001</p>
+                            <p>系列名称：FOREVER 系列</p>
+                        </div>
+                    </div>
+                    <strong class="padleft_20">主石副石信息</strong>
+                    <div class="ringdetail_hide">
+                        <p>主钻净度：VS2</p>
+                        <div>
+                            <p>主钻切工：VG</p>
+                            <p>主石数量：1</p>
+                            <p>副石重量：0分</p>
+                            <p>副石数量：0</p>
+                        </div>
+                    </div>
+                </td>
+                <td align="center" valign="top" class="padright_20"><a href="javascript:;" class="ringdetail_show">展开查看详情</a></td>
+            </tr>
+            </tbody>
+        </table>
+
+        <table class="shoppingcart_table shoppingcart_tbody" border="1" cellpadding="10">
+            <tbody>
+            <tr height="70px">
+                <td width="30px" rowspan="2" class="padleft_20" valign="top"><input type="checkbox" name="" data-price="12599.00" data-id="38046" id="38046" value="1" checked="checked" class="cbox"/></td>
+                <td width="120px" rowspan="2" valign="top"><img src="/Content/noimage.jpg" alt="" width="100" height="100"/></td>
+                <td width="500px" class="nopad_left border_dashed">
+                    <strong>
+                        Darry Ring 结婚对戒
+                    </strong> <strong>对戒</strong>
+                </td>
+                <td width="200px" class="border_dashed pay_money" align="center"><span>¥12599.00</span></td>
+                <td width="150px" class="border_dashed" align="center"><a href="javascript:;" class="addCollect" data-id="38046">移入收藏夹</a> <a href="javascript:;" class="car-del" data-id="38046">删除</a> </td>
+            </tr>
+            <tr>
+                <td class="nopad_left ring_detail" colspan="2">
+                    <strong>对戒信息</strong>
+                    <div class="ringdetail_hide">
+                        <p>材质：白18K金</p>
+                        <div>
+                            <p>刻字内容：</p>
+                            <p>手寸大小：13</p>
+                            <p>系列名称：DARRY RING 系列</p>
+                        </div>
+                    </div>
+                </td>
+                <td align="center" valign="top" class="padright_20"><a href="javascript:;" class="ringdetail_show">展开查看详情</a></td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="shoppingcart_table shoppingcart_tbody" border="1" cellpadding="10">
+            <tbody>
+            <tr height="70px">
+                <td width="30px" rowspan="2" class="padleft_20" valign="top"><input type="checkbox" name="" data-price="4299.00" data-id="38047" id="38047" value="1" checked="checked" class="cbox"/></td>
+                <td width="120px" rowspan="2" valign="top"><img src="/Content/noimage.jpg" alt="" width="100" height="100"/></td>
+                <td width="500px" class="nopad_left border_dashed">
+                    <strong>
+                        山盟海誓 7分 H色
+                    </strong> <strong>男戒</strong>
+                </td>
+                <td width="200px" class="border_dashed pay_money" align="center"><span>¥4299.00</span></td>
+                <td width="150px" class="border_dashed" align="center"><a href="javascript:;" class="addCollect" data-id="38047">移入收藏夹</a> <a href="javascript:;" class="car-del" data-id="38047">删除</a> </td>
+            </tr>
+            <tr>
+                <td class="nopad_left ring_detail" colspan="2">
+                    <strong>男戒信息</strong>
+                    <div class="ringdetail_hide">
+                        <p>男戒材质：白18K金</p>
+                        <div>
+                            <p>刻字内容：</p>
+                            <p>手寸大小：13</p>
+                            <p>产品编号：C10012</p>
+                            <p>系列名称：其他</p>
+                        </div>
+                    </div>
+                </td>
+                <td align="center" valign="top" class="padright_20"><a href="javascript:;" class="ringdetail_show">展开查看详情</a></td>
+            </tr>
+            </tbody>
+        </table>
+
+        <div class="shoppingcart_pay clearfix">
+            <div class="scfoot_left">
+                <p><input type="checkbox" name="" id="" value="" checked="checked" class="check_all"/>全选
+                </p>
+                <p><a href="javascript:;" id="addAll">全部移入收藏夹</a>
+                </p>
+                <p><a href="http://www.darryring.com/goods/9">继续购物</a>
+                </p>
+            </div>
+            <div class="scfoot_right">
+                <p id="cart-number">已选<strong> 4 </strong>件商品
+                </p>
+                <p id="cart-amount">总价：<strong>¥46706</strong>
+                </p>
+                <p>免运费</p>
+                <a href="javascript:;" id="cart-post" class="link_btn2">立即结算</a>
+            </div>
+        </div>
+        <div class="shopping_security">
+            <span class="security1">支持全球配送，实体店取货</span>
+            <span class="security2">全程保价 无风险</span>
+            <span class="security3">支付安全保障 安全支付系统采用SSL加密</span>
+        </div>
+    </div>
+
+    <div class="top_zhibao">
+       <img src="~/Content/images/index/h_50.gif">
+    </div>
+    <!--购物车 end-->
+</div>

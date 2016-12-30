@@ -943,6 +943,7 @@
     <Content Include="UI\订单中心.html" />
     <Content Include="UI\购物车中心-裸钻.html" />
     <Content Include="UI\购物车中心-钻石首饰.html" />
+    <Content Include="Views\Cart\Index.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -977,7 +978,6 @@
     <Content Include="Scripts\layui\font\iconfont.eot" />
     <Content Include="Scripts\layui\font\iconfont.ttf" />
     <Content Include="Scripts\layui\font\iconfont.woff" />
-    <Content Include="Views\Cart\Index.cshtml" />
     <Content Include="Views\Order\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
