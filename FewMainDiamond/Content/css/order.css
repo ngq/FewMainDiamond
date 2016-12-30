@@ -186,7 +186,7 @@ body {
 
 .address_list.select {
     border: 1px solid #ffbe78;
-    background: #fff8ef url(../img/cart/ico-select1.png) right bottom no-repeat;
+    background: #fff8ef url(../images/cart/ico-select1.png) right bottom no-repeat;
     font-size: 14px;
     padding: 5px;
     padding-left: 70px;
@@ -462,7 +462,7 @@ span.error_info {
 input[type="radio"], input[type="checkbox"] {
     border: none;
 }
-
+/*送货*/
 .delivery_notic {
     position: absolute;
     right: 0;
@@ -494,7 +494,19 @@ input[type="radio"], input[type="checkbox"] {
         padding: 0 2px;
         border: 1px solid #c9c9c9;
     }
-
     .delivery_notic label {
         margin-left: 20px;
     }
+.pay_float{position:fixed;left:50%;bottom:0;margin-left:-31.5%;z-index:11;}
+.top_zhibao {
+    margin-top: 60px;
+}
+.Popup_close {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    background: url(../images/cart/close.png) no-repeat;
+    right: 26px;
+    top: 26px;
+}

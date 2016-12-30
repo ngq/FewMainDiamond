@@ -217,9 +217,12 @@
     <Content Include="Content\css\cart.css" />
     <Content Include="Content\css\order.css" />
     <Content Include="Content\images\cart\bottom.png" />
+    <Content Include="Content\images\cart\close.png" />
+    <Content Include="Content\images\cart\ico-select1.png" />
     <Content Include="Content\images\cart\ico-service.png" />
     <Content Include="Content\images\cart\right.png" />
     <Content Include="Content\images\cart\steps_bg.png" />
+    <Content Include="Content\images\No-image-found1.jpg" />
     <Content Include="Content\images\order\ico-location.png" />
     <Content Include="Content\noimage.jpg" />
     <Content Include="Content\bootstrap.css" />
