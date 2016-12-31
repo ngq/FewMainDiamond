@@ -1,0 +1,58 @@
+﻿html { font-size: 100%;height: 100%; background:#f7f7f7; padding:0;}
+body { font-family: Arial, Helvetica, sans-serif; color: #555; font-size: 12px;  margin:0; padding:0;}	
+/*---------------------------*/			
+.header{ width:100%; height:116px;}    				
+.top{ width:1200px;text-align: right;line-height:36px;color:#666; font-size:12px;background:#f6f6f6;height:36px;margin:0 auto;}     	
+.top a{color:#666;}
+.top a:hover{color: #ff6600;}  
+.top .topleft{ float:left; width:360px; text-align:left;}
+.top .topleft b{ color:#ff8800;}
+.top .nav { float:right;}
+.top .nav ul {list-style: none;padding-left: 0;margin-top: 0;margin-bottom: 0;}
+.top .nav a {display: block;padding: 0 16px;line-height: inherit;cursor: pointer; text-align:left; border-left:1px solid #f8f8f8; border-right:1px solid #f8f8f8;}
+.top .nav li {line-height: 36px; text-transform: uppercase; float:left;}
+.top .nav_menu {line-height: 36px; text-transform: uppercase; }
+.top .nav_menu-item {display: inline-block;position: relative;   background:url(../images/top.png) no-repeat 70px 16px; border-left:1px solid #f8f8f8; border-right:1px solid #f8f8f8; padding-right:8px;}
+.top .nav_menu-item:hover {border-left:1px solid #dedede; border-right:1px solid #dedede; background:#fff url(../images/top2.png) no-repeat 70px 16px; padding-right:8px;}
+.top .nav_menu-item:hover .nav_submenu {display: block;}
+.top .nav_submenu {display: none;position: absolute; padding:6px 0 10px 0; overflow:hidden; background: #fff; border:1px solid #dedede;   border-top:none; z-index:100;}
+.top .nav_submenu-item a {line-height: 30px; padding-right:0; border:none;}
+.top .nav_submenu-item:hover {}
+.top  .img img{ margin-left:9px;}
+.top .nav_submenu img{ display:block; float:left;}
+.top .nav_menu-item2 {background:url(../images/top3.png) no-repeat 12px 9px;}
+.top .nav_menu-item2:hover {background:#fff url(../images/top33.png) no-repeat 12px 9px;}
+/*-------------------------*/
+.topnav{ width:100%; height:60px; background:#41b1a5; overflow:hidden;} 
+.topnav ul{ height:60px; line-height:60px; display:block; width:1200px;  margin:0 auto; padding:0;} 
+.topnav ul li{ display:block; float:left; padding-left:60px;} 
+.topnav ul li a{ color:#FFF; font-size:14px; font-weight:bold;} 
+.topnav ul li a:hover{ color:#ffee00;} 
+.topnav ul li font{ font-size:12px; font-weight:lighter; color:#fe0; margin-left:2px;}
+.topnav .search{ padding:16px 0 0 0; float:right;} 
+.topnav .search input, .topnav .search select{ display:block; float:left; margin:0; padding:0;} 
+.topnav .search .tit{ width:210px; height:26px; line-height:26px; border:1px solid #7ecdcd ; border-right:none; border-left:none; background:#fff url(../images/ipbg.jpg) no-repeat left; color:#ccc;text-indent:10px;}
+.topnav .search .submit{ width:80px; height:28px; border:1px solid #7ecdcd; border-left:none; color:#333; background:#eee url(../images/ipbg2.jpg) no-repeat left;}
+.topnav .search .select_style {width:62px; height:27px; overflow:hidden; background:#fff; float:left;} 
+.topnav .search .select_style select { width:78px; padding:5px 0; border:1px solid #7ecdcd ; border-right:none; color:#888;text-indent:3px; }  
+
+/*--------------------------*/
+.sidebar { width: 120px; height: 100%; float:left;color: #888; font-size: 12px;}
+.sidebar .sidebar-wrapper {margin: 0; }
+.sidebar a,.sidebar a:active {color:#beebeb;}
+.sidebar a:hover {color:#fff;}
+.sidebar .sidebar-title {margin: 40px 0 40px 0px;}
+/*---------------------------*/
+.sidebar .main-nav { width: 120px; padding: 0;margin: 0;overflow: hidden;}
+.sidebar .main-nav li {list-style: none; padding-bottom:2px;}
+.sidebar .main-nav li b {padding: 10px 10px;color: #585858; font-size: 12px;display: block;}
+.sidebar .main-nav ul {padding: 0;font-size: 12px;margin: 0;}
+.sidebar .main-nav ul li {list-style: none;margin: 0;padding: 8px 10px;display: block;}
+.sidebar .main-nav ul li a {color: #666;}
+.sidebar .main-nav ul li a:hover,
+.sidebar .main-nav ul li a.current,
+.sidebar .main-nav ul li a.current:hover {color: #333;font-weight:bold;	color:#ff8800;}
+.sidebar .main-nav ul li a.current {}
+
+
+

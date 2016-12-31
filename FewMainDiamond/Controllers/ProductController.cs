@@ -21,5 +21,21 @@ namespace FewMainDiamond.Controllers
         {
             return View();
         }
+        /// <summary>
+        /// 钻戒详情页
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult DiamondDetail()
+        {
+            return View();
+        }
+        /// <summary>
+        /// 珠宝饰品详情页
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult JeweleryDetail()
+        {
+            return View();
+        }
     }
 }
