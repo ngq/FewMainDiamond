@@ -25,6 +25,7 @@ namespace FewMainDiamond.Controllers
         {
             return PartialView();
         }
+        #region 网站公共部分
 
         public ActionResult Head()
         {
@@ -56,6 +57,19 @@ namespace FewMainDiamond.Controllers
             return PartialView();
         }
 
-        
+
+        #endregion
+        #region 用户中心公共部分
+
+        public ActionResult UserHeader()
+        {
+            return View();
+        }
+
+        public ActionResult UserLeftBar()
+        {
+            return View();
+        }
+        #endregion
     }
 }

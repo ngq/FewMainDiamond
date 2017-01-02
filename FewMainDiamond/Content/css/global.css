@@ -81,7 +81,7 @@ ul.topnav li span .box .right a{ display:block; margin:0; padding:0;}
 .theme_box p:hover{ background:#ccaa66; border:1px solid #c5a25d;}
 .theme-popover-mask{background: #000 none repeat scroll 0 0;display: none;height: 100%;left: 0;opacity: 0.6;position: fixed;top: 0;width: 100%; z-index: 9998;}
 /*------*/	
-.footer{width:100%; overflow:hidden; background:#41b1a5;}
+.footer{width:100%; overflow:hidden; background:#797979;}
 .footer a{ color:#fff; line-height:24px;}
 .footer a:hover{ color:#ffee00;}
 .footer .top{width:1200px;margin:0 auto;height:190px; padding:38px 0;}

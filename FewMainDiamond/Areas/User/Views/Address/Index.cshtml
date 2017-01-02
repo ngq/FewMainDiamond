@@ -1,0 +1,224 @@
+﻿@{
+    ViewBag.Title = "地址管理";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+@section scripts
+{
+
+
+    <link href="~/Scripts/layui/css/layui.css" rel="stylesheet" />
+    <script src="~/Scripts/layui/layui.js"></script>
+    <link href="~/Content/css/select2.css" rel="stylesheet" />
+    <script src="~/Scripts/FewMain/area.js"></script>
+    <script src="~/Scripts/FewMain/location.js"></script>
+    <script src="~/Scripts/FewMain/select2.js"></script>
+    <script src="~/Scripts/FewMain/select2_locale_zh-CN.js"></script>
+    <style>
+        /*确认订单信息*/
+        .address_popup {
+            width: 560px;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            margin-left: -300px;
+            margin-top: -190px;
+            background: #fff;
+            border: 2px solid #f2e3dc;
+            padding: 20px;
+            font-size: 12px;
+            color: #404040;
+            z-index: 10;
+            display: none;
+        }
+
+        .address_edit {
+            font-size: 12px;
+        }
+
+            .address_edit h4 {
+                color: #fc6210;
+                margin-bottom: 20px;
+            }
+
+            .address_edit div {
+                margin-bottom: 15px;
+            }
+
+            .address_edit label {
+                width: 80px;
+                display: inline-block;
+                text-align: right;
+                margin-right: 5px;
+            }
+
+                .address_edit label span {
+                    color: #ff5d5b;
+                    margin-right: 3px;
+                }
+
+            .address_edit input {
+                height: 20px;
+                width: 165px;
+                line-height: 24px;
+                padding: 2px;
+                border: 1px solid #e6e6e6;
+            }
+
+            .address_edit select {
+                height: 26px;
+                width: 98px;
+                padding: 2px;
+                color: #666;
+                border: 1px solid #e6e6e6;
+            }
+
+        input.width300 {
+            width: 300px;
+        }
+
+        input.width46 {
+            width: 46px;
+        }
+
+        input.width126 {
+            width: 126px;
+        }
+
+        .confirm_btn {
+            padding-left: 92px;
+            margin-top: 20px;
+        }
+
+            .confirm_btn a {
+                margin-right: 20px;
+            }
+
+        input[type="text"].error_info {
+            border: 1px solid #fe8c8c;
+        }
+
+        span.error_info {
+            color: #fe8c8c;
+        }
+
+        .Popup_close {
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            cursor: pointer;
+            background: url(/content/images/cart/close.png) no-repeat;
+            right: 26px;
+            top: 26px;
+        }
+        .address_select {
+            height: 26px;
+           
+        }
+    </style>
+    <script>
+        layui.use('layer', function () {
+            var layer = layui.layer;
+        });
+        $(function () {
+            $("#addAddress").on("click", function () {
+                var index = layer.open({
+                    type: 1,
+                    title: false,
+                    closeBtn: 0,
+                    shift: 0,
+                    area: ["700px", "500px"],
+                    content: $(".address_edit")
+                });
+                $(".address_close").off('click').on('click', function () {
+                    layer.close(index);
+
+                });
+            });
+        });
+    </script>
+}
+<div>
+    <table class="layui-table" style="width: 82%; float: right;">
+        <colgroup>
+            <col width="150">
+            <col width="200">
+            <col>
+        </colgroup>
+        <thead>
+            <tr>
+                <th>收件人姓名</th>
+                <th>地区</th>
+                <th>详细地址</th>
+                <th>联系方式</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>贤心</td>
+                <td>2016-11-29</td>
+                <td>人生就像是一场修行</td>
+                <td>人生就像是一场修行</td>
+                <td><a href="">编辑</a> <a href="">删除</a>&nbsp;&nbsp;&nbsp;&nbsp;<button class="layui-btn layui-btn-primary layui-btn-mini">设置默认</button></td>
+            </tr>
+            <tr>
+                <td>贤心</td>
+                <td>2016-11-29</td>
+                <td>人生就像是一场修行</td>
+                <td>人生就像是一场修行</td>
+                <td><a href="">编辑</a> <a href="">删除</a>&nbsp;&nbsp;&nbsp;&nbsp;<button class="layui-btn layui-btn-primary layui-btn-mini">设置默认</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <div style="text-align: center">
+        <button class="layui-btn layui-btn-primary" id="addAddress" style="text-align: center">添加收货地址</button>
+    </div>
+    <!--首次添加地址-->
+    <div class="address_edit address_popup">
+        <div class="Popup_close address_close"></div>
+        <h4>添加新收货地址</h4>
+        <form id="address-form">
+            <div>
+                <label><span>*</span>收货人</label>
+                <input type="text" name="data[username]" id="username" value="" placeholder="请您填写收货人姓名" />
+                <input type="hidden" name="data[id]" id="data-id" value="" />
+            </div>
+            <div class="address_select">
+                <span style="float: left; width: 90px;text-align: center"><span style="color: red">*</span>地区</span>
+                <select id="loc_province" style="float: left; width: 100px; height: 25px; text-align: center"></select>
+                <select id="loc_city" style="float: left; width: 100px; margin-left: 10px; text-align: center"></select>
+                <select id="loc_town" style="float: left; width: 100px; height: 25px; margin-left: 10px; text-align: center"></select>
+            </div>
+            <div>
+                <label><span>*</span>详细地址</label>
+                <input type="text" name="data[address]" id="address" value="" placeholder="请您填写收货人详细地址" class="width300" />
+            </div>
+            <div>
+                <label>邮政编码</label>
+                <input type="text" name="data[postcode]" id="postcode" value="" placeholder="请您填写邮政编码" />
+            </div>
+            <div>
+                <label><span>*</span>手机号码</label>
+                <input type="text" name="data[mobile]" id="mobile" value="" class="" placeholder="请您填写收货人手机号码" />
+                <span class="error_info" style="display: none">手机号校验正确性</span>
+            </div>
+            <div>
+                <label>固定电话</label>
+                <!-- <input type="text" name="" id="telephone1" value="" class="width46" /> -
+                <input type="text" name="" id="telephone2" value="" class="width46" /> -
+                <input type="text" name="" id="telephone3" value="" class="width126" /> -->
+                <input type="text" name="data[phone]" id="telephone" value="" placeholder="如:国家号-区号-固定电话" />
+            </div>
+            <div>
+                <label>电子邮箱</label>
+                <input type="text" name="data[email]" id="email" value="" placeholder="请您填写收货人电子邮箱" />
+            </div>
+        </form>
+        <div class="confirm_btn">
+            <a href="javascript:;" class="layui-btn layui-btn-primary layui-btn-small">配送到此地址</a>
+            <a href="javascript:;" class="layui-btn layui-btn-primary layui-btn-small">取消</a>
+        </div>
+    </div>
+    <!--首次添加地址end-->
+</div>
+

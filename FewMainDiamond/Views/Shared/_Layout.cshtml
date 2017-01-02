@@ -14,11 +14,11 @@
 </head>
 <body>
     <!--头部-->
-    @{ Html.RenderAction("Header", "Layout");}
+    @{ Html.RenderAction("Header", "Layout",new {area=""});}
 
     @RenderBody()
     <!--底部-->
-    @{ Html.RenderAction("Footer", "Layout");}
+    @{ Html.RenderAction("Footer", "Layout", new { area = "" });}
 
     @*@Scripts.Render("~/bundles/jquery")
      @Scripts.Render("~/bundles/bootstrap")*@

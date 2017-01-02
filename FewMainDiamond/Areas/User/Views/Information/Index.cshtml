@@ -1,0 +1,138 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+@section scripts
+ {
+    <link href="~/Content/css/select2.css" rel="stylesheet" />
+    <script src="~/Scripts/FewMain/area.js"></script>
+    <script src="~/Scripts/FewMain/location.js"></script>
+    <script src="~/Scripts/FewMain/select2.js"></script>
+    <script src="~/Scripts/FewMain/select2_locale_zh-CN.js"></script>
+
+}
+<div class="contentbox">
+    <h2>个人资料</h2>
+    <div class="personal-data">
+        <div class="personal-data-border">
+            <div class="personal-data-welcome">
+                亲爱的186****2254用户，填写真实的资料有助于我们第一时间联系到您的哦！
+            </div>
+            <ul class="layui-form">
+                <li class="clear personal-photos">
+                    <div class="personal-left">
+                        当前头像：
+                    </div>
+                    <div class="personal-right personal-photo">
+                        <div class="personal-photo-word">
+                            编辑头像
+                        </div>
+                        <img src="Content/images/person_01.png" />
+                    </div>
+                </li>
+                <li class="clear">
+                    <div class="personal-left">
+                        账号：
+                    </div>
+                    <div class="personal-right">
+                        186****2254
+                    </div>
+                </li>
+                <li class="clear">
+                    <div class="personal-left">
+                        <label class="layui-form-label layui-form-item">姓名:</label>
+                    </div>
+                    <div class="personal-right">
+
+                        <input type="text" name="title" placeholder="请输入姓名">
+
+                    </div>
+                </li>
+
+
+                <li class="clear">
+                    <div class="personal-left">
+                        性别：
+                    </div>
+                    <div class="personal-right">
+                        <span class="female user-select">  <input type="radio" value="" name="sex" id="nan" /> <label for="nan" class="nan">男</label>  <input type="radio" name="sex" value="" id="nv" /> <label for="nv" class="nan">女</label>  </span>
+                    </div>
+                </li>
+
+
+                <li class="clear">
+                    <div class="personal-left">
+                        <span class="mustchoosed">*</span>联系电话：
+                    </div>
+                    <div class="personal-right">
+                        <input type="text" />
+                    </div>
+                </li>
+
+                <li class="clear">
+                    <div class="personal-left">
+                        <span class="mustchoosed">*</span>联系地址：
+                    </div>
+                    <div class="personal-right">
+                        <select id="loc_province" style="float: left; width: 100px; height: 25px;text-align: center"></select>
+                        <select id="loc_city" style="float: left;width:100px;margin-left: 10px;text-align: center"></select>
+                        <select id="loc_town" style="float: left;width:100px; height: 25px;margin-left: 10px;text-align: center"></select>
+                    </div>
+                </li>
+                <li class="clear">
+                    <div class="personal-left">
+                        &nbsp;
+                    </div>
+                    <div class="personal-right">
+                        <textarea style="height: 57px;width: 320px"></textarea>
+                    </div>
+                </li>
+                <li class="clear" style="visibility:hidden">
+                    <div class="personal-left">
+
+                    </div>
+                    <div class="personal-right">
+                        <input type="text" class="true-name" />
+                    </div>
+                </li>
+
+                <li class="clear">
+                    <div class="personal-left">
+                        QQ：
+                    </div>
+                    <div class="personal-right">
+                        <input type="text" />
+                    </div>
+                </li>
+                <li class="clear">
+                    <div class="personal-left">
+                        <span class="mustchoosed">*</span>联系邮箱：
+                    </div>
+                    <div class="personal-right">
+                        <input type="text" /><a href="javascript:" class="getyzm">获取验证码</a><span style="color:#999">邮箱要获取验证码，进行验证</span>
+                    </div>
+                </li>
+                <li class="clear">
+                    <div class="personal-left">
+                        验证码：
+                    </div>
+                    <div class="personal-right">
+                        <input type="text" style="width:80px" />
+                    </div>
+                </li>
+
+                <li class="clear">
+                    <div class="personal-left">
+                        &nbsp;
+                    </div>
+                    <div class="personal-right">
+                        <a href="javascript:;" class="button_sub" id="edit_info">提交</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+

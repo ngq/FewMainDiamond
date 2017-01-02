@@ -1,0 +1,239 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+    <link href="common.css" rel="stylesheet" />
+    <link href="other.css" rel="stylesheet"/>
+    <script src="../Content/scripts/jquery-1.10.2.js"></script>
+    <script>
+        $(function() {
+            $(".menubox a").click(function () {
+                $(".menubox a").removeClass("hover");
+                $(this).addClass("hover");
+            })
+
+            $(".menubox dt").click(function () {
+                if ($(this).next().is("dd")) {
+                    if ($(this).hasClass("click")) {
+                        $(this).removeClass("click");
+                        $(this).next("dd").slideDown();
+                    } else {
+                        $(this).addClass("click");
+                        $(this).next("dd").slideUp();
+                    }
+                } else {
+                    $(this).removeClass("click");
+                }
+
+
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="clear mainbox">
+        <div class="center">
+            <dl class="menubox white left">
+                <dt>购物<span></span></dt>
+                <dd>
+                    <ul class="menubox-content">
+                        <li>
+                            <a class="hover" href="my-order.html">我的购物车</a>
+                        </li>
+                        <li>
+                            <a href="collection.html">我的收藏</a>
+                        </li>
+                       
+                    </ul>
+                </dd>
+                <dt>订单中心<span></span></dt>
+                <dd>
+                    <ul class="menubox-content">
+                        <li>
+                            <a href="online-buy.html">我的订单</a>
+                        </li>
+                        <li>
+                            <a href="new-arrive.html">我的评价</a>
+                        </li>
+                    </ul>
+                </dd>
+                 
+                <dt>账户和安全<span></span></dt>
+                <dd>
+                    <ul class="menubox-content">
+                        <li>
+                            <a href="personal-resource.html">个人资料</a>
+                        </li>
+                        <li>
+                            <a href="modify-password.html">密码修改</a>
+                        </li>
+                        <li>
+                            <a href="modify-password.html">绑定手机</a>
+                        </li>
+                        <li>
+                            <a href="modify-password.html">绑定邮箱</a>
+                        </li>
+                        <li>
+                            <a href="address-manage.html">地址管理</a>
+                        </li>
+                    </ul>
+                </dd>
+            </dl>
+            <div class="contentbox">
+                <h3>
+                    <span>当前位置：</span>&gt;
+                    <b>我的pfhoo</b>&gt;
+                    <i>我的订单</i>
+                </h3>
+                <div class="warm-prompt">
+                    <span>温馨提示:</span>2月5日将有592款宝贝上架，现开始接受老会员预订服务，预售价为9.99元，新客服注册即可享受9折优惠，2月5日后恢复原价12.99元，时间有限赶紧下单哦！链接地址：<a href="http://www.pfhoo.com/">http://www.pfhoo.com/</a>
+                </div>
+                <h2>我的订单</h2>
+                <div class="orders-title clear">
+                    <h4>全部订单</h4><div class="price-go left">成交时间<input type="text" id="order-price1" class="order-price1" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" /><span>-</span><input type="text" id="order-price2" class="order-price2" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" /><a href="javascript:" class="data-choose-sure">GO</a></div>
+                </div>
+                <div class="orders-allmoney">
+                    总计: 订单总金额: <span>533.20</span> + 总运费：<span>109.00</span> - 已付总金额: <span>0.00</span> - 免付总金额: <span>0.00</span>
+                </div>
+                <div class="orders-allless">
+                    订单总欠款：<span>642.20</span> - 预存款金额: <span>1.06</span> = 欠款总金额:<span>641.14</span>
+                </div>
+                <button class="orders-pay">点击在线付款</button>
+                <table border="0" cellpadding="0" cellspacing="0" class="orders-table">
+                    <thead>
+                        <tr>
+                            <td>订单编号</td>
+                            <td>商品总额</td>
+                            <td>总数量</td>
+                            <td>总重量</td>
+                            <td>运费</td>
+                            <td>代发服务费</td>
+                            <td>代发运费</td>
+                            <td>快递号</td>
+                            <td>免付</td>
+                            <td>已结算</td>
+                            <td>订单状态</td>
+                            <td>下单时间</td>
+                            <td>发货时间</td>
+                            <td>操作</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1605353850</td>
+                            <td>12.50</td>
+                            <td>1</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td></td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>已提交，未确认</td>
+                            <td>2016/05/16 16:50:56</td>
+                            <td>2016/01/01</td>
+                            <td>
+                                <a href="javascript:">订单明细</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1605353850</td>
+                            <td>12.50</td>
+                            <td>1</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td></td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>已提交，未确认</td>
+                            <td>2016/05/16 16:50:56</td>
+                            <td>2016/01/01</td>
+                            <td>
+                                <a href="javascript:">订单明细</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1605353850</td>
+                            <td>12.50</td>
+                            <td>1</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td></td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>已提交，未确认</td>
+                            <td>2016/05/16 16:50:56</td>
+                            <td>2016/01/01</td>
+                            <td>
+                                <a href="javascript:">订单明细</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1605353850</td>
+                            <td>12.50</td>
+                            <td>1</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td></td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>已提交，未确认</td>
+                            <td>2016/05/16 16:50:56</td>
+                            <td>2016/01/01</td>
+                            <td>
+                                <a href="javascript:">订单明细</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1605353850</td>
+                            <td>12.50</td>
+                            <td>1</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td></td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>已提交，未确认</td>
+                            <td>2016/05/16 16:50:56</td>
+                            <td>2016/01/01</td>
+                            <td>
+                                <a href="javascript:">订单明细</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1605353850</td>
+                            <td>12.50</td>
+                            <td>1</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td></td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>已提交，未确认</td>
+                            <td>2016/05/16 16:50:56</td>
+                            <td>2016/01/01</td>
+                            <td>
+                                <a href="javascript:">订单明细</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>

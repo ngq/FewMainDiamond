@@ -194,6 +194,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\User\Controllers\AddressController.cs" />
+    <Compile Include="Areas\User\Controllers\BindingController.cs" />
+    <Compile Include="Areas\User\Controllers\CollectionController.cs" />
+    <Compile Include="Areas\User\Controllers\InformationController.cs" />
+    <Compile Include="Areas\User\Controllers\MyOrderController.cs" />
     <Compile Include="Areas\User\UserAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CartController.cs" />
@@ -218,6 +223,10 @@
     <Content Include="Content\css\cart.css" />
     <Content Include="Content\css\order.css" />
     <Content Include="Content\css\product\dr.css" />
+    <Content Include="Content\css\select2.css" />
+    <Content Include="Content\css\usercenter\common.css" />
+    <Content Include="Content\css\usercenter\other.css" />
+    <Content Include="Content\css\usercenter\ucenter.css" />
     <Content Include="Content\images\base\all-right.png" />
     <Content Include="Content\images\base\all-right_w.png" />
     <Content Include="Content\images\base\all-right_y.png" />
@@ -226,6 +235,9 @@
     <Content Include="Content\images\base\br_right.png" />
     <Content Include="Content\images\base\close.jpg" />
     <Content Include="Content\images\base\close.png" />
+    <Content Include="Content\images\base\dd_03.jpg" />
+    <Content Include="Content\images\base\detail_70.png" />
+    <Content Include="Content\images\base\detail_71.png" />
     <Content Include="Content\images\base\fj.png" />
     <Content Include="Content\images\base\kzyl.jpg" />
     <Content Include="Content\images\base\leftorr.png" />
@@ -251,6 +263,10 @@
     <Content Include="Content\images\base\zs5.jpg" />
     <Content Include="Content\images\base\zs6.jpg" />
     <Content Include="Content\images\base\zs_rp.jpg" />
+    <Content Include="Scripts\FewMain\area.js" />
+    <Content Include="Scripts\FewMain\location.js" />
+    <Content Include="Scripts\FewMain\select2.js" />
+    <Content Include="Scripts\FewMain\select2_locale_zh-CN.js" />
     <Content Include="Scripts\product\buy_xq.js" />
     <Content Include="Scripts\product\diapro.js" />
     <Content Include="Scripts\product\fd_hd.js" />
@@ -547,6 +563,15 @@
     <Content Include="Scripts\FewMain\diamond.js" />
     <Content Include="Scripts\FewMain\FewMain.Account.js" />
     <Content Include="Areas\User\Views\web.config" />
+    <Content Include="Areas\User\Views\MyOrder\Index.cshtml" />
+    <Content Include="Areas\User\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\User\Views\Address\Index.cshtml" />
+    <Content Include="Areas\User\Views\Collection\Index.cshtml" />
+    <Content Include="Areas\User\Views\Information\Index.cshtml" />
+    <Content Include="Areas\User\Views\MyOrder\Appraise.cshtml" />
+    <Content Include="Areas\User\Views\Binding\Mobile.cshtml" />
+    <Content Include="Areas\User\Views\Binding\Email.cshtml" />
+    <Content Include="Areas\User\Views\Binding\ModifyPwd.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\FewMain\index.js" />
     <Content Include="Scripts\FewMain\jquery.validate.ext.js" />
@@ -982,12 +1007,20 @@
     <Content Include="UI\mall-productList-商城列表.html" />
     <Content Include="UI\joinUs招商加盟.html" />
     <Content Include="UI\usercenter.html" />
+    <Content Include="UI\个人中心\common.css" />
+    <Content Include="UI\个人中心\detail_70.png" />
+    <Content Include="UI\个人中心\detail_71.png" />
+    <Content Include="UI\个人中心\index.html" />
+    <Content Include="UI\个人中心\other.css" />
+    <Content Include="UI\个人中心\reset.css" />
+    <Content Include="UI\个人中心\shopping-car.css" />
     <Content Include="UI\会员找回密码.html" />
     <Content Include="UI\移动端\钻石定制_珠宝镶嵌_钻石价格_裸钻批发_卿语钻石品牌官网.html" />
     <Content Include="UI\订单中心.html" />
     <Content Include="UI\购物车中心-裸钻.html" />
     <Content Include="UI\购物车中心-钻石首饰.html" />
     <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Layout\UserHeader.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1025,10 +1058,11 @@
     <Content Include="Views\Order\Index.cshtml" />
     <Content Include="Views\Product\DiamondDetail.cshtml" />
     <Content Include="Views\Product\JeweleryDetail.cshtml" />
+    <Content Include="Views\Shared\_LayoutUser.cshtml" />
+    <Content Include="Views\Layout\UserLeftBar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\User\Controllers\" />
     <Folder Include="Areas\User\Models\" />
     <Folder Include="Areas\User\Views\Shared\" />
     <Folder Include="Views\Common\" />

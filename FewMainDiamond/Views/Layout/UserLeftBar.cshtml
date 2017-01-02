@@ -1,0 +1,48 @@
+﻿
+        <dl class="menubox white left">
+            <dt>购物<span></span></dt>
+            <dd>
+                <ul class="menubox-content">
+                    <li>
+                        <a class="hover" href="@Url.Action("Index","Cart")">我的购物车</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Index","Collection",new {area="User"})">我的收藏</a>
+                    </li>
+
+                </ul>
+            </dd>
+            <dt>订单中心<span></span></dt>
+            <dd>
+                <ul class="menubox-content">
+                    <li>
+                        <a href="@Url.Action("Index","Order",new {area="User"})">我的订单</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Appraise","Order",new { area="User"})">我的评价</a>
+                    </li>
+                </ul>
+            </dd>
+
+            <dt>账户和安全<span></span></dt>
+            <dd>
+                <ul class="menubox-content">
+                    <li>
+                        <a href="@Url.Action("Index","Information",new {area="User"})">个人资料</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("ModifyPwd","Binding",new {area="User"})">密码修改</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Mobile","Binding",new {area="User"})">绑定手机</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Email","Binding",new {area="User"})">绑定邮箱</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Index","Address",new {area="User"})">地址管理</a>
+                    </li>
+                </ul>
+            </dd>
+        </dl>
+ 

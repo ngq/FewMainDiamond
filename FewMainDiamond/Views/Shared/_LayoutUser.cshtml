@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/css/usercenter/common.css" rel="stylesheet" />
+    <link href="~/Content/css/usercenter/other.css" rel="stylesheet" />
+    <link href="~/Content/css/usercenter/ucenter.css" rel="stylesheet" />
+     
+
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    
+    <script src="~/Scripts/FewMain/common.base.js"></script>
+    <script>
+        $(function() {
+            $(".menubox a").click(function() {
+                $(".menubox a").removeClass("hover");
+                $(this).addClass("hover");
+            })
+
+            $(".menubox dt").click(function() {
+                if ($(this).next().is("dd")) {
+                    if ($(this).hasClass("click")) {
+                        $(this).removeClass("click");
+                        $(this).next("dd").slideDown();
+                    } else {
+                        $(this).addClass("click");
+                        $(this).next("dd").slideUp();
+                    }
+                } else {
+                    $(this).removeClass("click");
+                }
+
+
+            })
+        })
+    </script>
+    @RenderSection("scripts", required: false)
+</head>
+<body>
+    @{ Html.RenderAction("UserHeader", "Layout", new { area = "" });}
+    <div class="clear mainbox">
+        <div class="center">
+            @{ Html.RenderAction("UserLeftBar", "Layout", new { area = "" });}
+            @RenderBody()
+        </div>
+    </div>
+
+    <!--底部-->
+    @{ Html.RenderAction("Footer", "Layout", new { area = "" });}
+
+
+</body>
+</html>
