@@ -33,6 +33,7 @@
     </SccAuxPath>
     <SccProvider>
     </SccProvider>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -72,15 +73,11 @@
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
     </Reference>
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
@@ -1097,6 +1094,10 @@
     <ProjectReference Include="..\FewMain.Repository\FewMain.Repository.csproj">
       <Project>{1111800d-a2d8-4ed2-b2f4-c3653b3e9105}</Project>
       <Name>FewMain.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FewMain.Service\FewMain.Service.csproj">
+      <Project>{076258a7-f3eb-4d0c-8b53-1069c54500ae}</Project>
+      <Name>FewMain.Service</Name>
     </ProjectReference>
     <ProjectReference Include="..\FewMain.WebHelper\FewMain.WebHelper.csproj">
       <Project>{afc5de17-7634-4d45-a260-c831da54cba8}</Project>

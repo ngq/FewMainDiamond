@@ -105,22 +105,22 @@ ul.topnav li span .box .right a{ display:block; margin:0; padding:0;}
 .chat_f1 .chat_f1_expr{width:37px; height:0px; overflow:hidden; padding:0; margin:0;}
 .chat_f1 .list{overflow:hidden; border:none;}
 .chat_f1 h5{ background:none;}
-.chat_f1 .list:hover{background-color:#41b1a5;}
+.chat_f1 .list:hover{background-color:#585858;}
 .chat_f1 .detail{position:absolute;margin-left:-110px;margin-top:-37px;display:none;width:110px; height:100%;}    
-.chat_f1 .detail span{ line-height:37px;display:block;font-size:12px; background:#41b1a5; color:#fff; text-align:center;}
+.chat_f1 .detail span{ line-height:37px;display:block;font-size:12px; background:#585858; color:#fff; text-align:center;}
 .chat_f1 .detail span a{ color:#fff;}
 
 .chat_f1 .detail2{position:absolute;margin-left:-110px;margin-top:-200px;display:none;width:110px; height:100%;} 
 .chat_f1 .detail2 span{display:block;color:#666666;font-size:12px;}  
 
-.chat_f1 .detail .jiadiv_02{ background:#41b1a5; height:190px; padding:10px;} 
+.chat_f1 .detail .jiadiv_02{ background:#585858; height:190px; padding:10px;} 
 .chat_f1 .detail .jiadiv_02 h6{ color:#fff; font-size:14px; padding:5px 0 15px 10px; border:none; text-align:left;} 
 .chat_f1 .detail .jiadiv_02 a{ width:60px; height:80px; float:left; color:#fff; text-align:center;} 
 .chat_f1 .detail .jiadiv_02 a img{ display:block; margin:0 auto;} 
 
 
 .chat_f1  .kf1{background:#7ecdcd;} 
-.chat_f1 .detail .kf{ background:#41b1a5; height:280px; padding:20px; } 
+.chat_f1 .detail .kf{ background:#585858; height:280px; padding:20px; } 
 .chat_f1 .detail .kf h6{ color:#fff; font-size:14px; padding:0px 0 10px 10px; border:none; text-align:left;}
 .chat_f1 .detail .kf a{  width:110px; height:26px; line-height:26px; display:block;border-radius:20px; margin-bottom:10px; text-indent:20px;} 
 .chat_f1 .detail .kf .one{ background:#7ecdcd url(../images/base/qq/qq.png) no-repeat 10px 0px; border: 1px solid #99dbdb; }
@@ -128,7 +128,7 @@ ul.topnav li span .box .right a{ display:block; margin:0; padding:0;}
 .chat_f1 .detail .kf .two{ background:#7ecdcd url(../images/base/qq/qq2.png) no-repeat 10px 0px; border: 1px solid #99dbdb; }
 .chat_f1 .detail .kf .two:hover{ background:#ccb17a url(../images/base/qq/qq2.png) no-repeat 10px 0px; border: 1px solid #ccb17a;}
 
-.chat_f1 .detail .mem { background:#41b1a5; height:160px; padding:20px 0; margin-top:-1px;} 
+.chat_f1 .detail .mem { background:#585858; height:160px; padding:20px 0; margin-top:-1px;} 
 .chat_f1 .detail .mem img{ display:block; margin:0 auto; margin-bottom:10px;} 
 .chat_f1 .detail .mem a{ color:#fff;font-size:14px; background:#7ecdcd ; width:100px; height:26px; line-height:26px;text-align:center; display:block; border-radius:20px;border: 1px solid #99dbdb; margin:0 auto;margin-bottom:15px; }
 .chat_f1 .detail .mem a:hover{ background:#ccb17a;border: 1px solid #ccb17a;}

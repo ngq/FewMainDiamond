@@ -58,6 +58,24 @@
     <Compile Include="FewMainArticle.cs">
       <DependentUpon>FewMain_Services.tt</DependentUpon>
     </Compile>
+    <Compile Include="FewMainCart.cs">
+      <DependentUpon>FewMain_Services.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FewMainCartDetail.cs">
+      <DependentUpon>FewMain_Services.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FewMainCartType.cs">
+      <DependentUpon>FewMain_Services.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FewMainOrder.cs">
+      <DependentUpon>FewMain_Services.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FewMainOrderDetail.cs">
+      <DependentUpon>FewMain_Services.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FewMainOrderType.cs">
+      <DependentUpon>FewMain_Services.tt</DependentUpon>
+    </Compile>
     <Compile Include="FewMainProType.cs">
       <DependentUpon>FewMain_Services.tt</DependentUpon>
     </Compile>

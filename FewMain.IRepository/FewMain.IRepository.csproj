@@ -63,6 +63,24 @@
     <Compile Include="IFewMainArticle.cs">
       <DependentUpon>FewMain_IRepository.tt</DependentUpon>
     </Compile>
+    <Compile Include="IFewMainCart.cs">
+      <DependentUpon>FewMain_IRepository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IFewMainCartDetail.cs">
+      <DependentUpon>FewMain_IRepository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IFewMainCartType.cs">
+      <DependentUpon>FewMain_IRepository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IFewMainOrder.cs">
+      <DependentUpon>FewMain_IRepository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IFewMainOrderDetail.cs">
+      <DependentUpon>FewMain_IRepository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IFewMainOrderType.cs">
+      <DependentUpon>FewMain_IRepository.tt</DependentUpon>
+    </Compile>
     <Compile Include="IFewMainProType.cs">
       <DependentUpon>FewMain_IRepository.tt</DependentUpon>
     </Compile>
