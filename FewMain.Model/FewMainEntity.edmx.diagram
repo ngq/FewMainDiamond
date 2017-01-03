@@ -20,6 +20,8 @@
         <AssociationConnector Association="FewMainDiamondModel.FewMainOrderTypeFewMainOrder" />
         <AssociationConnector Association="FewMainDiamondModel.FewMainOrderFewMainOrderDetail" />
         <AssociationConnector Association="FewMainDiamondModel.FewMainCartFewMainCartType" />
+        <EntityTypeShape EntityType="FewMainDiamondModel.FewMainProduct" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="FewMainDiamondModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="7.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

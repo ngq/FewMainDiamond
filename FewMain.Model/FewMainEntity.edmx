@@ -4,188 +4,214 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="FewMainDiamondModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityContainer Name="FewMainDiamondModelStoreContainer">
-    <EntitySet Name="FewMainArticle" EntityType="FewMainDiamondModel.Store.FewMainArticle" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="FewMainProType" EntityType="FewMainDiamondModel.Store.FewMainProType" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="FewMainType" EntityType="FewMainDiamondModel.Store.FewMainType" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Tag" EntityType="FewMainDiamondModel.Store.Tag" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Users" EntityType="FewMainDiamondModel.Store.Users" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="FewMainCart" EntityType="FewMainDiamondModel.Store.FewMainCart" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="FewMainCartDetail" EntityType="FewMainDiamondModel.Store.FewMainCartDetail" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="FewMainOrder" EntityType="FewMainDiamondModel.Store.FewMainOrder" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="FewMainOrderDetail" EntityType="FewMainDiamondModel.Store.FewMainOrderDetail" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="FewMainOrderType" EntityType="FewMainDiamondModel.Store.FewMainOrderType" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="FewMainCartType" EntityType="FewMainDiamondModel.Store.FewMainCartType" store:Type="Tables" Schema="dbo" />
-    <AssociationSet Name="FewMainCartFewMainCartDetail" Association="FewMainDiamondModel.Store.FewMainCartFewMainCartDetail">
-      <End Role="FewMainCart" EntitySet="FewMainCart" />
-      <End Role="FewMainCartDetail" EntitySet="FewMainCartDetail" />
-    </AssociationSet>
-    <AssociationSet Name="FewMainOrderTypeFewMainOrder" Association="FewMainDiamondModel.Store.FewMainOrderTypeFewMainOrder">
-      <End Role="FewMainOrder" EntitySet="FewMainOrder" />
-      <End Role="FewMainOrderType" EntitySet="FewMainOrderType" />
-    </AssociationSet>
-    <AssociationSet Name="FewMainOrderFewMainOrderDetail" Association="FewMainDiamondModel.Store.FewMainOrderFewMainOrderDetail">
-      <End Role="FewMainOrder" EntitySet="FewMainOrder" />
-      <End Role="FewMainOrderDetail" EntitySet="FewMainOrderDetail" />
-    </AssociationSet>
-    <AssociationSet Name="FewMainCartFewMainCartType" Association="FewMainDiamondModel.Store.FewMainCartFewMainCartType">
-      <End Role="FewMainCart" EntitySet="FewMainCart" />
-      <End Role="FewMainCartType" EntitySet="FewMainCartType" />
-    </AssociationSet>
-  </EntityContainer>
-  <EntityType Name="FewMainArticle">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Author" Type="nvarchar" Nullable="true" MaxLength="50" />
-    <Property Name="Type" Type="int" Nullable="true" />
-    <Property Name="WebTitle" Type="nvarchar" Nullable="true" MaxLength="500" />
-    <Property Name="WebKeyword" Type="nvarchar" Nullable="true" MaxLength="500" />
-    <Property Name="WebDescription" Type="nvarchar" Nullable="true" MaxLength="500" />
-    <Property Name="Title" Type="nvarchar" Nullable="true" MaxLength="500" />
-    <Property Name="Contents" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="ClickCount" Type="int" Nullable="true" />
-    <Property Name="Tag" Type="int" Nullable="true" />
-    <Property Name="AddTime" Type="datetime" Nullable="true" />
-    <Property Name="AppId" Type="int" Nullable="true" />
-  </EntityType>
-  <EntityType Name="FewMainProType">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="TypeName" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="ParentId" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="FewMainType">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="TypeName" Type="nvarchar" Nullable="true" MaxLength="50" />
-    <Property Name="ParentId" Type="int" Nullable="true" />
-    <Property Name="Remark" Type="nvarchar" Nullable="true" MaxLength="500" />
-    <Property Name="AddTime" Type="datetime" Nullable="true" />
-  </EntityType>
-  <EntityType Name="Tag">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="TabName" Type="nvarchar" Nullable="true" MaxLength="50" />
-    <Property Name="Remark" Type="nvarchar" Nullable="true" MaxLength="500" />
-  </EntityType>
-  <EntityType Name="Users">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="UserName" Type="nvarchar" Nullable="true" MaxLength="50" />
-    <Property Name="Password" Type="nvarchar" Nullable="true" MaxLength="50" />
-    <Property Name="NickName" Type="nvarchar" Nullable="true" MaxLength="50" />
-    <Property Name="RealName" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="Email" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="Mobile" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="QQ" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="HeaderImgSrc" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="Weixin" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="AddTime" Type="datetime" Nullable="false" />
-  </EntityType>
-  <EntityType Name="FewMainCart">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="CartId" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="FewMainCartDetail">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="FewMainCartId" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="FewMainOrder">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="OrderId" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="FewMainOrderTypeId" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="FewMainOrderDetail">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="FewMainOrderId" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="FewMainOrderType">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="TypeName" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="FewMainCartType">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="TypeName" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="FewMainCartId" Type="int" Nullable="false" />
-  </EntityType>
-  <Association Name="FewMainCartFewMainCartDetail">
-    <End Role="FewMainCart" Type="FewMainDiamondModel.Store.FewMainCart" Multiplicity="1" />
-    <End Role="FewMainCartDetail" Type="FewMainDiamondModel.Store.FewMainCartDetail" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="FewMainCart">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="FewMainCartDetail">
-        <PropertyRef Name="FewMainCartId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FewMainOrderTypeFewMainOrder">
-    <End Role="FewMainOrder" Type="FewMainDiamondModel.Store.FewMainOrder" Multiplicity="*" />
-    <End Role="FewMainOrderType" Type="FewMainDiamondModel.Store.FewMainOrderType" Multiplicity="1" />
-    <ReferentialConstraint>
-      <Principal Role="FewMainOrderType">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="FewMainOrder">
-        <PropertyRef Name="FewMainOrderTypeId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FewMainOrderFewMainOrderDetail">
-    <End Role="FewMainOrder" Type="FewMainDiamondModel.Store.FewMainOrder" Multiplicity="1" />
-    <End Role="FewMainOrderDetail" Type="FewMainDiamondModel.Store.FewMainOrderDetail" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="FewMainOrder">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="FewMainOrderDetail">
-        <PropertyRef Name="FewMainOrderId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FewMainCartFewMainCartType">
-    <End Role="FewMainCart" Type="FewMainDiamondModel.Store.FewMainCart" Multiplicity="1" />
-    <End Role="FewMainCartType" Type="FewMainDiamondModel.Store.FewMainCartType" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="FewMainCart">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="FewMainCartType">
-        <PropertyRef Name="FewMainCartId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-</Schema></edmx:StorageModels>
+    <Schema Namespace="FewMainDiamondModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="FewMainArticle">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Author" Type="nvarchar" MaxLength="50" />
+          <Property Name="Type" Type="int" />
+          <Property Name="WebTitle" Type="nvarchar" MaxLength="500" />
+          <Property Name="WebKeyword" Type="nvarchar" MaxLength="500" />
+          <Property Name="WebDescription" Type="nvarchar" MaxLength="500" />
+          <Property Name="Title" Type="nvarchar" MaxLength="500" />
+          <Property Name="Contents" Type="nvarchar(max)" />
+          <Property Name="ClickCount" Type="int" />
+          <Property Name="Tag" Type="int" />
+          <Property Name="AddTime" Type="datetime" />
+          <Property Name="AppId" Type="int" />
+        </EntityType>
+        <EntityType Name="FewMainCart">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CartId" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FewMainCartDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FewMainCartId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FewMainCartType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypeName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="FewMainCartId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FewMainOrder">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderId" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="FewMainOrderTypeId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FewMainOrderDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FewMainOrderId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FewMainOrderType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypeName" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FewMainProduct">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProName" Type="nvarchar" MaxLength="500" />
+          <Property Name="ProTypeId" Type="int" />
+          <Property Name="ProTypeName" Type="nvarchar" MaxLength="500" />
+          <Property Name="ProSeriesId" Type="int" />
+          <Property Name="ProSeriesName" Type="nvarchar" MaxLength="500" />
+          <Property Name="ImgSrcList" Type="nvarchar(max)" />
+          <Property Name="ProImgDetail" Type="nvarchar(max)" />
+          <Property Name="AddTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="FewMainProType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypeName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ParentId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FewMainType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypeName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ParentId" Type="int" />
+          <Property Name="Remark" Type="nvarchar" MaxLength="500" />
+          <Property Name="AddTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Tag">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TabName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Remark" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="NickName" Type="nvarchar" MaxLength="50" />
+          <Property Name="RealName" Type="nvarchar(max)" />
+          <Property Name="Email" Type="nvarchar(max)" />
+          <Property Name="Mobile" Type="nvarchar(max)" />
+          <Property Name="QQ" Type="nvarchar(max)" />
+          <Property Name="HeaderImgSrc" Type="nvarchar(max)" />
+          <Property Name="Weixin" Type="nvarchar(max)" />
+          <Property Name="AddTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_FewMainCartFewMainCartDetail">
+          <End Role="FewMainCart" Type="Self.FewMainCart" Multiplicity="1" />
+          <End Role="FewMainCartDetail" Type="Self.FewMainCartDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FewMainCart">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FewMainCartDetail">
+              <PropertyRef Name="FewMainCartId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FewMainCartFewMainCartType">
+          <End Role="FewMainCart" Type="Self.FewMainCart" Multiplicity="1" />
+          <End Role="FewMainCartType" Type="Self.FewMainCartType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FewMainCart">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FewMainCartType">
+              <PropertyRef Name="FewMainCartId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FewMainOrderFewMainOrderDetail">
+          <End Role="FewMainOrder" Type="Self.FewMainOrder" Multiplicity="1" />
+          <End Role="FewMainOrderDetail" Type="Self.FewMainOrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FewMainOrder">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FewMainOrderDetail">
+              <PropertyRef Name="FewMainOrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FewMainOrderTypeFewMainOrder">
+          <End Role="FewMainOrderType" Type="Self.FewMainOrderType" Multiplicity="1" />
+          <End Role="FewMainOrder" Type="Self.FewMainOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FewMainOrderType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FewMainOrder">
+              <PropertyRef Name="FewMainOrderTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FewMainDiamondModelStoreContainer">
+          <EntitySet Name="FewMainArticle" EntityType="Self.FewMainArticle" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FewMainCart" EntityType="Self.FewMainCart" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FewMainCartDetail" EntityType="Self.FewMainCartDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FewMainCartType" EntityType="Self.FewMainCartType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FewMainOrder" EntityType="Self.FewMainOrder" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FewMainOrderDetail" EntityType="Self.FewMainOrderDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FewMainOrderType" EntityType="Self.FewMainOrderType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FewMainProduct" EntityType="Self.FewMainProduct" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FewMainProType" EntityType="Self.FewMainProType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FewMainType" EntityType="Self.FewMainType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tag" EntityType="Self.Tag" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_FewMainCartFewMainCartDetail" Association="Self.FK_FewMainCartFewMainCartDetail">
+            <End Role="FewMainCart" EntitySet="FewMainCart" />
+            <End Role="FewMainCartDetail" EntitySet="FewMainCartDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FewMainCartFewMainCartType" Association="Self.FK_FewMainCartFewMainCartType">
+            <End Role="FewMainCart" EntitySet="FewMainCart" />
+            <End Role="FewMainCartType" EntitySet="FewMainCartType" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FewMainOrderFewMainOrderDetail" Association="Self.FK_FewMainOrderFewMainOrderDetail">
+            <End Role="FewMainOrder" EntitySet="FewMainOrder" />
+            <End Role="FewMainOrderDetail" EntitySet="FewMainOrderDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FewMainOrderTypeFewMainOrder" Association="Self.FK_FewMainOrderTypeFewMainOrder">
+            <End Role="FewMainOrderType" EntitySet="FewMainOrderType" />
+            <End Role="FewMainOrder" EntitySet="FewMainOrder" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="FewMainDiamondModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -217,6 +243,8 @@
             <End Role="FewMainCart" EntitySet="FewMainCart" />
             <End Role="FewMainCartType" EntitySet="FewMainCartType" />
           </AssociationSet>
+          <EntitySet Name="FewMainProduct" EntityType="FewMainDiamondModel.FewMainProduct" />
+          <EntitySet Name="sysdiagrams" EntityType="FewMainDiamondModel.sysdiagrams" />
         </EntityContainer>
         <EntityType Name="FewMainArticle">
           <Key>
@@ -283,7 +311,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="CartDetail" Relationship="FewMainDiamondModel.FewMainCartFewMainCartDetail" FromRole="FewMainCart" ToRole="FewMainCartDetail" />
-          <Property Name="CartId" Type="String" Nullable="false" />
+          <Property Name="CartId" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="CartType" Relationship="FewMainDiamondModel.FewMainCartFewMainCartType" FromRole="FewMainCart" ToRole="FewMainCartType" />
         </EntityType>
         <EntityType Name="FewMainCartDetail">
@@ -300,7 +328,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="OrderType" Relationship="FewMainDiamondModel.FewMainOrderTypeFewMainOrder" FromRole="FewMainOrder" ToRole="FewMainOrderType" />
-          <Property Name="OrderId" Type="String" Nullable="false" />
+          <Property Name="OrderId" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="FewMainOrderTypeId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="OrderDetail" Relationship="FewMainDiamondModel.FewMainOrderFewMainOrderDetail" FromRole="FewMainOrder" ToRole="FewMainOrderDetail" />
         </EntityType>
@@ -333,14 +361,14 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="Order" Relationship="FewMainDiamondModel.FewMainOrderTypeFewMainOrder" FromRole="FewMainOrderType" ToRole="FewMainOrder" />
-          <Property Name="TypeName" Type="String" Nullable="false" />
+          <Property Name="TypeName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
         </EntityType>
         <EntityType Name="FewMainCartType">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TypeName" Type="String" Nullable="false" />
+          <Property Name="TypeName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Cart" Relationship="FewMainDiamondModel.FewMainCartFewMainCartType" FromRole="FewMainCartType" ToRole="FewMainCart" />
           <Property Name="FewMainCartId" Type="Int32" Nullable="false" />
         </EntityType>
@@ -380,6 +408,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="FewMainProduct">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ProTypeId" Type="Int32" />
+          <Property Name="ProTypeName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ProSeriesId" Type="Int32" />
+          <Property Name="ProSeriesName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ImgSrcList" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProImgDetail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AddTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -500,6 +552,32 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+          <EntitySetMapping Name="FewMainProduct">
+            <EntityTypeMapping TypeName="FewMainDiamondModel.FewMainProduct">
+              <MappingFragment StoreEntitySet="FewMainProduct">
+                <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+                <ScalarProperty Name="ProImgDetail" ColumnName="ProImgDetail" />
+                <ScalarProperty Name="ImgSrcList" ColumnName="ImgSrcList" />
+                <ScalarProperty Name="ProSeriesName" ColumnName="ProSeriesName" />
+                <ScalarProperty Name="ProSeriesId" ColumnName="ProSeriesId" />
+                <ScalarProperty Name="ProTypeName" ColumnName="ProTypeName" />
+                <ScalarProperty Name="ProTypeId" ColumnName="ProTypeId" />
+                <ScalarProperty Name="ProName" ColumnName="ProName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="FewMainDiamondModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>
