@@ -1098,6 +1098,10 @@
       <Project>{1111800d-a2d8-4ed2-b2f4-c3653b3e9105}</Project>
       <Name>FewMain.Repository</Name>
     </ProjectReference>
+    <ProjectReference Include="..\FewMain.Service\FewMain.Service.csproj">
+      <Project>{076258a7-f3eb-4d0c-8b53-1069c54500ae}</Project>
+      <Name>FewMain.Service</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FewMain.WebHelper\FewMain.WebHelper.csproj">
       <Project>{afc5de17-7634-4d45-a260-c831da54cba8}</Project>
       <Name>FewMain.WebHelper</Name>
