@@ -12,12 +12,12 @@ namespace FewMain.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagrams
+    public partial class FewMainHandSize
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public int Id { get; set; }
+        public decimal Size { get; set; }
+        public int ProductId { get; set; }
+        public string Remark { get; set; }
+        public System.DateTime AddTime { get; set; }
     }
 }

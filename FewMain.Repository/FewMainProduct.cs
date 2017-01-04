@@ -14,7 +14,7 @@ namespace FewMain.Repository
     
      using FewMain.IRepository;
       using FewMain.Model;
-    public partial class  UsersRepository:BaseRepository<Users>,IUsersRepository
+    public partial class  FewMainProductRepository:BaseRepository<FewMainProduct>,IFewMainProductRepository
     {
      
     }

@@ -88,6 +88,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FewMainEntity.edmx</DependentUpon>
     </Compile>
+    <Compile Include="FewMainHandSize.cs">
+      <DependentUpon>FewMainEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="FewMainImgs.cs">
       <DependentUpon>FewMainEntity.tt</DependentUpon>
     </Compile>
@@ -109,22 +112,19 @@
     <Compile Include="FewMainSku.cs">
       <DependentUpon>FewMainEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="FewMainTag.cs">
+      <DependentUpon>FewMainEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="FewMainType.cs">
+      <DependentUpon>FewMainEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FewMainUsers.cs">
       <DependentUpon>FewMainEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="ParamModel\ForgetParam.cs" />
     <Compile Include="ParamModel\RegisterParam.cs" />
     <Compile Include="ParamModel\LoginParam.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="sysdiagrams.cs">
-      <DependentUpon>FewMainEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Tag.cs">
-      <DependentUpon>FewMainEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Users.cs">
-      <DependentUpon>FewMainEntity.tt</DependentUpon>
-    </Compile>
     <Compile Include="ViewModel\UsersLoginViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

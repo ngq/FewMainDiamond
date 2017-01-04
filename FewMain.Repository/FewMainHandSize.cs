@@ -7,22 +7,15 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FewMain.Service
+namespace FewMain.Repository
 {
     using System;
     using System.Collections.Generic;
     
-    using FewMain.IRepository;
-    using FewMain.IService;
-    using Model;
-    public partial class  TagServices:BaseServices<Tag>,ITagServices
+     using FewMain.IRepository;
+      using FewMain.Model;
+    public partial class  FewMainHandSizeRepository:BaseRepository<FewMainHandSize>,IFewMainHandSizeRepository
     {
-      ITagRepository _rep;
-    
-       public TagServices(ITagRepository _rep)
-       {
-        this._rep = _rep;
-    	base._dal = _rep;
-       }
+     
     }
 }

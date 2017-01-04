@@ -7,14 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FewMain.Repository
+namespace FewMain.IRepository
 {
     using System;
     using System.Collections.Generic;
     
-     using FewMain.IRepository;
-      using FewMain.Model;
-    public partial class  TagRepository:BaseRepository<Tag>,ITagRepository
+     using FewMain.Model;
+    public partial interface  IFewMainTagRepository:IBaseRepository<FewMainTag>
     {
      
     }

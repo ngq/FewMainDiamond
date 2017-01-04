@@ -11,7 +11,7 @@ using FewMain.Model.ParamModel;
 
 namespace FewMain.Service
 {
-    public partial class UsersServices
+    public partial class FewMainUsersServices
     {
         #region 登录相关
         /// <summary>
@@ -42,7 +42,7 @@ namespace FewMain.Service
         {
             try
             {
-                var model = new Users() { AddTime = DateTime.Now, Email = parms.Email, Mobile = parms.Mobile, Password = EncryptHelper.GetMD5( parms.Password), UserName = parms.UserName, Weixin = parms.Weixin };
+                var model = new FewMainUsers() { AddTime = DateTime.Now, Email = parms.Email, Mobile = parms.Mobile, Password = EncryptHelper.GetMD5( parms.Password), UserName = parms.UserName, Weixin = parms.Weixin };
                 Add(model);
                 return SaveChanges() > 0;
             }

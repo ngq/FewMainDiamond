@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 01/04/2017 10:28:09
--- Generated from EDMX file: H:\我的\我的TFS项目\FewMainDiamond\FewMain.Model\FewMainEntity.edmx
+-- Date Created: 01/04/2017 22:15:08
+-- Generated from EDMX file: H:\Git项目管理\FewMainDiamond\FewMain.Model\FewMainEntity.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -46,6 +46,9 @@ GO
 IF OBJECT_ID(N'[dbo].[FewMainCartType]', 'U') IS NOT NULL
     DROP TABLE [dbo].[FewMainCartType];
 GO
+IF OBJECT_ID(N'[dbo].[FewMainImgs]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[FewMainImgs];
+GO
 IF OBJECT_ID(N'[dbo].[FewMainOrder]', 'U') IS NOT NULL
     DROP TABLE [dbo].[FewMainOrder];
 GO
@@ -55,23 +58,23 @@ GO
 IF OBJECT_ID(N'[dbo].[FewMainOrderType]', 'U') IS NOT NULL
     DROP TABLE [dbo].[FewMainOrderType];
 GO
-IF OBJECT_ID(N'[dbo].[FewMainProduct]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[FewMainProduct];
-GO
 IF OBJECT_ID(N'[dbo].[FewMainProType]', 'U') IS NOT NULL
     DROP TABLE [dbo].[FewMainProType];
 GO
+IF OBJECT_ID(N'[dbo].[FewMainSku]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[FewMainSku];
+GO
 IF OBJECT_ID(N'[dbo].[FewMainType]', 'U') IS NOT NULL
     DROP TABLE [dbo].[FewMainType];
-GO
-IF OBJECT_ID(N'[dbo].[sysdiagrams]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[sysdiagrams];
 GO
 IF OBJECT_ID(N'[dbo].[Tag]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Tag];
 GO
 IF OBJECT_ID(N'[dbo].[Users]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Users];
+GO
+IF OBJECT_ID(N'[FewMainDiamondModelStoreContainer].[FewMainProduct]', 'U') IS NOT NULL
+    DROP TABLE [FewMainDiamondModelStoreContainer].[FewMainProduct];
 GO
 
 -- --------------------------------------------------
@@ -198,13 +201,32 @@ CREATE TABLE [dbo].[FewMainProduct] (
 );
 GO
 
--- Creating table 'sysdiagrams'
-CREATE TABLE [dbo].[sysdiagrams] (
-    [name] nvarchar(128)  NOT NULL,
-    [principal_id] int  NOT NULL,
-    [diagram_id] int IDENTITY(1,1) NOT NULL,
-    [version] int  NULL,
-    [definition] varbinary(max)  NULL
+-- Creating table 'FewMainImgs'
+CREATE TABLE [dbo].[FewMainImgs] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [ImgSrc] nvarchar(max)  NULL,
+    [ProductId] int  NULL,
+    [AddTime] datetime  NOT NULL
+);
+GO
+
+-- Creating table 'FewMainSku'
+CREATE TABLE [dbo].[FewMainSku] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [SKUNo] nvarchar(500)  NOT NULL,
+    [Weight] decimal(18,2)  NOT NULL,
+    [Shape] int  NOT NULL,
+    [Color] nvarchar(50)  NOT NULL,
+    [Clarity] nvarchar(50)  NOT NULL,
+    [Cut] nvarchar(50)  NOT NULL,
+    [Polishing] nvarchar(50)  NOT NULL,
+    [Symmetry] nvarchar(50)  NOT NULL,
+    [Fluorescence] nvarchar(50)  NOT NULL,
+    [Price] decimal(18,2)  NOT NULL,
+    [Coffee] nvarchar(50)  NULL,
+    [Milk] nvarchar(50)  NULL,
+    [AddTime] datetime  NULL,
+    [UpdateTime] datetime  NULL
 );
 GO
 
@@ -284,10 +306,16 @@ ADD CONSTRAINT [PK_FewMainProduct]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
--- Creating primary key on [diagram_id] in table 'sysdiagrams'
-ALTER TABLE [dbo].[sysdiagrams]
-ADD CONSTRAINT [PK_sysdiagrams]
-    PRIMARY KEY CLUSTERED ([diagram_id] ASC);
+-- Creating primary key on [Id] in table 'FewMainImgs'
+ALTER TABLE [dbo].[FewMainImgs]
+ADD CONSTRAINT [PK_FewMainImgs]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'FewMainSku'
+ALTER TABLE [dbo].[FewMainSku]
+ADD CONSTRAINT [PK_FewMainSku]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
 -- --------------------------------------------------

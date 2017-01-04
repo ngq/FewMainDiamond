@@ -44,6 +44,16 @@
           <Property Name="TypeName" Type="nvarchar(max)" Nullable="false" />
           <Property Name="FewMainCartId" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="FewMainHandSize">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Size" Type="decimal" Precision="18" Scale="1" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="Remark" Type="nvarchar" MaxLength="500" />
+          <Property Name="AddTime" Type="datetime" Nullable="false" />
+        </EntityType>
         <EntityType Name="FewMainImgs">
           <Key>
             <PropertyRef Name="Id" />
@@ -75,14 +85,9 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TypeName" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
-        <!--生成过程中发现错误:
-警告 6002: 表/视图“FewMainDiamond.dbo.FewMainProduct”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
         <EntityType Name="FewMainProduct">
           <Key>
             <PropertyRef Name="Id" />
-            
-            
-            
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ProName" Type="nvarchar" MaxLength="500" />
@@ -93,9 +98,9 @@
           <Property Name="ImgSrcList" Type="nvarchar(max)" />
           <Property Name="ProImgDetail" Type="nvarchar(max)" />
           <Property Name="AddTime" Type="datetime" />
-          <Property Name="WebTitle" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="WebKeyword" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="WebDescription" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="WebTitle" Type="nvarchar" MaxLength="500" />
+          <Property Name="WebKeyword" Type="nvarchar" MaxLength="500" />
+          <Property Name="WebDescription" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <EntityType Name="FewMainProType">
           <Key>
@@ -125,6 +130,14 @@
           <Property Name="AddTime" Type="datetime" />
           <Property Name="UpdateTime" Type="datetime" />
         </EntityType>
+        <EntityType Name="FewMainTag">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TabName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Remark" Type="nvarchar" MaxLength="500" />
+        </EntityType>
         <EntityType Name="FewMainType">
           <Key>
             <PropertyRef Name="Id" />
@@ -135,15 +148,7 @@
           <Property Name="Remark" Type="nvarchar" MaxLength="500" />
           <Property Name="AddTime" Type="datetime" />
         </EntityType>
-        <EntityType Name="Tag">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TabName" Type="nvarchar" MaxLength="50" />
-          <Property Name="Remark" Type="nvarchar" MaxLength="500" />
-        </EntityType>
-        <EntityType Name="Users">
+        <EntityType Name="FewMainUsers">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -212,31 +217,17 @@
           <EntitySet Name="FewMainCart" EntityType="Self.FewMainCart" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FewMainCartDetail" EntityType="Self.FewMainCartDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FewMainCartType" EntityType="Self.FewMainCartType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FewMainHandSize" EntityType="Self.FewMainHandSize" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FewMainImgs" EntityType="Self.FewMainImgs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FewMainOrder" EntityType="Self.FewMainOrder" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FewMainOrderDetail" EntityType="Self.FewMainOrderDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FewMainOrderType" EntityType="Self.FewMainOrderType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FewMainProduct" EntityType="Self.FewMainProduct" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FewMainProType" EntityType="Self.FewMainProType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FewMainSku" EntityType="Self.FewMainSku" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FewMainTag" EntityType="Self.FewMainTag" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FewMainType" EntityType="Self.FewMainType" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Tag" EntityType="Self.Tag" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="FewMainProduct" EntityType="Self.FewMainProduct" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [FewMainProduct].[Id] AS [Id], 
-    [FewMainProduct].[ProName] AS [ProName], 
-    [FewMainProduct].[ProTypeId] AS [ProTypeId], 
-    [FewMainProduct].[ProTypeName] AS [ProTypeName], 
-    [FewMainProduct].[ProSeriesId] AS [ProSeriesId], 
-    [FewMainProduct].[ProSeriesName] AS [ProSeriesName], 
-    [FewMainProduct].[ImgSrcList] AS [ImgSrcList], 
-    [FewMainProduct].[ProImgDetail] AS [ProImgDetail], 
-    [FewMainProduct].[AddTime] AS [AddTime], 
-    [FewMainProduct].[WebTitle] AS [WebTitle], 
-    [FewMainProduct].[WebKeyword] AS [WebKeyword], 
-    [FewMainProduct].[WebDescription] AS [WebDescription]
-    FROM [dbo].[FewMainProduct] AS [FewMainProduct]</DefiningQuery>
-          </EntitySet>
+          <EntitySet Name="FewMainUsers" EntityType="Self.FewMainUsers" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_FewMainCartFewMainCartDetail" Association="Self.FK_FewMainCartFewMainCartDetail">
             <End Role="FewMainCart" EntitySet="FewMainCart" />
             <End Role="FewMainCartDetail" EntitySet="FewMainCartDetail" />
@@ -262,8 +253,6 @@
           <EntitySet Name="FewMainArticle" EntityType="FewMainDiamondModel.FewMainArticle" />
           <EntitySet Name="FewMainProType" EntityType="FewMainDiamondModel.FewMainProType" />
           <EntitySet Name="FewMainType" EntityType="FewMainDiamondModel.FewMainType" />
-          <EntitySet Name="Tag" EntityType="FewMainDiamondModel.Tag" />
-          <EntitySet Name="Users" EntityType="FewMainDiamondModel.Users" />
           <EntitySet Name="FewMainCart" EntityType="FewMainDiamondModel.FewMainCart" />
           <EntitySet Name="FewMainCartDetail" EntityType="FewMainDiamondModel.FewMainCartDetail" />
           <EntitySet Name="FewMainOrder" EntityType="FewMainDiamondModel.FewMainOrder" />
@@ -289,6 +278,9 @@
           <EntitySet Name="FewMainProduct" EntityType="FewMainDiamondModel.FewMainProduct" />
           <EntitySet Name="FewMainImgs" EntityType="FewMainDiamondModel.FewMainImgs" />
           <EntitySet Name="FewMainSku" EntityType="FewMainDiamondModel.FewMainSku" />
+          <EntitySet Name="FewMainHandSize" EntityType="FewMainDiamondModel.FewMainHandSize" />
+          <EntitySet Name="FewMainTag" EntityType="FewMainDiamondModel.FewMainTag" />
+          <EntitySet Name="FewMainUsers" EntityType="FewMainDiamondModel.FewMainUsers" />
         </EntityContainer>
         <EntityType Name="FewMainArticle">
           <Key>
@@ -324,30 +316,6 @@
           <Property Name="ParentId" Type="Int32" />
           <Property Name="Remark" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="AddTime" Type="DateTime" Precision="3" />
-        </EntityType>
-        <EntityType Name="Tag">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TabName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Remark" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="Users">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="NickName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="RealName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Mobile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="QQ" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="HeaderImgSrc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Weixin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="AddTime" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
         <EntityType Name="FewMainCart">
           <Key>
@@ -465,9 +433,9 @@
           <Property Name="ImgSrcList" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="ProImgDetail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="AddTime" Type="DateTime" Precision="3" />
-          <Property Name="WebTitle" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="WebKeyword" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="WebDescription" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="WebTitle" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="WebKeyword" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="WebDescription" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
         </EntityType>
         <EntityType Name="FewMainImgs">
           <Key>
@@ -497,6 +465,40 @@
           <Property Name="Milk" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="AddTime" Type="DateTime" Precision="3" />
           <Property Name="UpdateTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="FewMainHandSize">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Size" Type="Decimal" Nullable="false" Precision="18" Scale="1" />
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="Remark" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="AddTime" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="FewMainTag">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TabName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Remark" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="FewMainUsers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NickName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RealName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Mobile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="QQ" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HeaderImgSrc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Weixin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AddTime" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -538,32 +540,6 @@
           <ScalarProperty Name="TypeName" ColumnName="TypeName" />
           <ScalarProperty Name="ParentId" ColumnName="ParentId" />
           <ScalarProperty Name="Remark" ColumnName="Remark" />
-          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Tag">
-      <EntityTypeMapping TypeName="IsTypeOf(FewMainDiamondModel.Tag)">
-        <MappingFragment StoreEntitySet="Tag">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="TabName" ColumnName="TabName" />
-          <ScalarProperty Name="Remark" ColumnName="Remark" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Users">
-      <EntityTypeMapping TypeName="IsTypeOf(FewMainDiamondModel.Users)">
-        <MappingFragment StoreEntitySet="Users">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="UserName" ColumnName="UserName" />
-          <ScalarProperty Name="Password" ColumnName="Password" />
-          <ScalarProperty Name="NickName" ColumnName="NickName" />
-          <ScalarProperty Name="RealName" ColumnName="RealName" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
-          <ScalarProperty Name="QQ" ColumnName="QQ" />
-          <ScalarProperty Name="HeaderImgSrc" ColumnName="HeaderImgSrc" />
-          <ScalarProperty Name="Weixin" ColumnName="Weixin" />
           <ScalarProperty Name="AddTime" ColumnName="AddTime" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -636,34 +612,71 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-          <EntitySetMapping Name="FewMainImgs">
-            <EntityTypeMapping TypeName="FewMainDiamondModel.FewMainImgs">
-              <MappingFragment StoreEntitySet="FewMainImgs">
+    <EntitySetMapping Name="FewMainImgs">
+      <EntityTypeMapping TypeName="IsTypeOf(FewMainDiamondModel.FewMainImgs)">
+        <MappingFragment StoreEntitySet="FewMainImgs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ImgSrc" ColumnName="ImgSrc" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FewMainSku">
+      <EntityTypeMapping TypeName="IsTypeOf(FewMainDiamondModel.FewMainSku)">
+        <MappingFragment StoreEntitySet="FewMainSku">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SKUNo" ColumnName="SKUNo" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="Shape" ColumnName="Shape" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="Clarity" ColumnName="Clarity" />
+          <ScalarProperty Name="Cut" ColumnName="Cut" />
+          <ScalarProperty Name="Polishing" ColumnName="Polishing" />
+          <ScalarProperty Name="Symmetry" ColumnName="Symmetry" />
+          <ScalarProperty Name="Fluorescence" ColumnName="Fluorescence" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Coffee" ColumnName="Coffee" />
+          <ScalarProperty Name="Milk" ColumnName="Milk" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+          <EntitySetMapping Name="FewMainHandSize">
+            <EntityTypeMapping TypeName="FewMainDiamondModel.FewMainHandSize">
+              <MappingFragment StoreEntitySet="FewMainHandSize">
                 <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
                 <ScalarProperty Name="ProductId" ColumnName="ProductId" />
-                <ScalarProperty Name="ImgSrc" ColumnName="ImgSrc" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="FewMainSku">
-            <EntityTypeMapping TypeName="FewMainDiamondModel.FewMainSku">
-              <MappingFragment StoreEntitySet="FewMainSku">
-                <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
-                <ScalarProperty Name="AddTime" ColumnName="AddTime" />
-                <ScalarProperty Name="Milk" ColumnName="Milk" />
-                <ScalarProperty Name="Coffee" ColumnName="Coffee" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="Fluorescence" ColumnName="Fluorescence" />
-                <ScalarProperty Name="Symmetry" ColumnName="Symmetry" />
-                <ScalarProperty Name="Polishing" ColumnName="Polishing" />
-                <ScalarProperty Name="Cut" ColumnName="Cut" />
-                <ScalarProperty Name="Clarity" ColumnName="Clarity" />
-                <ScalarProperty Name="Color" ColumnName="Color" />
-                <ScalarProperty Name="Shape" ColumnName="Shape" />
-                <ScalarProperty Name="Weight" ColumnName="Weight" />
-                <ScalarProperty Name="SKUNo" ColumnName="SKUNo" />
+          <EntitySetMapping Name="FewMainTag">
+            <EntityTypeMapping TypeName="FewMainDiamondModel.FewMainTag">
+              <MappingFragment StoreEntitySet="FewMainTag">
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="TabName" ColumnName="TabName" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FewMainUsers">
+            <EntityTypeMapping TypeName="FewMainDiamondModel.FewMainUsers">
+              <MappingFragment StoreEntitySet="FewMainUsers">
+                <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+                <ScalarProperty Name="Weixin" ColumnName="Weixin" />
+                <ScalarProperty Name="HeaderImgSrc" ColumnName="HeaderImgSrc" />
+                <ScalarProperty Name="QQ" ColumnName="QQ" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="RealName" ColumnName="RealName" />
+                <ScalarProperty Name="NickName" ColumnName="NickName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -28,8 +28,6 @@ namespace FewMain.Model
         public virtual DbSet<FewMainArticle> FewMainArticle { get; set; }
         public virtual DbSet<FewMainProType> FewMainProType { get; set; }
         public virtual DbSet<FewMainType> FewMainType { get; set; }
-        public virtual DbSet<Tag> Tag { get; set; }
-        public virtual DbSet<Users> Users { get; set; }
         public virtual DbSet<FewMainCart> FewMainCart { get; set; }
         public virtual DbSet<FewMainCartDetail> FewMainCartDetail { get; set; }
         public virtual DbSet<FewMainOrder> FewMainOrder { get; set; }
@@ -39,5 +37,8 @@ namespace FewMain.Model
         public virtual DbSet<FewMainProduct> FewMainProduct { get; set; }
         public virtual DbSet<FewMainImgs> FewMainImgs { get; set; }
         public virtual DbSet<FewMainSku> FewMainSku { get; set; }
+        public virtual DbSet<FewMainHandSize> FewMainHandSize { get; set; }
+        public virtual DbSet<FewMainTag> FewMainTag { get; set; }
+        public virtual DbSet<FewMainUsers> FewMainUsers { get; set; }
     }
 }

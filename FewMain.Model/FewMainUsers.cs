@@ -12,7 +12,7 @@ namespace FewMain.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class Users
+    public partial class FewMainUsers
     {
         public int ID { get; set; }
         public string UserName { get; set; }

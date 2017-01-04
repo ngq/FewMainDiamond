@@ -72,6 +72,12 @@
     <Compile Include="IFewMainCartType.cs">
       <DependentUpon>FewMain_IRepository.tt</DependentUpon>
     </Compile>
+    <Compile Include="IFewMainHandSize.cs">
+      <DependentUpon>FewMain_IRepository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IFewMainImgs.cs">
+      <DependentUpon>FewMain_IRepository.tt</DependentUpon>
+    </Compile>
     <Compile Include="IFewMainOrder.cs">
       <DependentUpon>FewMain_IRepository.tt</DependentUpon>
     </Compile>
@@ -81,16 +87,22 @@
     <Compile Include="IFewMainOrderType.cs">
       <DependentUpon>FewMain_IRepository.tt</DependentUpon>
     </Compile>
+    <Compile Include="IFewMainProduct.cs">
+      <DependentUpon>FewMain_IRepository.tt</DependentUpon>
+    </Compile>
     <Compile Include="IFewMainProType.cs">
+      <DependentUpon>FewMain_IRepository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IFewMainSku.cs">
+      <DependentUpon>FewMain_IRepository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IFewMainTag.cs">
       <DependentUpon>FewMain_IRepository.tt</DependentUpon>
     </Compile>
     <Compile Include="IFewMainType.cs">
       <DependentUpon>FewMain_IRepository.tt</DependentUpon>
     </Compile>
-    <Compile Include="ITag.cs">
-      <DependentUpon>FewMain_IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="IUsers.cs">
+    <Compile Include="IFewMainUsers.cs">
       <DependentUpon>FewMain_IRepository.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

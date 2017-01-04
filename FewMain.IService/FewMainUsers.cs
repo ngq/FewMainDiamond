@@ -13,7 +13,7 @@ namespace FewMain.IService
     using System.Collections.Generic;
     
     using FewMain.Model;
-    public partial interface  ITagServices:IBaseServices<Tag>
+    public partial interface  IFewMainUsersServices:IBaseServices<FewMainUsers>
     {
      
     }
