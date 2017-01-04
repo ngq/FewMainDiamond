@@ -23,5 +23,8 @@ namespace FewMain.Model
         public string ImgSrcList { get; set; }
         public string ProImgDetail { get; set; }
         public Nullable<System.DateTime> AddTime { get; set; }
+        public string WebTitle { get; set; }
+        public string WebKeyword { get; set; }
+        public string WebDescription { get; set; }
     }
 }

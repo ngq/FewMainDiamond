@@ -37,6 +37,7 @@ namespace FewMain.Model
         public virtual DbSet<FewMainOrderType> FewMainOrderType { get; set; }
         public virtual DbSet<FewMainCartType> FewMainCartType { get; set; }
         public virtual DbSet<FewMainProduct> FewMainProduct { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<FewMainImgs> FewMainImgs { get; set; }
+        public virtual DbSet<FewMainSku> FewMainSku { get; set; }
     }
 }
