@@ -88,6 +88,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FewMainEntity.edmx</DependentUpon>
     </Compile>
+    <Compile Include="FewMainImgs.cs">
+      <DependentUpon>FewMainEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="FewMainOrder.cs">
       <DependentUpon>FewMainEntity.tt</DependentUpon>
     </Compile>
@@ -97,7 +100,13 @@
     <Compile Include="FewMainOrderType.cs">
       <DependentUpon>FewMainEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="FewMainProduct.cs">
+      <DependentUpon>FewMainEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="FewMainProType.cs">
+      <DependentUpon>FewMainEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FewMainSku.cs">
       <DependentUpon>FewMainEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="FewMainType.cs">
