@@ -120,6 +120,10 @@
           <Property Name="Symmetry" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Fluorescence" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Coffee" Type="nvarchar" MaxLength="50" />
+          <Property Name="Milk" Type="nvarchar" MaxLength="50" />
+          <Property Name="AddTime" Type="datetime" />
+          <Property Name="UpdateTime" Type="datetime" />
         </EntityType>
         <EntityType Name="FewMainType">
           <Key>
@@ -489,6 +493,10 @@
           <Property Name="Symmetry" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Fluorescence" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="Coffee" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Milk" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AddTime" Type="DateTime" Precision="3" />
+          <Property Name="UpdateTime" Type="DateTime" Precision="3" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -641,6 +649,10 @@
           <EntitySetMapping Name="FewMainSku">
             <EntityTypeMapping TypeName="FewMainDiamondModel.FewMainSku">
               <MappingFragment StoreEntitySet="FewMainSku">
+                <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+                <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+                <ScalarProperty Name="Milk" ColumnName="Milk" />
+                <ScalarProperty Name="Coffee" ColumnName="Coffee" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="Fluorescence" ColumnName="Fluorescence" />
                 <ScalarProperty Name="Symmetry" ColumnName="Symmetry" />

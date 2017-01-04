@@ -25,5 +25,9 @@ namespace FewMain.Model
         public string Symmetry { get; set; }
         public string Fluorescence { get; set; }
         public decimal Price { get; set; }
+        public string Coffee { get; set; }
+        public string Milk { get; set; }
+        public Nullable<System.DateTime> AddTime { get; set; }
+        public Nullable<System.DateTime> UpdateTime { get; set; }
     }
 }
