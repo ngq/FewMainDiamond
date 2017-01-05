@@ -21,10 +21,8 @@ namespace FewMain.Service
     
        public FewMainUsersServices(IFewMainUsersRepository _rep)
        {
-            
         this._rep = _rep;
     	base._dal = _rep;
        }
-
     }
 }
