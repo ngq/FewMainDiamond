@@ -135,8 +135,6 @@
     <Folder Include="PartialRepository\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="CodeTemplates\DbHelper.ttinclude" />
-    <None Include="CodeTemplates\Manager.ttinclude" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

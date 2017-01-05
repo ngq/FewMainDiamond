@@ -8,7 +8,7 @@ using FewMain.Model.ParamModel;
 
 namespace FewMain.IService
 {
-    public partial interface IUsersServices
+    public partial interface IFewMainUsersServices
     {
         #region 1.0 登录相关
         bool Login( LoginParam userModel);

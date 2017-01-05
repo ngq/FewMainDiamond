@@ -16,9 +16,9 @@ namespace FewMainDiamond.Controllers
     /// </summary>
     public class AccountController : Controller
     {
-        private IUsersServices userBll;
+        private IFewMainUsersServices userBll;
 
-        public AccountController(IUsersServices users)
+        public AccountController(IFewMainUsersServices users)
         {
             this.userBll = users;
         }

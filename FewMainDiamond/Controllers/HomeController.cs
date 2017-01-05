@@ -10,9 +10,9 @@ namespace FewMainDiamond.Controllers
     public class HomeController : Controller
     {
         
-        private IUsersServices users;
-
-        public HomeController(IUsersServices users)
+        private IFewMainUsersServices users;
+        
+        public HomeController(IFewMainUsersServices users)
         {
             this.users = users;
         }
