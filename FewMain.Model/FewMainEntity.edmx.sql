@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 01/04/2017 22:15:08
--- Generated from EDMX file: H:\Git项目管理\FewMainDiamond\FewMain.Model\FewMainEntity.edmx
+-- Date Created: 01/12/2017 08:59:11
+-- Generated from EDMX file: H:\我的\我的TFS项目\FewMainDiamond\FewMain.Model\FewMainEntity.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -20,14 +20,14 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_FewMainCartFewMainCartDetail]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[FewMainCartDetail] DROP CONSTRAINT [FK_FewMainCartFewMainCartDetail];
 GO
-IF OBJECT_ID(N'[dbo].[FK_FewMainCartFewMainCartType]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[FewMainCartType] DROP CONSTRAINT [FK_FewMainCartFewMainCartType];
+IF OBJECT_ID(N'[dbo].[FK_FewMainOrderTypeFewMainOrder]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[FewMainOrder] DROP CONSTRAINT [FK_FewMainOrderTypeFewMainOrder];
 GO
 IF OBJECT_ID(N'[dbo].[FK_FewMainOrderFewMainOrderDetail]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[FewMainOrderDetail] DROP CONSTRAINT [FK_FewMainOrderFewMainOrderDetail];
 GO
-IF OBJECT_ID(N'[dbo].[FK_FewMainOrderTypeFewMainOrder]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[FewMainOrder] DROP CONSTRAINT [FK_FewMainOrderTypeFewMainOrder];
+IF OBJECT_ID(N'[dbo].[FK_FewMainCartFewMainCartType]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[FewMainCartType] DROP CONSTRAINT [FK_FewMainCartFewMainCartType];
 GO
 
 -- --------------------------------------------------
@@ -37,17 +37,17 @@ GO
 IF OBJECT_ID(N'[dbo].[FewMainArticle]', 'U') IS NOT NULL
     DROP TABLE [dbo].[FewMainArticle];
 GO
+IF OBJECT_ID(N'[dbo].[FewMainProType]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[FewMainProType];
+GO
+IF OBJECT_ID(N'[dbo].[FewMainType]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[FewMainType];
+GO
 IF OBJECT_ID(N'[dbo].[FewMainCart]', 'U') IS NOT NULL
     DROP TABLE [dbo].[FewMainCart];
 GO
 IF OBJECT_ID(N'[dbo].[FewMainCartDetail]', 'U') IS NOT NULL
     DROP TABLE [dbo].[FewMainCartDetail];
-GO
-IF OBJECT_ID(N'[dbo].[FewMainCartType]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[FewMainCartType];
-GO
-IF OBJECT_ID(N'[dbo].[FewMainImgs]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[FewMainImgs];
 GO
 IF OBJECT_ID(N'[dbo].[FewMainOrder]', 'U') IS NOT NULL
     DROP TABLE [dbo].[FewMainOrder];
@@ -58,23 +58,26 @@ GO
 IF OBJECT_ID(N'[dbo].[FewMainOrderType]', 'U') IS NOT NULL
     DROP TABLE [dbo].[FewMainOrderType];
 GO
-IF OBJECT_ID(N'[dbo].[FewMainProType]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[FewMainProType];
+IF OBJECT_ID(N'[dbo].[FewMainCartType]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[FewMainCartType];
+GO
+IF OBJECT_ID(N'[dbo].[FewMainProduct]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[FewMainProduct];
+GO
+IF OBJECT_ID(N'[dbo].[FewMainImgs]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[FewMainImgs];
 GO
 IF OBJECT_ID(N'[dbo].[FewMainSku]', 'U') IS NOT NULL
     DROP TABLE [dbo].[FewMainSku];
 GO
-IF OBJECT_ID(N'[dbo].[FewMainType]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[FewMainType];
+IF OBJECT_ID(N'[dbo].[FewMainHandSize]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[FewMainHandSize];
 GO
-IF OBJECT_ID(N'[dbo].[Tag]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Tag];
+IF OBJECT_ID(N'[dbo].[FewMainTag]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[FewMainTag];
 GO
-IF OBJECT_ID(N'[dbo].[Users]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Users];
-GO
-IF OBJECT_ID(N'[FewMainDiamondModelStoreContainer].[FewMainProduct]', 'U') IS NOT NULL
-    DROP TABLE [FewMainDiamondModelStoreContainer].[FewMainProduct];
+IF OBJECT_ID(N'[dbo].[FewMainUsers]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[FewMainUsers];
 GO
 
 -- --------------------------------------------------
@@ -113,30 +116,6 @@ CREATE TABLE [dbo].[FewMainType] (
     [ParentId] int  NULL,
     [Remark] nvarchar(500)  NULL,
     [AddTime] datetime  NULL
-);
-GO
-
--- Creating table 'Tag'
-CREATE TABLE [dbo].[Tag] (
-    [Id] int IDENTITY(1,1) NOT NULL,
-    [TabName] nvarchar(50)  NULL,
-    [Remark] nvarchar(500)  NULL
-);
-GO
-
--- Creating table 'Users'
-CREATE TABLE [dbo].[Users] (
-    [ID] int IDENTITY(1,1) NOT NULL,
-    [UserName] nvarchar(50)  NULL,
-    [Password] nvarchar(50)  NULL,
-    [NickName] nvarchar(50)  NULL,
-    [RealName] nvarchar(max)  NULL,
-    [Email] nvarchar(max)  NULL,
-    [Mobile] nvarchar(max)  NULL,
-    [QQ] nvarchar(max)  NULL,
-    [HeaderImgSrc] nvarchar(max)  NULL,
-    [Weixin] nvarchar(max)  NULL,
-    [AddTime] datetime  NOT NULL
 );
 GO
 
@@ -195,9 +174,9 @@ CREATE TABLE [dbo].[FewMainProduct] (
     [ImgSrcList] nvarchar(max)  NULL,
     [ProImgDetail] nvarchar(max)  NULL,
     [AddTime] datetime  NULL,
-    [WebTitle] nvarchar(max)  NOT NULL,
-    [WebKeyword] nvarchar(max)  NOT NULL,
-    [WebDescription] nvarchar(max)  NOT NULL
+    [WebTitle] nvarchar(500)  NULL,
+    [WebKeyword] nvarchar(500)  NULL,
+    [WebDescription] nvarchar(500)  NULL
 );
 GO
 
@@ -230,6 +209,40 @@ CREATE TABLE [dbo].[FewMainSku] (
 );
 GO
 
+-- Creating table 'FewMainHandSize'
+CREATE TABLE [dbo].[FewMainHandSize] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Size] decimal(18,1)  NOT NULL,
+    [ProductId] int  NOT NULL,
+    [Remark] nvarchar(500)  NULL,
+    [AddTime] datetime  NOT NULL
+);
+GO
+
+-- Creating table 'FewMainTag'
+CREATE TABLE [dbo].[FewMainTag] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [TabName] nvarchar(50)  NULL,
+    [Remark] nvarchar(500)  NULL
+);
+GO
+
+-- Creating table 'FewMainUsers'
+CREATE TABLE [dbo].[FewMainUsers] (
+    [ID] int IDENTITY(1,1) NOT NULL,
+    [UserName] nvarchar(50)  NULL,
+    [Password] nvarchar(50)  NULL,
+    [NickName] nvarchar(50)  NULL,
+    [RealName] nvarchar(max)  NULL,
+    [Email] nvarchar(max)  NULL,
+    [Mobile] nvarchar(max)  NULL,
+    [QQ] nvarchar(max)  NULL,
+    [HeaderImgSrc] nvarchar(max)  NULL,
+    [Weixin] nvarchar(max)  NULL,
+    [AddTime] datetime  NOT NULL
+);
+GO
+
 -- --------------------------------------------------
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
@@ -250,18 +263,6 @@ GO
 ALTER TABLE [dbo].[FewMainType]
 ADD CONSTRAINT [PK_FewMainType]
     PRIMARY KEY CLUSTERED ([Id] ASC);
-GO
-
--- Creating primary key on [Id] in table 'Tag'
-ALTER TABLE [dbo].[Tag]
-ADD CONSTRAINT [PK_Tag]
-    PRIMARY KEY CLUSTERED ([Id] ASC);
-GO
-
--- Creating primary key on [ID] in table 'Users'
-ALTER TABLE [dbo].[Users]
-ADD CONSTRAINT [PK_Users]
-    PRIMARY KEY CLUSTERED ([ID] ASC);
 GO
 
 -- Creating primary key on [Id] in table 'FewMainCart'
@@ -316,6 +317,24 @@ GO
 ALTER TABLE [dbo].[FewMainSku]
 ADD CONSTRAINT [PK_FewMainSku]
     PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'FewMainHandSize'
+ALTER TABLE [dbo].[FewMainHandSize]
+ADD CONSTRAINT [PK_FewMainHandSize]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'FewMainTag'
+ALTER TABLE [dbo].[FewMainTag]
+ADD CONSTRAINT [PK_FewMainTag]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [ID] in table 'FewMainUsers'
+ALTER TABLE [dbo].[FewMainUsers]
+ADD CONSTRAINT [PK_FewMainUsers]
+    PRIMARY KEY CLUSTERED ([ID] ASC);
 GO
 
 -- --------------------------------------------------

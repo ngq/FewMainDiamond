@@ -15,8 +15,17 @@ namespace FewMain.Model
     public partial class FewMainCartDetail
     {
         public int Id { get; set; }
-        public int FewMainCartId { get; set; }
-    
-        public virtual FewMainCart Cart { get; set; }
+        public string FewMainCartId { get; set; }
+        public int ProductId { get; set; }
+        public string ProName { get; set; }
+        public int ProType { get; set; }
+        public string ProTypeName { get; set; }
+        public int Count { get; set; }
+        public string HandSize { get; set; }
+        public decimal Price { get; set; }
+        public string Material { get; set; }
+        public string ProInfo { get; set; }
+        public string ProImg { get; set; }
+        public System.DateTime AddTime { get; set; }
     }
 }

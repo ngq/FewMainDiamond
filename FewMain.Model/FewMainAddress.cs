@@ -12,15 +12,23 @@ namespace FewMain.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class FewMainCart
+    public partial class FewMainAddress
     {
         public int Id { get; set; }
-        public string CartId { get; set; }
-        public int CartTypeId { get; set; }
         public int UserId { get; set; }
+        public string Address { get; set; }
+        public string Province { get; set; }
+        public string City { get; set; }
+        public string Town { get; set; }
+        public string Street { get; set; }
+        public int ProvinceId { get; set; }
+        public int CityId { get; set; }
+        public int TownId { get; set; }
+        public string Name { get; set; }
+        public string Mobile { get; set; }
+        public string Email { get; set; }
         public System.DateTime AddTime { get; set; }
     
-        public virtual FewMainCartType FewMainCartType { get; set; }
         public virtual FewMainUsers FewMainUsers { get; set; }
     }
 }

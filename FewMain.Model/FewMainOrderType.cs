@@ -14,16 +14,9 @@ namespace FewMain.Model
     
     public partial class FewMainOrderType
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public FewMainOrderType()
-        {
-            this.Order = new HashSet<FewMainOrder>();
-        }
-    
         public int Id { get; set; }
         public string TypeName { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<FewMainOrder> Order { get; set; }
+        public virtual FewMainOrder FewMainOrder { get; set; }
     }
 }

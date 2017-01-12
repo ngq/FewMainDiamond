@@ -25,20 +25,24 @@ namespace FewMain.Model
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<FewMainAddress> FewMainAddress { get; set; }
         public virtual DbSet<FewMainArticle> FewMainArticle { get; set; }
-        public virtual DbSet<FewMainProType> FewMainProType { get; set; }
-        public virtual DbSet<FewMainType> FewMainType { get; set; }
         public virtual DbSet<FewMainCart> FewMainCart { get; set; }
         public virtual DbSet<FewMainCartDetail> FewMainCartDetail { get; set; }
+        public virtual DbSet<FewMainCartType> FewMainCartType { get; set; }
+        public virtual DbSet<FewMainEvaluation> FewMainEvaluation { get; set; }
+        public virtual DbSet<FewMainHandSize> FewMainHandSize { get; set; }
+        public virtual DbSet<FewMainImgs> FewMainImgs { get; set; }
         public virtual DbSet<FewMainOrder> FewMainOrder { get; set; }
         public virtual DbSet<FewMainOrderDetail> FewMainOrderDetail { get; set; }
         public virtual DbSet<FewMainOrderType> FewMainOrderType { get; set; }
-        public virtual DbSet<FewMainCartType> FewMainCartType { get; set; }
         public virtual DbSet<FewMainProduct> FewMainProduct { get; set; }
-        public virtual DbSet<FewMainImgs> FewMainImgs { get; set; }
+        public virtual DbSet<FewMainProType> FewMainProType { get; set; }
+        public virtual DbSet<FewMainSeries> FewMainSeries { get; set; }
         public virtual DbSet<FewMainSku> FewMainSku { get; set; }
-        public virtual DbSet<FewMainHandSize> FewMainHandSize { get; set; }
         public virtual DbSet<FewMainTag> FewMainTag { get; set; }
+        public virtual DbSet<FewMainType> FewMainType { get; set; }
         public virtual DbSet<FewMainUsers> FewMainUsers { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
     }
 }

@@ -12,18 +12,18 @@ namespace FewMain.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class FewMainCartType
+    public partial class FewMainEvaluation
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public FewMainCartType()
-        {
-            this.FewMainCart = new HashSet<FewMainCart>();
-        }
-    
         public int Id { get; set; }
-        public string TypeName { get; set; }
+        public int ProductId { get; set; }
+        public string Contents { get; set; }
+        public string ImgList { get; set; }
+        public string Tag { get; set; }
+        public Nullable<int> UserId { get; set; }
+        public string UserName { get; set; }
+        public int IsEvaluation { get; set; }
+        public System.DateTime AddTime { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<FewMainCart> FewMainCart { get; set; }
+        public virtual FewMainProduct FewMainProduct { get; set; }
     }
 }

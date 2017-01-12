@@ -12,18 +12,10 @@ namespace FewMain.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class FewMainOrderDetail
+    public partial class FewMainSeries
     {
         public int Id { get; set; }
-        public int OrderId { get; set; }
-        public int ProductId { get; set; }
-        public string ProImg { get; set; }
-        public decimal Price { get; set; }
-        public int Count { get; set; }
-        public string Material { get; set; }
-        public string HandSize { get; set; }
-        public string ProInfo { get; set; }
-    
-        public virtual FewMainOrder FewMainOrder { get; set; }
+        public string SeriesName { get; set; }
+        public int ParentId { get; set; }
     }
 }

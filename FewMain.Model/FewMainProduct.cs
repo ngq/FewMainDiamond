@@ -14,17 +14,29 @@ namespace FewMain.Model
     
     public partial class FewMainProduct
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public FewMainProduct()
+        {
+            this.FewMainEvaluation = new HashSet<FewMainEvaluation>();
+        }
+    
         public int Id { get; set; }
         public string ProName { get; set; }
-        public Nullable<int> ProTypeId { get; set; }
+        public int ProTypeId { get; set; }
         public string ProTypeName { get; set; }
-        public Nullable<int> ProSeriesId { get; set; }
+        public int ProSeriesId { get; set; }
         public string ProSeriesName { get; set; }
         public string ImgSrcList { get; set; }
         public string ProImgDetail { get; set; }
-        public Nullable<System.DateTime> AddTime { get; set; }
         public string WebTitle { get; set; }
         public string WebKeyword { get; set; }
         public string WebDescription { get; set; }
+        public string DefaultSKU { get; set; }
+        public string SetSKU { get; set; }
+        public int IsShow { get; set; }
+        public System.DateTime AddTime { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FewMainEvaluation> FewMainEvaluation { get; set; }
     }
 }
