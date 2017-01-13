@@ -63,94 +63,7 @@ $(function () {
         });
     });
 
-    //提交订单
-    $('#order-post').off('click').on('click', function () {
-        if ($('.address_list').hasClass('select')) {
-            var address = $('.address_list.select #address').data('id');
-        }
-        if (address == 0) {
-            alert('请选择收货地址!');
-
-            return false;
-        }
-        var receipt = $('.delivery_notic').find('input[type="radio"]:checked').data('type');
-        var mobile = $('.msg_r label').html();
-
-        if (receipt == 2) {
-            mobile = $('#receipt-phone').val();
-            if ($.trim(mobile) == "") {
-                alert('请输入电话号码');
-                return false;
-            }
-        }
-
-        var remark = $('#remark').val();
-
-        if ($('.love_agreement_bg').is(':visible')) {
-            //确认真爱协议
-            if (!$('#agrAccept').is(':checked')) {
-                alert('确认真爱协议');
-                return false;
-            }
-
-            var male = $('#male').val();
-            var female = $('#female').val();
-            var phone = $('#phone').val();
-            //通过遍历纪念日input输入框,进行赋值
-            var mdata = new Array();
-            var mname = new Array();
-            $('.anniversary div').each(function (index) {
-                var data = $('.anniversary div').eq(index).find('.anniversary_time').val();
-                mdata.push(data);
-                var name = $('.anniversary div').eq(index).find('.anniversary_name').val();
-                mname.push(name);
-                if ((data == '' && name != '') || (data != '' && name == '')) {
-                    alert('请完善你们的纪念日信息!');
-                    return false;
-                }
-
-            });
-            if ($.trim(male) == '' || $.trim(female) == '') {
-                alert('请填写名字');
-                return false;
-            }
-
-            var nameFlag = 0;
-            $('.agr-memTiem input').each(function (index) {
-                if ($(this).attr('name').indexOf('name') > -1 && $(this).val() != '') {
-                    nameFlag = 1;
-                }
-            });
-            //暂时拿掉，真爱协议处的短信接受号码非必填项
-            if (nameFlag > 0 && ($.trim($('#phone').val()) == '' || !checkMobile($.trim($('#phone').val())))) {
-                alert('真爱协议的手机号码填写不正确');
-                return false;
-            }
-        }
-        // $('form#memorial').serialize();
-        var dataResort = {
-            'data[address]': address,
-            'data[receipt]': receipt,
-            'data[mobile]': mobile,
-            'data[remark]': remark,
-            'data[male]': male,
-            'data[female]': female,
-            'data[memorial][phone]': phone,
-            'data[memorial][data]': mdata,
-            'data[memorial][name]': mname
-        };
-
-        $.post(orderCreateUrl, dataResort, function (res) {
-            if (res.result == 0) {
-                window.location.href = orderPayUrl + '?id=' + res.data.id;
-            } else {
-                alert(res.message);
-            }
-        });
-
-        return false;
-    });
-
+    
     //修改送货通知
     $(".msg_others,.msg_change").off('change').on('change', function () {
         $(".msg_r").css("display", "none");
@@ -221,7 +134,7 @@ $(function () {
     }).resize(function () {
         fixbottom();
     });
-    // var pay_now = $('.pay_bottom').offset().top;
+   
 
 });
 function fixbottom() {

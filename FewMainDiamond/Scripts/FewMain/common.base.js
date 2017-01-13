@@ -23,7 +23,12 @@
     //左侧客服部分鼠标移动上去后显示隐藏
     $(".chat_f1_expr .list").find("b").hover(function () {
         $(this).next().show();
-    }, function () { $(this).next().hide(); });
+    }, function() {
+        $(this).next().hover(function () { $(this).show(); }, function () { $(this).hide(); });
+        $(this).next().hide();
+    });
+
+
     //--- 开始--- app下载 微信扫码 点击显示隐藏
     $('.theme-login').click(function() {
         $('.theme-popover-mask').fadeIn(100);

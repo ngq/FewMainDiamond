@@ -1,4 +1,5 @@
 ﻿$(function () {
+    fixbottom();
     //订单详情显示隐藏
     $(".toggle_detail").off("click").on("click", function () {
         $(".detail_hide").slideToggle();
@@ -53,6 +54,21 @@
             $(".check_all").attr("checked", true);
         }
     });
-
+    $(window).scroll(function () {
+        fixbottom();
+    }).resize(function () {
+        fixbottom();
+    });
 });
+function fixbottom() {
 
+    var drcps = $('.shopping_security').offset().top;
+    var wh = $(window).height();
+    var st = $(window).scrollTop() + wh;
+   
+    if (st < drcps + 15) {
+        $('.shoppingcart_pay').addClass("cart_float");
+    } else {
+        $('.shoppingcart_pay').removeClass("cart_float");
+    }
+}

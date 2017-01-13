@@ -497,7 +497,7 @@ input[type="radio"], input[type="checkbox"] {
     .delivery_notic label {
         margin-left: 20px;
     }
-.pay_float{position:fixed;left:50%;bottom:0;margin-left:-31.5%;z-index:11;}
+.pay_float{position:fixed;bottom:0;z-index:11;}
 .top_zhibao {
     margin-top: 60px;
 }
