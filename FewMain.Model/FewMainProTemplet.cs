@@ -12,10 +12,10 @@ namespace FewMain.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class FewMainProduct
+    public partial class FewMainProTemplet
     {
         public int Id { get; set; }
-        public string ProName { get; set; }
+        public string Name { get; set; }
         public int ProTypeId { get; set; }
         public string ProTypeName { get; set; }
         public int ProSeriesId { get; set; }
@@ -25,10 +25,9 @@ namespace FewMain.Model
         public string WebTitle { get; set; }
         public string WebKeyword { get; set; }
         public string WebDescription { get; set; }
-        public string DefaultSKU { get; set; }
-        public string SetSKU { get; set; }
         public int IsShow { get; set; }
         public System.DateTime AddTime { get; set; }
-        public int Sort { get; set; }
+    
+        public virtual FewMainComment FewMainComment { get; set; }
     }
 }

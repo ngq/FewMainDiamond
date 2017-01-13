@@ -7,14 +7,22 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FewMain.IService
+namespace FewMain.Service
 {
     using System;
     using System.Collections.Generic;
     
-    using FewMain.Model;
-    public partial interface  IsysdiagramsServices:IBaseServices<sysdiagrams>
+    using FewMain.IRepository;
+    using FewMain.IService;
+    using Model;
+    public partial class  FewMainFactoryServices:BaseServices<FewMainFactory>,IFewMainFactoryServices
     {
-     
+      IFewMainFactoryRepository _rep;
+    
+       public FewMainFactoryServices(IFewMainFactoryRepository _rep)
+       {
+        this._rep = _rep;
+    	base._dal = _rep;
+       }
     }
 }

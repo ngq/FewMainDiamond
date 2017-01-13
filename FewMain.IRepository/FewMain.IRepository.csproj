@@ -75,7 +75,10 @@
     <Compile Include="IFewMainCartType.cs">
       <DependentUpon>FewMain_IRepository.tt</DependentUpon>
     </Compile>
-    <Compile Include="IFewMainEvaluation.cs">
+    <Compile Include="IFewMainComment.cs">
+      <DependentUpon>FewMain_IRepository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IFewMainFactory.cs">
       <DependentUpon>FewMain_IRepository.tt</DependentUpon>
     </Compile>
     <Compile Include="IFewMainHandSize.cs">
@@ -96,6 +99,9 @@
     <Compile Include="IFewMainProduct.cs">
       <DependentUpon>FewMain_IRepository.tt</DependentUpon>
     </Compile>
+    <Compile Include="IFewMainProTemplet.cs">
+      <DependentUpon>FewMain_IRepository.tt</DependentUpon>
+    </Compile>
     <Compile Include="IFewMainProType.cs">
       <DependentUpon>FewMain_IRepository.tt</DependentUpon>
     </Compile>
@@ -112,9 +118,6 @@
       <DependentUpon>FewMain_IRepository.tt</DependentUpon>
     </Compile>
     <Compile Include="IFewMainUsers.cs">
-      <DependentUpon>FewMain_IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Isysdiagrams.cs">
       <DependentUpon>FewMain_IRepository.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

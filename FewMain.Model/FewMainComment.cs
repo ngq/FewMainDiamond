@@ -12,10 +12,10 @@ namespace FewMain.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class FewMainEvaluation
+    public partial class FewMainComment
     {
         public int Id { get; set; }
-        public int ProductId { get; set; }
+        public int ProTempId { get; set; }
         public string Contents { get; set; }
         public string ImgList { get; set; }
         public string Tag { get; set; }
@@ -24,6 +24,6 @@ namespace FewMain.Model
         public int IsEvaluation { get; set; }
         public System.DateTime AddTime { get; set; }
     
-        public virtual FewMainProduct FewMainProduct { get; set; }
+        public virtual FewMainProTemplet FewMainProTemplet { get; set; }
     }
 }

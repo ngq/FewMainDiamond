@@ -13,7 +13,7 @@ namespace FewMain.IService
     using System.Collections.Generic;
     
     using FewMain.Model;
-    public partial interface  IFewMainEvaluationServices:IBaseServices<FewMainEvaluation>
+    public partial interface  IFewMainProTempletServices:IBaseServices<FewMainProTemplet>
     {
      
     }

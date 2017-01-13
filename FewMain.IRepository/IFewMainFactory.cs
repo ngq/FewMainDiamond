@@ -13,7 +13,7 @@ namespace FewMain.IRepository
     using System.Collections.Generic;
     
      using FewMain.Model;
-    public partial interface  IFewMainEvaluationRepository:IBaseRepository<FewMainEvaluation>
+    public partial interface  IFewMainFactoryRepository:IBaseRepository<FewMainFactory>
     {
      
     }

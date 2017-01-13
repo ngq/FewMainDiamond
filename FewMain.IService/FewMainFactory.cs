@@ -7,14 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FewMain.Repository
+namespace FewMain.IService
 {
     using System;
     using System.Collections.Generic;
     
-     using FewMain.IRepository;
-      using FewMain.Model;
-    public partial class  sysdiagramsRepository:BaseRepository<sysdiagrams>,IsysdiagramsRepository
+    using FewMain.Model;
+    public partial interface  IFewMainFactoryServices:IBaseServices<FewMainFactory>
     {
      
     }

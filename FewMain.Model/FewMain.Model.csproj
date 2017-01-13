@@ -76,6 +76,9 @@
     <Compile Include="FewMainCartType.cs">
       <DependentUpon>FewMainEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="FewMainComment.cs">
+      <DependentUpon>FewMainEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="FewMainEntity.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -91,7 +94,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FewMainEntity.edmx</DependentUpon>
     </Compile>
-    <Compile Include="FewMainEvaluation.cs">
+    <Compile Include="FewMainFactory.cs">
       <DependentUpon>FewMainEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="FewMainHandSize.cs">
@@ -110,6 +113,9 @@
       <DependentUpon>FewMainEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="FewMainProduct.cs">
+      <DependentUpon>FewMainEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FewMainProTemplet.cs">
       <DependentUpon>FewMainEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="FewMainProType.cs">
@@ -134,9 +140,6 @@
     <Compile Include="ParamModel\RegisterParam.cs" />
     <Compile Include="ParamModel\LoginParam.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="sysdiagrams.cs">
-      <DependentUpon>FewMainEntity.tt</DependentUpon>
-    </Compile>
     <Compile Include="ViewModel\UsersLoginViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
