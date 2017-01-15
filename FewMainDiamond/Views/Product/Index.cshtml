@@ -8,19 +8,19 @@
 
     <script src="~/Scripts/laypage/laypage.js"></script>
     <script>
-        $(function () {
+        $(function() {
             //分页脚本
             laypage({
                 cont: $('.pagination'), //容器。值支持id名、原生dom对象，jquery对象,
                 pages: 100, //总页数
                 skip: true, //是否开启跳页
-                skin: '#77C7C8',
+                skin: '#797979',
                 groups: 7 //连续显示分页数
             });
         });
 
         function Filter(a, b) {
-            var $ = function (e) { return document.getElementById(e); }
+            var $ = function(e) { return document.getElementById(e); }
             var ipts = $('filterForm').getElementsByTagName('input'), result = [];
             for (var i = 0, l = ipts.length; i < l; i++) {
                 if (ipts[i].getAttribute('to') == 'filter') {
@@ -40,6 +40,10 @@
             return false;
         }
     </script>
+    <style>
+        b{font-weight:normal}
+         .collect span:hover{background: #E2E2E1 none repeat scroll 0 0 !important;}
+    </style>
 }
 <div class="banner2">
     <div class="box">
@@ -54,15 +58,7 @@
 <div class="main">
 
     <div class="prosearch">
-        <form id="filterForm" name="form1" method="get" action="http://www.qydiamond.com/product/index.html">
-            <input id="nid" type="hidden" value="4" name="nid" to="filter" />
-            <input id="texture" type="hidden" value="" name="texture" to="filter" />
-            <input id="payment" type="hidden" value="" name="payment" to="filter" />
-            <input id="use" type="hidden" value="" name="use" to="filter" />
-            <input id="size" type="hidden" value="" name="size" to="filter" />
-            <input id="shape" type="hidden" value="" name="shape" to="filter" />
-            <input id="title1" type="hidden" value="" name="title1" to="filter" />
-
+        
             <ul class="navul">
                 <li class="navli">
                     <h3>按类别：</h3>
@@ -128,7 +124,7 @@
                 <a class="test2" href="http://www.qydiamond.com/product/index/nid/4.html">重 置</a>
                  
             </div>
-        </form>
+        
     </div>
 
     <div class="product">
@@ -137,14 +133,14 @@
                 <a href="http://www.qydiamond.com/content/product/nid/20/id/332.html"><img src="/Content/images/mall/20160427110358_35556.jpg" alt="六爪钻戒 白18K金六爪皇冠女戒" /></a>
                 <div class="pro-name">六爪钻戒 白18K金六爪皇冠女戒</div>
                 <div class="product-price">¥12900.00</div>
-                <span>收藏 </span>
+                <b class="collect"><span>收藏</span></b> 
                 <span>立即购买</span>
             </li>
             <li>
                 <a href="http://www.qydiamond.com/content/product/nid/20/id/330.html"><img src="/Content/images/mall/20160124101418_16915.jpg" alt="18K玫瑰金小清新蝴蝶钻戒" /></a>
                 <div class="pro-name">六爪钻戒 白18K金六爪皇冠女戒</div>
                 <div class="product-price">¥12900.00</div>
-                <span>收藏 </span>
+                <b class="collect"><span>收藏</span></b> 
                 <span>立即购买</span>
             </li>
             <li>

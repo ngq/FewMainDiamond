@@ -29,7 +29,7 @@ input,select,button{font:12px Verdana,Arial,Tahoma;vertical-align:middle; outlin
 ul.topnav {padding: 0;width:950px; height:100%; float:left;display:block;position: relative;z-index:1000;}
 ul.topnav li { float: left;margin: 0; padding: 0;}
 ul.topnav li a {padding:0px 22px; line-height:56px;	display: block;	color: #333;text-decoration: none; font-size:14px;}
-ul.topnav li:hover {color:#7ecdcd;}
+ul.topnav li:hover {color:#797979;}
 ul.topnav li span {padding: 15px 0;position: absolute;	left:50%; top:56px;	display: none;width:1920px; margin: 0 auto 0 -836px;overflow: hidden; height:268px;background:url(../images/base/navbg.png) repeat-x bottom;padding-top:30px;}
 ul.topnav li:hover span { display: block;}
 ul.topnav li span a {display: inline;color:#666;text-decoration: none;}
@@ -38,7 +38,7 @@ ul.topnav li span .box{ width:1200px; margin:0 auto;}
 /*---*/
 ul.topnav li span .box .left{float:left; height:100%; overflow:hidden; padding-left:38px;}
 ul.topnav li span .box .left b{ height:24px; font-size:14px; display:block; width:100%;}
-ul.topnav li span .box .left b a{color:#7ecdcd; display:block; line-height:24px; padding:0;}
+ul.topnav li span .box .left b a{color:#797979; display:block; line-height:24px; padding:0;}
 ul.topnav li span .box .left .lis{ height:100%; overflow:hidden; float:left;}
 ul.topnav li span .box .left .lis a{font-size:12px; display:block; width:200px; float:left; line-height:24px; padding:0;}
 ul.topnav li span .box .left .lis a:hover{ color:#ccb17a; font-weight:bold;}
@@ -119,16 +119,16 @@ ul.topnav li span .box .right a{ display:block; margin:0; padding:0;}
 .chat_f1 .detail .jiadiv_02 a img{ display:block; margin:0 auto;} 
 
 
-.chat_f1  .kf1{background:#7ecdcd;} 
+.chat_f1  .kf1{background:#797979;} 
 .chat_f1 .detail .kf{ background:#585858; height:280px; padding:20px; } 
 .chat_f1 .detail .kf h6{ color:#fff; font-size:14px; padding:0px 0 10px 10px; border:none; text-align:left;}
 .chat_f1 .detail .kf a{  width:110px; height:26px; line-height:26px; display:block;border-radius:20px; margin-bottom:10px; text-indent:20px;} 
-.chat_f1 .detail .kf .one{ background:#7ecdcd url(../images/base/qq/qq.png) no-repeat 10px 0px; border: 1px solid #99dbdb; }
-.chat_f1 .detail .kf .one:hover{ background:#ccb17a url(../images/base/qq/qq.png) no-repeat 10px 0px;  border: 1px solid #ccb17a;}
-.chat_f1 .detail .kf .two{ background:#7ecdcd url(../images/base/qq/qq2.png) no-repeat 10px 0px; border: 1px solid #99dbdb; }
-.chat_f1 .detail .kf .two:hover{ background:#ccb17a url(../images/base/qq/qq2.png) no-repeat 10px 0px; border: 1px solid #ccb17a;}
+.chat_f1 .detail .kf .one{ background:#ccb17a no-repeat 10px 0px; border: 1px solid #ccb17a; }
+.chat_f1 .detail .kf .one:hover{ background:#ccb17a  no-repeat 10px 0px;  border: 1px solid #ccb17a;}
+.chat_f1 .detail .kf .two{ background:#ccb17a  no-repeat 10px 0px; border: 1px solid #ccb17a; }
+.chat_f1 .detail .kf .two:hover{ background:#ccb17a  no-repeat 10px 0px; border: 1px solid #ccb17a;}
 
 .chat_f1 .detail .mem { background:#585858; height:160px; padding:20px 0; margin-top:-1px;} 
 .chat_f1 .detail .mem img{ display:block; margin:0 auto; margin-bottom:10px;} 
-.chat_f1 .detail .mem a{ color:#fff;font-size:14px; background:#7ecdcd ; width:100px; height:26px; line-height:26px;text-align:center; display:block; border-radius:20px;border: 1px solid #99dbdb; margin:0 auto;margin-bottom:15px; }
+.chat_f1 .detail .mem a{ color:#fff;font-size:14px; background:#ccb17a ; width:100px; height:26px; line-height:26px;text-align:center; display:block; border-radius:20px;border: 1px solid #ccb17a; margin:0 auto;margin-bottom:15px; }
 .chat_f1 .detail .mem a:hover{ background:#ccb17a;border: 1px solid #ccb17a;}

@@ -219,7 +219,7 @@
   <ItemGroup>
     <Content Include="Content\css\cart.css" />
     <Content Include="Content\css\order.css" />
-    <Content Include="Content\css\product\dr.css" />
+    <Content Include="Content\css\product\product.css" />
     <Content Include="Content\css\select2.css" />
     <Content Include="Content\css\usercenter\common.css" />
     <Content Include="Content\css\usercenter\other.css" />
@@ -245,6 +245,7 @@
     <Content Include="Content\images\base\phone.png" />
     <Content Include="Content\images\base\question.jpg" />
     <Content Include="Content\images\base\rpit.jpg" />
+    <Content Include="Content\images\base\search_close.jpg" />
     <Content Include="Content\images\base\search_hover.png" />
     <Content Include="Content\images\base\serch.png" />
     <Content Include="Content\images\base\small_right.png" />

@@ -90,7 +90,7 @@
 .product li img{width:250px;height:250px;padding:6.5px; background:#fff; margin-top:1px;}   
 .product li h6 a{ display:block;font-size:14px; line-height:32px; color:#666;}
  
-.product li span{ width:38%; display:block; line-height:22px;margin-left: 14px;padding-right: 10px; text-align:center; color:#666;float: left; text-indent:15px;border: 1px solid #dbc7ba;cursor: pointer;}
+.product li span{ width:38%; display:block; line-height:22px;margin-left: 14px;padding-right: 10px; text-align:center; color:#666;float: left; text-indent:15px;border: 1px solid rgba(121,121,121,0.39);cursor: pointer;}
  
  
  .product-price {
@@ -164,18 +164,23 @@
 .prosearch li{ display:block; float:left;}
 .prosearch li h3{ width:66px; text-align:right; display:block; float:left; font-size:12px;} 
 .prosearch .navli{ width:100%; padding:10px 0; border-bottom:1px dashed #eee;} 
-.prosearch .pronav li{  color:#555; width:85px; }
+.prosearch .pronav li{  color:#555; width:85px;margin-left: 20px }
 .prosearch .pronav li a{ color:#555;}
 .prosearch .pronav .all{ width:56px; text-indent:5px; }
-.prosearch .pronav .in a{color:#6ac3c3;}
-.prosearch .pronav .in a:hover{color: #6ac3c3}
+    .prosearch .pronav .in a {
+        background: url(../images/base/search_close.jpg) no-repeat right center;display: inline-block;
+        color: #797979;
+        border: 1px solid rgba(121,121,121,0.39);
+        width: 100%;
+    }
+.prosearch .pronav .in a:hover{ color: #797979;border: 1px solid rgba(121,121,121,0.39); width: 100%; background: url(../images/base/search_close.jpg) no-repeat right center;display: inline-block;}
 .prosearch .search{ height:24px; border:1px solid #eee; padding:20px 20px; background:#fff; margin-top:15px;}
 .prosearch .search h6{display:block; float:left; font-size:12px; line-height:24px;}
 .prosearch .search input{ height:24px; border:1px solid #dedede; display:block; float:left; color:#666; text-align:center;}
-.prosearch .search .test{ width:68px; background:#6ac3c3; border:1px solid #59bcbc; color:#FFF; display:block; float:left; height:24px; line-height:24px; text-align:center; margin-left:5px;}
-.prosearch .search .test:hover{background:#ccb17a;border:1px solid #c3a76f;}
+.prosearch .search .test{ width:68px; background:#797979; border:1px solid #797979; color:#FFF; display:block; float:left; height:24px; line-height:24px; text-align:center; margin-left:5px;}
+.prosearch .search .test:hover{background:#797979;border:1px solid #797979;}
 .prosearch .search .test2{ width:68px; background:#eee; border:1px solid #ccc; color:#666; display:block; float:left; height:24px; line-height:24px; text-align:center; margin-left:5px;}
-.prosearch .search .test2:hover{background:#ccb17a;  color:#fff; border:1px solid #c3a76f; }
+.prosearch .search .test2:hover{background:#ccc;  color:#fff; border:1px solid #ccc; }
 .prosearch .search b{ display:block; float:left; padding:0px 5px; line-height:24px; font-weight:lighter; color:#999;}
 /*-------产品详情--------*/
 .product_con{padding:0; overflow:hidden;}
