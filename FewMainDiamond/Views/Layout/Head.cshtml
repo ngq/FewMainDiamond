@@ -1,7 +1,7 @@
 ﻿@using FewMain.WebHelper.CurrentContext
 <!--头部开始-->
 <div class="header">
-    <div class="top">
+    <div class="top" name="top" id="top">
         <ul>
             <div class="logo"><a href="http://www.qydiamond.com/"><img src="~/Content/images/base/logo.png" title="卿语钻石" /></a></div>
             <li class="w"><a class="theme-login2" href="javascript:;">关注卿语</a></li>
@@ -12,7 +12,7 @@
 
                 <li><a href="@Url.Action("LoginOut","Account")" target="_top">退出</a></li>
                 <li><a href="http://www.qydiamond.com/member/index.html" target="_blank">会员中心</a></li>
-                <li>您好<b>@CurrentUserContext.Current.UserName</b>，欢迎来到卿语钻石品牌官网!</li>
+                <li>您好<b>@CurrentUserContext.Current.UserName</b>，欢迎来到尚爱珠宝品牌官网!</li>
             }
             else
             {
@@ -39,8 +39,8 @@
     </div>
     <!---微信客服--->
     <div class="theme-popover2" style="display:none;">
-        <div class="theme-poptit2"><h3><b></b>关注卿语微信</h3> <a class="close" title="关闭" href="javascript:;">×</a></div>
-        <div class="theme_box"><img src="~/Content/images/base/s_1.jpg" /><p>请扫码添加QYdiamond客服为您服务</p></div>
+        <div class="theme-poptit2"><h3><b></b>关注尚爱微信</h3> <a class="close" title="关闭" href="javascript:;">×</a></div>
+        <div class="theme_box"><img src="~/Content/images/base/s_1.jpg" /><p>请扫码添加sunloves客服为您服务</p></div>
     </div>
 </div>
 <!--头部结束-->

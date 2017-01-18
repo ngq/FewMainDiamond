@@ -98,4 +98,4 @@ Banner.prototype = {
         return this;
     }
 }
-module.exports = Banner;
+ 

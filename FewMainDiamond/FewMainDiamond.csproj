@@ -570,6 +570,7 @@
     <Content Include="Areas\User\Views\Binding\Mobile.cshtml" />
     <Content Include="Areas\User\Views\Binding\Email.cshtml" />
     <Content Include="Areas\User\Views\Binding\ModifyPwd.cshtml" />
+    <None Include="Properties\PublishProfiles\fewmain.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\FewMain\index.js" />
     <Content Include="Scripts\FewMain\jquery.validate.ext.js" />

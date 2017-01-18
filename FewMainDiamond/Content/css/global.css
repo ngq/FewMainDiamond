@@ -28,7 +28,7 @@ input,select,button{font:12px Verdana,Arial,Tahoma;vertical-align:middle; outlin
 .navigation .nav_con .one img{ display:block; float:left; margin:5px 10px 0 0;}
 ul.topnav {padding: 0;width:950px; height:100%; float:left;display:block;position: relative;z-index:1000;}
 ul.topnav li { float: left;margin: 0; padding: 0;}
-ul.topnav li a {padding:0px 22px; line-height:56px;	display: block;	color: #333;text-decoration: none; font-size:14px;}
+ul.topnav li a {padding:0px 22px; line-height:56px;	display: block;	color: #333;text-decoration: none; font-size:18px;font-family: serif}
 ul.topnav li:hover {color:#797979;}
 ul.topnav li span {padding: 15px 0;position: absolute;	left:50%; top:56px;	display: none;width:1920px; margin: 0 auto 0 -836px;overflow: hidden; height:268px;background:url(../images/base/navbg.png) repeat-x bottom;padding-top:30px;}
 ul.topnav li:hover span { display: block;}
@@ -84,7 +84,7 @@ ul.topnav li span .box .right a{ display:block; margin:0; padding:0;}
 .footer{width:100%; overflow:hidden; background:#797979;}
 .footer a{ color:#fff; line-height:24px;}
 .footer a:hover{ color:#ffee00;}
-.footer .top{width:1200px;margin:0 auto;height:190px; padding:38px 0;}
+.footer .top{width:1200px;margin:0 auto;height:120px; padding:38px 0;}
 .footer .top ul{width:130px; display:block; float:left;height:166px;}
 .footer .top ul h3{ margin-bottom:15px; font-size:16px; font-weight:lighter;}
 .footer .top ul h3 a{ color:#ffffcc;}
