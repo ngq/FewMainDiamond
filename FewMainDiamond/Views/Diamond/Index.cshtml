@@ -5,12 +5,42 @@
 }
 @section scripts
 {
-<link href="/Content/css/diamond.css" rel="stylesheet" />
-
-<script src="/Content/scripts/diamond.js"></script>
-<script src="/Content/scripts/laypage/laypage.js"></script>
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+    <link href="/Content/css/diamond.css" rel="stylesheet" />
+    <script src="~/Scripts/FewMain/diamond.js"></script>
+    <script src="/scripts/laypage/laypage.js"></script>
     <script>
-        $(function(){
+        //搜索
+        function search() {
+            
+            var color = [];
+            var shape = [];
+            var clarity = [];
+            var cut = [];
+            var polishing = [];
+            var symmetry = [];
+            var credentials = [];
+            var fluorescence = [];
+            $(".color").find(".hover").each(function () {
+                color.push($(this).attr("value"));
+            });
+            $(".color").find(".hover").each(function () {
+                color.push($(this).attr("value"));
+            });
+            $(".color").find(".hover").each(function () {
+                color.push($(this).attr("value"));
+            });
+            $(".color").find(".hover").each(function () {
+                color.push($(this).attr("value"));
+            });
+            $(".color").find(".hover").each(function () {
+                color.push($(this).attr("value"));
+            });
+            $(".color").find(".hover").each(function () {
+                color.push($(this).attr("value"));
+            });
+        }
+        $(function () {
             bgChange();
             //分页脚本
             laypage({
@@ -19,177 +49,165 @@
                 skip: true, //是否开启跳页
                 skin: '#77C7C8',
                 groups: 7 //连续显示分页数
-            });})
-</script>
+            });
+        })
+    </script>
 }
 <div id="position"><div class="box">当前位置：<a href="javascript:;">全球裸钻查询</a> <span style="float:right;">美元汇率：<b style="color:#ff9900;">6.90</b></span></div></div>
 <div class="main">
     <div id="diamond_search">
-        <form name="form1" method="GET" action="http://www.qydiamond.com/diamond/index.html">
-            <input name="nid" type="hidden" value="2" />
-            <input name="shape" id="shape" type="hidden" value="" />
-            <input name="color" id="color" type="hidden" value="" />
-            <input name="clarity" id="clarity" type="hidden" value="" />
-            <input name="cut" id="cut" type="hidden" value="" />
-            <input name="polishing" id="polishing" type="hidden" value="" />
-            <input name="symmetric" id="symmetric" type="hidden" value="" />
-            <input name="certificate" id="certificate" type="hidden" value="" />
-            <input name="sort" value="" type="hidden" />
 
-            <!--形状-->
-            <div class="con">
-                <h3 class="s_h3">形状</h3>
-                <ul class="shape">
-                    <li name="ROUND">           <span class="sh1">圆形</span></li>
-                    <li name="PRINCESS">  <span class="sh2">公主方</span></li>
-                    <li name="OVAL">              <span class="sh3">椭圆形</span></li>
-                    <li name="HEART">           <span class="sh4">心形</span></li>
-                    <li name="MARQUISE">  <span class="sh5">橄榄形</span></li>
-                    <li name="RADIANT">     <span class="sh6">雷蒂恩</span></li>
-                    <li name="CUSHION">     <span class="sh7">垫形</span></li>
-                    <li name="EMERALD">     <span class="sh8">祖母绿</span></li>
-                    <li name="PEAR">              <span class="sh9">梨形</span></li>
-                </ul>
+        <!--形状-->
+        <div class="con">
+            <h3 class="s_h3">形状</h3>
+            <ul class="shape">
+                <li name="shape" value="1"><span class="sh1">圆形</span></li>
+                <li name="shape" value="2"><span class="sh2">公主方</span></li>
+                <li name="shape" value="3"><span class="sh8">祖母绿</span></li>
+                <li name="shape" value="4"><span class="sh6">雷蒂恩</span></li>
+                <li name="shape" value="5"><span class="sh3">椭圆形</span></li>
+                <li name="shape" value="6"><span class="sh9">梨形</span></li>
+                <li name="shape" value="7"><span class="sh5">马眼形</span></li>
+                <li name="shape" value="8"><span class="sh4">心形</span></li>
+                <li name="shape" value="9"><span class="sh4">三角形</span></li>
+                <li name="shape" value="10"><span class="sh7">垫形</span></li>
+                <li name="shape" value="100"><span class="sh7">其他</span></li>
+            </ul>
+        </div>
+        <!--颜色-->
+        <div class="con">
+            <h3>颜色</h3>
+            <ul class="color">
+                <li name="color" value="2">D</li>
+                <li name="color" value="4">E</li>
+                <li name="color" value="8">F</li>
+                <li name="color" value="16">G</li>
+                <li name="color" value="32">H</li>
+                <li name="color" value="64">I</li>
+                <li name="color" value="128">J</li>
+                <li name="color" value="256">K</li>
+                <li name="color" value="512">L</li>
+                <li name="color" value="1024">M</li>
+            </ul>
+        </div>
+        <!--净度-->
+        <div class="con" style="width:53.68%;">
+            <h3>净度</h3>
+            <ul class="clarity">
+                <li name="clarity" value="3">IF</li>
+                <li name="clarity" value="4">VVS1</li>
+                <li name="clarity" value="8">VVS2</li>
+                <li name="clarity" value="16">VS1</li>
+                <li name="clarity" value="32">VS2</li>
+                <li name="clarity" value="64">SI1</li>
+                <li name="clarity" value="128">SI2</li>
+            </ul>
+        </div>
+        <div class="con width2">
+            <h3>重量</h3>
+            <input name="size1" type="text" value="0.3" /><font>ct</font><b></b>
+            <input name="size2" type="text" value="18" /><font>ct</font>
+        </div>
+        <div class="clear"></div>
+        <div class="con width">
+            <h3>切工</h3>
+            <ul class="cut">
+                <li name="cut" value="2">EX </li>
+                <li name="cut" value="4">VG</li>
+                <li name="cut" value="8">GD</li>
+            </ul>
+        </div>
+        <div class="con width">
+            <h3>抛光</h3>
+            <ul class="polishing">
+                <li name="polishin" value="2">EX </li>
+                <li name="polishin" value="4">VG</li>
+                <li name="polishin" value="8">GD</li>
+            </ul>
+        </div>
+        <div class="con width2">
+            <h3>价格</h3>
+            <input name="price1" type="text" value="1000" /><font>￥</font><b></b>
+            <input name="price2" type="text" value="1000000" /><font>￥</font>
+        </div>
+        <div class="clear"></div>
+        <div class="con width">
+            <h3>对称</h3>
+            <ul class="symmetric">
+                <li name="symmetric" value="2">EX </li>
+                <li name="symmetric" value="4">VG</li>
+                <li name="symmetric" value="8">GD</li>
+            </ul>
+        </div>
+        <div class="con width">
+            <h3>证书</h3>
+            <ul class="certificate">
+                <li name="certificate" value="1" title="美国宝石学院">GIA</li>
+                <li name="certificate" value="8" title="比利时高阶层钻石议会">HRD</li>
+                <li name="certificate" value="4" title="国际宝石学院">IGI</li>
+            </ul>
+        </div>
+        <div class="con width">
+            <h3>证书号</h3><input name="number" type="text" value="" style="width: 246px;" />
+        </div>
+        <div class="clear"></div>
+        <div class="con width3">
+            <h3>荧光</h3>
+            <ul class="symmetric fluorescence">
+                <li name="fluorescence" value="1">N(无) </li>
+                <li name="fluorescence" value="6">VSL/F(轻)</li>
+                <li name="fluorescence" value="8">M(中)</li>
+                <li name="fluorescence" value="16">S(强)</li>
+            </ul>
+        </div>
+        <div class="con width4">
+            <h3><label for="noNai">不咖不奶</label></h3><input name="number" id="noNai" type="checkbox" style="width: 20px; margin-top: 5px" value="" />
+            <h3><label for="kaNoNai">浅咖不奶</label></h3><input name="number" type="checkbox" id="kaNoNai" style="width: 20px; margin-top: 5px" value="" />
+            <h3><label for="outSide">在国外</label></h3><input name="number" type="checkbox" id="outSide" style="width: 20px; margin-top: 5px" value="" />
+            <h3><label for="inSide">在香港</label></h3><input name="number" type="checkbox" id="inSide" style="width: 20px; margin-top: 5px" value="" />
+            <h3><label for="inChina">在国内</label></h3><input name="number" type="checkbox" id="inChina" style="width: 20px; margin-top: 5px" value="" />
+        </div>
+        
+        <div class="hint">
+            <img src="/Content/images/base/hint1.jpg" />
+            <div class="btn">
+                <a href="#">重 置</a>
+                <input type="button" onclick="search()" name="" value="搜 索" />
             </div>
-            <!--颜色-->
-            <div class="con">
-                <h3>颜色</h3>
-                <ul class="color">
-                    <li name="D">D</li>
-                    <li name="E">E</li>
-                    <li name="F">F</li>
-                    <li name="G">G</li>
-                    <li name="H">H</li>
-                    <li name="I">I</li>
-                    <li name="J">J</li>
-                    <li name="K">K</li>
-                    <li name="L">L</li>
-                    <li name="M">M</li>
-                    <li name="N">N</li>
-                </ul>
-            </div>
-            <!--净度-->
-            <div class="con" style="width:53.68%;">
-                <h3>净度</h3>
-                <ul class="clarity">
-                    <li name="IF">IF</li>
-                    <li name="VVS1">VVS1</li>
-                    <li name="VVS2">VVS2</li>
-                    <li name="VS1">VS1</li>
-                    <li name="VS2">VS2</li>
-                    <li name="SI1">SI1</li>
-                    <li name="SI2">SI2</li>
-                </ul>
-            </div>
-            <div class="con width2">
-                <h3>重量</h3>
-                <input name="size1" type="text" value="0.3" /><font>ct</font><b></b>
-                <input name="size2" type="text" value="18" /><font>ct</font>
-            </div>
-            <div class="clear"></div>
-            <div class="con width">
-                <h3>切工</h3>
-                <ul class="cut">
-                    <li name="EX">EX </li>
-                    <li name="VG">VG</li>
-                    <li name="GD">GD</li>
-                </ul>
-            </div>
-            <div class="con width">
-                <h3>抛光</h3>
-                <ul class="polishing">
-                    <li name="EX">EX </li>
-                    <li name="VG">VG</li>
-                    <li name="GD">GD</li>
-                </ul>
-            </div>
-            <div class="con width2">
-                <h3>价格</h3>
-                <input name="price1" type="text" value="1000" /><font>￥</font><b></b>
-                <input name="price2" type="text" value="1000000" /><font>￥</font>
-            </div>
-            <div class="clear"></div>
-            <div class="con width">
-                <h3>对称</h3>
-                <ul class="symmetric">
-                    <li name="EX">EX </li>
-                    <li name="VG">VG</li>
-                    <li name="GD">GD</li>
-                </ul>
-            </div>
-            <div class="con width">
-                <h3>证书</h3>
-                <ul class="certificate">
-                    <li name="GIA">GIA</li>
-                    <li name="HRD">HRD</li>
-                    <li name="IGI">IGI</li>
-                </ul>
-            </div>
-
-            <div class="con width">
-                <h3>证书号</h3><input name="number" type="text" value="" style="width:246px;" />
-            </div>
-            <div class="hint2"><a href="http://www.qydiamond.com/User/registered.html" target="_blank"><img src="/Content/images/base/hint2.jpg" /></a></div>
-            <div class="hint">
-                <img src="/Content/images/base/hint1.jpg" />
-                <div class="btn">
-                    <a href="http://www.qydiamond.com/diamond/index/nid/2.html">重 置</a>
-                    <input type="submit" name="" value="搜 索" />
-                </div>
-            </div>
-        </form>
+        </div>
     </div>
 
     <div id="diamond">
         <ul class="c1">
-            <form id="filterForm" name="form1" method="get" action="http://www.qydiamond.com/diamond/index.html">
-                <input name="nid" type="hidden" value="2" />
-                <input name="shape" id="shape" type="hidden" value="" />
-                <input name="color" id="color" type="hidden" value="" />
-                <input name="clarity" id="clarity" type="hidden" value="" />
-                <input name="cut" id="cut" type="hidden" value="" />
-                <input name="polishing" id="polishing" type="hidden" value="" />
-                <input name="symmetric" id="symmetric" type="hidden" value="" />
-                <input name="certificate" id="certificate" type="hidden" value="" />
+            <li class="bg">
+                <dl>
+                    <dd>形状</dd>
+                    <dd>重量</dd>
+                    <dd>颜色</dd>
+                    <dd>净度</dd>
+                    <dd>切工</dd>
+                    <dd>抛光</dd>
+                    <dd>对称</dd>
+                    <dd>荧光</dd>
+                    <dd class="dd1">尺寸</dd>
+                    <dd>奶油</dd>
+                    <dd>色度</dd>
+                    <dd class="dd3">台面比</dd>
+                    <dd class="dd3">深度比</dd>
+                    <dd>证书</dd>
+                    <dd class="dd2">证书号</dd>
+                    <dd class="dd3">
+                        价格
+                        <div class="sort">
+                            <a certificate="1" href="#"><img src="/Content/images/base/sort1.png" /></a>
+                            <a certificate="3" href="#"><img src="/Content/images/base/sort3.png" /></a>
+                            <a certificate="2" href="#"><img src="/Content/images/base/sort2.png" /></a>
+                        </div>
+                    </dd>
+                    <dd class="dd6">订购</dd>
+                </dl>
+            </li>
 
-                <input name="number" type="hidden" value="" />
-                <input name="size1" type="hidden" value="" />
-                <input name="size2" type="hidden" value="" />
-                <input name="price1" type="hidden" value="" />
-                <input name="price2" type="hidden" value="" />
-
-                <input id="sort" type="hidden" value="" name="sort" to="filter" />
-
-                <li class="bg">
-                    <dl>
-                        <dd>形状</dd>
-                        <dd>重量</dd>
-                        <dd>颜色</dd>
-                        <dd>净度</dd>
-                        <dd>切工</dd>
-                        <dd>抛光</dd>
-                        <dd>对称</dd>
-                        <dd>荧光</dd>
-                        <dd class="dd1">尺寸</dd>
-                        <dd>奶油</dd>
-                        <dd>色度</dd>
-                        <dd class="dd3">台面比</dd>
-                        <dd class="dd3">深度比</dd>
-                        <dd>证书</dd>
-                        <dd class="dd2">证书号</dd>
-
-                        <dd class="dd3">
-                            价格
-                            <div class="sort">
-                                <a certificate="1" href="javascript:Filter(&#39;sort&#39;,&#39;1&#39;);"><img src="Content/images/base/sort1.png" /></a>
-                                <a certificate="3" href="javascript:Filter(&#39;sort&#39;,&#39;3&#39;);"><img src="Content/images/base/sort3.png" /></a>
-                                <a certificate="2" href="javascript:Filter(&#39;sort&#39;,&#39;2&#39;);"><img src="Content/images/base/sort2.png" /></a>
-                            </div>
-                        </dd>
-                        <dd class="dd6">订购</dd>
-                    </dl>
-                </li>
-            </form>
             <li>
                 <dl>
                     <dd>
@@ -384,10 +402,8 @@
                 </dl>
             </li>
         </ul>
-
-
     </div>
     <div class="pagination"></div>
 </div>
 <div class="diam-popover-mask" style="display: none;"></div>
-
+ 

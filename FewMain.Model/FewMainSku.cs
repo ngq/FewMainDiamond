@@ -17,7 +17,7 @@ namespace FewMain.Model
         public int Id { get; set; }
         public string SKUNo { get; set; }
         public decimal Weight { get; set; }
-        public int Shape { get; set; }
+        public string Shape { get; set; }
         public string Color { get; set; }
         public string Clarity { get; set; }
         public string Cut { get; set; }

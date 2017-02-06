@@ -136,10 +136,15 @@
     <Compile Include="FewMainUsers.cs">
       <DependentUpon>FewMainEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="ParamModel\SearchParam.cs" />
     <Compile Include="ParamModel\ForgetParam.cs" />
     <Compile Include="ParamModel\RegisterParam.cs" />
     <Compile Include="ParamModel\LoginParam.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>FewMainEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\SKUViewModel.cs" />
     <Compile Include="ViewModel\UsersLoginViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

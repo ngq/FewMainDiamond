@@ -2,15 +2,17 @@
 #diamond_search .con{ width:100%; overflow:hidden; line-height:30px; float:left; margin-bottom:12px;}
 #diamond_search .con h3{ float:left; display:block; line-height:30px; padding-right:10px; width:56px; text-align:right; font-size:12px;} 
 #diamond_search  ul li { border: 1px solid #dedede;color: #666;cursor: pointer;float: left; font-weight: normal;line-height:30px;margin-bottom: 0;margin-right: -1px;text-align: center; width:78px; background:url(../images/base/bg.jpg) repeat-x bottom;}
-#diamond_search li.hover { background:url(../images/base/bg2.jpg) repeat-x ; color:#fff; border: 1px solid #6ac3c3;}
+#diamond_search li.hover { background:url(../images/base/bg2.jpg) repeat-x ; color:#fff; border: 1px solid #797979;}
 #diamond_search input{ display:block; float:left; width:100.3px; padding:5px 0; height:20px; line-height:20px; text-align:center; border:1px solid #dedede; color:#999;outline:none;}
 #diamond_search b{ display:block; float:left;margin:0 6px;border-bottom: 1px solid #847771; height:15px; width:8px;}
 #diamond_search font{ display:block; float:left;width:13px; overflow:hidden; text-align:right;}
 #diamond_search .width{width:26.8%;}
 #diamond_search .width2{width:28%;}
+#diamond_search .width3{width:35%;}
+#diamond_search .width4{width:40%;}
 /*--------*/
 #diamond_search .shape li{background:#fff url(../images/base/bg3.jpg) repeat-x bottom}
-#diamond_search .shape li.hover { background:url(../images/base/bg2.jpg) repeat-x bottom; color:#fff; border: 1px solid #6ac3c3;}
+#diamond_search .shape li.hover { background:url(../images/base/bg2.jpg) repeat-x bottom; color:#fff; border: 1px solid #797979;}
 #diamond_search .shape span{ padding-top:26px; display:block;}
 #diamond_search .shape .sh1{ background:url(../images/diamond/dz1.png) no-repeat center 6px;}
 #diamond_search .shape .hover .sh1{ background:url(../images/diamond/dz11.png) no-repeat center 6px;}
@@ -34,7 +36,7 @@
 /*--------*/ 
 #diamond_search .hint{width:180px;height:180px; right:25px; top:10px; position: absolute;} 
 #diamond_search .hint .btn{ padding-left:25px;}
-#diamond_search .hint .btn input{background:url(../images/base/bg1.jpg) repeat-x;color:#fff; width:119px; height:30px; font-size:12px; font-weight:bold; float:left; display:block; margin-top:10px;border: 1px solid #6ac3c3;}
+#diamond_search .hint .btn input{background:url(../images/base/bg1.jpg) repeat-x;color:#fff; width:119px; height:30px; font-size:12px; font-weight:bold; float:left; display:block; margin-top:10px;border: 1px solid #797979;}
 #diamond_search .hint .btn a{background:url(../images/base/bg.jpg) repeat-x;color:#666; width:118px; height:30px; line-height:32px; font-size:12px; font-weight:bold; float:left; display:block; border: 1px solid #dedede; text-align:center;}
 #diamond_search .hint .btn input:hover,#diamond_search .hint .btn a:hover{ background:#ff8800; color:#fff; border:1px solid #ff7700;}
 

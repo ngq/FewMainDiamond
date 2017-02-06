@@ -62,6 +62,7 @@
     <Compile Include="Cache\NetCache\ICache.cs" />
     <Compile Include="Cache\NetCache\MemoryCacheHelper.cs" />
     <Compile Include="Cache\NetCache\SessionHelper.cs" />
+    <Compile Include="DiamondHelper.cs" />
     <Compile Include="EncryptHelper.cs" />
     <Compile Include="NewtonsoftJson\JsonHelper.cs" />
     <Compile Include="ObjectConvert.cs" />
@@ -71,6 +72,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FewMain.Model\FewMain.Model.csproj">
+      <Project>{91a84aff-8124-481e-9d63-d150ada65ddb}</Project>
+      <Name>FewMain.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

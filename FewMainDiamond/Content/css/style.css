@@ -1,5 +1,9 @@
 @import url(global.css);
-.main{width:100%;margin:0 auto;overflow:hidden; margin-top:20px; margin-bottom:60px;}
+.main{width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    margin-top: 20px;
+    margin-bottom: 60px;}
 .info{position:relative; overflow:hidden;}
 .info .box{display:block;position:relative;z-index:1;left: 50%; margin: 0 auto 0 -960px;overflow: hidden; text-align: center; width: 1920px;}
 .info .box2{ background:#fff; padding:30px 0; width:1200px; margin:0 auto;}

@@ -45,5 +45,6 @@ namespace FewMain.Model
         public virtual DbSet<FewMainTag> FewMainTag { get; set; }
         public virtual DbSet<FewMainType> FewMainType { get; set; }
         public virtual DbSet<FewMainUsers> FewMainUsers { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
     }
 }
