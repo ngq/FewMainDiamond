@@ -21,6 +21,12 @@ namespace FewMain.Model.ViewModel
         /// 查询出的数量
         /// </summary>
         public int ShowCount { get; set; }
+        /// <summary>
+        /// 汇率
+        /// </summary>
+        public decimal Rate { get; set; }
+
+        public string DiamondInfo { get; set; }
     }
 
     public class SKUViewModel
@@ -38,5 +44,11 @@ namespace FewMain.Model.ViewModel
         public decimal Price { get; set; }
         public string Coffee { get; set; }
         public string Milk { get; set; }
+        public string ProNoType { get; set; }
+
+        /// <summary>
+        /// 证书编号
+        /// </summary>
+        public string ProNo { get; set; }
     }
 }

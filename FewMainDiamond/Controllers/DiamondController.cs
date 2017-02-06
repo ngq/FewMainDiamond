@@ -23,12 +23,26 @@ namespace FewMainDiamond.Controllers
         {
             HttpClient = Login();
             return View();
-        }
-
+        }  
+        [HttpPost]
         public ActionResult GetDiamondData(SearchParam parms)
         {
-           string url= DiamondHelper.CustomUrl(parms);
-            return null;
+
+            #region  构造参数
+            parms.Shape = JsonHelper.ParseJSON<List<int>>(parms.StrShape);
+            parms.Color = JsonHelper.ParseJSON<List<int>>(parms.StrColor);
+            parms.Cut = JsonHelper.ParseJSON<List<int>>(parms.StrCut);
+            parms.Clarity = JsonHelper.ParseJSON<List<int>>(parms.StrClarity);
+            parms.Credentials = JsonHelper.ParseJSON<List<int>>(parms.StrCredentials);
+            parms.Symmetry = JsonHelper.ParseJSON<List<int>>(parms.StrSymmetry);
+            parms.Fluorescence = JsonHelper.ParseJSON<List<int>>(parms.StrFluorescence);
+            parms.Polishing = JsonHelper.ParseJSON<List<int>>(parms.StrPolishing);
+            #endregion
+
+            string url= DiamondHelper.CustomUrl(parms);
+
+          var model=  GetDiamondData(url);
+            return Json(model);
         }
 
 
@@ -102,7 +116,7 @@ namespace FewMainDiamond.Controllers
             var PageInfo = GetHtml(url);
             #region 获取钻石数据
             string RegexStr =
-                    "<tr class=\"list\"[\\w\\W]*?><td[\\w\\W]*?>(?<check>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<mark>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<onsale>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<datePro>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<shape>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<weight>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<clo>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<jingdu>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<cut>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<paoguang>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<duichen>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<yingguang>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<zhijing>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<gia>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<pic>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<shipin>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<meijin>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<zhekou>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<rmb>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<kase>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<naise>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<xuangou>[\\w\\W]*?)</td></tr>";
+                    "<tr class=\"list\"[\\w\\W]*?><td[\\w\\W]*?>(?<check>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<mark>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<onsale>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<datePro>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<shape>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<weight>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<clo>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<jingdu>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<cut>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<paoguang>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<duichen>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<yingguang>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<zhijing>[\\w\\W]*?)</td><td[\\w\\W]*?><a[\\w\\W]*?no=(?<giaNo>[\\w\\W]*?)&weight[\\w\\W]*?>(?<giaType>[\\w\\W]*?)</a></td><td[\\w\\W]*?>(?<pic>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<shipin>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<meijin>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<zhekou>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<rmb>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<kase>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<naise>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<xuangou>[\\w\\W]*?)</td></tr>";
             SKUSearchModel model = new SKUSearchModel();
             List<SKUViewModel> list = new List<SKUViewModel>();
 
@@ -126,6 +140,9 @@ namespace FewMainDiamond.Controllers
                     Price = Convert.ToDecimal(StripHTMLToTEXT(item.Groups["rmb"].Value)),
                     Milk = item.Groups["naise"].Value,
                     Coffee = item.Groups["kase"].Value,
+                    ProNo = item.Groups["giaNo"].Value,
+                    ProNoType = item.Groups["giaType"].Value,
+                    
                     #endregion
                 });
 
@@ -134,7 +151,16 @@ namespace FewMainDiamond.Controllers
 
             #region 获取数量信息
 
-            string regexProInfo = "";
+            string regexProInfo = "<div class=\"u-page-total\">(当前裸钻数量：(?<AllCount>[\\w\\W]*?) 颗[\\w\\W]*?显示(?<ShowCount>[\\w\\W]*?)颗)</div>";
+            MatchCollection mcPro = Regex.Matches(PageInfo, regexProInfo,
+               RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.ExplicitCapture);
+            foreach (Match item in mcPro)
+            {
+                model.Count = Convert.ToInt32(StripHTMLToTEXT(item.Groups["AllCount"].Value));
+                model.PageCount = Math.Ceiling(Convert.ToDecimal(model.Count/50)).ToInt();
+                model.ShowCount= Convert.ToInt32(StripHTMLToTEXT(item.Groups["ShowCount"].Value));
+                model.DiamondInfo = item.Groups[0].Value;
+            }
             #endregion
             model.PageList = list;
             return model;

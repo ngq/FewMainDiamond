@@ -266,6 +266,9 @@
     <Content Include="Scripts\FewMain\location.js" />
     <Content Include="Scripts\FewMain\select2.js" />
     <Content Include="Scripts\FewMain\select2_locale_zh-CN.js" />
+    <Content Include="Scripts\jsrender\jsrender-node.js" />
+    <Content Include="Scripts\jsrender\jsrender.js" />
+    <Content Include="Scripts\jsrender\jsrender.min.js" />
     <Content Include="Scripts\product\buy_xq.js" />
     <Content Include="Scripts\product\diapro.js" />
     <Content Include="Scripts\product\fd_hd.js" />
@@ -1060,6 +1063,8 @@
     <Content Include="Views\Product\JeweleryDetail.cshtml" />
     <Content Include="Views\Shared\_LayoutUser.cshtml" />
     <Content Include="Views\Layout\UserLeftBar.cshtml" />
+    <Content Include="Scripts\jsrender\jsrender.min.js.map" />
+    <Content Include="Scripts\jsrender\README.md" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

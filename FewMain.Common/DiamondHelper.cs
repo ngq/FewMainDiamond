@@ -177,7 +177,7 @@ namespace FewMain.Common
 
             #endregion
 
-            url = string.Format("{0}--{1}--{2}--{3}--{4}--{5}--{6}--{7}.html{8}", shape, color, clarity, cut, polishing, symmetry, credentials, fluorescence,url);
+            url = string.Format("http://www.888gia.com/diamond/{0}--{1}--{2}--{3}--{4}--{5}--{6}--{7}.html{8}", shape, color, clarity, cut, polishing, symmetry, credentials, fluorescence,url);
 
             return url;
         }
