@@ -6,7 +6,9 @@ using System.Net.Http;
 using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
+using FewMain.Common;
 using FewMain.Model;
+using FewMain.Model.ParamModel;
 using FewMain.Model.ViewModel;
 
 namespace FewMainDiamond.Controllers
@@ -23,9 +25,10 @@ namespace FewMainDiamond.Controllers
             return View();
         }
 
-        public ActionResult GetDiamondData()
+        public ActionResult GetDiamondData(SearchParam parms)
         {
-           
+           string url= DiamondHelper.CustomUrl(parms);
+            return null;
         }
 
 
@@ -93,11 +96,14 @@ namespace FewMainDiamond.Controllers
         /// </summary>
         /// <param name="url"></param>
         /// <returns></returns>
-        private List<SKUViewModel> GetDiamondData(string url)
+        private SKUSearchModel GetDiamondData(string url)
         {
+
             var PageInfo = GetHtml(url);
+            #region 获取钻石数据
             string RegexStr =
-                "<tr class=\"list\"[\\w\\W]*?><td[\\w\\W]*?>(?<check>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<mark>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<onsale>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<datePro>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<shape>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<weight>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<clo>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<jingdu>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<cut>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<paoguang>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<duichen>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<yingguang>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<zhijing>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<gia>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<pic>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<shipin>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<meijin>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<zhekou>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<rmb>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<kase>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<naise>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<xuangou>[\\w\\W]*?)</td></tr>";
+                    "<tr class=\"list\"[\\w\\W]*?><td[\\w\\W]*?>(?<check>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<mark>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<onsale>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<datePro>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<shape>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<weight>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<clo>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<jingdu>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<cut>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<paoguang>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<duichen>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<yingguang>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<zhijing>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<gia>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<pic>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<shipin>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<meijin>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<zhekou>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<rmb>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<kase>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<naise>[\\w\\W]*?)</td><td[\\w\\W]*?>(?<xuangou>[\\w\\W]*?)</td></tr>";
+            SKUSearchModel model = new SKUSearchModel();
             List<SKUViewModel> list = new List<SKUViewModel>();
 
             PageInfo = PageInfo.Replace("\n", "").Replace("\r", "").Replace("\t", "").Replace("\\", "").Replace("<!-- 转换字段图片 -->", "").Replace("<!--                                管理员端                            -->", "");
@@ -124,8 +130,14 @@ namespace FewMainDiamond.Controllers
                 });
 
             }
+            #endregion
 
-            return list;
+            #region 获取数量信息
+
+            string regexProInfo = "";
+            #endregion
+            model.PageList = list;
+            return model;
 
         }
 

@@ -117,10 +117,10 @@
                 <h6>商品名称：</h6><input id="proname" name="proname" type="text"  style="width:180px" value="" />
                 <h6 style="padding-left:20px;">价格：</h6>
 
-                <input name="price1" type="text" style="width:80px" onkeyup="if (this.value.length == 1) { this.value = this.value.replace(/[^1-9]/g, '') } else { this.value = this.value.replace(/\D/g, '') }" onafterpaste="if (this.value.length == 1) { this.value = this.value.replace(/[^1-9]/g, '') } else { this.value = this.value.replace(/\D/g, '') }" value="1" /><b>￥ —</b>
-                <input name="price2" type="text" style="width:80px" onkeyup="if (this.value.length == 1) { this.value = this.value.replace(/[^1-9]/g, '') } else { this.value = this.value.replace(/\D/g, '') }" onafterpaste="if (this.value.length == 1) { this.value = this.value.replace(/[^1-9]/g, '') } else { this.value = this.value.replace(/\D/g, '') }" value="100000" /><b>￥</b>
+                <input name="price1" type="text" style="width:80px" onkeyup="if (this.value.length == 1) { this.value = this.value.replace(/[^\d.]/g, '') } else { this.value = this.value.replace(/[^\d.]/g, '') }" onafterpaste="if(this.value.length == 1) { this.value = this.value.replace(/[^\d.]/g, '') } else { this.value = this.value.replace(/[^\d.]/g, '') }" value="1" /><b>￥ —</b>
+                <input name="price2" type="text" style="width:80px" onkeyup="if (this.value.length == 1) { this.value = this.value.replace(/[^\d.]/g, '') } else { this.value = this.value.replace(/[^\d.]/g, '') }" onafterpaste="if(this.value.length == 1) { this.value = this.value.replace(/[^\d.]/g, '') } else { this.value = this.value.replace(/[^\d.]/g, '') }" value="100000" /><b>￥</b>
 
-                <a class="test" href="javascript:Filter(&#39;title1&#39;,&#39;&#39;);">搜 索</a> 
+                <a class="test" href="#">搜 索</a> 
                 <a class="test2" href="http://www.qydiamond.com/product/index/nid/4.html">重 置</a>
 
         </div>

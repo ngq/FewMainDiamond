@@ -11,33 +11,80 @@
     <script src="/scripts/laypage/laypage.js"></script>
     <script>
         //搜索
-        function search() {
+        function search(curr) {
             
             var color = [];
             var shape = [];
             var clarity = [];
             var cut = [];
             var polishing = [];
-            var symmetry = [];
+            var symmetric = [];
             var credentials = [];
             var fluorescence = [];
-            $(".color").find(".hover").each(function () {
-                color.push($(this).attr("value"));
+            $(".shape").find(".hover").each(function () {
+                shape.push($(this).attr("value"));
             });
             $(".color").find(".hover").each(function () {
                 color.push($(this).attr("value"));
             });
-            $(".color").find(".hover").each(function () {
-                color.push($(this).attr("value"));
+            $(".clarity").find(".hover").each(function () {
+                clarity.push($(this).attr("value"));
             });
-            $(".color").find(".hover").each(function () {
-                color.push($(this).attr("value"));
+            $(".cut").find(".hover").each(function () {
+                cut.push($(this).attr("value"));
             });
-            $(".color").find(".hover").each(function () {
-                color.push($(this).attr("value"));
+            $(".polishing").find(".hover").each(function () {
+                polishing.push($(this).attr("value"));
             });
-            $(".color").find(".hover").each(function () {
-                color.push($(this).attr("value"));
+            $(".symmetric").find(".hover").each(function () {
+                symmetric.push($(this).attr("value"));
+            });
+            $(".credentials").find(".hover").each(function () {
+                credentials.push($(this).attr("value"));
+            });
+            $(".fluorescence").find(".hover").each(function () {
+                fluorescence.push($(this).attr("value"));
+            });
+            var weightStart = $("#weightStart").val() == "" ? "0" : $("#weightStart").val();
+            var weightEnd = $("#weightEnd").val() == "" ? "0" : $("#weightEnd").val();
+            var noNai = $("#noNai[type='checkbox']").is(':checked');
+            var kaNoNai = $("#kaNoNai[type='checkbox']").is(':checked');
+            var outSide = $("#outSide[type='checkbox']").is(':checked');
+            var inSide = $("#inSide[type='checkbox']").is(':checked');
+            var inChina = $("#inChina[type='checkbox']").is(':checked');
+            
+            $("@Url.Action("GetDiamondData","Diamond")", {
+                StrColor: JSON.stringify(color),
+                StrClarity: JSON.stringify(clarity),
+                StrCut: JSON.stringify(cut),
+                StrShape: JSON.stringify(shape),
+                StrPolishing: JSON.stringify(polishing),
+                StrSymmetry: JSON.stringify(symmetric),
+                StrFluorescence: JSON.stringify(fluorescence),
+                StrCredentials: JSON.stringify(credentials),
+                WeightStart: weightStart,
+                WeightEnd: weightEnd,
+                NoMilky: noNai,
+                NoMilkyShade: kaNoNai,
+                PageIndex: curr,
+                OutSide: outSide,
+                InSideHK: inSide,
+                InChina: inChina
+            },function(data) {
+                //分页脚本
+                laypage({
+                    cont: $('.pagination'), //容器。值支持id名、原生dom对象，jquery对象,
+                    pages: data.PageCount, //总页数
+                    curr:curr || 1,
+                    skip: true, //是否开启跳页
+                    skin: '#77C7C8',
+                    groups: 7, //连续显示分页数
+                    jump: function (obj, first) {
+                        if (!first) { //点击跳页触发函数自身，并传递当前页：obj.curr
+                            search(obj.curr);
+                        }
+                    }
+                });
             });
         }
         $(function () {
@@ -105,8 +152,8 @@
         </div>
         <div class="con width2">
             <h3>重量</h3>
-            <input name="size1" type="text" value="0.3" /><font>ct</font><b></b>
-            <input name="size2" type="text" value="18" /><font>ct</font>
+            <input name="size1" type="text" id="weightStart"  onkeyup="if (this.value.length == 1) { this.value = this.value.replace(/[^\d.]/g, '') } else { this.value = this.value.replace(/[^\d.]/g, '') }" onafterpaste="if (this.value.length == 1) { this.value = this.value.replace(/[^\d.]/g, '') }else{ this.value = this.value.replace(/[^\d.]/g, '') }" value="0.3" /><font>ct</font><b></b>
+            <input name="size2" type="text" id="weightEnd" value="18" /><font>ct</font>
         </div>
         <div class="clear"></div>
         <div class="con width">

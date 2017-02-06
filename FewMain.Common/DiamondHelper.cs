@@ -121,12 +121,12 @@ namespace FewMain.Common
 
             #region 奶咖
             //不奶不咖
-            if (parms.NoMilky > 0)
+            if (parms.NoMilky)
             {
                 url += "&q_no_milky_shade=1";
             }
             //浅奶不咖
-            if (parms.NoMilkyShade > 0)
+            if (parms.NoMilkyShade)
             {
                 url += "&q_shade_milky_shade=1";
             }
@@ -138,26 +138,26 @@ namespace FewMain.Common
 
             #region 区域
 
-            if (parms.OutSide > 0)
+            if (parms.OutSide)
             {
                 url += "&q_is_outside=1";
             }
-            if (parms.InSideHK > 0)
+            if (parms.InSideHK)
             {
                 url += "&q_is_inside=1";
             }
-            if (parms.InChina > 0)
+            if (parms.InChina)
             {
                 url += "&q_is_cn=1";
             }
             #endregion
 
             #region 实时,现货
-            if (parms.IsStock > 0)
+            if (parms.IsStock)
             {
                 url += "&q_is_stock=1";
             }
-            if (parms.IsLive > 0)
+            if (parms.IsLive)
             {
                 url += "&q_is_live=1";
             }

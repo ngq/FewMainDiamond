@@ -6,6 +6,23 @@ using System.Threading.Tasks;
 
 namespace FewMain.Model.ViewModel
 {
+    public class SKUSearchModel
+    {
+        public List<SKUViewModel> PageList { get; set; }
+        /// <summary>
+        /// 总页码
+        /// </summary>
+        public int PageCount { get; set; }
+        /// <summary>
+        /// 当前总数量
+        /// </summary>
+        public int Count { get; set; }
+        /// <summary>
+        /// 查询出的数量
+        /// </summary>
+        public int ShowCount { get; set; }
+    }
+
     public class SKUViewModel
     {
         public int Id { get; set; }
