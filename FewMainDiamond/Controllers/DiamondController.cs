@@ -142,7 +142,9 @@ namespace FewMainDiamond.Controllers
                     Coffee = item.Groups["kase"].Value,
                     ProNo = item.Groups["giaNo"].Value,
                     ProNoType = item.Groups["giaType"].Value,
-                    
+                    DiaSize = item.Groups["zhijing"].Value,
+                    Delivery = item.Groups["datePro"].Value,
+                    State = item.Groups["onsale"].Value,
                     #endregion
                 });
 

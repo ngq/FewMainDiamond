@@ -33,22 +33,66 @@ namespace FewMain.Model.ViewModel
     {
         public int Id { get; set; }
         public string SKUNo { get; set; }
+        /// <summary>
+        /// 重量
+        /// </summary>
         public decimal Weight { get; set; }
+        /// <summary>
+        /// 形状
+        /// </summary>
         public string Shape { get; set; }
+        /// <summary>
+        /// 颜色
+        /// </summary>
         public string Color { get; set; }
+        /// <summary>
+        /// 净度
+        /// </summary>
         public string Clarity { get; set; }
+        /// <summary>
+        /// 切工
+        /// </summary>
         public string Cut { get; set; }
+        /// <summary>
+        /// 抛光
+        /// </summary>
         public string Polishing { get; set; }
+        /// <summary>
+        /// 对称
+        /// </summary>
         public string Symmetry { get; set; }
+        /// <summary>
+        /// 荧光
+        /// </summary>
         public string Fluorescence { get; set; }
+        /// <summary>
+        /// 价格
+        /// </summary>
         public decimal Price { get; set; }
+        /// <summary>
+        /// 咖色
+        /// </summary>
         public string Coffee { get; set; }
+        /// <summary>
+        /// 奶色
+        /// </summary>
         public string Milk { get; set; }
+        /// <summary>
+        /// 证书类型
+        /// </summary>
         public string ProNoType { get; set; }
+        /// <summary>
+        /// 钻石尺寸
+        /// </summary>
+        public string DiaSize { get; set; }
 
         /// <summary>
         /// 证书编号
         /// </summary>
         public string ProNo { get; set; }
+
+        public string Delivery { get; set; }
+
+        public string  State { get; set; }
     }
 }

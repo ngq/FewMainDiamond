@@ -13,8 +13,10 @@
     <script id="tempDiamond" type="text/x-jsrender">
         <li>
             <dl>
+                <dd>{{>Delivery}}</dd>
+                <dd>{{>State}}</dd>
                 <dd>
-                    <img src="/Content/images/base/dz1.png" alt="钻石证书号：1238546149" />
+                   {{>Shape}}
                 </dd>
                 <dd>{{>Weight}}</dd>
                 <dd>{{>Color}}</dd>
@@ -23,7 +25,7 @@
                 <dd>{{>Polishing}}</dd>
                 <dd>{{>Symmetry}}</dd>
                 <dd>{{>Fluorescence}}</dd>
-                <dd>--</dd>
+                <dd>{{>DiaSize}}</dd>
                 <dd> {{>Milk}} </dd>
                 <dd>{{>Coffee}}</dd>
                 @*<dd class="dd3">59</dd>
@@ -269,6 +271,8 @@
         <ul class="c1">
             <li class="bg">
                 <dl>
+                    <dd>货期</dd>
+                    <dd>状态</dd>
                     <dd >形状</dd>
                     <dd>重量</dd>
                     <dd>颜色</dd>
@@ -287,9 +291,9 @@
                     <dd class="dd3">
                         价格
                         <div class="sort">
-                            <a certificate="1" href="#"><img src="/Content/images/base/sort1.png" /></a>
-                            <a certificate="3" href="#"><img src="/Content/images/base/sort3.png" /></a>
-                            <a certificate="2" href="#"><img src="/Content/images/base/sort2.png" /></a>
+                            <a certificate="1" href="#"><img src="/Content/images/base/sort1.png"/></a>
+                            <a certificate="3" href="#"><img src="/Content/images/base/sort3.png"/></a>
+                            <a certificate="2" href="#"><img src="/Content/images/base/sort2.png"/></a>
                         </div>
                     </dd>
                     <dd class="dd6">订购</dd>
