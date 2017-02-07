@@ -1,11 +1,11 @@
 ﻿$(function () {
     //全局检测404图片
-    document.addEventListener("error", function (e) {
-        var elem = e.target;
-        if (elem.tagName.toLowerCase() === 'img') {
-            elem.src = "/Content/images/No-image-found1.jpg";
-        }
-    }, true);
+    //document.addEventListener("error", function (e) {
+    //    var elem = e.target;
+    //    if (elem.tagName.toLowerCase() === 'img') {
+    //        elem.src = "/Content/images/No-image-found1.jpg";
+    //    }
+    //}, true);
     //首页
 
     //如果是移动端的话就跳转到移动端页面

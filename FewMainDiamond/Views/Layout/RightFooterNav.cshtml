@@ -4,7 +4,7 @@
     <div class="chat_f1_expr" style="height: 800px; display: block;">
         <!------------>
         <div class="list">
-            <b><img src="~/Content/images/base/1_03.png"/></b>
+            <b><a href="@Url.Action("Index","Member")"><img src="~/Content/images/base/1_03.png" /></a></b>
             @if (CurrentUserContext.Current.IsLogin)
             {
                 <div class="detail" style="width: 136px; margin-left: -136px; height: 200px;">
