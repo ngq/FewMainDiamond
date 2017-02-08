@@ -122,6 +122,9 @@
     </Compile>
     <Compile Include="PartialIService\IUsersServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>FewMain_IServices.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="FewMain_IServices.tt">
