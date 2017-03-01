@@ -11,8 +11,11 @@ namespace FewMainDiamond.Controllers
         // GET: Product
         public ActionResult Index()
         {
+           
             return View();
         }
+
+      
         /// <summary>
         /// 款式欣赏
         /// </summary>

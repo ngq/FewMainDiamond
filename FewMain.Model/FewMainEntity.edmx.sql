@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 01/15/2017 15:36:13
+-- Date Created: 02/25/2017 10:13:41
 -- Generated from EDMX file: H:\Git项目管理\FewMainDiamond\FewMain.Model\FewMainEntity.edmx
 -- --------------------------------------------------
 
@@ -102,6 +102,9 @@ IF OBJECT_ID(N'[dbo].[FewMainType]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[FewMainUsers]', 'U') IS NOT NULL
     DROP TABLE [dbo].[FewMainUsers];
+GO
+IF OBJECT_ID(N'[dbo].[sysdiagrams]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[sysdiagrams];
 GO
 
 -- --------------------------------------------------
@@ -318,7 +321,7 @@ CREATE TABLE [dbo].[FewMainSku] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [SKUNo] nvarchar(500)  NOT NULL,
     [Weight] decimal(18,2)  NOT NULL,
-    [Shape] int  NOT NULL,
+    [Shape] nvarchar(50)  NOT NULL,
     [Color] nvarchar(50)  NOT NULL,
     [Clarity] nvarchar(50)  NOT NULL,
     [Cut] nvarchar(50)  NOT NULL,
@@ -364,6 +367,16 @@ CREATE TABLE [dbo].[FewMainUsers] (
     [ImgSrc] nvarchar(max)  NULL,
     [Weixin] nvarchar(max)  NULL,
     [AddTime] datetime  NOT NULL
+);
+GO
+
+-- Creating table 'sysdiagrams'
+CREATE TABLE [dbo].[sysdiagrams] (
+    [name] nvarchar(128)  NOT NULL,
+    [principal_id] int  NOT NULL,
+    [diagram_id] int IDENTITY(1,1) NOT NULL,
+    [version] int  NULL,
+    [definition] varbinary(max)  NULL
 );
 GO
 
@@ -489,6 +502,12 @@ GO
 ALTER TABLE [dbo].[FewMainUsers]
 ADD CONSTRAINT [PK_FewMainUsers]
     PRIMARY KEY CLUSTERED ([ID] ASC);
+GO
+
+-- Creating primary key on [diagram_id] in table 'sysdiagrams'
+ALTER TABLE [dbo].[sysdiagrams]
+ADD CONSTRAINT [PK_sysdiagrams]
+    PRIMARY KEY CLUSTERED ([diagram_id] ASC);
 GO
 
 -- --------------------------------------------------
