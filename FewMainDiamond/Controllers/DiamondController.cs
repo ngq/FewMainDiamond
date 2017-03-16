@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Mime;
 using System.Text.RegularExpressions;
 using System.Web;
+using System.Web.Caching;
 using System.Web.Mvc;
 using FewMain.Common;
+using FewMain.Common.Cache;
 using FewMain.Model;
 using FewMain.Model.ParamModel;
 using FewMain.Model.ViewModel;
@@ -16,12 +19,18 @@ namespace FewMainDiamond.Controllers
     public class DiamondController : Controller
     {
 
-        public static HttpClient HttpClient { get; set; }
+        public static HttpClient HttpClient
+        {
+            get
+            {
+                return CacheHelper.MemoryCache["httpClient"]==null?Login(): CacheHelper.MemoryCache["httpClient"] as HttpClient;
+            }
+        }
+
 
         // GET: Diamond
         public ActionResult Index()
         {
-            HttpClient = Login();
             return View();
         }  
         [HttpPost]
@@ -45,11 +54,14 @@ namespace FewMainDiamond.Controllers
             return Json(model);
         }
 
+        [HttpGet]
+        public ActionResult AddDiamondCart()
+        {
+            AddCart();
+            return null;
+        }
 
-        #region 构造Url
-
-         
-        #endregion
+        
 
         #region 获取远程数据
         /// <summary>
@@ -81,13 +93,13 @@ namespace FewMainDiamond.Controllers
                {"user_pwd", "ngq123456A"}
            });
             var response = httpClient.PostAsync(uri, content).Result;
-            return httpClient;
+            //return httpClient;
             #region 注释
 
             //var data = response.Headers.ToDictionary(t => t.Key);
             //data["Set-Cookie"].Value.First();//获取cookie 
             //string responseString = response.Content.ReadAsStringAsync().Result;
-            // return httpClient;
+            return httpClient;
 
             #endregion
 
@@ -166,6 +178,34 @@ namespace FewMainDiamond.Controllers
             #endregion
             model.PageList = list;
             return model;
+
+        }
+
+        /// <summary>
+        /// 添加到购物车 单个产品
+        /// </summary>
+        /// <param name="diaSN"></param>
+        /// <returns></returns>
+        private static string AddCart(string diaSN)
+        {
+           
+
+            HttpResponseMessage response = new HttpResponseMessage(HttpStatusCode.OK);
+            HttpClient.DefaultRequestHeaders.Referrer = new Uri("http://www.888gia.com/diamond/");
+            response = HttpClient.GetAsync(new Uri(" http://www.888gia.com/consumer/cart/add/"+ diaSN)).Result;
+            string result = response.Content.ReadAsStringAsync().Result;
+            return result;
+            // HttpResponseMessage response = new HttpResponseMessage(HttpStatusCode.OK);
+            // HttpClient.DefaultRequestHeaders.Referrer = new Uri("http://www.888gia.com/diamond/");
+            // var uri = "http://www.888gia.com"+ "/consumer/cart/add";
+            // var content = new FormUrlEncodedContent(new Dictionary<string, string>()
+            //{
+            //    {"dids", "[\"15791152\", \"15682069\", \"14450356\"]"},
+            //});
+            // //var response = HttpClient.PostAsync(uri, content).Result;
+            // response = HttpClient.PostAsync(uri, content).Result;
+            // var dd= response.Content.ReadAsStringAsync().Result;
+            return "";
 
         }
 

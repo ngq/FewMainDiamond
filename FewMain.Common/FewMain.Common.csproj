@@ -69,6 +69,7 @@
     <Compile Include="NewtonsoftJson\JsonHelper.cs" />
     <Compile Include="ObjectConvert.cs" />
     <Compile Include="NewtonsoftJson\StringTrimConverter.cs" />
+    <Compile Include="UtilHelper.cs" />
     <Compile Include="ValidateCode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebHelper.cs" />
