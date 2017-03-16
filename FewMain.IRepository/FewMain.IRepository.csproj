@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseDbContext.cs" />
     <Compile Include="FewMain_IRepository.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

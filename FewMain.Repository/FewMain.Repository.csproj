@@ -54,7 +54,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseDbContext.cs" />
     <Compile Include="BaseRepository.cs" />
     <Compile Include="FewMainAddress.cs">
       <DependentUpon>FewMain_Repository.tt</DependentUpon>

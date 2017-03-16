@@ -16,7 +16,7 @@ namespace FewMain.Model
     {
         public int Id { get; set; }
         public decimal Size { get; set; }
-        public int ProductId { get; set; }
+        public int ProTempId { get; set; }
         public string Remark { get; set; }
         public System.DateTime AddTime { get; set; }
     }

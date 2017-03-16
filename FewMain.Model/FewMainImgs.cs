@@ -16,7 +16,7 @@ namespace FewMain.Model
     {
         public int Id { get; set; }
         public string ImgSrc { get; set; }
-        public Nullable<int> ProductId { get; set; }
+        public Nullable<int> ProTempId { get; set; }
         public System.DateTime AddTime { get; set; }
     }
 }

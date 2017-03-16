@@ -3,25 +3,42 @@
     ViewBag.Title = "钻石首饰_钻石定制|珠宝镶嵌|钻石价格|裸钻批发|";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@model FewMain.Model.ViewModel.ProductListViewModel
 @section scripts
 {
 
     <script src="~/Scripts/laypage/laypage.js"></script>
     <script>
-        $(function() {
-            //分页脚本
+        $(function () {
+
             laypage({
-                cont: $('.pagination'), //容器。值支持id名、原生dom对象，jquery对象,
-                pages: 100, //总页数
+                cont: $('.pagination'),
+                pages: 18, //可以叫服务端把总页数放在某一个隐藏域，再获取。假设我们获取到的是18
                 skip: true, //是否开启跳页
-                skin: '#797979',
-                groups: 7 //连续显示分页数
+                skin: '#AF0000',
+                curr: function () { //通过url获取当前页，也可以同上（pages）方式获取
+                    var page = location.search.match(/page=(\d+)/);
+                    return page ? page[1] : 1;
+                }(),
+                jump: function (e, first) { //触发分页后的回调
+                    if (!first) { //一定要加此判断，否则初始时会无限刷新
+                        location.href = '?page=' + e.curr;
+                    }
+                }
             });
+
+            //分页脚本
+
         });
     </script>
     <style>
-        b{font-weight:normal}
-         .collect span:hover{background: #E2E2E1 none repeat scroll 0 0 !important;}
+        b {
+            font-weight: normal;
+        }
+
+        .collect span:hover {
+            background: #E2E2E1 none repeat scroll 0 0 !important;
+        }
     </style>
 }
 <div class="banner2">
@@ -34,95 +51,11 @@
         当前位置：<a href="@Url.Action("Index","Product")" target="_blank">尚爱商城</a>
     </div>
 </div>
-<div class="main" >
-
-    <div class="prosearch">
-        
-            <ul class="navul">
-                <li class="navli">
-                    <h3>按类别：</h3>
-                    <ul class="pronav">
-                        <li class="in all"><a pid="0" href="#">全部</a></li>
-                        <li class=""><a nid="20" href="#">女戒</a></li>
-                        <li class=""><a nid="21" href="#">男戒</a></li>
-                        <li class=""><a nid="23" href="#">对戒</a></li>
-                        <li class=""><a nid="26" href="#">吊坠</a></li>
-                        <li class=""><a nid="27" href="#">耳钉</a></li>
-                        <li class=""><a nid="28" href="#">手链</a></li>
-                        <li class=""><a nid="24" href="#">女戒指环</a></li>
-                        <li class=""><a nid="25" href="#">男戒指环</a></li>
-                    </ul>
-                </li>
-                <li class="navli">
-                    <h3>按形状：</h3>
-                    <ul class="pronav">
-                        <li class="in all"><a href="#">全部</a></li>
-                        <li class=""><a shape="170" href="#">圆形</a></li>
-                        <li class=""><a shape="171" href="#">公主方</a></li>
-                        <li class=""><a shape="172" href="#">椭圆形</a></li>
-                        <li class=""><a shape="173" href="#">心形</a></li>
-                        <li class=""><a shape="174" href="#">橄榄形</a></li>
-                        <li class=""><a shape="175" href="#">雷蒂恩</a></li>
-                        <li class=""><a shape="176" href="#">垫形</a></li>
-                        <li class=""><a shape="177" href="#">祖母绿</a></li>
-                        <li class=""><a shape="178" href="#">梨形</a></li>
-                    </ul>
-                </li>
-                <li class="navli">
-                    <h3>按材质：</h3>
-                    <ul class="pronav">
-                        <li class="in all"><a href="#">全部</a></li>
-                        <li class="#"><a texture="109" href="">PT950铂金</a></li>
-                        <li class="#"><a texture="107" href="">18K白金</a></li>
-                        <li class="#"><a texture="108" href="">18K玫瑰金</a></li>
-                        <li class="#"><a texture="111" href="">18K黄金</a></li>
-                    </ul>
-                </li>
-                <li class="navli" style="border:none;">
-                    <h3>按款式：</h3>
-                    <ul class="pronav">
-                        <li class="in all"><a href="">全部</a></li>
-                        <li class=""><a payment="115" href="">最新款</a></li>
-                        <li class=""><a payment="116" href="">流行款</a></li>
-                        <li class=""><a payment="117" href="">畅销款</a></li>
-                        <li class=""><a payment="118" href="">经典款</a></li>
-                        <li class=""><a payment="119" href="">大牌款</a></li>
-                        <li class=""><a payment="120" href="">个性款</a></li>
-                    </ul>
-                </li>
-            </ul>
-
-            <div class="search">
-                <h6>商品名称：</h6><input id="proname" name="proname" type="text"  style="width:180px" value="" />
-                <h6 style="padding-left:20px;">价格：</h6>
-
-                <input name="price1" type="text" style="width:80px" onkeyup="if (this.value.length == 1) { this.value = this.value.replace(/[^\d.]/g, '') } else { this.value = this.value.replace(/[^\d.]/g, '') }" onafterpaste="if(this.value.length == 1) { this.value = this.value.replace(/[^\d.]/g, '') } else { this.value = this.value.replace(/[^\d.]/g, '') }" value="1" /><b>￥ —</b>
-                <input name="price2" type="text" style="width:80px" onkeyup="if (this.value.length == 1) { this.value = this.value.replace(/[^\d.]/g, '') } else { this.value = this.value.replace(/[^\d.]/g, '') }" onafterpaste="if(this.value.length == 1) { this.value = this.value.replace(/[^\d.]/g, '') } else { this.value = this.value.replace(/[^\d.]/g, '') }" value="100000" /><b>￥</b>
-
-                <a class="test" href="#">搜 索</a> 
-                <a class="test2" href="http://www.sunloves.com/product/index/nid/4.html">重 置</a>
-
-        </div>
-
-    </div>
-
-    <div class="product">
-        <ul class="leftmargin">
-            @for (int i = 0; i < 19; i++)
-            {
-                <li>
-                    <a href="@Url.Action("DiamondDetail")"><img src="/Content/images/mall/20160427110358_35556.jpg" alt="六爪钻戒 白18K金六爪皇冠女戒" /></a>
-                    <div class="pro-name">六爪钻戒 白18K金六爪皇冠女戒</div>
-                    <div class="product-price">¥12900.00</div>
-                    <b class="collect"><span>收藏</span></b>
-                    <span>立即购买</span>
-                </li>
-            }
-        </ul>
-    </div>
-
+<div class="main">
+    @*列表搜索页面*@
+    @{Html.RenderPartial("_PartialProSearch", Model);}
+    @*列表分页数据*@
+    @{Html.RenderPartial("_PartialProduct", Model);}
+    @*分页位置*@
     <div class="pagination"></div>
-
-
-
 </div>

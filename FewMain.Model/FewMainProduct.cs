@@ -30,5 +30,11 @@ namespace FewMain.Model
         public int IsShow { get; set; }
         public System.DateTime AddTime { get; set; }
         public int Sort { get; set; }
+        public string MainImg { get; set; }
+        public decimal Price { get; set; }
+        public int ShapeId { get; set; }
+        public int SaleCount { get; set; }
+    
+        public virtual FewMainShape FewMainShape { get; set; }
     }
 }

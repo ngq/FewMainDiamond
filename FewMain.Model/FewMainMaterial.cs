@@ -12,14 +12,11 @@ namespace FewMain.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class FewMainType
+    public partial class FewMainMaterial
     {
         public int Id { get; set; }
-        public string TypeName { get; set; }
-        public string TypeEnName { get; set; }
-        public Nullable<int> ParentId { get; set; }
+        public string Material { get; set; }
         public string Remark { get; set; }
-        public Nullable<System.DateTime> AddTime { get; set; }
-        public int IsShow { get; set; }
+        public Nullable<int> IsShow { get; set; }
     }
 }

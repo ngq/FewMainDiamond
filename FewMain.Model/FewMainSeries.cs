@@ -16,6 +16,8 @@ namespace FewMain.Model
     {
         public int Id { get; set; }
         public string SeriesName { get; set; }
+        public string SeriesEnName { get; set; }
         public int ParentId { get; set; }
+        public int IsShow { get; set; }
     }
 }

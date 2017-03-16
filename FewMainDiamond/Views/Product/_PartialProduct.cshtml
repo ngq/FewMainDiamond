@@ -1,4 +1,16 @@
-﻿@{
-    Layout = null;
-}
+﻿@model FewMain.Model.ViewModel.ProductListViewModel
+<div class="product">
+    <ul class="leftmargin">
+        @foreach(var item in Model.ProductList)
+        {
+            <li>
+                <a href="@Url.Action("DiamondDetail")"><img src="@item.ProImgSrc" alt="@item.ProName" /></a>
+                <div class="pro-name">@item.ProName</div>
+                <div class="product-price">¥@item.Price</div>
+                <b class="collect"><span>收藏</span></b>
+                <span>立即购买</span>
+            </li>
+        }
+    </ul>
+</div>
 

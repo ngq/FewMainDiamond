@@ -16,6 +16,10 @@ namespace FewMain.Repository
       using FewMain.Model;
     public partial class  FewMainUsersRepository:BaseRepository<FewMainUsers>,IFewMainUsersRepository
     {
-     
+        public void dd()
+        {
+            
+        }
+
     }
 }

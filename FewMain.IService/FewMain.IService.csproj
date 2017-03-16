@@ -120,6 +120,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FewMain_IServices.tt</DependentUpon>
     </Compile>
+    <Compile Include="PartialIService\IProductService.cs" />
     <Compile Include="PartialIService\IUsersServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sysdiagrams.cs">
@@ -136,6 +137,10 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FewMain.IRepository\FewMain.IRepository.csproj">
+      <Project>{05039add-992e-412d-81f1-8120b2b6a593}</Project>
+      <Name>FewMain.IRepository</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FewMain.Model\FewMain.Model.csproj">
       <Project>{91a84aff-8124-481e-9d63-d150ada65ddb}</Project>
       <Name>FewMain.Model</Name>

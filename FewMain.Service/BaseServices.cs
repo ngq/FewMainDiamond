@@ -22,6 +22,11 @@ namespace FewMain.Service
             }
         }
 
+        public BaseDbContext BaseContext
+        {
+            get { return _dal.BaseContext; }
+        }
+
         public virtual List<TEntity> Query(Expression<Func<TEntity, bool>> predicate)
         {
             return _dal.Query(predicate);

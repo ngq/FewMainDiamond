@@ -1,0 +1,57 @@
+﻿ 
+@model FewMain.Model.ViewModel.ProductListViewModel
+<div class="prosearch">
+
+    <ul class="navul">
+        <li class="navli">
+            <h3>按类别：</h3>
+            <ul class="pronav">
+                @foreach (var item in Model.CatList)
+                {
+                    <li class="@(item.IsChoose?"in":"")"><a pid="@item.Id" href="@item.Url" target="_blank">@item.Name</a></li>
+                }
+                
+            </ul>
+        </li>
+        <li class="navli">
+            <h3>按形状：</h3>
+            <ul class="pronav">
+                 @foreach (var item in Model.Shape)
+                 {
+                    <li class="@(item.IsChoose?"in":"")"><a pid="@item.Id" href="@item.Url" target="_blank">@item.Name</a></li>
+                 }
+            </ul>
+        </li>
+        <li class="navli">
+            <h3>按材质：</h3>
+            <ul class="pronav">
+                @foreach (var item in Model.Material)
+                {
+                    <li class="@(item.IsChoose?"in":"")"><a pid="@item.Id" href="@item.Url" target="_blank">@item.Name</a></li>
+                }
+            </ul>
+        </li>
+        <li class="navli" style="border:none;">
+            <h3>按款式：</h3>
+            <ul class="pronav">
+                @foreach (var item in Model.Material)
+                {
+                    <li class="@(item.IsChoose?"in":"")"><a pid="@item.Id" href="@item.Url" target="_blank">@item.Name</a></li>
+                }
+            </ul>
+        </li>
+    </ul>
+
+    <div class="search">
+        <h6>商品名称：</h6><input id="proname" name="proname" type="text" style="width:180px" value="" />
+        <h6 style="padding-left:20px;">价格：</h6>
+
+        <input name="price1" type="text" style="width:80px" onkeyup="if (this.value.length == 1) { this.value = this.value.replace(/[^\d.]/g, '') } else { this.value = this.value.replace(/[^\d.]/g, '') }" onafterpaste="if(this.value.length == 1) { this.value = this.value.replace(/[^\d.]/g, '') } else { this.value = this.value.replace(/[^\d.]/g, '') }" value="1" /><b>￥ —</b>
+        <input name="price2" type="text" style="width:80px" onkeyup="if (this.value.length == 1) { this.value = this.value.replace(/[^\d.]/g, '') } else { this.value = this.value.replace(/[^\d.]/g, '') }" onafterpaste="if(this.value.length == 1) { this.value = this.value.replace(/[^\d.]/g, '') } else { this.value = this.value.replace(/[^\d.]/g, '') }" value="100000" /><b>￥</b>
+
+        <a class="test" href="#">搜 索</a>
+        <a class="test2" href="http://www.sunloves.com/product/index/nid/4.html">重 置</a>
+
+    </div>
+
+</div>

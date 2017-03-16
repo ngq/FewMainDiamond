@@ -60,7 +60,7 @@ $(function(){
 });
 $(function(){
 	new Magnifier("Magnifier1",{
-		pPath:'nimages/drbuy_xq/thebig_ring.jpg',
+	    pPath: '/Content/images/base/left_ring.jpg',
         sWidth:150,//小框宽度
         sHeight:150,//小框高度
         sOpacity:0.4,//小框透明度
@@ -71,7 +71,7 @@ $(function(){
             
     });
     new Magnifier("Magnifier2",{
-		pPath:'nimages/drbuy_xq/thebig_ring.jpg',
+        pPath: '/Content/images/base/left_ring.jpg',
         sWidth:150,//小框宽度
         sHeight:150,//小框高度
         sOpacity:0.4,//小框透明度

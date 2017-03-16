@@ -11,9 +11,11 @@ namespace FewMain.Service
 {
     using System;
     using System.Collections.Generic;
-    
+
     using FewMain.IRepository;
     using FewMain.IService;
+    using Model.ParamModel;
+    using Model.ViewModel;
     using Model;
     public partial class  FewMainProductServices:BaseServices<FewMainProduct>,IFewMainProductServices
     {
@@ -24,5 +26,7 @@ namespace FewMain.Service
         this._rep = _rep;
     	base._dal = _rep;
        }
+
+      
     }
 }

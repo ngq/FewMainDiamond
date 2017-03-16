@@ -6,10 +6,13 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace FewMain.IRepository
 {
     public partial interface IBaseRepository<TEntity> where TEntity : class
     {
+        BaseDbContext BaseContext { get; } 
+        
         #region 3.0 将_dbset以只读属性暴露给外部调用
         //3.0 将_dbset以只读属性暴露给外部调用
         DbSet<TEntity> DbSet { get; }

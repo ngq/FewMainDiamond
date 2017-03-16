@@ -21,6 +21,7 @@ namespace FewMain.Service
         /// <returns></returns>
         public bool Login(LoginParam parms)
         {
+           
             parms.Password = EncryptHelper.GetMD5(parms.Password);
             var user = Query(t => t.UserName == parms.UserName && t.Password == parms.Password).FirstOrDefault();
             if (user != null)
@@ -42,7 +43,7 @@ namespace FewMain.Service
         {
             try
             {
-                var model = new FewMainUsers() { AddTime = DateTime.Now, Email = parms.Email, Mobile = parms.Mobile, Password = EncryptHelper.GetMD5( parms.Password), UserName = parms.UserName, Weixin = parms.Weixin };
+                   var model = new FewMainUsers() { AddTime = DateTime.Now, Email = parms.Email, Mobile = parms.Mobile, Password = EncryptHelper.GetMD5( parms.Password), UserName = parms.UserName, Weixin = parms.Weixin };
                 Add(model);
                 return SaveChanges() > 0;
             }

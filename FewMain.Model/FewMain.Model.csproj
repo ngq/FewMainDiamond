@@ -59,6 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommonModel\Pager.cs" />
     <Compile Include="CommonModel\ResultModel.cs" />
     <Compile Include="CurrentModel\UserModel.cs" />
     <Compile Include="FewMainAddress.cs">
@@ -103,6 +104,9 @@
     <Compile Include="FewMainImgs.cs">
       <DependentUpon>FewMainEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="FewMainMaterial.cs">
+      <DependentUpon>FewMainEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="FewMainOrder.cs">
       <DependentUpon>FewMainEntity.tt</DependentUpon>
     </Compile>
@@ -124,6 +128,9 @@
     <Compile Include="FewMainSeries.cs">
       <DependentUpon>FewMainEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="FewMainShape.cs">
+      <DependentUpon>FewMainEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="FewMainSku.cs">
       <DependentUpon>FewMainEntity.tt</DependentUpon>
     </Compile>
@@ -136,6 +143,7 @@
     <Compile Include="FewMainUsers.cs">
       <DependentUpon>FewMainEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="ParamModel\ProSearchParam.cs" />
     <Compile Include="ParamModel\SearchParam.cs" />
     <Compile Include="ParamModel\ForgetParam.cs" />
     <Compile Include="ParamModel\RegisterParam.cs" />
@@ -144,6 +152,7 @@
     <Compile Include="sysdiagrams.cs">
       <DependentUpon>FewMainEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\Product\ProductListViewModel.cs" />
     <Compile Include="ViewModel\SKUViewModel.cs" />
     <Compile Include="ViewModel\UsersLoginViewModel.cs" />
   </ItemGroup>
